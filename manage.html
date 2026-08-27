@@ -318,6 +318,116 @@
   }
   .upload-zone-box:hover { background: #f0ebe1; }
   .upload-zone-box input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+
+  /* Custom Styled Dropdowns matching Eduard Bodak Design */
+  .custom-dropdown-container {
+    position: relative;
+    width: 100%;
+  }
+  .custom-dropdown-trigger {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 0.6rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    font-family: inherit;
+    font-weight: 600;
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .custom-dropdown-trigger:hover, .custom-dropdown-container.is-open .custom-dropdown-trigger {
+    border-color: #000000;
+    box-shadow: 0 0 0 2px #000000;
+  }
+  .custom-dropdown-chevron {
+    transition: transform 0.2s ease;
+    font-size: 10px;
+  }
+  .custom-dropdown-container.is-open .custom-dropdown-chevron {
+    transform: rotate(180deg);
+  }
+  .custom-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: #f9f4eb;
+    border: 1.5px solid #000000;
+    border-radius: 0.75rem;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+    z-index: 500;
+    padding: 0.35rem;
+    max-height: 220px;
+    overflow-y: auto;
+  }
+  .custom-dropdown-container.is-open .custom-dropdown-menu {
+    display: block;
+  }
+  .custom-dropdown-item {
+    padding: 0.65rem 0.85rem;
+    border-radius: 0.45rem;
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: #000000;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .custom-dropdown-item:hover {
+    background: #000000;
+    color: #ffffff;
+  }
+  .custom-dropdown-item.is-selected {
+    background: #facc15;
+    color: #000000;
+    font-weight: 900;
+  }
+
+  /* Auto-generate field helpers */
+  .input-with-action {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .btn-field-addon {
+    background: #f4efe6;
+    border: 1px solid #000000;
+    border-radius: 0.5rem;
+    padding: 0.7rem 0.8rem;
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: bold;
+    color: #000000;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+  }
+  .btn-field-addon:hover {
+    background: #000000;
+    color: #ffffff;
+  }
+  .badge-auto {
+    background: #e0f2fe;
+    color: #0369a1;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 0.15rem 0.45rem;
+    border-radius: 0.3rem;
+    border: 1px solid #bae6fd;
+    letter-spacing: 0.05em;
+    margin-left: 0.4rem;
+  }
+
 </style>
 <body data-load="" data-click-animation="">
   <div class="preloader" style="display:none!important;"><div class="preloader_element"><span class="preloader_box"></span><span class="preloader_box"></span><span class="preloader_box"></span><span class="preloader_box"></span></div></div>
@@ -429,21 +539,35 @@
         <div class="form-grid-2">
           <div>
             <label class="form-label-tag">Platform *</label>
-            <select id="f-platform" class="form-select-ctrl">
-              <option value="Xbox Game Pass Ultimate">Xbox Game Pass Ultimate</option>
-              <option value="NVIDIA GeForce NOW (Priority)">NVIDIA GeForce NOW (Priority)</option>
-              <option value="NVIDIA GeForce NOW (Ultimate RTX 4080)">NVIDIA GeForce NOW (Ultimate RTX 4080)</option>
-            </select>
+            <input type="hidden" id="f-platform" value="Xbox Game Pass Ultimate">
+            <div class="custom-dropdown-container" id="dropdown-platform">
+              <div class="custom-dropdown-trigger" onclick="toggleDropdown('dropdown-platform')">
+                <span id="label-platform">Xbox Game Pass Ultimate</span>
+                <span class="custom-dropdown-chevron">▼</span>
+              </div>
+              <div class="custom-dropdown-menu">
+                <div class="custom-dropdown-item is-selected" onclick="selectPlatform('Xbox Game Pass Ultimate')">Xbox Game Pass Ultimate</div>
+                <div class="custom-dropdown-item" onclick="selectPlatform('NVIDIA GeForce NOW (Priority)')">NVIDIA GeForce NOW (Priority)</div>
+                <div class="custom-dropdown-item" onclick="selectPlatform('NVIDIA GeForce NOW (Ultimate RTX 4080)')">NVIDIA GeForce NOW (Ultimate RTX 4080)</div>
+              </div>
+            </div>
           </div>
           <div>
             <label class="form-label-tag">Duration Validity *</label>
-            <select id="f-duration" class="form-select-ctrl">
-              <option value="1">1 Month</option>
-              <option value="2">2 Months</option>
-              <option value="3">3 Months (Seasonal)</option>
-              <option value="6">6 Months</option>
-              <option value="12">12 Months (Ultimate)</option>
-            </select>
+            <input type="hidden" id="f-duration" value="1">
+            <div class="custom-dropdown-container" id="dropdown-duration">
+              <div class="custom-dropdown-trigger" onclick="toggleDropdown('dropdown-duration')">
+                <span id="label-duration">1 Month</span>
+                <span class="custom-dropdown-chevron">▼</span>
+              </div>
+              <div class="custom-dropdown-menu">
+                <div class="custom-dropdown-item is-selected" onclick="selectDuration('1', '1 Month', 499)">1 Month (INR 499)</div>
+                <div class="custom-dropdown-item" onclick="selectDuration('2', '2 Months', 899)">2 Months (INR 899)</div>
+                <div class="custom-dropdown-item" onclick="selectDuration('3', '3 Months (Seasonal)', 1299)">3 Months (INR 1,299)</div>
+                <div class="custom-dropdown-item" onclick="selectDuration('6', '6 Months', 2399)">6 Months (INR 2,399)</div>
+                <div class="custom-dropdown-item" onclick="selectDuration('12', '12 Months (Ultimate)', 4499)">12 Months (INR 4,499)</div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -460,12 +584,22 @@
 
         <div class="form-grid-2">
           <div>
-            <label class="form-label-tag">Profile Slot ID</label>
-            <input type="text" id="f-slot" class="form-input-ctrl" placeholder="#XBOX-SLOT-01">
+            <label class="form-label-tag">
+              Profile Slot ID <span class="badge-auto">AUTO-GENERATED</span>
+            </label>
+            <div class="input-with-action">
+              <input type="text" id="f-slot" class="form-input-ctrl" placeholder="#XBOX-SLOT-01" required>
+              <button type="button" class="btn-field-addon" onclick="generateSlotId()" title="Re-generate Slot ID">🎲 RE-ROLL</button>
+            </div>
           </div>
           <div>
-            <label class="form-label-tag">Profile PIN Code</label>
-            <input type="text" id="f-pin" class="form-input-ctrl" placeholder="4892">
+            <label class="form-label-tag">
+              Profile PIN Code <span class="badge-auto">AUTO-GENERATED</span>
+            </label>
+            <div class="input-with-action">
+              <input type="text" id="f-pin" class="form-input-ctrl" placeholder="4892" required>
+              <button type="button" class="btn-field-addon" onclick="generatePinCode()" title="Re-generate 4-digit PIN">🎲 RE-ROLL</button>
+            </div>
           </div>
         </div>
 
@@ -626,21 +760,81 @@
       }).join('');
     }
 
+    
+    // Custom Dropdown Controller
+    function toggleDropdown(containerId) {
+      const container = document.getElementById(containerId);
+      const isOpen = container.classList.contains('is-open');
+      document.querySelectorAll('.custom-dropdown-container').forEach(c => c.classList.remove('is-open'));
+      if (!isOpen) container.classList.add('is-open');
+    }
+
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.custom-dropdown-container')) {
+        document.querySelectorAll('.custom-dropdown-container').forEach(c => c.classList.remove('is-open'));
+      }
+    });
+
+    function selectPlatform(val) {
+      document.getElementById('f-platform').value = val;
+      document.getElementById('label-platform').innerText = val;
+      
+      const menu = document.getElementById('dropdown-platform');
+      menu.querySelectorAll('.custom-dropdown-item').forEach(item => {
+        item.classList.toggle('is-selected', item.innerText.includes(val));
+      });
+      menu.classList.remove('is-open');
+
+      // Auto-update Slot ID prefix based on platform
+      generateSlotId(val);
+    }
+
+    function selectDuration(val, label, defaultPrice) {
+      document.getElementById('f-duration').value = val;
+      document.getElementById('label-duration').innerText = label;
+      if (defaultPrice) document.getElementById('f-amount').value = defaultPrice;
+
+      const menu = document.getElementById('dropdown-duration');
+      menu.querySelectorAll('.custom-dropdown-item').forEach(item => {
+        item.classList.toggle('is-selected', item.innerText.includes(label));
+      });
+      menu.classList.remove('is-open');
+    }
+
+    // Auto Generation Logic
+    function generateSlotId(platform) {
+      const p = platform || document.getElementById('f-platform').value;
+      let prefix = '#XBOX-SLOT-';
+      if (p.includes('Priority')) prefix = '#GFN-PRIO-';
+      else if (p.includes('Ultimate RTX 4080')) prefix = '#GFN-ULT-';
+      else if (p.includes('Xbox')) prefix = '#XBOX-SLOT-';
+      
+      const num = String(Math.floor(1 + Math.random() * 99)).padStart(2, '0');
+      document.getElementById('f-slot').value = prefix + num;
+    }
+
+    function generatePinCode() {
+      const pin = String(Math.floor(1000 + Math.random() * 9000));
+      document.getElementById('f-pin').value = pin;
+    }
+
     function openCreateModal() {
       document.getElementById('modal-heading').innerText = 'Provision New Customer Slot';
       document.getElementById('f-id').value = '';
       document.getElementById('f-name').value = '';
       document.getElementById('f-whatsapp').value = '';
       document.getElementById('f-email').value = '';
-      document.getElementById('f-duration').value = '1';
+      
+      selectPlatform('Xbox Game Pass Ultimate');
+      selectDuration('1', '1 Month', 499);
       
       const now = new Date();
       now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
       document.getElementById('f-purchase-date').value = now.toISOString().slice(0, 16);
 
-      document.getElementById('f-amount').value = '499';
-      document.getElementById('f-slot').value = '#SLOT-' + Math.floor(100 + Math.random() * 900);
-      document.getElementById('f-pin').value = Math.floor(1000 + Math.random() * 9000);
+      generateSlotId('Xbox Game Pass Ultimate');
+      generatePinCode();
+
       document.getElementById('f-proof-url').value = '';
       document.getElementById('zone-text').innerText = 'Click to upload UPI / Bank receipt screenshot';
       document.getElementById('btn-save-slot-cta').innerText = 'ACTIVATE SLOT';
@@ -722,8 +916,9 @@
       document.getElementById('f-name').value = s.customer_name;
       document.getElementById('f-whatsapp').value = s.whatsapp;
       document.getElementById('f-email').value = s.email || '';
-      document.getElementById('f-platform').value = s.platform;
-      document.getElementById('f-duration').value = s.duration_months;
+      
+      selectPlatform(s.platform || 'Xbox Game Pass Ultimate');
+      selectDuration(String(s.duration_months || '1'), s.duration_months + ' Month' + (s.duration_months > 1 ? 's' : ''), s.amount_paid);
       
       try {
         const pd = new Date(s.purchase_date);
