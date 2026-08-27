@@ -10,7 +10,7 @@ export interface SubscriptionRecord {
   customer_name: string;
   whatsapp: string;
   email?: string;
-  platform: 'Xbox Game Pass Ultimate' | 'NVIDIA GeForce NOW (Priority)' | 'NVIDIA GeForce NOW (Ultimate)' | string;
+  platform: 'Xbox PC Game Pass' | 'NVIDIA GeForce NOW (Performance)' | 'NVIDIA GeForce NOW (Ultimate)' | string;
   duration_months: number;
   purchase_date: string;
   expiry_date: string;

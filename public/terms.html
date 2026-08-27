@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" class="w-mod-js is-ready">
+<head>
+  <meta charset="utf-8">
+  <title>Warranty &amp; Service Terms — RAKEXURA Subscriptions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+
+<script id="auto-live-reload-script">
+  // Auto Live-Reload on localhost
+  if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+    let lastMod = null;
+    setInterval(async () => {
+      try {
+        const res = await fetch(location.pathname, { method: 'HEAD', cache: 'no-store' });
+        const mod = (res.headers.get('last-modified') || '') + '_' + (res.headers.get('etag') || '');
+        if (lastMod && mod && mod !== lastMod) {
+          console.log('[Auto-Reload] File change detected, reloading page...');
+          location.reload();
+        }
+        lastMod = mod;
+      } catch (e) {}
+    }, 800);
+  }
+</script>
+
+
+
+
+
+
+
+
+<style id="clean-animation-enabler">
+  .preloader, #preloader, [class*="preloader_box"] {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+</style>
+
+<style id="theme-color-tokens">
+  :root {
+    --color-background: #f2efeb !important;
+    --ci-cream: #f2efeb !important;
+    --color-background-beige: #e8e3dc !important;
+    --ci-beige: #e8e3dc !important;
+  }
+  html, body, .main, [data-scroll-container], .page-wrapper, .hero, .content-block, .empty-state, .faq {
+    background-color: #f2efeb !important;
+  }
+</style>
+</head>
+<body style="background:#000; color:#b9a4ff; font-family:sans-serif; padding:40px 20px; line-height:1.8; max-width:800px; margin:auto;">
+  <a href="/" style="color:#facc15; text-decoration:none; font-weight:bold;">&larr; Back to Subscriptions</a>
+  <h1 style="color:#fff; margin-top:20px;">Warranty &amp; Subscription Terms</h1>
+  <p style="color:#8991a6;">Last Updated: August 2026</p>
+  
+  <h2 style="color:#fff; margin-top:30px;">1. Service Scope</h2>
+  <p style="color:#d8dce6;">RAKEXURA provides private profile slot access and subscription management for Xbox Game Pass Ultimate and NVIDIA GeForce NOW. All subscriptions are calibrated to the exact timestamp of checkout.</p>
+  
+  <h2 style="color:#fff; margin-top:30px;">2. Durations &amp; Precision Timing</h2>
+  <p style="color:#d8dce6;">Subscriptions are available in 1, 2, 3, 6, and 12-month validity tiers. Active timing countdown starts immediately upon credential delivery.</p>
+  
+  <h2 style="color:#fff; margin-top:30px;">3. 100% Lifetime Replacement Warranty</h2>
+  <p style="color:#d8dce6;">Every active subscription includes full warranty coverage. In the unlikely event of an authentication issue or login lock, a replacement slot is provisioned at no additional cost.</p>
+  
+  <h2 style="color:#fff; margin-top:30px;">4. Private PIN Security</h2>
+  <p style="color:#d8dce6;">Customers are assigned dedicated profile slots with individual PIN protection. Sharing credentials outside authorized devices is prohibited.</p>
+
+
+
+
+<script id="admin-secret-access-script">
+  (function() {
+    // 1. Keyboard Shortcut: Alt + M anywhere
+    window.addEventListener('keydown', function(e) {
+      if (e.altKey && (e.key === 'm' || e.key === 'M')) {
+        e.preventDefault();
+        window.location.href = '/manage';
+      }
+    });
+
+    // 2. Effortless Logo Click Triggers:
+    //    - Shift + Click on Logo OR
+    //    - Double Click (dblclick) on Logo
+    document.addEventListener('DOMContentLoaded', function() {
+      const logoLinks = document.querySelectorAll('.header_title-link, .brand-logo, [data-button-hover]');
+      logoLinks.forEach(function(el) {
+        // Shift + Click
+        el.addEventListener('click', function(e) {
+          if (e.shiftKey) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.href = '/manage';
+          }
+        });
+        // Double Click
+        el.addEventListener('dblclick', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          window.location.href = '/manage';
+        });
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
