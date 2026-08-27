@@ -13,60 +13,8 @@
 <style>
   body { background-color: #f9f4eb !important; color: #000000 !important; min-height: 100vh; margin: 0; padding: 0; }
   
-  /* Exact Header Nav Positioning matched with index.html */
-  .header {
-    padding-top: var(--size-24) !important;
-    padding-right: var(--grid-margin) !important;
-    padding-left: var(--grid-margin) !important;
-    width: 100% !important;
-    display: flex !important;
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 1000 !important;
-    pointer-events: none !important;
-  }
-  .header * {
-    pointer-events: auto !important;
-  }
-  .header_inner {
-    width: 100% !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-  }
-  .header_title {
-    flex: 1 1 0% !important;
-    display: flex !important;
-    justify-content: flex-start !important;
-    align-items: center !important;
-    width: auto !important;
-  }
-  .header_nav {
-    flex: 0 0 auto !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-  .header_nav-list {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 0.5rem !important;
-    list-style: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-  .header_tools {
-    flex: 1 1 0% !important;
-    display: flex !important;
-    justify-content: flex-end !important;
-    align-items: center !important;
-    width: auto !important;
-  }
-
-  
   .matrix-content-wrapper {
-    padding-top: 130px;
+    padding-top: 2rem;
     padding-bottom: 4rem;
     width: 100%;
     position: relative;
@@ -363,6 +311,24 @@
 
   <main id="main" class="main">
     <div class="matrix-content-wrapper u-container">
+      
+<div aria-hidden="true" class="hero-process_divider" style="display:flex; justify-content:space-between; align-items:center; width:100%; margin-bottom:2.5rem; padding-bottom:1rem; border-bottom:1px solid rgba(0,0,0,0.1);">
+  <div style="display:flex; align-items:center; gap:0.5rem;">
+    <span style="font-size:14px;">✦ ✦ ✦</span>
+    <span class="hero-process_divider-text u-f1" style="font-family:monospace; font-size:11px; color:#666; margin-left:0.5rem;">3D2Y</span>
+    <span style="font-size:14px; margin-left:0.5rem;">✦</span>
+  </div>
+  <div style="display:flex; align-items:center; gap:0.5rem;">
+    <span style="font-size:14px;">✦</span>
+  </div>
+  <div style="display:flex; align-items:center; gap:0.5rem;">
+    <span style="font-size:14px;">✦</span>
+    <span class="hero-process_divider-text u-f1" style="font-family:monospace; font-size:11px; color:#666; margin-right:0.5rem;">A113</span>
+    <span style="font-size:14px;">✦ ✦ ✦</span>
+  </div>
+</div>
+
+
       <!-- Centered Eduard Bodak Hero Header -->
       <div style="text-align:center; margin-bottom:2.5rem;">
         <h1 class="hero-step-title">
