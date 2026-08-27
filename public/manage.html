@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html data-wf-domain="www.eduardbodak.com" data-wf-page="64591e5db836f6149ebb97ed" data-wf-site="64591e5db836f60c02bb97e9" lang="en" class="w-mod-js is-ready" style="--vw: 11.4px;">
+<head><meta charset="utf-8"><link href="https://cdn.prod.website-files.com" rel="preconnect" crossorigin="anonymous"><title>RAKEXURA | Subscription & Account Slot Management</title><meta content="Automated subscription control center for Xbox Game Pass Ultimate & NVIDIA GeForce NOW. Precision timing validation from 1 to 12 months, private profile PIN locks, and live expiry alerts." name="description"><meta content="RAKEXURA — Gaming Subscription & Account Slot Management" property="og:title"><meta content="Automated subscription control center for Xbox Game Pass Ultimate & NVIDIA GeForce NOW. Precision timing validation from 1 to 12 months, private profile PIN locks, and live expiry alerts." property="og:description"><meta content="https://cdn.prod.website-files.com/64591e5db836f60c02bb97e9/680fdd120c1b1657876c3607_1200x630_OG.png" property="og:image"><meta content="RAKEXURA — Gaming Subscription & Account Slot Management" name="twitter:title"><meta content="Automated subscription control center for Xbox Game Pass Ultimate & NVIDIA GeForce NOW. Precision timing validation from 1 to 12 months, private profile PIN locks, and live expiry alerts." name="twitter:description"><meta content="https://cdn.prod.website-files.com/64591e5db836f60c02bb97e9/680fdd120c1b1657876c3607_1200x630_OG.png" name="twitter:image"><meta property="og:type" content="website"><meta content="summary_large_image" name="twitter:card"><meta content="width=device-width, initial-scale=1" name="viewport"><meta content="M_yRk6d99hk4fo_NG2d7yGZcRg26zebG7VOhL8crkKI" name="google-site-verification"><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="https://cdn.prod.website-files.com/64591e5db836f60c02bb97e9/6703ea4bbff5d08293f4cd11_32x32_Favicon.svg" rel="shortcut icon" type="image/x-icon"><link href="https://cdn.prod.website-files.com/64591e5db836f60c02bb97e9/6703ea5073dcdead0eef425d_256x256_Favicon.svg" rel="apple-touch-icon"><meta name="theme-color" content="#000">
+<meta name="theme-color" content="#000" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000" media="(prefers-color-scheme: dark)">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!--<link id="main-css" rel="stylesheet" href="https://localhost:3000/styles/main.css">-->
+
+
+<script src="scripts/app.js" defer></script><script src="https://edbo.vercel.app/scripts/app.js" defer></script>
+<!--<script src="https://localhost:3000/scripts/app.js" defer></script>--><link rel="stylesheet" href="styles.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script></head>
+<style>
+  body { background-color: #f9f4eb !important; color: #000000 !important; min-height: 100vh; margin: 0; padding: 0; }
+  
+  /* Ensure header flex alignment */
+  .header_inner { display: flex !important; align-items: center !important; justify-content: space-between !important; width: 100% !important; }
+  .header_nav { display: flex !important; align-items: center !important; }
+  .header_nav-list { display: flex !important; flex-direction: row !important; align-items: center !important; gap: 0.5rem !important; list-style: none !important; margin: 0 !important; padding: 0 !important; }
+  .header_tools { display: flex !important; align-items: center !important; }
+
+  /* Ensure RAKE ✦ XURA badge has full high-contrast styling */
+  .header_title-button {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-radius: 0.5rem !important;
+    padding: 0.4rem 0.8rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+  .header_title-logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+    font-family: monospace !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    color: #ffffff !important;
+  }
+
+  .matrix-content-wrapper { padding-top: 130px; padding-bottom: 4rem; max-width: 1200px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; }
+  
+  /* Header Typography */
+  .hero-step-title {
+    font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #000000;
+    letter-spacing: -0.01em;
+    text-align: center;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+  }
+  .hero-step-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+    font-family: monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+  .hero-step-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .hero-step-num {
+    color: #888888;
+    font-weight: 500;
+  }
+  .hero-step-name {
+    color: #000000;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  /* Controls & Search Toolbar */
+  .toolbar-wrapper {
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 1rem;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  }
+  .search-ctrl-input {
+    background: transparent;
+    border: none;
+    color: #000000;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.95rem;
+    outline: none;
+    flex: 1;
+    min-width: 250px;
+    font-family: monospace;
+  }
+  .toolbar-buttons {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .btn-gold-cta {
+    background: #facc15 !important;
+    color: #000000 !important;
+    font-weight: 900 !important;
+    font-family: monospace !important;
+    padding: 0.75rem 1.4rem !important;
+    border-radius: 0.6rem !important;
+    border: 1px solid #000000 !important;
+    cursor: pointer !important;
+    font-size: 12px !important;
+    letter-spacing: 0.05em !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+    transition: all 0.2s ease !important;
+  }
+  .btn-gold-cta:hover {
+    background: #000000 !important;
+    color: #ffffff !important;
+    transform: scale(1.02) !important;
+  }
+
+  .btn-action-ghost {
+    background: #ffffff;
+    border: 1px solid #000000;
+    color: #000000;
+    padding: 0.75rem 1.1rem;
+    border-radius: 0.6rem;
+    font-family: monospace;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+  }
+  .btn-action-ghost:hover {
+    background: #000000;
+    color: #ffffff;
+  }
+
+  /* Telemetry Stat Cards */
+  .stat-row-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .stat-box-card {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.2s;
+  }
+  .stat-box-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  }
+  .stat-tag-lbl {
+    font-family: monospace;
+    font-size: 11px;
+    color: #666666;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  .stat-val-num {
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: #000000;
+    font-family: monospace;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+  .stat-cream-tag {
+    background-color: #f4efe6;
+    border-radius: 0.5rem;
+    padding: 0.35rem 0.65rem;
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: #333333;
+    display: inline-block;
+    width: fit-content;
+  }
+
+  /* Customer Slot Cards Grid */
+  .slot-grid-feed {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+  .slot-item-box {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .slot-item-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+  }
+
+  .slot-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+  }
+  .slot-cust-name {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #000000;
+    line-height: 1.2;
+  }
+  .slot-cust-phone {
+    font-family: monospace;
+    font-size: 12px;
+    color: #15803d;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 0.2rem;
+    display: inline-block;
+  }
+  .slot-id-pill {
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 700;
+    background: #f4efe6;
+    padding: 0.35rem 0.65rem;
+    border-radius: 0.5rem;
+    color: #000000;
+  }
+
+  .inner-row-pill {
+    background-color: #f4efe6;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    font-family: monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .btn-pill-action {
+    background-color: #f4efe6;
+    border-radius: 0.5rem;
+    padding: 0.65rem 0.85rem;
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-pill-action:hover {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  /* Modal System */
+  .y2k-backdrop {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px); display: none; align-items: center; justify-content: center;
+    z-index: 2500; padding: 1.5rem;
+  }
+  .y2k-backdrop.open { display: flex; }
+  .y2k-panel {
+    background: #f9f4eb; border: 2px solid #000000; border-radius: 1.5rem;
+    width: 100%; max-width: 600px; padding: 2.5rem; max-height: 90vh; overflow-y: auto;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.25); color: #000000;
+  }
+  .form-group-item { margin-bottom: 1.25rem; }
+  .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.25rem; }
+  .form-label-tag { display: block; font-family: monospace; font-size: 10px; color: #444444; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem; font-weight: bold; }
+  .form-input-ctrl, .form-select-ctrl {
+    width: 100%; background: #ffffff; border: 1px solid #000000; color: #000000;
+    padding: 0.75rem 1rem; border-radius: 0.6rem; font-size: 0.85rem; outline: none; font-family: inherit;
+  }
+  .form-input-ctrl:focus, .form-select-ctrl:focus { box-shadow: 0 0 0 2px #000000; }
+  .upload-zone-box {
+    border: 2px dashed #000000; border-radius: 1rem; padding: 1.75rem;
+    text-align: center; background: #ffffff; cursor: pointer; position: relative;
+  }
+  .upload-zone-box:hover { background: #f0ebe1; }
+  .upload-zone-box input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+</style>
+<body data-load="" data-click-animation="">
+  <div class="preloader" style="display:none!important;"><div class="preloader_element"><span class="preloader_box"></span><span class="preloader_box"></span><span class="preloader_box"></span><span class="preloader_box"></span></div></div>
+  
+<header class="header">
+  <nav class="skip-nav"><a href="#main" class="skip-nav_link w-inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="icon is-small"><path fill-rule="evenodd" clip-rule="evenodd" d="M5 9L5 4H3V9V10V11L13 11V13H11V15H13V13H15V11L17 11V9H15V7H13V5H11V7L13 7V9H5Z" fill="currentColor"></path></svg><span class="skip-nav_link-text u-c1">Skip to content</span></a></nav>
+  <div class="header_inner">
+    <div class="header_title">
+      <div class="header_title-inner u-c1">
+        <a href="/" class="header_title-link w-inline-block">
+          <div data-button-hover="" class="header_title-profile">
+            <img src="https://cdn.prod.website-files.com/64591e5db836f60c02bb97e9/6703ea4bbff5d08293f4cd11_32x32_Favicon.svg" loading="eager" width="32" height="32" alt="RAKEXURA" class="header_title-profile-img" style="border-radius:50%;object-fit:cover;background:#0c0a1a;">
+          </div>
+          <div data-button-hover="" class="header_title-button">
+            <div class="header_title-logo">
+              <span style="--index: 0;" class="header_title-logo-text">RAKE</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="--index: 1;" class="icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 5H11V7H13V9H15V11H13V13H11V15H9V13H7V11H5V9H7V7H9V5Z" fill="currentColor"></path></svg>
+              <span style="--index: 2;" data-button-hover-animation="" class="header_title-logo-text">XURA</span>
+            </div>
+            <div class="header_title-bg"></div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <nav class="header_nav">
+      <ul role="list" class="header_nav-list w-list-unstyled">
+        <li class="header_nav-list-item"><a data-nav-link="" data-text="Subscriptions" data-swup-preload="" data-wf--header-button--variant="base" href="/" class="header_nav-button u-c1 w-inline-block"><span class="header_nav-button-inner"><span class="header_nav-button-text">Subscriptions</span><span class="header_nav-button-bg"></span></span></a></li>
+        <li class="header_nav-list-item"><a data-nav-link="" data-text="Validation" data-swup-preload="" data-wf--header-button--variant="base" href="/prozess" class="header_nav-button u-c1 w-inline-block"><span class="header_nav-button-inner"><span class="header_nav-button-text">Validation</span><span class="header_nav-button-bg"></span></span></a></li>
+        <li class="header_nav-list-item"><a data-nav-link="" data-text="Pricing" data-swup-preload="" data-wf--header-button--variant="base" href="/preis" class="header_nav-button u-c1 w-inline-block"><span class="header_nav-button-inner"><span class="header_nav-button-text">Pricing</span><span class="header_nav-button-bg"></span></span></a></li>
+        <li class="header_nav-list-item"><a data-nav-link="" data-text="Support" data-swup-preload="" data-wf--header-button--variant="base" href="/kontakt" class="header_nav-button u-c1 w-inline-block"><span class="header_nav-button-inner"><span class="header_nav-button-text">Support</span><span class="header_nav-button-bg"></span></span></a></li>
+        <li class="header_nav-list-item"><a data-nav-link="" data-text="Track" data-wf--header-button--variant="base" href="/track" class="header_nav-button u-c1 w-inline-block "><span class="header_nav-button-inner"><span class="header_nav-button-text">Track</span><span class="header_nav-button-bg"></span></span></a></li>
+        <li class="header_nav-list-item"><a data-nav-link="" data-text="Manage" data-wf--header-button--variant="base" href="/manage" class="header_nav-button u-c1 w-inline-block is-active"><span class="header_nav-button-inner"><span class="header_nav-button-text">Manage</span><span class="header_nav-button-bg"></span></span></a></li>
+      </ul>
+    </nav>
+    <div class="header_tools">
+      <a data-text="Store" href="https://rakeon-store.vercel.app" target="_blank" class="header_nav-button u-c1 w-inline-block"><span class="header_nav-button-inner"><span class="header_nav-button-text">Store ↗</span><span class="header_nav-button-bg"></span></span></a>
+    </div>
+    <button type="button" data-menu-toggle="" class="header_menu-button"><span class="header_menu-button-text u-c1">Menu</span><span class="header_menu-button-bg"></span></button>
+  </div>
+</header>
+
+
+  <main id="main" class="main">
+    <div class="matrix-content-wrapper">
+      <!-- Centered Eduard Bodak Hero Header -->
+      <div style="text-align:center; margin-bottom:2.5rem;">
+        <h1 class="hero-step-title">
+          Subscription Slot Management &amp;<br>Real-Time Account Telemetry.
+        </h1>
+        <div class="hero-step-strip">
+          <div class="hero-step-item"><span class="hero-step-num">01</span> <span class="hero-step-name">PROVISION</span></div>
+          <div class="hero-step-item"><span class="hero-step-num">02</span> <span class="hero-step-name">VALIDATE</span></div>
+          <div class="hero-step-item"><span class="hero-step-num">03</span> <span class="hero-step-name">DISPATCH</span></div>
+          <div class="hero-step-item"><span class="hero-step-num">04</span> <span class="hero-step-name">RENEW</span></div>
+        </div>
+      </div>
+
+      <!-- Controls & Search Toolbar -->
+      <div class="toolbar-wrapper">
+        <input type="text" id="filter-input" class="search-ctrl-input" placeholder="Search customer, WhatsApp, slot ID..." oninput="renderCards()">
+        <div class="toolbar-buttons">
+          <button class="btn-action-ghost" onclick="fetchMatrixData()">REFRESH</button>
+          <button class="btn-gold-cta" onclick="openCreateModal()">
+            <span>+ PROVISION NEW SLOT</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Telemetry Stat Cards -->
+      <div class="stat-row-grid">
+        <div class="stat-box-card">
+          <div class="stat-tag-lbl">TOTAL ALLOCATIONS</div>
+          <div class="stat-val-num" id="metric-total">0</div>
+          <div class="stat-cream-tag">Matrix Slots Recorded</div>
+        </div>
+        <div class="stat-box-card">
+          <div class="stat-tag-lbl">ACTIVE PASSES</div>
+          <div class="stat-val-num" id="metric-active" style="color:#16a34a;">0</div>
+          <div class="stat-cream-tag" style="color:#15803d;">ONLINE TELEMETRY</div>
+        </div>
+        <div class="stat-box-card">
+          <div class="stat-tag-lbl">EXPIRING &lt; 48H</div>
+          <div class="stat-val-num" id="metric-urgent" style="color:#ca8a04;">0</div>
+          <div class="stat-cream-tag" style="color:#a16207;">48H ALERTS ACTIVE</div>
+        </div>
+        <div class="stat-box-card">
+          <div class="stat-tag-lbl">TOTAL MRR RECORDED</div>
+          <div class="stat-val-num" id="metric-revenue" style="color:#000000;">INR 0</div>
+          <div class="stat-cream-tag">Verified Payments</div>
+        </div>
+      </div>
+
+      <!-- Customer Slot Cards Grid -->
+      <div id="slot-cards-target" class="slot-grid-feed">
+        <div style="text-align:center; padding:4rem; color:#666666; font-family:monospace; grid-column:1/-1;">
+          Connecting to Supabase Slot Matrix...
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ADD / EDIT MODAL -->
+  <div class="y2k-backdrop" id="slot-modal">
+    <div class="y2k-panel">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem; border-bottom:1px solid #e5dec9; padding-bottom:1.25rem;">
+        <h2 style="font-size:1.5rem; font-weight:900; color:#000000;" id="modal-heading">Provision New Customer Slot</h2>
+        <button onclick="closeCreateModal()" style="background:none; border:none; color:#000000; font-size:1.75rem; cursor:pointer;">&times;</button>
+      </div>
+
+      <form onsubmit="handleSlotSave(event)">
+        <input type="hidden" id="f-id">
+        <div class="form-group-item">
+          <label class="form-label-tag">Customer Full Name *</label>
+          <input type="text" id="f-name" class="form-input-ctrl" required placeholder="e.g. Rakesh Kanna">
+        </div>
+
+        <div class="form-grid-2">
+          <div>
+            <label class="form-label-tag">WhatsApp Number *</label>
+            <input type="text" id="f-whatsapp" class="form-input-ctrl" required placeholder="+91 9363063876">
+          </div>
+          <div>
+            <label class="form-label-tag">Email Address (Optional)</label>
+            <input type="email" id="f-email" class="form-input-ctrl" placeholder="customer@gmail.com">
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div>
+            <label class="form-label-tag">Platform *</label>
+            <select id="f-platform" class="form-select-ctrl">
+              <option value="Xbox Game Pass Ultimate">Xbox Game Pass Ultimate</option>
+              <option value="NVIDIA GeForce NOW (Priority)">NVIDIA GeForce NOW (Priority)</option>
+              <option value="NVIDIA GeForce NOW (Ultimate RTX 4080)">NVIDIA GeForce NOW (Ultimate RTX 4080)</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label-tag">Duration Validity *</label>
+            <select id="f-duration" class="form-select-ctrl">
+              <option value="1">1 Month</option>
+              <option value="2">2 Months</option>
+              <option value="3">3 Months (Seasonal)</option>
+              <option value="6">6 Months</option>
+              <option value="12">12 Months (Ultimate)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div>
+            <label class="form-label-tag">Purchase Date &amp; Time *</label>
+            <input type="datetime-local" id="f-purchase-date" class="form-input-ctrl" required>
+          </div>
+          <div>
+            <label class="form-label-tag">Amount Paid (INR)</label>
+            <input type="number" id="f-amount" class="form-input-ctrl" value="499">
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div>
+            <label class="form-label-tag">Profile Slot ID</label>
+            <input type="text" id="f-slot" class="form-input-ctrl" placeholder="#XBOX-SLOT-01">
+          </div>
+          <div>
+            <label class="form-label-tag">Profile PIN Code</label>
+            <input type="text" id="f-pin" class="form-input-ctrl" placeholder="4892">
+          </div>
+        </div>
+
+        <div class="form-group-item">
+          <label class="form-label-tag">Payment Screenshot Proof</label>
+          <div class="upload-zone-box">
+            <span id="zone-text" style="font-size:12px; color:#555555; font-family:monospace;">Click to upload UPI / Bank receipt screenshot</span>
+            <input type="file" accept="image/*" onchange="uploadReceiptFile(event)">
+            <input type="hidden" id="f-proof-url">
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; gap:1rem; margin-top:2rem; border-top:1px solid #e5dec9; padding-top:1.5rem;">
+          <button type="button" class="btn-action-ghost" onclick="closeCreateModal()">Cancel</button>
+          <button type="submit" class="btn-gold-cta" id="btn-save-slot-cta">
+            <span>ACTIVATE SLOT</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="y2k-backdrop" id="img-zoom-lightbox" onclick="closeLightbox()">
+    <img id="img-zoom-target" src="" style="max-width:90vw; max-height:85vh; border-radius:1.5rem; border:2px solid #000000; box-shadow:0 0 60px rgba(0,0,0,0.4);">
+  </div>
+
+  
+<footer style="margin-top:7rem; border-top:1px solid #000000; padding:4rem 0 3rem 0; background:#000000; color:#f9f4eb; position:relative; z-index:10;">
+  <div class="u-container" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; margin-bottom:3rem;">
+    <div>
+      <div style="font-family:monospace; font-size:11px; color:#888888; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:1rem;">NAVIGATION</div>
+      <div style="display:flex; flex-direction:column; gap:0.5rem; font-family:monospace; font-size:13px;">
+        <a href="/" style="color:#f9f4eb; text-decoration:none;">SUBSCRIPTIONS</a>
+        <a href="/prozess" style="color:#f9f4eb; text-decoration:none;">VALIDATION</a>
+        <a href="/preis" style="color:#f9f4eb; text-decoration:none;">PRICING</a>
+        <a href="/kontakt" style="color:#f9f4eb; text-decoration:none;">SUPPORT</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:monospace; font-size:11px; color:#888888; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:1rem;">COMMUNITY &amp; CHANNELS</div>
+      <div style="display:flex; flex-direction:column; gap:0.5rem; font-family:monospace; font-size:13px;">
+        <a href="https://discord.gg" target="_blank" style="color:#f9f4eb; text-decoration:none;">DISCORD ↗</a>
+        <a href="https://wa.me/918317416695" target="_blank" style="color:#f9f4eb; text-decoration:none;">WHATSAPP ↗</a>
+        <a href="https://t.me" target="_blank" style="color:#f9f4eb; text-decoration:none;">TELEGRAM ↗</a>
+        <a href="https://rakeon-store.vercel.app" style="color:#f9f4eb; text-decoration:none;">STORE ↗</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:monospace; font-size:11px; color:#888888; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:1rem;">LEGAL &amp; WARRANTY</div>
+      <div style="display:flex; flex-direction:column; gap:0.5rem; font-family:monospace; font-size:13px;">
+        <a href="/agb" style="color:#f9f4eb; text-decoration:none;">TERMS OF SERVICE</a>
+        <a href="/datenschutz" style="color:#f9f4eb; text-decoration:none;">PRIVACY POLICY</a>
+        <a href="/prozess" style="color:#f9f4eb; text-decoration:none;">WARRANTY GUIDE</a>
+      </div>
+    </div>
+  </div>
+  <div class="u-container" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; border-top:1px solid #222222; padding-top:2rem; font-family:monospace; font-size:11px; color:#888888;">
+    <div>©2026 RAKEXURA : CLOUD MATRIX</div>
+    <div style="display:flex; gap:1.5rem;">
+      <span>EINFACHE DESIGN SYSTEM</span>
+      <span>NVL-101 • 3D2Y</span>
+    </div>
+  </div>
+</footer>
+
+
+  <script>
+    const SUPABASE_URL = 'https://cwvfgxdhearouclomjeq.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_xkeb5PPKakTH5qQvPQllBA_eZDAHqKK';
+    const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    let subscriptions = [];
+
+    async function fetchMatrixData() {
+      const { data, error } = await client.from('subscriptions').select('*').order('purchase_date', { ascending: false });
+      if (!error && data) {
+        subscriptions = data;
+        renderCards();
+      } else {
+        console.error('Supabase fetch error:', error);
+        document.getElementById('slot-cards-target').innerHTML = '<div style="text-align:center; padding:3rem; color:#dc2626; font-family:monospace; grid-column:1/-1;">Error loading slots telemetry.</div>';
+      }
+    }
+
+    function calculateTime(expiryStr) {
+      const diff = new Date(expiryStr).getTime() - new Date().getTime();
+      if (diff <= 0) return { expired: true, text: 'EXPIRED', days: 0, isUrgent: false };
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      return { expired: false, text: days + 'd ' + hours + 'h left', days, isUrgent: days < 2 };
+    }
+
+    function renderCards() {
+      const q = document.getElementById('filter-input').value.toLowerCase();
+      let active = 0, urgent = 0, mrr = 0;
+
+      const filtered = subscriptions.filter(s => {
+        const t = calculateTime(s.expiry_date);
+        mrr += Number(s.amount_paid || 0);
+        if (!t.expired && !t.isUrgent) active++;
+        if (!t.expired && t.isUrgent) urgent++;
+        return s.customer_name.toLowerCase().includes(q) || s.whatsapp.includes(q) || (s.profile_slot && s.profile_slot.toLowerCase().includes(q));
+      });
+
+      document.getElementById('metric-total').innerText = subscriptions.length;
+      document.getElementById('metric-active').innerText = active;
+      document.getElementById('metric-urgent').innerText = urgent;
+      document.getElementById('metric-revenue').innerText = 'INR ' + mrr.toLocaleString();
+
+      if (filtered.length === 0) {
+        document.getElementById('slot-cards-target').innerHTML = '<div style="text-align:center; padding:4rem; color:#666666; font-family:monospace; grid-column:1/-1;"><div style="font-size:2rem; font-weight:900; color:#000000; margin-bottom:0.5rem;">[ NO SLOTS FOUND ]</div><p style="font-size:12px; margin-top:0.35rem;">Click "+ PROVISION NEW SLOT" to create your first customer allocation.</p></div>';
+        return;
+      }
+
+      document.getElementById('slot-cards-target').innerHTML = filtered.map(s => {
+        const t = calculateTime(s.expiry_date);
+        const tColor = t.expired ? '#dc2626' : t.isUrgent ? '#ca8a04' : '#16a34a';
+        const tBadge = t.expired ? 'EXPIRED' : t.isUrgent ? 'EXPIRING: ' + t.text : 'ACTIVE: ' + t.text;
+
+        return '<div class="slot-item-box">' +
+          '<div>' +
+            '<div class="slot-box-header">' +
+              '<div>' +
+                '<div class="slot-cust-name">' + s.customer_name + '</div>' +
+                '<a href="https://wa.me/' + s.whatsapp.replace(/[^0-9]/g, '') + '" target="_blank" class="slot-cust-phone">TEL: ' + s.whatsapp + '</a>' +
+              '</div>' +
+              '<span class="slot-id-pill">' + (s.profile_slot || '#SLOT-01') + '</span>' +
+            '</div>' +
+
+            '<div class="inner-row-pill">' +
+              '<span>PLATFORM: ' + s.platform + '</span>' +
+              '<span>' + s.duration_months + ' MO</span>' +
+            '</div>' +
+
+            '<div class="inner-row-pill">' +
+              '<span style="color:' + tColor + '; font-weight:bold;">' + tBadge + '</span>' +
+              '<span style="font-size:11px; color:#666;">EXP: ' + new Date(s.expiry_date).toLocaleDateString() + '</span>' +
+            '</div>' +
+
+            '<div class="inner-row-pill">' +
+              '<span>PIN: <strong style="background:#facc15; padding:0.1rem 0.4rem; border-radius:0.3rem;">' + (s.profile_pin || '4892') + '</strong></span>' +
+              '<span style="color:#15803d; font-weight:bold;">INR ' + s.amount_paid + '</span>' +
+            '</div>' +
+          '</div>' +
+
+          '<div style="display:grid; grid-template-columns: 1fr auto auto auto; gap:0.4rem; margin-top:1rem; padding-top:0.75rem; border-top:1px solid #f4efe6;">' +
+            '<a href="javascript:void(0)" onclick="sendWhatsAppCredential(\'' + s.id + '\')" class="btn-pill-action" style="background:#16a34a; color:#ffffff;">' +
+              'DISPATCH WA' +
+            '</a>' +
+            (s.payment_proof_url ? '<button class="btn-pill-action" onclick="showLightbox(\'' + s.payment_proof_url + '\')" title="Receipt">RECEIPT</button>' : '') +
+            '<button class="btn-pill-action" onclick="extendSlotOneMonth(\'' + s.id + '\')" title="Extend +1 Month">+1M</button>' +
+            '<button class="btn-pill-action" onclick="openEditModal(\'' + s.id + '\')">EDIT</button>' +
+            '<button class="btn-pill-action" style="color:#dc2626;" onclick="deleteSlotRecord(\'' + s.id + '\')">DEL</button>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    function openCreateModal() {
+      document.getElementById('modal-heading').innerText = 'Provision New Customer Slot';
+      document.getElementById('f-id').value = '';
+      document.getElementById('f-name').value = '';
+      document.getElementById('f-whatsapp').value = '';
+      document.getElementById('f-email').value = '';
+      document.getElementById('f-duration').value = '1';
+      
+      const now = new Date();
+      now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+      document.getElementById('f-purchase-date').value = now.toISOString().slice(0, 16);
+
+      document.getElementById('f-amount').value = '499';
+      document.getElementById('f-slot').value = '#SLOT-' + Math.floor(100 + Math.random() * 900);
+      document.getElementById('f-pin').value = Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('f-proof-url').value = '';
+      document.getElementById('zone-text').innerText = 'Click to upload UPI / Bank receipt screenshot';
+      document.getElementById('btn-save-slot-cta').innerText = 'ACTIVATE SLOT';
+      document.getElementById('slot-modal').classList.add('open');
+    }
+
+    function closeCreateModal() { document.getElementById('slot-modal').classList.remove('open'); }
+    function showLightbox(url) { document.getElementById('img-zoom-target').src = url; document.getElementById('img-zoom-lightbox').classList.add('open'); }
+    function closeLightbox() { document.getElementById('img-zoom-lightbox').classList.remove('open'); }
+
+    async function uploadReceiptFile(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      document.getElementById('zone-text').innerText = 'Uploading to Supabase...';
+      const ext = file.name.split('.').pop();
+      const fn = Date.now() + '_' + Math.random().toString(36).substring(7) + '.' + ext;
+      const path = 'receipts/' + fn;
+      const { error } = await client.storage.from('payment-proofs').upload(path, file);
+      if (error) { alert('Upload error: ' + error.message); return; }
+      const { data } = client.storage.from('payment-proofs').getPublicUrl(path);
+      document.getElementById('f-proof-url').value = data.publicUrl;
+      document.getElementById('zone-text').innerHTML = '[ RECEIPT UPLOADED ]';
+    }
+
+    async function handleSlotSave(e) {
+      e.preventDefault();
+      document.getElementById('btn-save-slot-cta').innerText = 'Saving...';
+      
+      const id = document.getElementById('f-id').value;
+      const duration = Number(document.getElementById('f-duration').value) || 1;
+      
+      let pDateInput = document.getElementById('f-purchase-date').value;
+      let pDate = pDateInput ? new Date(pDateInput) : new Date();
+      if (isNaN(pDate.getTime())) pDate = new Date();
+
+      let eDate = new Date(pDate);
+      eDate.setMonth(eDate.getMonth() + duration);
+
+      const payload = {
+        customer_name: document.getElementById('f-name').value.trim(),
+        whatsapp: document.getElementById('f-whatsapp').value.trim(),
+        email: document.getElementById('f-email').value.trim() || null,
+        platform: document.getElementById('f-platform').value,
+        duration_months: duration,
+        purchase_date: pDate.toISOString(),
+        expiry_date: eDate.toISOString(),
+        amount_paid: Number(document.getElementById('f-amount').value) || 0,
+        profile_slot: document.getElementById('f-slot').value.trim() || null,
+        profile_pin: document.getElementById('f-pin').value.trim() || null,
+        payment_proof_url: document.getElementById('f-proof-url').value.trim() || null,
+        status: 'active',
+        updated_at: new Date().toISOString()
+      };
+
+      let res;
+      if (id) {
+        res = await client.from('subscriptions').update(payload).eq('id', id);
+      } else {
+        res = await client.from('subscriptions').insert([payload]);
+      }
+
+      if (res.error) {
+        console.error('Supabase save error:', res.error);
+        alert('Database save error: ' + (res.error.message || JSON.stringify(res.error)));
+        document.getElementById('btn-save-slot-cta').innerText = 'ACTIVATE SLOT';
+        return;
+      }
+
+      document.getElementById('btn-save-slot-cta').innerText = 'ACTIVATE SLOT';
+      closeCreateModal();
+      await fetchMatrixData();
+    }
+
+    function openEditModal(id) {
+      const s = subscriptions.find(item => item.id === id);
+      if (!s) return;
+      document.getElementById('modal-heading').innerText = 'Edit Subscription Slot';
+      document.getElementById('f-id').value = s.id;
+      document.getElementById('f-name').value = s.customer_name;
+      document.getElementById('f-whatsapp').value = s.whatsapp;
+      document.getElementById('f-email').value = s.email || '';
+      document.getElementById('f-platform').value = s.platform;
+      document.getElementById('f-duration').value = s.duration_months;
+      
+      try {
+        const pd = new Date(s.purchase_date);
+        pd.setMinutes(pd.getMinutes() - pd.getTimezoneOffset());
+        document.getElementById('f-purchase-date').value = pd.toISOString().slice(0, 16);
+      } catch(err) {
+        document.getElementById('f-purchase-date').value = new Date().toISOString().slice(0, 16);
+      }
+
+      document.getElementById('f-amount').value = s.amount_paid;
+      document.getElementById('f-slot').value = s.profile_slot || '';
+      document.getElementById('f-pin').value = s.profile_pin || '';
+      document.getElementById('f-proof-url').value = s.payment_proof_url || '';
+      document.getElementById('zone-text').innerText = s.payment_proof_url ? '[ RECEIPT ATTACHED ]' : 'Click to upload receipt';
+      document.getElementById('btn-save-slot-cta').innerText = 'UPDATE SLOT';
+      document.getElementById('slot-modal').classList.add('open');
+    }
+
+    async function extendSlotOneMonth(id) {
+      const s = subscriptions.find(item => item.id === id);
+      if (!s) return;
+      const cur = new Date(s.expiry_date);
+      const next = new Date(cur > new Date() ? cur : new Date());
+      next.setMonth(next.getMonth() + 1);
+      const { error } = await client.from('subscriptions').update({ 
+        expiry_date: next.toISOString(), 
+        duration_months: Number(s.duration_months || 0) + 1, 
+        status: 'active', 
+        updated_at: new Date().toISOString() 
+      }).eq('id', id);
+
+      if (error) {
+        alert('Extension error: ' + error.message);
+        return;
+      }
+      fetchMatrixData();
+    }
+
+    async function deleteSlotRecord(id) {
+      if (!confirm('Are you sure you want to remove this slot?')) return;
+      const { error } = await client.from('subscriptions').delete().eq('id', id);
+      if (error) {
+        alert('Delete error: ' + error.message);
+        return;
+      }
+      fetchMatrixData();
+    }
+
+    function sendWhatsAppCredential(id) {
+      const s = subscriptions.find(item => item.id === id);
+      if (!s) return;
+      const t = calculateTime(s.expiry_date);
+      const trackLink = 'https://rakeon-store.vercel.app/track?slot=' + encodeURIComponent(s.id);
+      const msg = '*RAKEXURA SUBSCRIPTIONS — SLOT ALLOCATION*\n\n' +
+        '*Customer:* ' + s.customer_name + '\n' +
+        '*Platform:* ' + s.platform + '\n' +
+        '*Validity:* ' + s.duration_months + ' Month(s)\n' +
+        '*Start Date:* ' + new Date(s.purchase_date).toLocaleDateString() + '\n' +
+        '*Expires On:* ' + new Date(s.expiry_date).toLocaleDateString() + ' (' + t.text + ')\n\n' +
+        '*YOUR PRIVATE CREDENTIALS:*\n' +
+        '• *Slot Assigned:* ' + (s.profile_slot || 'Dedicated Profile 01') + '\n' +
+        '• *Profile PIN:* ' + (s.profile_pin || '4892') + '\n\n' +
+        '*Live Telemetry & Status Tracker:*\n' + trackLink + '\n\n' +
+        '_Thank you for gaming with RAKEXURA! 24/7 Replacement Warranty Active._';
+      window.open('https://wa.me/' + s.whatsapp.replace(/[^0-9]/g, '') + '?text=' + encodeURIComponent(msg), '_blank');
+    }
+
+    fetchMatrixData();
+  </script>
+</body>
+</html>
