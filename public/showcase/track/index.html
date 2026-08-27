@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Live Slot Telemetry &amp; PIN Vault — RAKEXURA Subscriptions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #000000;
+      color: #f9f4eb;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .track-wrap { max-width: 680px; margin: 0 auto; width: 100%; padding-top: 1.5rem; }
+    .header-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid #1e1a33; padding-bottom: 1.5rem; margin-bottom: 2rem;
+    }
+    .brand-group { display: flex; align-items: center; gap: 0.75rem; }
+    .brand-logo {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: #120f24; border: 1px solid rgba(139,92,246,0.3);
+      display: flex; align-items: center; justify-content: center;
+      color: #facc15; font-weight: 900; font-size: 1.25rem;
+    }
+    .eyebrow { font-family: monospace; font-size: 10px; color: #8b5cf6; letter-spacing: 0.25em; text-transform: uppercase; font-weight: bold; }
+    .page-title { font-size: 1.35rem; font-weight: 900; color: #fff; }
+    .btn-showcase {
+      padding: 0.5rem 1rem; border-radius: 9999px; font-family: monospace; font-size: 11px;
+      color: #8991a6; border: 1px solid #2a2545; text-decoration: none;
+    }
+    .btn-showcase:hover { color: #fff; border-color: #8b5cf6; }
+
+    .search-box {
+      display: flex; gap: 0.5rem; background: #0c0a1a;
+      border: 1px solid #1e1a33; padding: 0.75rem; border-radius: 1.25rem; margin-bottom: 2rem;
+    }
+    .search-input {
+      flex: 1; background: #151226; border: 1px solid #2a2545;
+      color: #fff; padding: 0.65rem 1rem; border-radius: 0.75rem; font-size: 0.85rem; outline: none;
+    }
+    .btn-track {
+      background: #facc15; color: #000; font-weight: 900;
+      border: none; border-radius: 0.75rem; padding: 0 1.25rem;
+      cursor: pointer; text-transform: uppercase; font-size: 11px; letter-spacing: 0.05em;
+    }
+
+    .telemetry-card {
+      background: #0c0a1a; border: 1px solid #2a2545;
+      border-radius: 1.5rem; padding: 2rem;
+      box-shadow: 0 0 50px rgba(139,92,246,0.1); margin-bottom: 2rem;
+    }
+    .clock-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem; max-width: 380px; margin: 1.5rem auto; text-align: center;
+    }
+    .clock-unit {
+      background: #0c0a1a; border: 1px solid #2a2545; border-radius: 0.75rem; padding: 0.75rem 0.5rem;
+    }
+    .clock-num { font-size: 1.75rem; font-weight: 900; color: #fff; font-family: monospace; }
+    .clock-lbl { font-size: 9px; text-transform: uppercase; color: #8991a6; font-family: monospace; margin-top: 0.25rem; }
+
+    .vault-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+    .vault-box {
+      background: #151226; border: 1px solid #2a2545; border-radius: 1rem; padding: 1rem;
+    }
+    .pin-display {
+      font-size: 1.25rem; font-weight: 900; font-family: monospace; letter-spacing: 0.2em; color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="track-wrap">
+    <div class="header-bar">
+      <div class="brand-group">
+        <div class="brand-logo">R</div>
+        <div>
+          <span class="eyebrow">LIVE TELEMETRY</span>
+          <h1 class="page-title">Slot Validity &amp; Expiry Tracker</h1>
+        </div>
+      </div>
+      <a href="/" class="btn-showcase">Showcase</a>
+    </div>
+
+    <form class="search-box" onsubmit="lookup(event)">
+      <input type="text" id="track-input" class="search-input" placeholder="Enter Slot ID or your WhatsApp number...">
+      <button type="submit" class="btn-track" id="btn-submit">Track Slot</button>
+    </form>
+
+    <div id="result-area"></div>
+  </div>
+
+  <footer style="text-align:center; font-family:monospace; font-size:11px; color:#646b7b; padding:1.5rem 0; border-top:1px solid #1e1a33; margin-top:2rem;">
+    RAKEXURA Subscriptions &copy; 2026 • 100% Lifetime Warranty Active
+  </footer>
+
+  <script>
+    const SUPABASE_URL = 'https://cwvfgxdhearouclomjeq.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_xkeb5PPKakTH5qQvPQllBA_eZDAHqKK';
+    const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    let activeSub = null;
+    let showPin = false;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialKey = urlParams.get('slot') || urlParams.get('phone');
+    if (initialKey) {
+      document.getElementById('track-input').value = initialKey;
+      doSearch(initialKey);
+    }
+
+    async function lookup(e) {
+      e.preventDefault();
+      const val = document.getElementById('track-input').value.trim();
+      if (!val) return;
+      doSearch(val);
+    }
+
+    async function doSearch(key) {
+      document.getElementById('btn-submit').innerText = 'Searching...';
+      activeSub = null;
+
+      const { data: byId } = await client.from('subscriptions').select('*').eq('id', key).single();
+      if (byId) {
+        activeSub = byId;
+        renderResult();
+        document.getElementById('btn-submit').innerText = 'Track Slot';
+        return;
+      }
+
+      const cleanPhone = key.replace(/[^0-9]/g, '');
+      const { data: byPhone } = await client.from('subscriptions').select('*').ilike('whatsapp', `%${cleanPhone}%`).order('purchase_date', { ascending: false }).limit(1);
+
+      if (byPhone && byPhone.length > 0) {
+        activeSub = byPhone[0];
+        renderResult();
+      } else {
+        document.getElementById('result-area').innerHTML = `
+          <div style="text-align:center; padding:3rem; background:#0c0a1a; border:1px solid #1e1a33; border-radius:1.5rem; color:#8991a6;">
+            <div style="font-size:2rem; margin-bottom:0.5rem;">🛡️</div>
+            <div style="font-weight:bold; color:#fff;">No active slot found for "${key}"</div>
+            <p style="font-size:12px; margin-top:0.25rem;">Please check your WhatsApp number or Slot ID.</p>
+          </div>
+        `;
+      }
+      document.getElementById('btn-submit').innerText = 'Track Slot';
+    }
+
+    function renderResult() {
+      if (!activeSub) return;
+      const diff = new Date(activeSub.expiry_date).getTime() - new Date().getTime();
+      const expired = diff <= 0;
+      const days = Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)));
+      const hours = Math.max(0, Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+      const mins = Math.max(0, Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)));
+      const secs = Math.max(0, Math.floor((diff % (1000 * 60)) / 1000));
+
+      const isUrgent = !expired && days < 2;
+
+      document.getElementById('result-area').innerHTML = `
+        <div class="telemetry-card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+            <div style="font-family:monospace; font-size:11px; font-weight:bold; color:${expired ? '#f87171' : isUrgent ? '#facc15' : '#34d399'};">
+              ${expired ? '🔴 EXPIRED' : isUrgent ? '🟡 EXPIRING SOON (<48H)' : '🟢 ACTIVE • 100% HEALTHY'}
+            </div>
+            <div style="font-family:monospace; font-size:10px; color:#8991a6;">
+              Slot: ${activeSub.profile_slot || '#XBOX-01'}
+            </div>
+          </div>
+
+          <div style="font-size:12px; color:#8991a6; font-family:monospace;">CUSTOMER: ${activeSub.customer_name}</div>
+          <h2 style="font-size:1.5rem; font-weight:900; color:#fff; margin-top:0.25rem;">🎮 ${activeSub.platform}</h2>
+
+          <div style="background:#151226; border:1px solid #2a2545; border-radius:1rem; padding:1.25rem; margin:1.5rem 0; text-align:center;">
+            <div style="font-family:monospace; font-size:10px; color:#8991a6; letter-spacing:0.15em; text-transform:uppercase;">TIME REMAINING</div>
+            ${expired ? `
+              <div style="font-size:1.5rem; font-weight:900; color:#f87171; font-family:monospace; margin-top:0.5rem;">SUBSCRIPTION ENDED</div>
+            ` : `
+              <div class="clock-grid">
+                <div class="clock-unit"><div class="clock-num" id="c-days">${days}</div><div class="clock-lbl">Days</div></div>
+                <div class="clock-unit"><div class="clock-num" id="c-hours">${hours}</div><div class="clock-lbl">Hours</div></div>
+                <div class="clock-unit"><div class="clock-num" id="c-mins">${mins}</div><div class="clock-lbl">Mins</div></div>
+                <div class="clock-unit"><div class="clock-num" id="c-secs" style="color:#facc15;">${secs}</div><div class="clock-lbl">Secs</div></div>
+              </div>
+            `}
+          </div>
+
+          <div class="vault-grid">
+            <div class="vault-box">
+              <div style="font-size:10px; font-family:monospace; color:#8991a6;">DEDICATED PROFILE</div>
+              <div style="font-weight:bold; color:#fff; margin-top:0.25rem;">${activeSub.profile_slot || 'Profile Slot 01'}</div>
+              <div style="font-size:10px; color:#34d399; font-family:monospace; margin-top:0.25rem;">PIN-Protected</div>
+            </div>
+            <div class="vault-box" style="display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <div style="font-size:10px; font-family:monospace; color:#8991a6;">PROFILE PIN</div>
+                <div class="pin-display" id="pin-val">${showPin ? activeSub.profile_pin || '4892' : '••••'}</div>
+              </div>
+              <button onclick="togglePin()" style="background:none; border:1px solid #2a2545; color:#8991a6; padding:0.4rem 0.6rem; border-radius:0.5rem; cursor:pointer;">
+                ${showPin ? 'Hide' : 'Show'}
+              </button>
+            </div>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; font-size:11px; font-family:monospace; color:#8991a6; border-top:1px solid #1e1a33; padding-top:1rem; margin-bottom:1.5rem;">
+            <div>Start: <span style="color:#fff;">${new Date(activeSub.purchase_date).toLocaleDateString()}</span></div>
+            <div>Duration: <span style="color:#fff;">${activeSub.duration_months} Mo</span></div>
+            <div>Expires: <span style="color:#fff;">${new Date(activeSub.expiry_date).toLocaleDateString()}</span></div>
+          </div>
+
+          <a href="https://wa.me/918317416695?text=${encodeURIComponent('Hi Rakexura Support, I want to renew my ' + activeSub.platform + ' slot (' + (activeSub.profile_slot || activeSub.id) + ').')}" target="_blank" style="display:block; text-align:center; padding:0.85rem; border-radius:9999px; background:#facc15; color:#000; font-weight:900; text-decoration:none; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; box-shadow:0 0 20px rgba(250,204,21,0.25);">
+            💬 1-Click WhatsApp Extension &amp; Support
+          </a>
+        </div>
+      `;
+    }
+
+    function togglePin() {
+      showPin = !showPin;
+      renderResult();
+    }
+
+    setInterval(() => {
+      if (activeSub) renderResult();
+    }, 1000);
+  </script>
+</body>
+</html>

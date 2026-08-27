@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>RAKEXURA | Subscription Slot Manager &amp; Control Matrix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #000000;
+      color: #f9f4eb;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      min-height: 100vh;
+    }
+    .matrix-container { max-width: 1280px; margin: 0 auto; }
+    .nav-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #1e1a33;
+      margin-bottom: 2rem;
+    }
+    .brand-group { display: flex; items-center; gap: 0.75rem; }
+    .brand-logo {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: #120f24; border: 1px solid rgba(139,92,246,0.3);
+      display: flex; align-items: center; justify-content: center;
+      color: #facc15; font-weight: 900; font-size: 1.25rem;
+      box-shadow: 0 0 15px rgba(139,92,246,0.2);
+    }
+    .eyebrow { font-family: monospace; font-size: 10px; color: #8b5cf6; letter-spacing: 0.25em; text-transform: uppercase; font-weight: bold; }
+    .page-title { font-size: 1.5rem; font-weight: 900; color: #fff; letter-spacing: -0.02em; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.6rem 1.2rem; border-radius: 9999px;
+      font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
+      cursor: pointer; transition: all 0.2s ease; text-decoration: none; border: none;
+    }
+    .btn-gold {
+      background: #facc15; color: #000;
+      box-shadow: 0 0 20px rgba(250,204,21,0.25);
+    }
+    .btn-gold:hover { background: #eab308; transform: translateY(-1px); }
+    .btn-outline {
+      background: #0c0a1a; color: #8991a6;
+      border: 1px solid #2a2545; font-family: monospace;
+    }
+    .btn-outline:hover { color: #fff; border-color: #8b5cf6; }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: #0c0a1a;
+      border: 1px solid #1e1a33;
+      border-radius: 1rem;
+      padding: 1.25rem;
+    }
+    .stat-label { font-size: 10px; font-family: monospace; color: #8991a6; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.25rem; }
+    .stat-value { font-size: 1.75rem; font-weight: 900; color: #fff; }
+    .stat-sub { font-size: 11px; font-family: monospace; color: #8b5cf6; margin-top: 0.25rem; }
+
+    /* Filters Bar */
+    .filter-bar {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 1rem; background: #0c0a1a; border: 1px solid #1e1a33;
+      border-radius: 1rem; padding: 0.75rem 1rem; margin-bottom: 1.5rem;
+    }
+    .search-input {
+      background: #151226; border: 1px solid #2a2545;
+      color: #fff; padding: 0.5rem 1rem; border-radius: 0.75rem;
+      font-size: 0.8rem; outline: none; width: 100%; max-width: 320px;
+    }
+    .search-input:focus { border-color: #8b5cf6; }
+    .filter-pills { display: flex; gap: 0.25rem; background: #151226; padding: 0.25rem; border-radius: 0.75rem; border: 1px solid #2a2545; }
+    .filter-pill {
+      background: transparent; border: none; color: #8991a6;
+      font-size: 11px; font-family: monospace; padding: 0.35rem 0.75rem;
+      border-radius: 0.5rem; cursor: pointer; text-transform: uppercase;
+    }
+    .filter-pill.active { background: #8b5cf6; color: #fff; font-weight: bold; }
+
+    /* Matrix Table */
+    .table-wrap {
+      background: #0c0a1a; border: 1px solid #1e1a33;
+      border-radius: 1rem; overflow-x: auto;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.8rem; }
+    th {
+      padding: 0.85rem 1rem; background: rgba(18,15,36,0.6);
+      border-bottom: 1px solid #1e1a33; font-family: monospace;
+      font-size: 10px; color: #8991a6; text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    td { padding: 1rem; border-bottom: 1px solid #151226; vertical-align: middle; }
+    tr:hover td { background: rgba(21,18,38,0.5); }
+
+    .tag-xbox { background: rgba(6,78,59,0.3); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7; padding: 0.2rem 0.6rem; border-radius: 9999px; font-size: 11px; font-weight: bold; display: inline-block; }
+    .tag-gfn { background: rgba(20,83,45,0.3); border: 1px solid rgba(34,197,94,0.3); color: #86efac; padding: 0.2rem 0.6rem; border-radius: 9999px; font-size: 11px; font-weight: bold; display: inline-block; }
+    
+    .timer-badge {
+      font-family: monospace; font-weight: bold; font-size: 11px;
+      padding: 0.25rem 0.6rem; border-radius: 0.5rem; display: inline-flex; align-items: center; gap: 0.35rem;
+    }
+    .timer-active { background: rgba(6,78,59,0.4); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7; }
+    .timer-urgent { background: rgba(120,53,15,0.5); border: 1px solid rgba(245,158,11,0.4); color: #fde68a; animation: pulse 1.5s infinite; }
+    .timer-expired { background: rgba(136,19,55,0.5); border: 1px solid rgba(244,63,94,0.4); color: #fecdd3; }
+
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+
+    .thumb-proof {
+      width: 50px; height: 50px; border-radius: 0.5rem;
+      object-fit: cover; border: 1px solid #2a2545; cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .thumb-proof:hover { transform: scale(1.1); border-color: #8b5cf6; }
+
+    /* Action Buttons */
+    .action-btn {
+      padding: 0.4rem 0.6rem; border-radius: 0.5rem;
+      background: #151226; border: 1px solid #2a2545;
+      color: #8991a6; cursor: pointer; font-family: monospace; font-size: 11px;
+      transition: all 0.2s;
+    }
+    .action-btn:hover { color: #fff; border-color: #8b5cf6; }
+    .action-btn-wa { background: rgba(16,185,129,0.15); border-color: rgba(16,185,129,0.3); color: #6ee7b7; }
+    .action-btn-wa:hover { background: rgba(16,185,129,0.3); }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(8px); display: none; align-items: center; justify-content: center;
+      z-index: 1000; padding: 1rem;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal-box {
+      background: #0c0a1a; border: 1px solid #2a2545;
+      border-radius: 1.5rem; width: 100%; max-width: 580px;
+      padding: 1.5rem 2rem; max-height: 90vh; overflow-y: auto;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    }
+    .modal-title { font-size: 1.25rem; font-weight: 900; color: #fff; margin-bottom: 1.25rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-label { display: block; font-size: 10px; font-family: monospace; color: #8991a6; text-transform: uppercase; margin-bottom: 0.35rem; }
+    .form-input, .form-select {
+      width: 100%; background: #151226; border: 1px solid #2a2545;
+      color: #fff; padding: 0.6rem 0.85rem; border-radius: 0.75rem;
+      font-size: 0.8rem; outline: none;
+    }
+    .form-input:focus, .form-select:focus { border-color: #8b5cf6; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .dropzone {
+      border: 2px dashed #2a2545; border-radius: 1rem; padding: 1.25rem;
+      text-align: center; background: rgba(21,18,38,0.5); cursor: pointer;
+      position: relative; transition: border-color 0.2s;
+    }
+    .dropzone:hover { border-color: #8b5cf6; }
+    .dropzone input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="matrix-container">
+    <!-- Header -->
+    <header class="nav-bar">
+      <div class="brand-group">
+        <div class="brand-logo">R</div>
+        <div>
+          <span class="eyebrow">RAKEXURA CONTROL MATRIX</span>
+          <h1 class="page-title">Subscription Slot Manager</h1>
+        </div>
+      </div>
+      <div style="display:flex; gap:0.75rem; align-items:center;">
+        <a href="/" class="btn btn-outline">&larr; Back to Showcase</a>
+        <a href="/track" class="btn btn-outline">Customer Tracker</a>
+        <button class="btn btn-gold" onclick="openAddModal()">+ Add Customer Slot</button>
+      </div>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-label">TOTAL ALLOCATIONS</span>
+        <div class="stat-value" id="stat-total">0</div>
+        <div class="stat-sub">Matrix slots recorded</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">ACTIVE PASSES</span>
+        <div class="stat-value" id="stat-active" style="color:#34d399;">0</div>
+        <div class="stat-sub" style="color:#10b981;">🟢 100% Online</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">EXPIRING &lt; 48H</span>
+        <div class="stat-value" id="stat-urgent" style="color:#fbbf24;">0</div>
+        <div class="stat-sub" style="color:#f59e0b;">🟡 Alerts pending</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">TOTAL MRR LOGGED</span>
+        <div class="stat-value" id="stat-revenue" style="color:#facc15;">₹0</div>
+        <div class="stat-sub">Verified payments</div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="filter-bar">
+      <input type="text" id="search-box" class="search-input" placeholder="Search customer, WhatsApp, slot..." oninput="filterSlots()">
+      <div style="display:flex; gap:0.5rem; flex-wrap:wrap; align-items:center;">
+        <div class="filter-pills">
+          <button class="filter-pill active" onclick="setStatusFilter('all', this)">All</button>
+          <button class="filter-pill" onclick="setStatusFilter('active', this)">Active</button>
+          <button class="filter-pill" onclick="setStatusFilter('urgent', this)">⚠️ &lt;48h</button>
+          <button class="filter-pill" onclick="setStatusFilter('expired', this)">Expired</button>
+        </div>
+        <button class="btn btn-outline" onclick="loadSubscriptions()" style="padding:0.45rem 0.8rem;">↻ Refresh</button>
+      </div>
+    </div>
+
+    <!-- Subscriptions Table -->
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Customer</th>
+            <th>Platform &amp; Pass</th>
+            <th>Purchase &amp; Validity</th>
+            <th>Time Remaining</th>
+            <th>Slot &amp; PIN</th>
+            <th>Payment Proof</th>
+            <th style="text-align:right;">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="matrix-tbody">
+          <tr>
+            <td colspan="7" style="text-align:center; padding:3rem; color:#8991a6; font-family:monospace;">
+              Connecting to Supabase Telemetry...
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ADD / EDIT MODAL -->
+  <div class="modal-backdrop" id="modal-backdrop">
+    <div class="modal-box">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+        <h2 class="modal-title" id="modal-heading">Provision New Customer Slot</h2>
+        <button onclick="closeModal()" style="background:none; border:none; color:#8991a6; font-size:1.5rem; cursor:pointer;">&times;</button>
+      </div>
+
+      <form id="slot-form" onsubmit="saveSlot(event)">
+        <input type="hidden" id="edit-id">
+        <div class="form-group">
+          <label class="form-label">Customer Full Name *</label>
+          <input type="text" id="f-name" class="form-input" required placeholder="e.g. Rakesh Kanna">
+        </div>
+
+        <div class="grid-2 form-group">
+          <div>
+            <label class="form-label">WhatsApp Number *</label>
+            <input type="text" id="f-whatsapp" class="form-input" required placeholder="+91 9363063876">
+          </div>
+          <div>
+            <label class="form-label">Email (Optional)</label>
+            <input type="email" id="f-email" class="form-input" placeholder="customer@gmail.com">
+          </div>
+        </div>
+
+        <div class="grid-2 form-group">
+          <div>
+            <label class="form-label">Platform *</label>
+            <select id="f-platform" class="form-select">
+              <option value="Xbox Game Pass Ultimate">Xbox Game Pass Ultimate</option>
+              <option value="NVIDIA GeForce NOW (Priority)">NVIDIA GeForce NOW (Priority)</option>
+              <option value="NVIDIA GeForce NOW (Ultimate RTX 4080)">NVIDIA GeForce NOW (Ultimate RTX 4080)</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Duration *</label>
+            <select id="f-duration" class="form-select">
+              <option value="1">1 Month</option>
+              <option value="2">2 Months</option>
+              <option value="3">3 Months (Seasonal)</option>
+              <option value="6">6 Months</option>
+              <option value="12">12 Months (Ultimate)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid-2 form-group">
+          <div>
+            <label class="form-label">Purchase Date &amp; Time *</label>
+            <input type="datetime-local" id="f-purchase-date" class="form-input" required>
+          </div>
+          <div>
+            <label class="form-label">Amount Paid (₹)</label>
+            <input type="number" id="f-amount" class="form-input" value="499">
+          </div>
+        </div>
+
+        <div class="grid-2 form-group">
+          <div>
+            <label class="form-label">Profile Slot ID</label>
+            <input type="text" id="f-slot" class="form-input" placeholder="#XBOX-SLOT-01">
+          </div>
+          <div>
+            <label class="form-label">Profile PIN Code</label>
+            <input type="text" id="f-pin" class="form-input" placeholder="4892">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Payment Screenshot Proof</label>
+          <div class="dropzone" id="dropzone">
+            <span style="font-size:0.8rem; color:#8991a6;" id="upload-status">Click to upload UPI / Bank receipt image</span>
+            <input type="file" id="f-file" accept="image/*" onchange="uploadImage(event)">
+            <input type="hidden" id="f-proof-url">
+          </div>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; gap:0.75rem; margin-top:1.5rem;">
+          <button type="button" class="btn btn-outline" onclick="closeModal()">Cancel</button>
+          <button type="submit" class="btn btn-gold" id="save-btn">⚡ Activate Slot</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="modal-backdrop" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" style="max-width:90vw; max-height:85vh; border-radius:1rem; border:1px solid #2a2545;">
+  </div>
+
+  <script>
+    const SUPABASE_URL = 'https://cwvfgxdhearouclomjeq.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_xkeb5PPKakTH5qQvPQllBA_eZDAHqKK';
+    const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    let allSubscriptions = [];
+    let currentStatus = 'all';
+
+    async function loadSubscriptions() {
+      const { data, error } = await client.from('subscriptions').select('*').order('purchase_date', { ascending: false });
+      if (!error && data) {
+        allSubscriptions = data;
+        render();
+      } else {
+        document.getElementById('matrix-tbody').innerHTML = `<tr><td colspan="7" style="text-align:center; color:#f87171;">Error loading data: ${error ? error.message : 'Unknown'}</td></tr>`;
+      }
+    }
+
+    function calculateTimeLeft(expiryDateStr) {
+      const diff = new Date(expiryDateStr).getTime() - new Date().getTime();
+      if (diff <= 0) return { expired: true, text: 'EXPIRED', days: 0, isUrgent: false };
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      return { expired: false, text: `${days}d ${hours}h ${mins}m left`, days, isUrgent: days < 2 };
+    }
+
+    function render() {
+      const query = document.getElementById('search-box').value.toLowerCase();
+      let activeCount = 0, urgentCount = 0, revenue = 0;
+
+      const filtered = allSubscriptions.filter(sub => {
+        const timer = calculateTimeLeft(sub.expiry_date);
+        revenue += Number(sub.amount_paid || 0);
+        if (!timer.expired && !timer.isUrgent) activeCount++;
+        if (!timer.expired && timer.isUrgent) urgentCount++;
+
+        const matchesQuery = sub.customer_name.toLowerCase().includes(query) ||
+          sub.whatsapp.includes(query) ||
+          (sub.profile_slot && sub.profile_slot.toLowerCase().includes(query));
+
+        let matchesStatus = true;
+        if (currentStatus === 'active') matchesStatus = !timer.expired && !timer.isUrgent;
+        if (currentStatus === 'urgent') matchesStatus = !timer.expired && timer.isUrgent;
+        if (currentStatus === 'expired') matchesStatus = timer.expired;
+
+        return matchesQuery && matchesStatus;
+      });
+
+      document.getElementById('stat-total').innerText = allSubscriptions.length;
+      document.getElementById('stat-active').innerText = activeCount;
+      document.getElementById('stat-urgent').innerText = urgentCount;
+      document.getElementById('stat-revenue').innerText = '₹' + revenue.toLocaleString();
+
+      if (filtered.length === 0) {
+        document.getElementById('matrix-tbody').innerHTML = `<tr><td colspan="7" style="text-align:center; padding:3rem; color:#8991a6;">No subscription slots found.</td></tr>`;
+        return;
+      }
+
+      document.getElementById('matrix-tbody').innerHTML = filtered.map(sub => {
+        const timer = calculateTimeLeft(sub.expiry_date);
+        const timerClass = timer.expired ? 'timer-expired' : timer.isUrgent ? 'timer-urgent' : 'timer-active';
+        const tagClass = sub.platform.includes('Xbox') ? 'tag-xbox' : 'tag-gfn';
+
+        return `
+          <tr>
+            <td>
+              <div style="font-weight:900; color:#fff;">${sub.customer_name}</div>
+              <a href="https://wa.me/${sub.whatsapp.replace(/[^0-9]/g, '')}" target="_blank" style="color:#8b5cf6; font-family:monospace; font-size:11px; text-decoration:none;">📱 ${sub.whatsapp}</a>
+            </td>
+            <td>
+              <span class="${tagClass}">${sub.platform}</span>
+              <div style="color:#8991a6; font-family:monospace; font-size:11px; margin-top:0.25rem;">${sub.duration_months} Month(s)</div>
+            </td>
+            <td style="font-family:monospace; font-size:11px;">
+              <div style="color:#8991a6;">Start: <span style="color:#fff;">${new Date(sub.purchase_date).toLocaleDateString()}</span></div>
+              <div style="color:#8991a6;">Expires: <span style="color:#fff;">${new Date(sub.expiry_date).toLocaleDateString()}</span></div>
+              <div style="color:#facc15;">₹${sub.amount_paid}</div>
+            </td>
+            <td>
+              <span class="timer-badge ${timerClass}">${timer.text}</span>
+            </td>
+            <td style="font-family:monospace;">
+              <div style="color:#fff; font-weight:bold;">${sub.profile_slot || '#SLOT-01'}</div>
+              <div style="color:#b9a4ff; font-size:11px; margin-top:0.25rem;">🔒 PIN: ${sub.profile_pin || '4892'}</div>
+            </td>
+            <td>
+              ${sub.payment_proof_url ? `<img src="${sub.payment_proof_url}" class="thumb-proof" onclick="openLightbox('${sub.payment_proof_url}')">` : '<span style="color:#646b7b; font-family:monospace; font-size:10px;">No proof</span>'}
+            </td>
+            <td style="text-align:right;">
+              <button class="action-btn action-btn-wa" onclick="sendWhatsApp('${sub.id}')" title="WhatsApp Credentials">💬 WA</button>
+              <button class="action-btn" onclick="extendSlot('${sub.id}', 1)" title="Add +1 Month">+1M</button>
+              <button class="action-btn" onclick="editSlot('${sub.id}')">✏️</button>
+              <button class="action-btn" style="color:#f87171;" onclick="deleteSlot('${sub.id}')">🗑️</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function setStatusFilter(status, el) {
+      currentStatus = status;
+      document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+      render();
+    }
+
+    function filterSlots() { render(); }
+
+    function openAddModal() {
+      document.getElementById('modal-heading').innerText = 'Provision New Customer Slot';
+      document.getElementById('edit-id').value = '';
+      document.getElementById('f-name').value = '';
+      document.getElementById('f-whatsapp').value = '';
+      document.getElementById('f-email').value = '';
+      document.getElementById('f-duration').value = '1';
+      document.getElementById('f-purchase-date').value = new Date().toISOString().slice(0, 16);
+      document.getElementById('f-amount').value = '499';
+      document.getElementById('f-slot').value = '#SLOT-' + Math.floor(100 + Math.random() * 900);
+      document.getElementById('f-pin').value = Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('f-proof-url').value = '';
+      document.getElementById('upload-status').innerText = 'Click to upload UPI / Bank receipt image';
+      document.getElementById('modal-backdrop').classList.add('open');
+    }
+
+    function closeModal() { document.getElementById('modal-backdrop').classList.remove('open'); }
+
+    function openLightbox(url) {
+      document.getElementById('lightbox-img').src = url;
+      document.getElementById('lightbox').classList.add('open');
+    }
+    function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
+
+    async function uploadImage(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      document.getElementById('upload-status').innerText = 'Uploading to Supabase...';
+      const fileExt = file.name.split('.').pop();
+      const fileName = `${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`;
+      const filePath = `receipts/${fileName}`;
+
+      const { error } = await client.storage.from('payment-proofs').upload(filePath, file);
+      if (error) {
+        alert('Upload failed: ' + error.message);
+        document.getElementById('upload-status').innerText = 'Upload failed.';
+        return;
+      }
+      const { data } = client.storage.from('payment-proofs').getPublicUrl(filePath);
+      document.getElementById('f-proof-url').value = data.publicUrl;
+      document.getElementById('upload-status').innerHTML = '✅ Receipt Uploaded (<a href="' + data.publicUrl + '" target="_blank" style="color:#facc15;">View</a>)';
+    }
+
+    async function saveSlot(e) {
+      e.preventDefault();
+      document.getElementById('save-btn').innerText = 'Saving...';
+
+      const editId = document.getElementById('edit-id').value;
+      const duration = Number(document.getElementById('f-duration').value);
+      const purchaseDate = new Date(document.getElementById('f-purchase-date').value);
+      const expiryDate = new Date(purchaseDate);
+      expiryDate.setMonth(expiryDate.getMonth() + duration);
+
+      const payload = {
+        customer_name: document.getElementById('f-name').value,
+        whatsapp: document.getElementById('f-whatsapp').value,
+        email: document.getElementById('f-email').value,
+        platform: document.getElementById('f-platform').value,
+        duration_months: duration,
+        purchase_date: purchaseDate.toISOString(),
+        expiry_date: expiryDate.toISOString(),
+        amount_paid: Number(document.getElementById('f-amount').value),
+        profile_slot: document.getElementById('f-slot').value,
+        profile_pin: document.getElementById('f-pin').value,
+        payment_proof_url: document.getElementById('f-proof-url').value,
+        status: 'active',
+        updated_at: new Date().toISOString(),
+      };
+
+      if (editId) {
+        await client.from('subscriptions').update(payload).eq('id', editId);
+      } else {
+        await client.from('subscriptions').insert([payload]);
+      }
+
+      document.getElementById('save-btn').innerText = '⚡ Activate Slot';
+      closeModal();
+      loadSubscriptions();
+    }
+
+    function editSlot(id) {
+      const sub = allSubscriptions.find(s => s.id === id);
+      if (!sub) return;
+      document.getElementById('modal-heading').innerText = 'Edit Subscription Slot';
+      document.getElementById('edit-id').value = sub.id;
+      document.getElementById('f-name').value = sub.customer_name;
+      document.getElementById('f-whatsapp').value = sub.whatsapp;
+      document.getElementById('f-email').value = sub.email || '';
+      document.getElementById('f-platform').value = sub.platform;
+      document.getElementById('f-duration').value = sub.duration_months;
+      document.getElementById('f-purchase-date').value = new Date(sub.purchase_date).toISOString().slice(0, 16);
+      document.getElementById('f-amount').value = sub.amount_paid;
+      document.getElementById('f-slot').value = sub.profile_slot || '';
+      document.getElementById('f-pin').value = sub.profile_pin || '';
+      document.getElementById('f-proof-url').value = sub.payment_proof_url || '';
+      document.getElementById('upload-status').innerText = sub.payment_proof_url ? 'Receipt attached' : 'Click to upload receipt image';
+      document.getElementById('modal-backdrop').classList.add('open');
+    }
+
+    async function extendSlot(id, months) {
+      const sub = allSubscriptions.find(s => s.id === id);
+      if (!sub) return;
+      const currentExpiry = new Date(sub.expiry_date);
+      const newExpiry = new Date(currentExpiry > new Date() ? currentExpiry : new Date());
+      newExpiry.setMonth(newExpiry.getMonth() + months);
+
+      await client.from('subscriptions').update({
+        expiry_date: newExpiry.toISOString(),
+        duration_months: sub.duration_months + months,
+        status: 'active',
+        updated_at: new Date().toISOString()
+      }).eq('id', id);
+
+      loadSubscriptions();
+    }
+
+    async function deleteSlot(id) {
+      if (!confirm('Are you sure you want to remove this slot?')) return;
+      await client.from('subscriptions').delete().eq('id', id);
+      loadSubscriptions();
+    }
+
+    function sendWhatsApp(id) {
+      const sub = allSubscriptions.find(s => s.id === id);
+      if (!sub) return;
+      const timer = calculateTimeLeft(sub.expiry_date);
+      const trackLink = `https://rakeon-store.vercel.app/track?slot=${encodeURIComponent(sub.id)}`;
+      const message = `🎮 *RAKEXURA SUBSCRIPTIONS — SLOT ALLOCATION*\n\n` +
+        `👤 *Customer:* ${sub.customer_name}\n` +
+        `⚡ *Platform:* ${sub.platform}\n` +
+        `⏱️ *Validity:* ${sub.duration_months} Month(s)\n` +
+        `📅 *Start Date:* ${new Date(sub.purchase_date).toLocaleDateString()}\n` +
+        `⏳ *Expires On:* ${new Date(sub.expiry_date).toLocaleDateString()} (${timer.text})\n\n` +
+        `🔐 *YOUR PRIVATE CREDENTIALS:*\n` +
+        `• *Slot Assigned:* ${sub.profile_slot || 'Dedicated Profile 01'}\n` +
+        `• *Profile PIN:* ${sub.profile_pin || '4892'}\n\n` +
+        `🛡️ *Live Telemetry & Status Tracker:*\n${trackLink}\n\n` +
+        `_Thank you for gaming with RAKEXURA! 24/7 Replacement Warranty Active._`;
+
+      const cleanPhone = sub.whatsapp.replace(/[^0-9]/g, '');
+      window.open(`https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    loadSubscriptions();
+  </script>
+</body>
+</html>
