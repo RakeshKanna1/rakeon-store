@@ -7,7 +7,7 @@ export default function CatchAllPage() {
     <main style={{ margin: 0, padding: 0, width: '100vw', height: '100vh', overflow: 'hidden', backgroundColor: '#000' }}>
       <iframe
         src="/showcase/index.html"
-        title="Eduard Bodak — Webdesigner & Webflow Experte aus Köln"
+        title="RAKEXURA — Gaming Subscription & Account Slot Management Control Center"
         style={{
           width: '100%',
           height: '100%',
