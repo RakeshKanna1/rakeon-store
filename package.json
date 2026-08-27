@@ -3,22 +3,10 @@
   "version": "1.0.0",
   "description": "RAKEXURA Subscriptions Platform",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "npx serve -l 3000 .",
+    "start": "npx serve -l 3000 ."
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.112.4",
-    "lucide-react": "^1.34.0",
-    "next": "^15.1.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "sonner": "^2.0.8"
-  },
-  "devDependencies": {
-    "@types/node": "^20.17.19",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "typescript": "^5.7.3"
+    "@supabase/supabase-js": "^2.112.4"
   }
 }
