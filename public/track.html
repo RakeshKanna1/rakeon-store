@@ -15,28 +15,76 @@
   
   .matrix-content-wrapper {
     padding-top: 2rem;
-    padding-bottom: 3rem;
+    padding-bottom: 4rem;
+    width: 100%;
+    position: relative;
+    z-index: 5;
   }
   
-  .search-panel-pill {
+  /* Hero Typography */
+  .hero-step-title {
+    font-size: clamp(2rem, 3.8vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: #000000;
+    letter-spacing: -0.01em;
+    text-align: center;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+  }
+  .hero-step-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+    font-family: monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+  }
+  .hero-step-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .hero-step-num {
+    color: #888888;
+    font-weight: 500;
+  }
+  .hero-step-name {
+    color: #000000;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  /* Controls & Search Toolbar */
+  .toolbar-wrapper {
     background: #ffffff;
     border: 1px solid #000000;
-    border-radius: 0.75rem;
-    padding: 0.5rem;
+    border-radius: 1rem;
+    padding: 0.75rem 1.25rem;
     display: flex;
-    gap: 0.5rem;
-    margin: 3rem auto;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-    max-width: 650px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    width: 100%;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .track-input-field {
-    flex: 1;
+  .search-ctrl-input {
     background: transparent;
     border: none;
     color: #000000;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 0.75rem;
     font-size: 0.95rem;
     outline: none;
+    flex: 1;
+    min-width: 250px;
     font-family: monospace;
   }
 
@@ -45,15 +93,15 @@
     color: #000000 !important;
     font-weight: 900 !important;
     font-family: monospace !important;
-    padding: 0.85rem 1.75rem !important;
-    border-radius: 0.75rem !important;
+    padding: 0.75rem 1.6rem !important;
+    border-radius: 0.6rem !important;
     border: 1px solid #000000 !important;
     cursor: pointer !important;
-    font-size: 13px !important;
+    font-size: 12px !important;
     letter-spacing: 0.05em !important;
     display: inline-flex !important;
     align-items: center !important;
-    gap: 0.5rem !important;
+    gap: 0.4rem !important;
     transition: all 0.2s ease !important;
   }
   .btn-gold-cta:hover {
@@ -68,7 +116,7 @@
     border-radius: 1.25rem;
     padding: clamp(2rem, 4vw, 3.5rem);
     box-shadow: 0 15px 50px rgba(0,0,0,0.08);
-    margin: 0 auto 5rem auto;
+    margin: 0 auto 4rem auto;
     max-width: 760px;
   }
   .countdown-grid-box {
@@ -106,6 +154,9 @@
     grid-template-columns: 1fr 1fr;
     gap: 1.25rem;
     margin: 2rem 0;
+  }
+  @media (max-width: 640px) {
+    .vault-cells-row { grid-template-columns: 1fr; }
   }
   .vault-unit-box {
     background: #f9f4eb;
@@ -150,20 +201,22 @@
 </div>
 
 
-      <div style="text-align: center; margin-bottom: 2rem;">
-        <div style="display:inline-flex; align-items:center; gap:0.5rem; font-family:monospace; font-size:11px; color:#666666; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:0.75rem; font-weight:bold;">
-          <span>[TELEMETRY]</span> PUBLIC PASS VERIFICATION
-        </div>
-        <h1 style="font-size: clamp(2.25rem, 4.5vw, 3.75rem); font-weight: 900; line-height: 1.1; margin: 0; letter-spacing: -0.02em; color: #000000;">
-          Customer Slot <span style="background:#facc15; padding:0 0.4rem; border-radius:0.4rem; border:1px solid #000;">Telemetry</span>
+      <!-- Centered Eduard Bodak Hero Header -->
+      <div style="text-align:center; margin-bottom:2.5rem;">
+        <h1 class="hero-step-title">
+          Customer Slot Telemetry &amp;<br>Real-Time Account Verification.
         </h1>
-        <p style="color: #666666; font-size: 1rem; max-width: 540px; margin: 0.75rem auto 0 auto; line-height: 1.6;">
-          Enter your WhatsApp number or Profile Slot ID below to retrieve your live remaining time, PIN code, and active credentials.
-        </p>
+        <div class="hero-step-strip">
+          <div class="hero-step-item"><span class="hero-step-num">01</span> <span class="hero-step-name">ENTER PHONE / SLOT ID</span></div>
+          <div class="hero-step-item"><span class="hero-step-num">02</span> <span class="hero-step-name">VERIFY STATUS</span></div>
+          <div class="hero-step-item"><span class="hero-step-num">03</span> <span class="hero-step-name">ACCESS PIN</span></div>
+          <div class="hero-step-item"><span class="hero-step-num">04</span> <span class="hero-step-name">1-CLICK RENEW</span></div>
+        </div>
       </div>
 
-      <div class="search-panel-pill">
-        <input type="text" id="track-input" class="track-input-field" placeholder="Enter WhatsApp or Slot ID (e.g. +91 9363063876)" onkeypress="if(event.key === 'Enter') executeTrackingLookup()">
+      <!-- Controls & Search Toolbar -->
+      <div class="toolbar-wrapper">
+        <input type="text" id="track-input" class="search-ctrl-input" placeholder="Enter WhatsApp or Slot ID (e.g. +91 9363063876)" onkeypress="if(event.key === 'Enter') executeTrackingLookup()">
         <button class="btn-gold-cta" onclick="executeTrackingLookup()">
           <span>VERIFY PASS</span>
         </button>
