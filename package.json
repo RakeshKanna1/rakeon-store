@@ -4,6 +4,7 @@
   "description": "RAKEXURA Subscriptions Platform",
   "scripts": {
     "dev": "npx serve -l 3000 .",
+    "build": "echo Static site ready",
     "start": "npx serve -l 3000 ."
   },
   "dependencies": {

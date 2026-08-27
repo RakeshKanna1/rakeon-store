@@ -13,15 +13,34 @@
 <style>
   body { background-color: #f9f4eb !important; color: #000000 !important; min-height: 100vh; margin: 0; padding: 0; }
   
-  /* Force authentic flex header */
+  /* Ensure header flex alignment */
   .header_inner { display: flex !important; align-items: center !important; justify-content: space-between !important; width: 100% !important; }
   .header_nav { display: flex !important; align-items: center !important; }
   .header_nav-list { display: flex !important; flex-direction: row !important; align-items: center !important; gap: 0.5rem !important; list-style: none !important; margin: 0 !important; padding: 0 !important; }
   .header_tools { display: flex !important; align-items: center !important; }
 
+  /* Ensure RAKE ✦ XURA badge has full high-contrast styling */
+  .header_title-button {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-radius: 0.5rem !important;
+    padding: 0.4rem 0.8rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+  .header_title-logo {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+    font-family: monospace !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    color: #ffffff !important;
+  }
+
   .matrix-content-wrapper { padding-top: 130px; padding-bottom: 4rem; max-width: 1200px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; }
   
-  /* 1. Header Typography */
+  /* Header Typography */
   .hero-step-title {
     font-size: clamp(1.75rem, 3.2vw, 2.75rem);
     font-weight: 700;
@@ -58,7 +77,7 @@
     letter-spacing: 0.05em;
   }
 
-  /* 2. Controls & Search Toolbar */
+  /* Controls & Search Toolbar */
   .toolbar-wrapper {
     background: #ffffff;
     border: 1px solid #000000;
@@ -128,7 +147,7 @@
     color: #ffffff;
   }
 
-  /* 3. Telemetry Stat Cards */
+  /* Telemetry Stat Cards */
   .stat-row-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -179,7 +198,7 @@
     width: fit-content;
   }
 
-  /* 4. Customer Slot Cards Grid */
+  /* Customer Slot Cards Grid */
   .slot-grid-feed {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -304,8 +323,17 @@
     <div class="header_title">
       <div class="header_title-inner u-c1">
         <a href="/" class="header_title-link w-inline-block">
-          <div data-button-hover="" class="header_title-profile"><img src="https://cdn.prod.website-files.com/64591e5db836f60c02bb97e9/6703ea4bbff5d08293f4cd11_32x32_Favicon.svg" loading="eager" alt="RakeXura" class="u-image-cover"></div>
-          <div class="header_title-profile-text"><span>RAKE</span><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="icon is-nav"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 3H11V7H15V9H11V13H15V15H11V17H9V15H5V13H9V9H5V7H9V3Z" fill="currentColor"></path></svg><span>XURA</span></div>
+          <div data-button-hover="" class="header_title-profile">
+            <img src="https://cdn.prod.website-files.com/64591e5db836f60c02bb97e9/6703ea4bbff5d08293f4cd11_32x32_Favicon.svg" loading="eager" width="32" height="32" alt="RAKEXURA" class="header_title-profile-img" style="border-radius:50%;object-fit:cover;background:#0c0a1a;">
+          </div>
+          <div data-button-hover="" class="header_title-button">
+            <div class="header_title-logo">
+              <span style="--index: 0;" class="header_title-logo-text">RAKE</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="--index: 1;" class="icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 5H11V7H13V9H15V11H13V13H11V15H9V13H7V11H5V9H7V7H9V5Z" fill="currentColor"></path></svg>
+              <span style="--index: 2;" data-button-hover-animation="" class="header_title-logo-text">XURA</span>
+            </div>
+            <div class="header_title-bg"></div>
+          </div>
         </a>
       </div>
     </div>
@@ -315,7 +343,7 @@
         <li class="header_nav-list-item"><a data-nav-link="" data-text="Validation" data-swup-preload="" data-wf--header-button--variant="base" href="/prozess" class="header_nav-button u-c1 w-inline-block"><span class="header_nav-button-inner"><span class="header_nav-button-text">Validation</span><span class="header_nav-button-bg"></span></span></a></li>
         <li class="header_nav-list-item"><a data-nav-link="" data-text="Pricing" data-swup-preload="" data-wf--header-button--variant="base" href="/preis" class="header_nav-button u-c1 w-inline-block"><span class="header_nav-button-inner"><span class="header_nav-button-text">Pricing</span><span class="header_nav-button-bg"></span></span></a></li>
         <li class="header_nav-list-item"><a data-nav-link="" data-text="Support" data-swup-preload="" data-wf--header-button--variant="base" href="/kontakt" class="header_nav-button u-c1 w-inline-block"><span class="header_nav-button-inner"><span class="header_nav-button-text">Support</span><span class="header_nav-button-bg"></span></span></a></li>
-        <li class="header_nav-list-item"><a data-nav-link="" data-text="Track" data-wf--header-button--variant="base" href="/track" class="header_nav-button u-c1 w-inline-block"><span class="header_nav-button-inner"><span class="header_nav-button-text">Track</span><span class="header_nav-button-bg"></span></span></a></li>
+        <li class="header_nav-list-item"><a data-nav-link="" data-text="Track" data-wf--header-button--variant="base" href="/track" class="header_nav-button u-c1 w-inline-block "><span class="header_nav-button-inner"><span class="header_nav-button-text">Track</span><span class="header_nav-button-bg"></span></span></a></li>
         <li class="header_nav-list-item"><a data-nav-link="" data-text="Manage" data-wf--header-button--variant="base" href="/manage" class="header_nav-button u-c1 w-inline-block is-active"><span class="header_nav-button-inner"><span class="header_nav-button-text">Manage</span><span class="header_nav-button-bg"></span></span></a></li>
       </ul>
     </nav>
