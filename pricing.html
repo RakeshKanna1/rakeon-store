@@ -936,214 +936,241 @@ html.is-ready .preloader::before {
   </div>
 
   <!-- Hero Header & Title -->
-  <div class="hero-price_header">
-    <h1 class="hero-price_title">
-      <span class="hero-price_title-span">CHOOSE YOUR ACCESS PASS.</span>
+  
+  <!-- Hero Header & Title -->
+  <div class="hero-price_header" style="text-align: center; margin-bottom: 2.5rem;">
+    <h1 class="hero-price_title" style="margin-bottom: 0.75rem;">
+      <span class="hero-price_title-span" style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; color: #18181b; text-transform: uppercase; letter-spacing: -0.03em;">CHOOSE YOUR ACCESS PASS.</span>
     </h1>
-    <p class="hero-price_description-text u-p1">
+    <p class="hero-price_description-text u-p1" style="max-width: 680px; margin: 0 auto 1.75rem; color: #4b4946; font-size: clamp(14px, 1.2vw, 16px); line-height: 1.5;">
       Private account slots with dedicated PIN security, instant WhatsApp delivery, and live countdown tracking. Select your validity window from 1 to 12 months.
     </p>
 
-    <!-- Controls: Duration Tabs & Currency Toggle -->
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem; margin-top: 2rem;">
-      <!-- Duration Tabs -->
-      <div class="duration-selector">
-        <button type="button" class="duration-btn active" data-duration="1" onclick="switchDuration(1)">
+    <!-- Controls: Duration Tabs & Currency Toggle in Unified Capsules -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem; margin-top: 1.5rem; margin-bottom: 1.25rem;">
+      <!-- Duration Capsule Selector -->
+      <div class="duration-selector-wrap" style="display: inline-flex; background: #faf8f5; border: 1.5px solid #18181b; border-radius: 999px; padding: 4px; gap: 4px; box-shadow: 0 2px 0 #18181b;">
+        <button type="button" class="duration-btn active" data-duration="1" style="border: none; border-radius: 999px; padding: 7px 16px; font-family: monospace; font-size: 12px; font-weight: 800; text-transform: uppercase; background: #18181b; color: #ffffff; cursor: pointer; transition: all 0.15s ease;">
           1 Month
         </button>
-        <button type="button" class="duration-btn" data-duration="3" onclick="switchDuration(3)">
-          3 Months <span class="duration-discount-chip">-15%</span>
+        <button type="button" class="duration-btn" data-duration="2" style="border: none; border-radius: 999px; padding: 7px 16px; font-family: monospace; font-size: 12px; font-weight: 800; text-transform: uppercase; background: transparent; color: #18181b; cursor: pointer; transition: all 0.15s ease;">
+          2 Months <span style="background: #f2c744; color: #18181b; border-radius: 4px; padding: 1px 4px; font-size: 10px; margin-left: 2px;">Hot</span>
         </button>
-        <button type="button" class="duration-btn" data-duration="6" onclick="switchDuration(6)">
-          6 Months <span class="duration-discount-chip">-25%</span>
+        <button type="button" class="duration-btn" data-duration="3" style="border: none; border-radius: 999px; padding: 7px 16px; font-family: monospace; font-size: 12px; font-weight: 800; text-transform: uppercase; background: transparent; color: #18181b; cursor: pointer; transition: all 0.15s ease;">
+          3 Months <span style="background: rgba(24,24,27,0.1); border-radius: 4px; padding: 1px 4px; font-size: 10px; margin-left: 2px;">-15%</span>
         </button>
-        <button type="button" class="duration-btn" data-duration="12" onclick="switchDuration(12)">
-          12 Months <span class="duration-discount-chip" style="background:#f2c744;">-40%</span>
+        <button type="button" class="duration-btn" data-duration="6" style="border: none; border-radius: 999px; padding: 7px 16px; font-family: monospace; font-size: 12px; font-weight: 800; text-transform: uppercase; background: transparent; color: #18181b; cursor: pointer; transition: all 0.15s ease;">
+          6 Months <span style="background: rgba(24,24,27,0.1); border-radius: 4px; padding: 1px 4px; font-size: 10px; margin-left: 2px;">-25%</span>
+        </button>
+        <button type="button" class="duration-btn" data-duration="12" style="border: none; border-radius: 999px; padding: 7px 16px; font-family: monospace; font-size: 12px; font-weight: 800; text-transform: uppercase; background: transparent; color: #18181b; cursor: pointer; transition: all 0.15s ease;">
+          12 Months <span style="background: #f2c744; color: #18181b; border-radius: 4px; padding: 1px 4px; font-size: 10px; margin-left: 2px;">Save 90%</span>
         </button>
       </div>
 
-      <!-- Currency Toggle -->
-      <div class="currency-selector">
-        <button type="button" class="currency-btn active" data-currency="INR" onclick="switchCurrency('INR')">
+      <!-- Currency Capsule Toggle -->
+      <div class="currency-selector-wrap" style="display: inline-flex; background: #faf8f5; border: 1.5px solid #18181b; border-radius: 999px; padding: 4px; gap: 4px; box-shadow: 0 2px 0 #18181b;">
+        <button type="button" class="currency-btn active" data-curr="INR" style="border: none; border-radius: 999px; padding: 7px 14px; font-family: monospace; font-size: 12px; font-weight: 800; background: #18181b; color: #ffffff; cursor: pointer; transition: all 0.15s ease;">
           ₹ INR
         </button>
-        <button type="button" class="currency-btn" data-currency="USD" onclick="switchCurrency('USD')">
+        <button type="button" class="currency-btn" data-curr="USD" style="border: none; border-radius: 999px; padding: 7px 14px; font-family: monospace; font-size: 12px; font-weight: 800; background: transparent; color: #18181b; cursor: pointer; transition: all 0.15s ease;">
           $ USD
         </button>
       </div>
     </div>
 
     <!-- Dynamic Savings / Dispatch Info Strip -->
-    <div>
-      <div id="savings-banner" class="savings-alert-box">
-        <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M5 9L5 4H3V9V10V11L13 11V13H11V15H13V13H15V11L17 11V9H15V7H13V5H11V7L13 7V9H5Z"></path></svg>
+    <div style="display: flex; justify-content: center; margin-top: 1rem;">
+      <div id="savings-banner" style="display: inline-flex; align-items: center; gap: 8px; background: #faf8f5; border: 1.5px solid #18181b; border-radius: 999px; padding: 6px 18px; font-family: monospace; font-size: 11.5px; font-weight: 800; color: #18181b; box-shadow: 0 2px 0 #18181b;">
+        <span style="width: 7px; height: 7px; border-radius: 50%; background: #22c55e; display: inline-block;"></span>
         <span id="savings-banner-text">INSTANT 2FA &bull; AUTOMATED CREDENTIALS DISPATCHED TO WHATSAPP IN &lt; 60 SECONDS</span>
       </div>
     </div>
   </div>
 
   <!-- 3-Column Pricing Grid -->
-  <div class="pricing-grid-3col">
+  <div class="pricing-grid-3col" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto 3.5rem;">
 
-    <!-- Tier 1: Starter Pass -->
-    <div class="pricing-card-item">
+    <!-- Card 1: Xbox PC Game Pass -->
+    <div class="pricing-card-item" style="background: #ffffff; border: 1.5px solid #18181b; border-radius: 1.25rem; padding: 1.75rem; box-shadow: 0 6px 0 #18181b; display: flex; flex-direction: column; justify-content: space-between;">
       <div>
-        
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
-          <div style="width: 44px; height: 44px; border-radius: 12px; background: #ffffff; border: 1.5px solid #18181b; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 0 #18181b; padding: 6px;">
+          <div style="width: 44px; height: 44px; border-radius: 12px; background: #faf8f5; border: 1.5px solid #18181b; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 0 #18181b; padding: 6px;">
             <img src="/assets/xbox-logo-50.png" alt="Xbox" style="width: 100%; height: 100%; object-fit: contain;">
           </div>
-          <div class="card-tier-tag" style="font-family: monospace; font-size: 11px; font-weight: 800; color: #787571; text-transform: uppercase;">
-            [SLOT-XBOX]
+          <div style="font-family: monospace; font-size: 11px; font-weight: 800; color: #787571; text-transform: uppercase;">
+            [SLOT-XBOX-PC]
           </div>
         </div>
 
-
-        <h3 class="card-tier-title">Starter Pass</h3>
-        <p class="card-tier-desc">Dedicated private 2FA verification slot for solo Xbox Console or PC Game Pass players.</p>
+        <h3 style="font-size: 1.35rem; font-weight: 900; color: #18181b; text-transform: uppercase; margin: 0 0 0.4rem; letter-spacing: -0.02em;">Xbox PC Game Pass</h3>
+        <p style="font-size: 13px; color: #555555; line-height: 1.45; margin: 0 0 1.25rem;">Dedicated private 4-digit PIN slot for solo Windows PC Game Pass and EA Play gaming.</p>
 
         <!-- Price Display -->
-        <div class="price-block">
-          <div class="price-row">
-            <span class="price-val" id="price-starter">₹249</span>
-            <span class="price-period" id="period-starter">/ 1 month</span>
+        <div style="background: #faf8f5; border: 1px solid rgba(24,24,27,0.1); border-radius: 0.85rem; padding: 1rem; margin-bottom: 1.25rem;">
+          <div style="display: flex; align-items: baseline; gap: 6px;">
+            <span id="price-starter" style="font-size: 2.2rem; font-weight: 900; color: #18181b; font-family: monospace; letter-spacing: -0.03em;">₹199</span>
+            <span id="period-starter" style="font-size: 12.5px; font-weight: 800; color: #787571; font-family: monospace;">/ 1 month</span>
           </div>
-          <div class="price-retail-row">
-            <span id="retail-starter" class="retail-val">₹799 retail</span>
-            <span id="save-starter" class="save-chip">Save 68%</span>
-            <span id="monthly-starter" class="monthly-val">₹249/mo</span>
+          <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 11.5px; font-family: monospace;">
+            <span id="retail-starter" style="text-decoration: line-through; color: #9ca3af;">₹799 retail</span>
+            <span id="save-starter" style="background: #dcfce7; color: #15803d; font-weight: 800; padding: 1px 6px; border-radius: 4px;">Save 75%</span>
+            <span id="monthly-starter" style="color: #787571; margin-left: auto;">₹199/mo</span>
           </div>
         </div>
 
         <!-- Inclusions Checklist -->
-        <ul class="tier-feature-list">
-          <li class="tier-feature-item">
-            <span class="feature-check-icon">✓</span>
-            <span><strong>1 Private Profile Slot</strong> (Zero sharing)</span>
+        <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem; display: flex; flex-direction: column; gap: 9px; font-size: 13px; color: #333333;">
+          <li style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: #15803d; font-weight: 900;">✓</span> 400+ PC Games + EA Play Library
           </li>
-          <li class="tier-feature-item">
-            <span class="feature-check-icon">✓</span>
-            <span><strong>Personal PIN Lock</strong> &amp; Cloud Saves</span>
+          <li style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: #15803d; font-weight: 900;">✓</span> Private Profile with 4-Digit PIN Lock
           </li>
-          <li class="tier-feature-item">
-            <span class="feature-check-icon">✓</span>
-            <span><strong>Xbox Console &amp; PC Game Pass</strong></span>
+          <li style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: #15803d; font-weight: 900;">✓</span> Play on Your Personal Xbox Gamertag
           </li>
-          <li class="tier-feature-item">
-            <span class="feature-check-icon">✓</span>
-            <span><strong>Automated Dispatch</strong> in &lt; 60 seconds</span>
+          <li style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: #15803d; font-weight: 900;">✓</span> Automated WhatsApp Delivery &lt; 60s
           </li>
-          <li class="tier-feature-item">
-            <span class="feature-check-icon">✓</span>
-            <span>48h Expiry Alert with 1-Click Renewal</span>
-          </li>
-          <li class="tier-feature-item">
-            <span class="feature-check-icon">✓</span>
-            <span><strong>100% Lifetime Warranty</strong> &amp; Support</span>
-          </li>
-          <li class="tier-feature-item" style="color: #888888;">
-            <span class="feature-check-icon is-dim">✕</span>
-            <span>GeForce NOW RTX 5080 Cloud</span>
+          <li style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: #15803d; font-weight: 900;">✓</span> 100% Full Replacement Warranty
           </li>
         </ul>
       </div>
-
-      <!-- Action Buttons -->
-      <div style="display: flex; flex-direction: column; gap: 8px; margin-top: auto;">
-        <a id="btn-starter-wa" href="https://wa.me/918317416695?text=Hi%20Rakexura%20Team%2C%20I%20want%20to%20get%20the%20Starter%20Pass%20(1%20Month)%20for%20%E2%82%B9249." target="_blank" class="btn-primary-rakexura">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="icon is-small" style="width:16px; height:16px;"><path fill-rule="evenodd" clip-rule="evenodd" d="M5 9L5 4H3V9V10V11L13 11V13H11V15H13V13H15V11L17 11V9H15V7H13V5H11V7L13 7V9H5Z" fill="currentColor"></path></svg>
-          <span>Buy on WhatsApp</span>
-        </a>
-        <a href="https://rakexura-store.vercel.app" target="_blank" class="btn-secondary-rakexura">
-          <span>Open in Store</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- Tier 2: Ultimate Cloud Pass (FEATURED) -->
-    <div class="pricing-card-item is-featured">
-      <div class="featured-ribbon">[★ MOST POPULAR PASS]</div>
 
       <div>
-        
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
-          <div style="width: 44px; height: 44px; border-radius: 12px; background: #ffffff; border: 1.5px solid #18181b; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 0 #18181b; padding: 6px;">
-            <img src="/assets/nvidia-logo-48.png" alt="NVIDIA" style="width: 100%; height: 100%; object-fit: contain;">
+        <a id="btn-starter-wa" href="https://wa.me/918317416695?text=Hi%20Rakexura%20Team%2C%20I%20want%20to%20get%20the%20Xbox%20PC%20Game%20Pass%20(1%20Month)%20for%20%E2%82%B9199." target="_blank" class="btn-primary-rakexura" style="width: 100%; box-sizing: border-box; text-align: center;">
+          <span>Get Xbox Pass &rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 2: Ultimate Cloud Pass (Combo) - Featured -->
+    <div class="pricing-card-item is-featured" style="background: #ffffff; border: 2px solid #18181b; border-radius: 1.25rem; padding: 1.75rem; box-shadow: 0 8px 0 #18181b; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+      
+      <!-- Popular Combo Chip -->
+      <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #f2c744; border: 1.5px solid #18181b; border-radius: 999px; padding: 3px 14px; font-family: monospace; font-size: 11px; font-weight: 900; color: #18181b; box-shadow: 0 2px 0 #18181b; text-transform: uppercase;">
+        ★ MOST POPULAR COMBO
+      </div>
+
+      <div>
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; margin-top: 0.25rem;">
+          <!-- Dual Icon Badge -->
+          <div style="display: flex; align-items: center; gap: 4px;">
+            <div style="width: 38px; height: 38px; border-radius: 10px; background: #faf8f5; border: 1.5px solid #18181b; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 0 #18181b; padding: 5px;">
+              <img src="/assets/xbox-logo-50.png" alt="Xbox" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <span style="font-size: 12px; font-weight: 900; color: #18181b;">+</span>
+            <div style="width: 38px; height: 38px; border-radius: 10px; background: #faf8f5; border: 1.5px solid #18181b; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 0 #18181b; padding: 5px;">
+              <img src="/assets/nvidia-logo-48.png" alt="NVIDIA" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
           </div>
-          <div class="card-tier-tag" style="font-family: monospace; font-size: 11px; font-weight: 800; color: #787571; text-transform: uppercase;">
-            [SLOT-GFN]
+          <div style="font-family: monospace; font-size: 11px; font-weight: 800; color: #b45309; text-transform: uppercase;">
+            [SLOT-COMBO-PRO]
           </div>
         </div>
 
-
-        <h3 class="card-tier-title">All-Access Master Pass</h3>
-        <p class="card-tier-desc">Multi-device households, power gamers &amp; teams needing dedicated priority allocation and live telemetry.</p>
+        <h3 style="font-size: 1.35rem; font-weight: 900; color: #18181b; text-transform: uppercase; margin: 0 0 0.4rem; letter-spacing: -0.02em;">Ultimate Cloud Pass</h3>
+        <p style="font-size: 13px; color: #555555; line-height: 1.45; margin: 0 0 1.25rem;">The complete hybrid pass: Xbox PC Game Pass bundled with NVIDIA RTX Cloud Gaming.</p>
 
         <!-- Price Display -->
-        <div class="price-block">
-          <div class="price-row">
-            <span class="price-val" id="price-master">₹899</span>
-            <span class="price-period" id="period-master">/ 1 month</span>
+        <div style="background: rgba(242, 199, 68, 0.15); border: 1.5px solid #18181b; border-radius: 0.85rem; padding: 1rem; margin-bottom: 1.25rem;">
+          <div style="display: flex; align-items: baseline; gap: 6px;">
+            <span id="price-ultimate" style="font-size: 2.2rem; font-weight: 900; color: #18181b; font-family: monospace; letter-spacing: -0.03em;">₹399</span>
+            <span id="period-ultimate" style="font-size: 12.5px; font-weight: 800; color: #787571; font-family: monospace;">/ 1 month</span>
           </div>
-          <div class="price-retail-row">
-            <span id="retail-master" class="retail-val">₹3,499 retail</span>
-            <span id="save-master" class="save-chip">Save 74%</span>
-            <span id="monthly-master" class="monthly-val">₹899/mo</span>
+          <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 11.5px; font-family: monospace;">
+            <span id="retail-ultimate" style="text-decoration: line-through; color: #9ca3af;">₹1,999 retail</span>
+            <span id="save-ultimate" style="background: #f2c744; color: #18181b; font-weight: 800; padding: 1px 6px; border-radius: 4px;">Save 80%</span>
+            <span id="monthly-ultimate" style="color: #787571; margin-left: auto;">₹399/mo</span>
           </div>
         </div>
 
         <!-- Inclusions Checklist -->
-        <ul class="tier-feature-list">
-          <li class="tier-feature-item">
-            <span class="feature-check-icon">✓</span>
-            <span><strong>Up to 5 Multi-Device Slots</strong></span>
+        <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem; display: flex; flex-direction: column; gap: 9px; font-size: 13px; color: #333333;">
+          <li style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: #15803d; font-weight: 900;">✓</span> <strong>Xbox PC Game Pass (400+ Games)</strong>
           </li>
-          <li class="tier-feature-item">
-            <span class="feature-check-icon">✓</span>
-            <span><strong>All Passes Combined</strong> (Xbox + GFN + 2FA)</span>
+          <li style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: #15803d; font-weight: 900;">✓</span> <strong>NVIDIA GeForce NOW RTX Cloud Rigs</strong>
           </li>
-          <li class="tier-feature-item">
-            <span class="feature-check-icon">✓</span>
-            <span><strong>Live Telemetry Dashboard Sync</strong> &amp; API Key</span>
+          <li style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: #15803d; font-weight: 900;">✓</span> 4K / 120FPS on PC, Mac, Phone, TV
           </li>
-          <li class="tier-feature-item">
-            <span class="feature-check-icon">✓</span>
-            <span><strong>Custom Bot &amp; Webhook Provisioning</strong></span>
+          <li style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: #15803d; font-weight: 900;">✓</span> 1-Click WhatsApp Renewal (Keep Saves)
           </li>
-          <li class="tier-feature-item">
-            <span class="feature-check-icon">✓</span>
-            <span><strong>Dedicated VIP Account Manager</strong> on WhatsApp</span>
-          </li>
-          <li class="tier-feature-item">
-            <span class="feature-check-icon">✓</span>
-            <span><strong>Priority Slot Reserving</strong> &amp; Zero Downtime</span>
-          </li>
-          <li class="tier-feature-item">
-            <span class="feature-check-icon">✓</span>
-            <span><strong>100% Lifetime Warranty</strong> &amp; Instant Replacement</span>
+          <li style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: #15803d; font-weight: 900;">✓</span> 100% Full Replacement Warranty
           </li>
         </ul>
       </div>
 
-      <!-- Action Buttons -->
-      <div style="display: flex; flex-direction: column; gap: 8px; margin-top: auto;">
-        <a id="btn-master-wa" href="https://wa.me/918317416695?text=Hi%20Rakexura%20Team%2C%20I%20want%20to%20get%20the%20All-Access%20Master%20Pass%20(1%20Month)%20for%20%E2%82%B9899." target="_blank" class="btn-primary-rakexura">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="icon is-small" style="width:16px; height:16px;"><path fill-rule="evenodd" clip-rule="evenodd" d="M5 9L5 4H3V9V10V11L13 11V13H11V15H13V13H15V11L17 11V9H15V7H13V5H11V7L13 7V9H5Z" fill="currentColor"></path></svg>
-          <span>Get Master Pass</span>
+      <div>
+        <a id="btn-ultimate-wa" href="https://wa.me/918317416695?text=Hi%20Rakexura%20Team%2C%20I%20want%20to%20get%20the%20Ultimate%20Cloud%20Pass%20(1%20Month)%20for%20%E2%82%B9399." target="_blank" class="btn-primary-rakexura" style="width: 100%; box-sizing: border-box; text-align: center; background-color: #f2c744;">
+          <span>Get Ultimate Combo &rarr;</span>
         </a>
-        <a href="https://rakexura-store.vercel.app" target="_blank" class="btn-secondary-rakexura">
-          <span>Open in Store</span>
+      </div>
+    </div>
+
+    <!-- Card 3: NVIDIA GeForce NOW -->
+    <div class="pricing-card-item" style="background: #ffffff; border: 1.5px solid #18181b; border-radius: 1.25rem; padding: 1.75rem; box-shadow: 0 6px 0 #18181b; display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+          <div style="width: 44px; height: 44px; border-radius: 12px; background: #faf8f5; border: 1.5px solid #18181b; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 0 #18181b; padding: 6px;">
+            <img src="/assets/nvidia-logo-48.png" alt="NVIDIA GeForce NOW" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+          <div style="font-family: monospace; font-size: 11px; font-weight: 800; color: #787571; text-transform: uppercase;">
+            [SLOT-GFN-RTX]
+          </div>
+        </div>
+
+        <h3 style="font-size: 1.35rem; font-weight: 900; color: #18181b; text-transform: uppercase; margin: 0 0 0.4rem; letter-spacing: -0.02em;">NVIDIA GeForce NOW</h3>
+        <p style="font-size: 13px; color: #555555; line-height: 1.45; margin: 0 0 1.25rem;">Play your own Steam &amp; Epic games on dedicated RTX high-performance cloud hardware.</p>
+
+        <!-- Price Display -->
+        <div style="background: #faf8f5; border: 1px solid rgba(24,24,27,0.1); border-radius: 0.85rem; padding: 1rem; margin-bottom: 1.25rem;">
+          <div style="display: flex; align-items: baseline; gap: 6px;">
+            <span id="price-master" style="font-size: 2.2rem; font-weight: 900; color: #18181b; font-family: monospace; letter-spacing: -0.03em;">₹250</span>
+            <span id="period-master" style="font-size: 12.5px; font-weight: 800; color: #787571; font-family: monospace;">/ 1 month</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 11.5px; font-family: monospace;">
+            <span id="retail-master" style="text-decoration: line-through; color: #9ca3af;">₹999 retail</span>
+            <span id="save-master" style="background: #dcfce7; color: #15803d; font-weight: 800; padding: 1px 6px; border-radius: 4px;">Save 75%</span>
+            <span id="monthly-master" style="color: #787571; margin-left: auto;">₹250/mo</span>
+          </div>
+        </div>
+
+        <!-- Inclusions Checklist -->
+        <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem; display: flex; flex-direction: column; gap: 9px; font-size: 13px; color: #333333;">
+          <li style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: #15803d; font-weight: 900;">✓</span> Priority NVIDIA RTX Cloud Rig Access
+          </li>
+          <li style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: #15803d; font-weight: 900;">✓</span> Ultra-Low Latency &amp; Zero Wait Queue
+          </li>
+          <li style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: #15803d; font-weight: 900;">✓</span> Play on PC, Mac, Phone, Tablet &amp; Smart TV
+          </li>
+          <li style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: #15803d; font-weight: 900;">✓</span> Automated WhatsApp Setup &lt; 60s
+          </li>
+          <li style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: #15803d; font-weight: 900;">✓</span> 100% Full Replacement Warranty
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <a id="btn-master-wa" href="https://wa.me/918317416695?text=Hi%20Rakexura%20Team%2C%20I%20want%20to%20get%20NVIDIA%20GeForce%20NOW%20(1%20Month)%20for%20%E2%82%B9250." target="_blank" class="btn-primary-rakexura" style="width: 100%; box-sizing: border-box; text-align: center;">
+          <span>Get GeForce NOW &rarr;</span>
         </a>
       </div>
     </div>
 
   </div>
 
-  
-  </div>
 
-  <!-- Detailed Comparison Table -->
-  
   <div class="pricing-compare-section">
     <div class="hero-price_divider" style="margin-bottom: 1.25rem;">
       <div class="hero-price_divider-left">[COMPARISON MATRIX]</div>
@@ -1218,6 +1245,7 @@ html.is-ready .preloader::before {
       </tbody>
     </table>
   </div>
+
 
 
   <!-- Telemetry & Direct Validation Callout Bar -->
