@@ -922,10 +922,10 @@
 <style id="rakexura-master-brand-system">
 
   /* ==========================================================================
-     RAKEXURA MASTER DESIGN SYSTEM
+     RAKEXURA AUTHENTIC DESIGN SYSTEM
      ========================================================================== */
 
-  /* 1. Header Bar: Solid Sand Background on Scroll with Crisp Border */
+  /* Header Solid Background on Scroll */
   header.header, .header {
     position: sticky !important;
     top: 0 !important;
@@ -939,70 +939,21 @@
   }
   header.header.is-scrolled, .header.is-scrolled {
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
-    background-color: #f2efeb !important;
   }
 
-  /* 2. Logo Scroll-Reveal Animation: Hidden at top, smoothly slides in on scroll */
-  .header_title-inner {
-    display: inline-flex !important;
-    align-items: center !important;
-    height: auto !important;
-  }
-
-  .header_title-link {
-    display: inline-flex !important;
-    align-items: center !important;
-    text-decoration: none !important;
-  }
-
-  .header_title-profile {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 0px !important;
-    height: 32px !important;
-    opacity: 0 !important;
-    overflow: hidden !important;
-    margin-right: 0px !important;
-    transform: scale(0.65) translateX(-12px) !important;
-    transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-                opacity 0.25s ease, 
-                margin-right 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-                transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  }
-
-  /* When scrolled down, logo smoothly emerges */
-  .header.is-scrolled .header_title-profile,
-  body.is-scrolled .header_title-profile {
-    width: 32px !important;
-    opacity: 1 !important;
-    margin-right: 8px !important;
-    transform: scale(1) translateX(0) !important;
-  }
-
-  .header_title-profile img, .header_title-profile-img {
-    width: 32px !important;
-    height: 32px !important;
-    border-radius: 50% !important;
-    object-fit: cover !important;
-    display: block !important;
-    border: 1.5px solid #18181b !important;
-  }
-
-  /* 3. Signature Brutalist Buttons (Yellow with Black Underborder Shadow) */
+  /* Signature Brutalist Buttons (Yellow with Black Underborder Shadow) */
   .btn-primary-rakexura,
-  .btn-whatsapp-rakexura,
   .button-default.is-yellow,
   button.btn-primary-rakexura {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 8px !important;
-    background-color: #f2c744 !important; /* Signature Yellow */
+    background-color: #f2c744 !important;
     color: #18181b !important;
     border: 1.5px solid #18181b !important;
     border-radius: 1.25rem !important;
-    box-shadow: 0 3px 0 #18181b !important; /* Signature underborder line */
+    box-shadow: 0 3px 0 #18181b !important;
     font-family: inherit !important;
     font-size: 13px !important;
     font-weight: 800 !important;
@@ -1013,20 +964,7 @@
     cursor: pointer !important;
     transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease !important;
   }
-
-  .btn-primary-rakexura svg,
-  .btn-whatsapp-rakexura svg,
-  .button-default.is-yellow svg {
-    width: 16px !important;
-    height: 16px !important;
-    max-width: 16px !important;
-    max-height: 16px !important;
-    flex-shrink: 0 !important;
-    display: inline-block !important;
-  }
-
   .btn-primary-rakexura:hover,
-  .btn-whatsapp-rakexura:hover,
   .button-default.is-yellow:hover,
   button.btn-primary-rakexura:hover {
     transform: translateY(2px) !important;
@@ -1056,7 +994,6 @@
     cursor: pointer !important;
     transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease !important;
   }
-
   .btn-secondary-rakexura:hover,
   button.btn-secondary-rakexura:hover {
     transform: translateY(2px) !important;
@@ -1065,7 +1002,7 @@
     color: #18181b !important;
   }
 
-  /* 4. Professional Pill Selector Capsules (Screenshot 173505) */
+  /* Professional Unified Pill Selectors */
   .duration-selector-wrap, .home-duration-selector,
   .currency-selector-wrap, .home-currency-selector {
     display: inline-flex !important;
