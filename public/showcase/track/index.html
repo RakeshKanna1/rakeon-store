@@ -1223,6 +1223,88 @@
   }
 
 </style>
+
+<style id="rakexura-master-theme-system">
+  /* 1. Header Bar: Authentic Sandstone Beige (Matches page body) */
+  header.header, .header, [data-site-header="true"] {
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background-color: #f2efeb !important; /* Sandstone Beige */
+    border-bottom: 1.5px solid rgba(24, 24, 27, 0.12) !important;
+    z-index: 9999 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
+  }
+
+  /* Hide static separate circular logo by default */
+  .header_title-profile {
+    display: none !important;
+  }
+
+  /* 2. Comparison Table: High-Contrast Dark Text (Fix invisible white text) */
+  .pricing-compare-section,
+  .pricing-compare-section *,
+  table.pricing-compare-table,
+  table.pricing-compare-table td,
+  table.pricing-compare-table th,
+  table.pricing-compare-table tr {
+    color: #18181b !important; /* Crisp dark obsidian text */
+  }
+
+  .pricing-compare-section td,
+  table.pricing-compare-table td {
+    color: #18181b !important;
+    border-bottom: 1px solid rgba(24, 24, 27, 0.08) !important;
+    padding: 12px 16px !important;
+  }
+
+  .pricing-compare-section th,
+  table.pricing-compare-table th {
+    color: #18181b !important;
+    font-weight: 900 !important;
+    padding: 12px 16px !important;
+  }
+
+  .pricing-compare-section td strong {
+    color: #18181b !important;
+    font-weight: 800 !important;
+  }
+
+  /* 3. Signature Yellow Brutalist Action Buttons */
+  .btn-primary-rakexura,
+  .button-default.is-yellow,
+  button.btn-primary-rakexura {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    background-color: #f2c744 !important; /* Signature Yellow */
+    color: #18181b !important;
+    border: 1.5px solid #18181b !important;
+    border-radius: 1.25rem !important;
+    box-shadow: 0 3px 0 #18181b !important; /* Signature underborder line */
+    font-family: inherit !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    text-decoration: none !important;
+    padding: 10px 22px !important;
+    cursor: pointer !important;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease !important;
+  }
+
+  .btn-primary-rakexura:hover,
+  .button-default.is-yellow:hover,
+  button.btn-primary-rakexura:hover {
+    transform: translateY(2px) !important;
+    box-shadow: 0 1px 0 #18181b !important;
+    background-color: #e5b938 !important;
+  }
+</style>
+
 </head>
 <style>
   body { background-color: #f2efeb !important; color: #000000 !important; min-height: 100vh; margin: 0; padding: 0; }
