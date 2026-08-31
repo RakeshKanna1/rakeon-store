@@ -3,13 +3,19 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
+    { "source": "/pricing", "destination": "/pricing.html" },
+    { "source": "/validation", "destination": "/validation.html" },
+    { "source": "/support", "destination": "/support.html" },
     { "source": "/manage", "destination": "/manage.html" },
     { "source": "/track", "destination": "/track.html" },
-    { "source": "/prozess", "destination": "/prozess.html" },
-    { "source": "/preis", "destination": "/preis.html" },
-    { "source": "/kontakt", "destination": "/kontakt.html" },
-    { "source": "/agb", "destination": "/agb.html" },
-    { "source": "/datenschutz", "destination": "/datenschutz.html" },
-    { "source": "/impressum", "destination": "/impressum.html" }
+    { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/imprint", "destination": "/imprint.html" },
+    { "source": "/prozess", "destination": "/validation.html" },
+    { "source": "/preis", "destination": "/pricing.html" },
+    { "source": "/kontakt", "destination": "/support.html" },
+    { "source": "/agb", "destination": "/terms.html" },
+    { "source": "/datenschutz", "destination": "/privacy.html" },
+    { "source": "/impressum", "destination": "/imprint.html" }
   ]
 }

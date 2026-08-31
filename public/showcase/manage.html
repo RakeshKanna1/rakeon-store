@@ -814,6 +814,126 @@
 }
 
 </style>
+
+<style id="eye-friendly-palette-override">
+  /* ==========================================================================
+     RAKEXURA EYE-FRIENDLY WARM CASHMERE & HONEY AMBER PALETTE
+     (Zero eye strain • Warm natural tones • No harsh neon • No harsh pitch black)
+     ========================================================================== */
+  :root {
+    --color-background: #f2efeb !important;
+    --ci-cream: #f2efeb !important;
+    --color-background-beige: #e8e3dc !important;
+    --ci-beige: #e8e3dc !important;
+    --rak-bg-canvas: #f2efeb !important;
+    --rak-bg-surface: #faf8f5 !important;
+    --rak-bg-inset: #e8e3dc !important;
+    --rak-text-primary: #18181b !important;
+    --rak-text-secondary: #4b4946 !important;
+    --rak-text-muted: #787571 !important;
+    --rak-accent-honey: #f2c744 !important;
+    --rak-accent-honey-hover: #e8bc33 !important;
+    --rak-border-solid: #18181b !important;
+    --rak-border-subtle: rgba(24, 24, 27, 0.12) !important;
+  }
+
+  html, body, .main, [data-scroll-container], .page-wrapper, .hero, .hero-price, .hero-process, .hero-contact, .content-block, .faq, .home-pricing-section, .validator-section {
+    background-color: #f2efeb !important;
+    color: #18181b !important;
+  }
+
+  /* Softened Charcoal Text instead of harsh pitch black */
+  h1, h2, h3, .u-h1, .u-h2, .u-h3, .hero_title, .hero-price_title, .home-pricing-title {
+    color: #18181b !important;
+  }
+  p, .u-p1, .hero_description-text, .hero-process_description-text, .home-pricing-subtitle {
+    color: #4b4946 !important;
+  }
+
+  /* Refined, Non-glaring Honey Amber Buttons */
+  .btn-primary-rakexura, .is-yellow, .btn-gold-cta {
+    background-color: #f2c744 !important;
+    color: #18181b !important;
+    border-color: #18181b !important;
+    box-shadow: 0 2px 0 #18181b !important;
+  }
+  .btn-primary-rakexura:hover, .is-yellow:hover, .btn-gold-cta:hover {
+    background-color: #e8bc33 !important;
+    color: #18181b !important;
+    box-shadow: 0 4px 0 #18181b !important;
+  }
+
+  .btn-secondary-rakexura {
+    background-color: #faf8f5 !important;
+    color: #18181b !important;
+    border-color: #18181b !important;
+    box-shadow: 0 2px 0 #18181b !important;
+  }
+  .btn-secondary-rakexura:hover {
+    background-color: #ebe7e0 !important;
+    color: #18181b !important;
+    box-shadow: 0 4px 0 #18181b !important;
+  }
+
+  /* Softened Surface & Cards */
+  .home-pricing-card, .price-card, .validator-terminal, .telemetry-card-vault, .search-card {
+    background-color: #faf8f5 !important;
+    border-color: #18181b !important;
+    box-shadow: 0 6px 20px rgba(24, 24, 27, 0.04) !important;
+  }
+  .home-pricing-card:hover, .price-card:hover {
+    box-shadow: 0 14px 32px rgba(24, 24, 27, 0.08) !important;
+  }
+
+  /* Softened Dark Section (No harsh pitch black) */
+  .intro, .intro.u-theme-dark, .intro_wrap {
+    background-color: #1e1e22 !important;
+    color: #f2efeb !important;
+  }
+  .intro_title {
+    color: #f2efeb !important;
+  }
+  .intro_paragraph {
+    color: #d4d0c8 !important;
+  }
+
+  /* Tags & Ribbons */
+  .home-duration-discount, .status-badge-verified, .price-card_badge {
+    background-color: #f2c744 !important;
+    color: #18181b !important;
+    border-color: #18181b !important;
+  }
+</style>
+
+<style id="footer-btn-clean-style">
+
+  /* Clean Footer Next-Page Action without clipping artifacts */
+  .footer_next-page {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  .footer_next-page-action {
+    display: inline-flex !important;
+  }
+  .button-default.is-yellow {
+    background-color: #f2c744 !important;
+    color: #18181b !important;
+    border: 1.5px solid #18181b !important;
+    border-radius: 1.25rem !important;
+    box-shadow: 0 2px 0 #18181b !important;
+    overflow: hidden !important;
+  }
+  .button-default.is-yellow .button-default_button-bg {
+    display: none !important; /* Eliminate duplicate Webflow stroke artifact */
+  }
+  .button-default.is-yellow .button-default_button-container {
+    color: #18181b !important;
+    padding: 0.55rem 1.2rem !important;
+    font-weight: 800 !important;
+  }
+  
+</style>
 </head>
 <style>
   body { background-color: #f2efeb !important; color: #000000 !important; min-height: 100vh; margin: 0; padding: 0; }
@@ -1498,7 +1618,7 @@
     <div>
       <div style="font-family:monospace; font-size:11px; color:#888888; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:1rem;">COMMUNITY &amp; CHANNELS</div>
       <div style="display:flex; flex-direction:column; gap:0.5rem; font-family:monospace; font-size:13px;">
-        <a href="https://discord.gg" target="_blank" style="color:#f2efeb; text-decoration:none;">DISCORD ↗</a>
+        
         <a href="https://wa.me/918317416695" target="_blank" style="color:#f2efeb; text-decoration:none;">WHATSAPP ↗</a>
         <a href="https://t.me" target="_blank" style="color:#f2efeb; text-decoration:none;">TELEGRAM ↗</a>
         <a href="https://rakexura-store.vercel.app" style="color:#f2efeb; text-decoration:none;">STORE ↗</a>
