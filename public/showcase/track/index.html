@@ -1305,6 +1305,60 @@
   }
 </style>
 
+
+<style id="rakexura-unified-sandstone-header">
+  /* Universal Header: Sandstone Beige Background Across Entire Site */
+  header.header, .header, [data-site-header="true"],
+  body.is-price header.header, body.is-price .header,
+  body[data-wf-page="678f8fc870e24177d6118bfa"] .header {
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background-color: #f2efeb !important; /* Sandstone Beige */
+    border-bottom: 1.5px solid rgba(24, 24, 27, 0.12) !important;
+    z-index: 9999 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
+  }
+
+  /* Universal Navigation Buttons: Clean brutalist styling */
+  .header_nav-link, .header_nav-button {
+    background-color: rgba(24, 24, 27, 0.06) !important;
+    color: #18181b !important;
+    border: 1px solid rgba(24, 24, 27, 0.1) !important;
+    border-radius: 999px !important;
+    font-weight: 800 !important;
+    transition: all 0.15s ease !important;
+  }
+
+  .header_nav-link.w--current, .header_nav-button.w--current,
+  .header_nav-link.active, .header_nav-button.active,
+  a[aria-current="page"] {
+    background-color: #18181b !important;
+    color: #ffffff !important;
+    border-color: #18181b !important;
+  }
+
+  /* Hide static separate circular logo by default */
+  .header_title-profile {
+    display: none !important;
+  }
+
+  /* Universal Comparison Matrix: High Contrast Obsidian Text */
+  .pricing-compare-section,
+  .pricing-compare-section *,
+  table.pricing-compare-table,
+  table.pricing-compare-table td,
+  table.pricing-compare-table th {
+    color: #18181b !important;
+  }
+  .pricing-compare-section td {
+    color: #18181b !important;
+    border-bottom: 1px solid rgba(24, 24, 27, 0.08) !important;
+  }
+</style>
+
 </head>
 <style>
   body { background-color: #f2efeb !important; color: #000000 !important; min-height: 100vh; margin: 0; padding: 0; }
