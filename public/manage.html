@@ -1094,6 +1094,106 @@
   }
 
 </style>
+<style id="header-and-button-fix-css">
+
+  /* ==========================================================================
+     CLEAN HEADER (NO STATIC LOGO BADGE, SOLID BACKGROUND ON SCROLL)
+     ========================================================================== */
+  header.header, .header {
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background-color: #f2efeb !important;
+    border-bottom: 1.5px solid rgba(24, 24, 27, 0.12) !important;
+    z-index: 9999 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03) !important;
+  }
+
+  /* Hide the separate static circular logo on the left of RAKE ✦ XURA */
+  .header_title-profile {
+    display: none !important;
+  }
+
+  .header_title-button {
+    margin-left: 0 !important;
+  }
+
+  /* Signature Brutalist Buttons (Yellow with Black Underborder Shadow) */
+  .btn-primary-rakexura,
+  .btn-whatsapp-rakexura,
+  .button-default.is-yellow,
+  button.btn-primary-rakexura {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    background-color: #f2c744 !important; /* Signature Rakexura Yellow */
+    color: #18181b !important;
+    border: 1.5px solid #18181b !important;
+    border-radius: 1.25rem !important;
+    box-shadow: 0 3px 0 #18181b !important; /* Signature underborder black line */
+    font-family: inherit !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    text-decoration: none !important;
+    padding: 10px 22px !important;
+    cursor: pointer !important;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease !important;
+  }
+
+  .btn-primary-rakexura svg,
+  .btn-whatsapp-rakexura svg,
+  .button-default.is-yellow svg {
+    width: 16px !important;
+    height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
+  }
+
+  .btn-primary-rakexura:hover,
+  .btn-whatsapp-rakexura:hover,
+  .button-default.is-yellow:hover {
+    transform: translateY(2px) !important;
+    box-shadow: 0 1px 0 #18181b !important;
+    background-color: #e5b938 !important;
+    color: #18181b !important;
+  }
+
+  .btn-secondary-rakexura {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    background-color: #faf8f5 !important;
+    color: #18181b !important;
+    border: 1.5px solid #18181b !important;
+    border-radius: 1.25rem !important;
+    box-shadow: 0 3px 0 #18181b !important;
+    font-family: inherit !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    text-decoration: none !important;
+    padding: 10px 22px !important;
+    cursor: pointer !important;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease !important;
+  }
+
+  .btn-secondary-rakexura:hover {
+    transform: translateY(2px) !important;
+    box-shadow: 0 1px 0 #18181b !important;
+    background-color: #eee9e0 !important;
+    color: #18181b !important;
+  }
+
+</style>
 </head>
 <style>
   body { background-color: #f2efeb !important; color: #000000 !important; min-height: 100vh; margin: 0; padding: 0; }
