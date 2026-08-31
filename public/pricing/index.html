@@ -213,158 +213,7 @@ html.is-ready .preloader::before {
 </style>
 
 
-<style id="rakexura-header-optical-center">
-  /* Optical Vertical Centering for Header Words */
-  .header_nav-button-inner {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    height: 100% !important;
-  }
 
-  .header_nav-button-text,
-  .header_nav-button-text-span,
-  .header_nav-button-text-touch {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    line-height: 1 !important;
-    transform: translateY(-1.5px) !important;
-  }
-
-  /* Header Title Link Container */
-  .header_title-link {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    text-decoration: none !important;
-    cursor: pointer !important;
-  }
-
-  /* 1. Animated Profile Logo Picture */
-  .header_title-profile {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 34px !important;
-    height: 34px !important;
-    border-radius: 50% !important;
-    overflow: hidden !important;
-    background: #0c0a1a !important;
-    border: 1.5px solid rgba(0, 0, 0, 0.12) !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease !important;
-    flex-shrink: 0 !important;
-  }
-
-  .header_title-profile-img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    display: block !important;
-    border-radius: 50% !important;
-    transition: transform 0.35s ease !important;
-  }
-
-  .header_title-link:hover .header_title-profile {
-    transform: scale(1.1) rotate(-4deg) !important;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18) !important;
-    border-color: #000000 !important;
-  }
-
-  .header_title-link:hover .header_title-profile-img {
-    transform: scale(1.08) !important;
-  }
-
-  /* 2. Premium Black Pill Box for RAKE ✦ XURA */
-  .header_title-button {
-    position: relative !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 0 16px !important;
-    height: 34px !important;
-    min-height: 34px !important;
-    border-radius: 9999px !important;
-    background: #000000 !important;
-    color: #ffffff !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s ease, box-shadow 0.3s ease !important;
-  }
-
-  .header_title-link:hover .header_title-button {
-    transform: translateY(-1px) scale(1.03) !important;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22) !important;
-    background: #111111 !important;
-  }
-
-  .header_title-logo {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    position: relative !important;
-    z-index: 2 !important;
-    color: #ffffff !important;
-  }
-
-  .header_title-logo-text {
-    font-family: inherit !important;
-    font-size: 11.5px !important;
-    font-weight: 900 !important;
-    letter-spacing: 0.08em !important;
-    text-transform: uppercase !important;
-    line-height: 1 !important;
-    color: #ffffff !important;
-    transform: translateY(-0.5px) !important;
-  }
-
-  .header_title-logo svg,
-  .header_title-logo .icon,
-  .header_title-logo svg path {
-    width: 12px !important;
-    height: 12px !important;
-    color: #ff5b1a !important;
-    fill: #ff5b1a !important;
-    display: inline-block !important;
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-  }
-
-  .header_title-link:hover .header_title-logo svg {
-    transform: rotate(90deg) scale(1.15) !important;
-  }
-
-  /* 3. Dark Theme Mode */
-  html.dark-theme .header_title-profile,
-  body.dark-theme .header_title-profile,
-  [data-theme="dark"] .header_title-profile {
-    border-color: rgba(255, 255, 255, 0.2) !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
-  }
-
-  html.dark-theme .header_title-button,
-  body.dark-theme .header_title-button,
-  [data-theme="dark"] .header_title-button {
-    background: #16132b !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
-  }
-
-  html.dark-theme .header_title-link:hover .header_title-button,
-  body.dark-theme .header_title-link:hover .header_title-button,
-  [data-theme="dark"] .header_title-link:hover .header_title-button {
-    background: #201b3d !important;
-    border-color: rgba(255, 91, 26, 0.6) !important;
-    box-shadow: 0 4px 18px rgba(255, 91, 26, 0.25) !important;
-  }
-
-  .header_menu-button-text {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    line-height: 1 !important;
-    transform: translateY(-1.5px) !important;
-  }
-</style>
 
 
 
@@ -422,9 +271,9 @@ html.is-ready .preloader::before {
     <div class="header_inner">
       <div class="header_title">
         <div class="header_title-inner u-c1">
-          <a href="/" class="header_title-link w-inline-block">
+          <a href="/" aria-current="page" class="header_title-link w-inline-block w--current">
             <div data-button-hover="" class="header_title-profile">
-              <img src="/assets/favicon.png" loading="eager" width="32" height="32" alt="RAKEXURA Subscriptions" fetchpriority="high" class="header_title-profile-img" style="border-radius:50%;object-fit:cover;background:#0c0a1a;">
+              <img src="/assets/favicon.png" loading="eager" width="32" height="32" alt="RAKEXURA Subscriptions" fetchpriority="high" class="header_title-profile-img">
             </div>
             <div data-button-hover="" class="header_title-button">
               <div class="header_title-logo">
@@ -442,7 +291,7 @@ html.is-ready .preloader::before {
       <nav class="header_nav">
         <ul role="list" class="header_nav-list w-list-unstyled">
           <li class="header_nav-list-item">
-            <a data-nav-link="" data-text="Subscriptions" data-swup-preload="" data-wf--header-button--variant="base" href="/" class="header_nav-button u-c1 w-inline-block ">
+            <a data-nav-link="" data-text="Subscriptions" data-swup-preload="" data-wf--header-button--variant="base" href="/" class="header_nav-button u-c1 w-inline-block w--current is-active">
               <span class="header_nav-button-inner">
                 <span class="header_nav-button-text">Subscriptions</span>
                 <span class="header_nav-button-bg"></span>
@@ -450,7 +299,7 @@ html.is-ready .preloader::before {
             </a>
           </li>
           <li class="header_nav-list-item">
-            <a data-nav-link="" data-text="Validation" data-swup-preload="" data-wf--header-button--variant="base" href="/validation" class="header_nav-button u-c1 w-inline-block ">
+            <a data-nav-link="" data-text="Validation" data-swup-preload="" data-wf--header-button--variant="base" href="/validation" class="header_nav-button u-c1 w-inline-block">
               <span class="header_nav-button-inner">
                 <span class="header_nav-button-text">Validation</span>
                 <span class="header_nav-button-bg"></span>
@@ -458,7 +307,7 @@ html.is-ready .preloader::before {
             </a>
           </li>
           <li class="header_nav-list-item">
-            <a data-nav-link="" data-text="Pricing" data-swup-preload="" data-wf--header-button--variant="base" href="/pricing" class="header_nav-button u-c1 w-inline-block w--current is-active">
+            <a data-nav-link="" data-text="Pricing" data-swup-preload="" data-wf--header-button--variant="base" href="/pricing" class="header_nav-button u-c1 w-inline-block">
               <span class="header_nav-button-inner">
                 <span class="header_nav-button-text">Pricing</span>
                 <span class="header_nav-button-bg"></span>
@@ -466,7 +315,7 @@ html.is-ready .preloader::before {
             </a>
           </li>
           <li class="header_nav-list-item">
-            <a data-nav-link="" data-text="Support" data-swup-preload="" data-wf--header-button--variant="base" href="/support" class="header_nav-button u-c1 w-inline-block ">
+            <a data-nav-link="" data-text="Support" data-swup-preload="" data-wf--header-button--variant="base" href="/support" class="header_nav-button u-c1 w-inline-block">
               <span class="header_nav-button-inner">
                 <span class="header_nav-button-text">Support</span>
                 <span class="header_nav-button-bg"></span>
@@ -474,7 +323,7 @@ html.is-ready .preloader::before {
             </a>
           </li>
           <li class="header_nav-list-item">
-            <a data-nav-link="" data-text="Track" data-wf--header-button--variant="base" href="/track" class="header_nav-button u-c1 w-inline-block ">
+            <a data-nav-link="" data-text="Track" data-wf--header-button--variant="base" href="/track" class="header_nav-button u-c1 w-inline-block">
               <span class="header_nav-button-inner">
                 <span class="header_nav-button-text">Track</span>
                 <span class="header_nav-button-bg"></span>
@@ -483,7 +332,7 @@ html.is-ready .preloader::before {
           </li>
         </ul>
       </nav>
-      <div class="header_tools" style="display: flex; align-items: center; gap: 6px;">
+      <div aria-hidden="true" class="header_tools" style="display:flex; align-items:center; gap:6px;">
         <a data-text="2026" role="link" aria-disabled="true" class="header_nav-button u-c1">
           <span class="header_nav-button-inner">
             <span class="header_nav-button-text">
@@ -492,7 +341,6 @@ html.is-ready .preloader::before {
             <span class="header_nav-button-bg"></span>
           </span>
         </a>
-        <!-- Dark Theme Box Button matching exact header button box styling -->
         <button type="button" class="header_nav-button u-c1 theme-box-toggle-btn" onclick="window.toggleRakexuraTheme()" style="background: transparent; border: none; padding: 0; cursor: pointer; text-decoration: none; display: inline-flex;">
           <span class="header_nav-button-inner">
             <span class="header_nav-button-text theme-toggle-label" style="display: inline-flex; align-items: center; justify-content: center; gap: 3px;">
@@ -510,328 +358,7 @@ html.is-ready .preloader::before {
   </header>
   
 
-<main id="main" class="main" style="width: 100%; min-height: 100vh; background-color: var(--theme-bg, #f2efeb); box-sizing: border-box;">
-  <section class="section is-pricing" style="width: 100%; padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1rem, 3vw, 2rem); box-sizing: border-box;">
-    <div style="max-width: 1200px; margin: 0 auto; width: 100%; box-sizing: border-box;">
-      
-      <!-- Header & Title -->
-      <div style="text-align: center; margin-bottom: 2.5rem;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; font-family: monospace; font-size: 11px; font-weight: 800; color: #787571; letter-spacing: 0.06em; text-transform: uppercase;">
-          <span>[ 03 &bull; PRICING MATRIX ]</span>
-          <span>CREDENTIAL PROVISIONING</span>
-        </div>
 
-        <h1 style="font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 900; color: var(--theme-text, #18181b); text-transform: uppercase; letter-spacing: -0.03em; line-height: 1.1; margin: 0 0 0.5rem;">
-          CHOOSE YOUR ACCESS PASS.
-        </h1>
-        <p style="max-width: 680px; margin: 0 auto 1.75rem; color: var(--theme-text-muted, #4b4946); font-size: clamp(14px, 1.2vw, 16px); line-height: 1.5;">
-          Private account slots with dedicated PIN security, instant WhatsApp delivery, and live countdown tracking. Select your validity window from 1 to 12 months.
-        </p>
-
-        <!-- Controls: Duration Tabs & Currency Toggle in Unified Capsule Containers -->
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1rem; margin-top: 1.5rem; margin-bottom: 1.25rem;">
-          <!-- Duration Capsule Selector -->
-          <div class="duration-selector-wrap" style="display: inline-flex; background: var(--theme-card-bg, #ffffff); border: 1.5px solid var(--theme-border-strong, #18181b); border-radius: 999px; padding: 4px; gap: 4px; box-shadow: 0 3px 0 var(--theme-border-strong, #18181b);">
-            <button type="button" class="duration-btn active" data-duration="1" style="border: none; border-radius: 999px; padding: 8px 16px; font-family: monospace; font-size: 12px; font-weight: 800; text-transform: uppercase; background: #18181b; color: #ffffff; cursor: pointer; transition: all 0.15s ease;">
-              1 Month
-            </button>
-            <button type="button" class="duration-btn" data-duration="2" style="border: none; border-radius: 999px; padding: 8px 16px; font-family: monospace; font-size: 12px; font-weight: 800; text-transform: uppercase; background: transparent; color: var(--theme-text, #18181b); cursor: pointer; transition: all 0.15s ease;">
-              2 Months <span style="background: #f2c744; color: #18181b; border-radius: 4px; padding: 1px 5px; font-size: 10px; margin-left: 2px;">Hot</span>
-            </button>
-            <button type="button" class="duration-btn" data-duration="3" style="border: none; border-radius: 999px; padding: 8px 16px; font-family: monospace; font-size: 12px; font-weight: 800; text-transform: uppercase; background: transparent; color: var(--theme-text, #18181b); cursor: pointer; transition: all 0.15s ease;">
-              3 Months <span style="background: rgba(24,24,27,0.1); border-radius: 4px; padding: 1px 5px; font-size: 10px; margin-left: 2px;">-15%</span>
-            </button>
-            <button type="button" class="duration-btn" data-duration="6" style="border: none; border-radius: 999px; padding: 8px 16px; font-family: monospace; font-size: 12px; font-weight: 800; text-transform: uppercase; background: transparent; color: var(--theme-text, #18181b); cursor: pointer; transition: all 0.15s ease;">
-              6 Months <span style="background: rgba(24,24,27,0.1); border-radius: 4px; padding: 1px 5px; font-size: 10px; margin-left: 2px;">-25%</span>
-            </button>
-            <button type="button" class="duration-btn" data-duration="12" style="border: none; border-radius: 999px; padding: 8px 16px; font-family: monospace; font-size: 12px; font-weight: 800; text-transform: uppercase; background: transparent; color: var(--theme-text, #18181b); cursor: pointer; transition: all 0.15s ease;">
-              12 Months <span style="background: #f2c744; color: #18181b; border-radius: 4px; padding: 1px 5px; font-size: 10px; margin-left: 2px;">Save 90%</span>
-            </button>
-          </div>
-
-          <!-- Currency Capsule Toggle -->
-          <div class="currency-selector-wrap" style="display: inline-flex; background: var(--theme-card-bg, #ffffff); border: 1.5px solid var(--theme-border-strong, #18181b); border-radius: 999px; padding: 4px; gap: 4px; box-shadow: 0 3px 0 var(--theme-border-strong, #18181b);">
-            <button type="button" class="currency-btn active" data-curr="INR" style="border: none; border-radius: 999px; padding: 8px 14px; font-family: monospace; font-size: 12px; font-weight: 800; background: #18181b; color: #ffffff; cursor: pointer; transition: all 0.15s ease;">
-              ₹ INR
-            </button>
-            <button type="button" class="currency-btn" data-curr="USD" style="border: none; border-radius: 999px; padding: 8px 14px; font-family: monospace; font-size: 12px; font-weight: 800; background: transparent; color: var(--theme-text, #18181b); cursor: pointer; transition: all 0.15s ease;">
-              $ USD
-            </button>
-          </div>
-        </div>
-
-        <!-- Dynamic Savings / Dispatch Info Strip -->
-        <div style="display: flex; justify-content: center; margin-top: 1rem;">
-          <div id="savings-banner" style="display: inline-flex; align-items: center; gap: 8px; background: var(--theme-card-bg, #ffffff); border: 1.5px solid var(--theme-border-strong, #18181b); border-radius: 999px; padding: 6px 18px; font-family: monospace; font-size: 11.5px; font-weight: 800; color: var(--theme-text, #18181b); box-shadow: 0 2px 0 var(--theme-border-strong, #18181b);">
-            <span style="width: 7px; height: 7px; border-radius: 50%; background: #22c55e; display: inline-block;"></span>
-            <span id="savings-banner-text">INSTANT 2FA &bull; AUTOMATED CREDENTIALS DISPATCHED TO WHATSAPP IN &lt; 60 SECONDS</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3-Column Pricing Grid -->
-      <div class="pricing-grid-3col" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.75rem; margin-bottom: 3.5rem; width: 100%; box-sizing: border-box;">
-
-        <!-- Card 1: Xbox PC Game Pass -->
-        <div class="pricing-card-item" style="background: var(--theme-card-bg, #ffffff); border: 1.5px solid var(--theme-border-strong, #18181b); border-radius: 1.25rem; padding: 1.75rem; box-shadow: 0 6px 0 var(--theme-border-strong, #18181b); display: flex; flex-direction: column; justify-content: space-between; height: 100%; box-sizing: border-box;">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
-              <div style="width: 44px; height: 44px; border-radius: 12px; background: var(--theme-card-sub, #faf8f5); border: 1.5px solid var(--theme-border-strong, #18181b); display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 0 var(--theme-border-strong, #18181b); padding: 6px;">
-                <img src="/assets/xbox-logo-50.png" alt="Xbox" style="width: 100%; height: 100%; object-fit: contain;">
-              </div>
-              <div style="font-family: monospace; font-size: 11px; font-weight: 800; color: #787571; text-transform: uppercase;">
-                [SLOT-XBOX-PC]
-              </div>
-            </div>
-
-            <h3 style="font-size: 1.35rem; font-weight: 900; color: var(--theme-text, #18181b); text-transform: uppercase; margin: 0 0 0.4rem; letter-spacing: -0.02em;">Xbox PC Game Pass</h3>
-            <p style="font-size: 13px; color: var(--theme-text-muted, #555555); line-height: 1.45; margin: 0 0 1.25rem;">Dedicated private 4-digit PIN slot for solo Windows PC Game Pass and EA Play gaming.</p>
-
-            <!-- Price Display -->
-            <div style="background: var(--theme-card-sub, #faf8f5); border: 1px solid var(--theme-border, rgba(24,24,27,0.1)); border-radius: 0.85rem; padding: 1rem; margin-bottom: 1.25rem;">
-              <div style="display: flex; align-items: baseline; gap: 6px;">
-                <span id="price-starter" style="font-size: 2.2rem; font-weight: 900; color: var(--theme-text, #18181b); font-family: monospace; letter-spacing: -0.03em;">₹199</span>
-                <span id="period-starter" style="font-size: 12.5px; font-weight: 800; color: #787571; font-family: monospace;">/ 1 month</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 11.5px; font-family: monospace;">
-                <span id="retail-starter" style="text-decoration: line-through; color: #9ca3af;">₹799 retail</span>
-                <span id="save-starter" style="background: #dcfce7; color: #15803d; font-weight: 800; padding: 1px 6px; border-radius: 4px;">Save 75%</span>
-                <span id="monthly-starter" style="color: #787571; margin-left: auto;">₹199/mo</span>
-              </div>
-            </div>
-
-            <!-- Inclusions Checklist -->
-            <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem; display: flex; flex-direction: column; gap: 9px; font-size: 13px; color: var(--theme-text, #333333);">
-              <li style="display: flex; align-items: center; gap: 8px;">
-                <span style="color: #15803d; font-weight: 900;">✓</span> 400+ PC Games + EA Play Library
-              </li>
-              <li style="display: flex; align-items: center; gap: 8px;">
-                <span style="color: #15803d; font-weight: 900;">✓</span> Private Profile with 4-Digit PIN Lock
-              </li>
-              <li style="display: flex; align-items: center; gap: 8px;">
-                <span style="color: #15803d; font-weight: 900;">✓</span> Play on Your Personal Xbox Gamertag
-              </li>
-              <li style="display: flex; align-items: center; gap: 8px;">
-                <span style="color: #15803d; font-weight: 900;">✓</span> Automated WhatsApp Delivery &lt; 60s
-              </li>
-              <li style="display: flex; align-items: center; gap: 8px;">
-                <span style="color: #15803d; font-weight: 900;">✓</span> 100% Full Replacement Warranty
-              </li>
-            </ul>
-          </div>
-
-          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 1.25rem;">
-            <a id="btn-starter-wa" href="https://wa.me/918317416695?text=Hi%20Rakexura%20Team%2C%20I%20want%20to%20get%20the%20Xbox%20PC%20Game%20Pass%20(1%20Month)%20for%20%E2%82%B9199." target="_blank" style="display: flex; align-items: center; justify-content: center; background: #f2c744; color: #18181b; border: 1.5px solid #18181b; border-radius: 999px; padding: 11px 16px; font-family: monospace; font-size: 12px; font-weight: 800; text-transform: uppercase; text-decoration: none; box-shadow: 0 4px 0 #18181b; transition: all 0.15s ease;">
-              GET XBOX PASS ON WHATSAPP
-            </a>
-            <a href="https://rakexura-store.vercel.app/games/xbox-pc-game-pass-3-months-56" target="_blank" style="display: flex; align-items: center; justify-content: center; background: var(--theme-card-bg, #ffffff); color: var(--theme-text, #18181b); border: 1.5px solid var(--theme-border-strong, #18181b); border-radius: 999px; padding: 10px 16px; font-family: monospace; font-size: 12px; font-weight: 800; text-transform: uppercase; text-decoration: none; box-shadow: 0 4px 0 var(--theme-border-strong, #18181b); transition: all 0.15s ease;">
-              VIEW ON OFFICIAL STORE
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 2: Ultimate Cloud Pass (Combo) - Featured -->
-        <div class="pricing-card-item is-featured" style="background: var(--theme-card-bg, #ffffff); border: 2px solid #18181b; border-radius: 1.25rem; padding: 1.75rem; box-shadow: 0 8px 0 #18181b; display: flex; flex-direction: column; justify-content: space-between; height: 100%; box-sizing: border-box; position: relative;">
-          
-          <!-- Popular Combo Chip -->
-          <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: #f2c744; border: 1.5px solid #18181b; border-radius: 999px; padding: 3px 14px; font-family: monospace; font-size: 11px; font-weight: 900; color: #18181b; box-shadow: 0 2px 0 #18181b; text-transform: uppercase; white-space: nowrap;">
-            ★ MOST POPULAR COMBO
-          </div>
-
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; margin-top: 0.25rem;">
-              <div style="display: flex; align-items: center; gap: 4px;">
-                <div style="width: 38px; height: 38px; border-radius: 10px; background: var(--theme-card-sub, #faf8f5); border: 1.5px solid var(--theme-border-strong, #18181b); display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 0 var(--theme-border-strong, #18181b); padding: 5px;">
-                  <img src="/assets/xbox-logo-50.png" alt="Xbox" style="width: 100%; height: 100%; object-fit: contain;">
-                </div>
-                <span style="font-size: 12px; font-weight: 900; color: var(--theme-text, #18181b);">+</span>
-                <div style="width: 38px; height: 38px; border-radius: 10px; background: var(--theme-card-sub, #faf8f5); border: 1.5px solid var(--theme-border-strong, #18181b); display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 0 var(--theme-border-strong, #18181b); padding: 5px;">
-                  <img src="/assets/nvidia-logo-48.png" alt="NVIDIA" style="width: 100%; height: 100%; object-fit: contain;">
-                </div>
-              </div>
-              <div style="font-family: monospace; font-size: 11px; font-weight: 800; color: #b45309; text-transform: uppercase;">
-                [SLOT-COMBO-PRO]
-              </div>
-            </div>
-
-            <h3 style="font-size: 1.35rem; font-weight: 900; color: var(--theme-text, #18181b); text-transform: uppercase; margin: 0 0 0.4rem; letter-spacing: -0.02em;">Ultimate Cloud Pass</h3>
-            <p style="font-size: 13px; color: var(--theme-text-muted, #555555); line-height: 1.45; margin: 0 0 1.25rem;">The complete hybrid pass: Xbox PC Game Pass bundled with NVIDIA RTX Cloud Gaming.</p>
-
-            <!-- Price Display -->
-            <div style="background: rgba(242, 199, 68, 0.15); border: 1.5px solid #18181b; border-radius: 0.85rem; padding: 1rem; margin-bottom: 1.25rem;">
-              <div style="display: flex; align-items: baseline; gap: 6px;">
-                <span id="price-ultimate" style="font-size: 2.2rem; font-weight: 900; color: var(--theme-text, #18181b); font-family: monospace; letter-spacing: -0.03em;">₹399</span>
-                <span id="period-ultimate" style="font-size: 12.5px; font-weight: 800; color: #787571; font-family: monospace;">/ 1 month</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 11.5px; font-family: monospace;">
-                <span id="retail-ultimate" style="text-decoration: line-through; color: #9ca3af;">₹1,999 retail</span>
-                <span id="save-ultimate" style="background: #f2c744; color: #18181b; font-weight: 800; padding: 1px 6px; border-radius: 4px;">Save 80%</span>
-                <span id="monthly-ultimate" style="color: #787571; margin-left: auto;">₹399/mo</span>
-              </div>
-            </div>
-
-            <!-- Inclusions Checklist -->
-            <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem; display: flex; flex-direction: column; gap: 9px; font-size: 13px; color: var(--theme-text, #333333);">
-              <li style="display: flex; align-items: center; gap: 8px;">
-                <span style="color: #15803d; font-weight: 900;">✓</span> <strong>Xbox PC Game Pass (400+ Games)</strong>
-              </li>
-              <li style="display: flex; align-items: center; gap: 8px;">
-                <span style="color: #15803d; font-weight: 900;">✓</span> <strong>NVIDIA GeForce NOW RTX Cloud Rigs</strong>
-              </li>
-              <li style="display: flex; align-items: center; gap: 8px;">
-                <span style="color: #15803d; font-weight: 900;">✓</span> 4K / 120FPS on PC, Mac, Phone, TV
-              </li>
-              <li style="display: flex; align-items: center; gap: 8px;">
-                <span style="color: #15803d; font-weight: 900;">✓</span> 1-Click WhatsApp Renewal (Keep Saves)
-              </li>
-              <li style="display: flex; align-items: center; gap: 8px;">
-                <span style="color: #15803d; font-weight: 900;">✓</span> 100% Full Replacement Warranty
-              </li>
-            </ul>
-          </div>
-
-          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 1.25rem;">
-            <a id="btn-ultimate-wa" href="https://wa.me/918317416695?text=Hi%20Rakexura%20Team%2C%20I%20want%20to%20get%20the%20Ultimate%20Cloud%20Pass%20(1%20Month)%20for%20%E2%82%B9399." target="_blank" style="display: flex; align-items: center; justify-content: center; background: #f2c744; color: #18181b; border: 1.5px solid #18181b; border-radius: 999px; padding: 11px 16px; font-family: monospace; font-size: 12px; font-weight: 800; text-transform: uppercase; text-decoration: none; box-shadow: 0 4px 0 #18181b; transition: all 0.15s ease;">
-              GET ULTIMATE PASS ON WHATSAPP
-            </a>
-            <a href="https://rakexura-store.vercel.app/subscriptions" target="_blank" style="display: flex; align-items: center; justify-content: center; background: var(--theme-card-bg, #ffffff); color: var(--theme-text, #18181b); border: 1.5px solid var(--theme-border-strong, #18181b); border-radius: 999px; padding: 10px 16px; font-family: monospace; font-size: 12px; font-weight: 800; text-transform: uppercase; text-decoration: none; box-shadow: 0 4px 0 var(--theme-border-strong, #18181b); transition: all 0.15s ease;">
-              VIEW ON OFFICIAL STORE
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 3: NVIDIA GeForce NOW -->
-        <div class="pricing-card-item" style="background: var(--theme-card-bg, #ffffff); border: 1.5px solid var(--theme-border-strong, #18181b); border-radius: 1.25rem; padding: 1.75rem; box-shadow: 0 6px 0 var(--theme-border-strong, #18181b); display: flex; flex-direction: column; justify-content: space-between; height: 100%; box-sizing: border-box;">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
-              <div style="width: 44px; height: 44px; border-radius: 12px; background: var(--theme-card-sub, #faf8f5); border: 1.5px solid var(--theme-border-strong, #18181b); display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 0 var(--theme-border-strong, #18181b); padding: 6px;">
-                <img src="/assets/nvidia-logo-48.png" alt="NVIDIA GeForce NOW" style="width: 100%; height: 100%; object-fit: contain;">
-              </div>
-              <div style="font-family: monospace; font-size: 11px; font-weight: 800; color: #787571; text-transform: uppercase;">
-                [SLOT-GFN-RTX]
-              </div>
-            </div>
-
-            <h3 style="font-size: 1.35rem; font-weight: 900; color: var(--theme-text, #18181b); text-transform: uppercase; margin: 0 0 0.4rem; letter-spacing: -0.02em;">NVIDIA GeForce NOW</h3>
-            <p style="font-size: 13px; color: var(--theme-text-muted, #555555); line-height: 1.45; margin: 0 0 1.25rem;">Play your own Steam &amp; Epic games on dedicated RTX high-performance cloud hardware.</p>
-
-            <!-- Price Display -->
-            <div style="background: var(--theme-card-sub, #faf8f5); border: 1px solid var(--theme-border, rgba(24,24,27,0.1)); border-radius: 0.85rem; padding: 1rem; margin-bottom: 1.25rem;">
-              <div style="display: flex; align-items: baseline; gap: 6px;">
-                <span id="price-master" style="font-size: 2.2rem; font-weight: 900; color: var(--theme-text, #18181b); font-family: monospace; letter-spacing: -0.03em;">₹250</span>
-                <span id="period-master" style="font-size: 12.5px; font-weight: 800; color: #787571; font-family: monospace;">/ 1 month</span>
-              </div>
-              <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 11.5px; font-family: monospace;">
-                <span id="retail-master" style="text-decoration: line-through; color: #9ca3af;">₹999 retail</span>
-                <span id="save-master" style="background: #dcfce7; color: #15803d; font-weight: 800; padding: 1px 6px; border-radius: 4px;">Save 75%</span>
-                <span id="monthly-master" style="color: #787571; margin-left: auto;">₹250/mo</span>
-              </div>
-            </div>
-
-            <!-- Inclusions Checklist -->
-            <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem; display: flex; flex-direction: column; gap: 9px; font-size: 13px; color: var(--theme-text, #333333);">
-              <li style="display: flex; align-items: center; gap: 8px;">
-                <span style="color: #15803d; font-weight: 900;">✓</span> Priority NVIDIA RTX Cloud Rig Access
-              </li>
-              <li style="display: flex; align-items: center; gap: 8px;">
-                <span style="color: #15803d; font-weight: 900;">✓</span> Ultra-Low Latency &amp; Zero Wait Queue
-              </li>
-              <li style="display: flex; align-items: center; gap: 8px;">
-                <span style="color: #15803d; font-weight: 900;">✓</span> Play on PC, Mac, Phone, Tablet &amp; Smart TV
-              </li>
-              <li style="display: flex; align-items: center; gap: 8px;">
-                <span style="color: #15803d; font-weight: 900;">✓</span> Automated WhatsApp Setup &lt; 60s
-              </li>
-              <li style="display: flex; align-items: center; gap: 8px;">
-                <span style="color: #15803d; font-weight: 900;">✓</span> 100% Full Replacement Warranty
-              </li>
-            </ul>
-          </div>
-
-          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 1.25rem;">
-            <a id="btn-master-wa" href="https://wa.me/918317416695?text=Hi%20Rakexura%20Team%2C%20I%20want%20to%20get%20NVIDIA%20GeForce%20NOW%20(1%20Month)%20for%20%E2%82%B9250." target="_blank" style="display: flex; align-items: center; justify-content: center; background: #f2c744; color: #18181b; border: 1.5px solid #18181b; border-radius: 999px; padding: 11px 16px; font-family: monospace; font-size: 12px; font-weight: 800; text-transform: uppercase; text-decoration: none; box-shadow: 0 4px 0 #18181b; transition: all 0.15s ease;">
-              GET GEFORCE NOW ON WHATSAPP
-            </a>
-            <a href="https://rakexura-store.vercel.app/games/nvidia-geforce-now-57" target="_blank" style="display: flex; align-items: center; justify-content: center; background: var(--theme-card-bg, #ffffff); color: var(--theme-text, #18181b); border: 1.5px solid var(--theme-border-strong, #18181b); border-radius: 999px; padding: 10px 16px; font-family: monospace; font-size: 12px; font-weight: 800; text-transform: uppercase; text-decoration: none; box-shadow: 0 4px 0 var(--theme-border-strong, #18181b); transition: all 0.15s ease;">
-              VIEW ON OFFICIAL STORE
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Store Comparison Table -->
-      <div class="pricing-compare-section" style="background: var(--theme-card-bg, #ffffff); border: 1.5px solid var(--theme-border-strong, #18181b); border-radius: 1.25rem; padding: clamp(1.5rem, 3vw, 2.25rem); box-shadow: 0 6px 0 var(--theme-border-strong, #18181b); overflow-x: auto; width: 100%; box-sizing: border-box;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--theme-border, rgba(24,24,27,0.1)); padding-bottom: 0.85rem; margin-bottom: 1.5rem; font-family: monospace; font-size: 11.5px; color: #787571;">
-          <span style="font-weight: 800; color: var(--theme-text, #18181b);">[ COMPARISON MATRIX ]</span>
-          <span>AUTHENTIC STORE SPECIFICATIONS &bull; ALL SLOTS 100% ISOLATED</span>
-        </div>
-
-        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13.5px;">
-          <thead>
-            <tr style="background: var(--theme-card-sub, #faf8f5); border-bottom: 1.5px solid var(--theme-border-strong, #18181b);">
-              <th style="padding: 12px 16px; font-weight: 900; color: var(--theme-text, #18181b);">Plan Specifications</th>
-              <th style="padding: 12px 16px; font-weight: 900; color: var(--theme-text, #18181b);">Xbox PC Game Pass</th>
-              <th style="padding: 12px 16px; background: #f2c744; color: #18181b; font-weight: 900;">Ultimate Cloud Pass (Combo)</th>
-              <th style="padding: 12px 16px; font-weight: 900; color: var(--theme-text, #18181b);">NVIDIA GeForce NOW</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid var(--theme-border, rgba(24,24,27,0.08));">
-              <td style="padding: 12px 16px;"><strong>Dedicated Private PIN Slot</strong></td>
-              <td style="padding: 12px 16px;">✓ Included (Private PIN)</td>
-              <td style="padding: 12px 16px; background: rgba(242, 199, 68, 0.12); font-weight: 800;">✓ Included (Private PIN)</td>
-              <td style="padding: 12px 16px;">✓ Included (Private PIN)</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--theme-border, rgba(24,24,27,0.08));">
-              <td style="padding: 12px 16px;"><strong>400+ PC Games Library (Xbox + EA Play)</strong></td>
-              <td style="padding: 12px 16px;">✓ Included</td>
-              <td style="padding: 12px 16px; background: rgba(242, 199, 68, 0.12); font-weight: 800;">✓ Included</td>
-              <td style="padding: 12px 16px; color: #888888;">— Not Included (BYO Games)</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--theme-border, rgba(24,24,27,0.08));">
-              <td style="padding: 12px 16px;"><strong>NVIDIA RTX Cloud Streaming Rigs</strong></td>
-              <td style="padding: 12px 16px; color: #888888;">— Not Included</td>
-              <td style="padding: 12px 16px; background: rgba(242, 199, 68, 0.12); font-weight: 800;"><strong>✓ Priority RTX Cloud Rigs</strong></td>
-              <td style="padding: 12px 16px;"><strong>✓ Priority RTX Cloud Rigs</strong></td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--theme-border, rgba(24,24,27,0.08));">
-              <td style="padding: 12px 16px;"><strong>4K / 120FPS Cloud Cross-Play</strong></td>
-              <td style="padding: 12px 16px; color: #888888;">— (Runs on Local PC)</td>
-              <td style="padding: 12px 16px; background: rgba(242, 199, 68, 0.12); font-weight: 800;">✓ PC, Mac, Phone, Tablet, TV</td>
-              <td style="padding: 12px 16px;">✓ PC, Mac, Phone, Tablet, TV</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--theme-border, rgba(24,24,27,0.08));">
-              <td style="padding: 12px 16px;"><strong>EA Play &amp; Day-One Title Releases</strong></td>
-              <td style="padding: 12px 16px;">✓ All Day-One Titles</td>
-              <td style="padding: 12px 16px; background: rgba(242, 199, 68, 0.12); font-weight: 800;">✓ All Day-One Titles</td>
-              <td style="padding: 12px 16px; color: #888888;">—</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--theme-border, rgba(24,24,27,0.08));">
-              <td style="padding: 12px 16px;"><strong>Cloud Save &amp; Progression Isolation</strong></td>
-              <td style="padding: 12px 16px;">✓ Dedicated PIN Isolation</td>
-              <td style="padding: 12px 16px; background: rgba(242, 199, 68, 0.12); font-weight: 800;">✓ Dedicated PIN Isolation</td>
-              <td style="padding: 12px 16px;">✓ Dedicated PIN Isolation</td>
-            </tr>
-            <tr style="border-bottom: 1px solid var(--theme-border, rgba(24,24,27,0.08));">
-              <td style="padding: 12px 16px;"><strong>Automated Dispatch &amp; Delivery</strong></td>
-              <td style="padding: 12px 16px;">&lt; 60s to WhatsApp</td>
-              <td style="padding: 12px 16px; background: rgba(242, 199, 68, 0.12); font-weight: 800;">&lt; 60s to WhatsApp</td>
-              <td style="padding: 12px 16px;">&lt; 60s to WhatsApp</td>
-            </tr>
-            <tr>
-              <td style="padding: 12px 16px;"><strong>100% Replacement Warranty</strong></td>
-              <td style="padding: 12px 16px;">100% Duration Warranty</td>
-              <td style="padding: 12px 16px; background: rgba(242, 199, 68, 0.12); font-weight: 800;"><strong>100% Duration Warranty</strong></td>
-              <td style="padding: 12px 16px;">100% Duration Warranty</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-    </div>
-  </section>
-</main>
 
 <footer data-footer-action="" data-scroll="" data-scroll-offset="10%, 0" data-scroll-class="is-inview" class="footer u-theme-dark"><div class="footer_card-wrap"><div data-footer-action-list="" class="footer_card-list"><div data-footer-action-item="" class="footer_card-item"><div class="footer_card"><div data-footer-action-length="" class="footer_card-inner"><span class="footer_card-title u-f2">Xbox Pass</span></div><span class="footer_card-bg"><span class="footer_card-bg-left"></span><span class="footer_card-bg-center"></span><span class="footer_card-bg-right"></span></span></div></div><div data-footer-action-item="" class="footer_card-item"><div class="footer_card"><div data-footer-action-length="" class="footer_card-inner"><span class="footer_card-title u-f2">GeForce NOW</span></div><span class="footer_card-bg"><span class="footer_card-bg-left"></span><span class="footer_card-bg-center"></span><span class="footer_card-bg-right"></span></span></div></div><div data-footer-action-item="" class="footer_card-item"><div class="footer_card"><div data-footer-action-length="" class="footer_card-inner"><span class="footer_card-title u-f2">Timed Slots</span></div><span class="footer_card-bg"><span class="footer_card-bg-left"></span><span class="footer_card-bg-center"></span><span class="footer_card-bg-right"></span></span></div></div><div data-footer-action-item="" class="footer_card-item"><div class="footer_card"><div data-footer-action-length="" class="footer_card-inner"><span class="footer_card-title u-f2">Private PIN</span></div><span class="footer_card-bg"><span class="footer_card-bg-left"></span><span class="footer_card-bg-center"></span><span class="footer_card-bg-right"></span></span></div></div><div data-footer-action-item="" class="footer_card-item"><div class="footer_card"><div data-footer-action-length="" class="footer_card-inner"><span class="footer_card-title u-f2">Telemetry</span></div><span class="footer_card-bg"><span class="footer_card-bg-left"></span><span class="footer_card-bg-center"></span><span class="footer_card-bg-right"></span></span></div></div></div></div><div class="footer_container u-container"><div class="footer_inner"><div class="footer_sitemap"><div class="footer_next-page"><div class="footer_next-page-action"><div class="button-default no-animation"><span class="button-default_button-container"><span class="button-default_button-text u-c1">Need Support?</span></span><span class="button-default_button-bg"></span></div></div><div class="footer_next-page-action"><a data-button-hover="" data-text="Support" href="/support" class="button-default is-yellow w-inline-block"><span class="button-default_button-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" aria-hidden="true" STYLE="--index: 0;" class="icon is-small"><path fill-rule="evenodd" clip-rule="evenodd" d="M5 9L5 4H3V9V10V11L13 11V13H11V15H13V13H15V11L17 11V9H15V7H13V5H11V7L13 7V9H5Z" fill="currentColor"></path></svg><span data-button-hover-animation="" STYLE="--index: 1;" class="button-default_button-text u-c1">Support</span></span><span class="button-default_button-bg is-yellow no-stroke"></span></a></div></div><div class="footer_sitemap-right"><nav class="footer_links"><ul role="list" class="footer_links-list"><li class="footer_links-item"><a href="/" class="footer_link u-c1 w-inline-block"><span class="footer_link-text">Subscriptions</span></a></li><li class="footer_links-item"><a href="/validation" class="footer_link u-c1 w-inline-block"><span class="footer_link-text">Validation</span></a></li><li class="footer_links-item"><a href="/pricing" aria-current="page" class="footer_link u-c1 w-inline-block w--current"><span class="footer_link-text">Pricing</span></a></li><li class="footer_links-item"><a href="/support" class="footer_link u-c1 w-inline-block"><span class="footer_link-text">Support</span></a></li></ul></nav><nav class="footer_links"><ul data-footer-action-link-list="" role="list" class="footer_links-list"><li class="footer_links-item is-social"></li><li class="footer_links-item is-social"><a data-footer-action-link-item="" href="https://wa.me/919363060000" target="_blank" class="footer_link u-c1 is-social w-inline-block"><span class="footer_link-text">WhatsApp</span></a></li><li class="footer_links-item is-social"></li><li class="footer_links-item is-social"></li><li class="footer_links-item is-social"><a data-footer-action-link-item="" href="https://rakexura-store.vercel.app" target="_blank" class="footer_link u-c1 is-social w-inline-block"><span class="footer_link-text">Store</span></a></li></ul></nav><nav class="footer_links"><ul role="list" class="footer_links-list"><li class="footer_links-item"><a href="/terms" class="footer_link u-c1 w-inline-block"><span class="footer_link-text">Terms of Service</span></a></li><li class="footer_links-item"><a href="/privacy" class="footer_link u-c1 w-inline-block"><span class="footer_link-text">Privacy Policy</span></a></li><li class="footer_links-item"><a href="/terms" class="footer_link u-c1 w-inline-block"><span class="footer_link-text">Warranty Guide</span></a></li></ul></nav></div></div><div class="footer_action"><div class="footer_copyright u-c1">©<span data-copyright="" class="footer_copyright-year">2026</span> RAKEXURA Subscriptions • <a href="/manage" style="color:#888888; text-decoration:none; font-size:10px; margin-left:4px;" title="Admin Console">[ADMIN MATRIX]</a></div><div class="footer_action-right"><div data-digital-clock="" class="footer_time u-c1"><div class="footer_time-inner"><span data-digital-clock-hours="" class="footer_hours"><span class="footer_hours-inner"></span></span><span class="footer_colon">:</span><span data-digital-clock-minutes="" class="footer_minutes"><span class="footer_minutes-inner"></span></span></div><span class="footer_time-city">Cloud Matrix</span></div><button type="button" data-scroll-to="" data-scroll-to-href="top" data-scroll-to-offset="0" class="footer_to-top-btn"><span class="footer_to-top-btn-text u-c1">Back to top</span><span class="footer_to-top-btn-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2L12 4L10 4V6H8V8H10V6H12V14H2V16H12H13H14L14 6H16V8H18V6H16V4L14 4V2H12Z" fill="currentColor"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2L12 4L10 4V6H8V8H10V6H12V14H2V16H12H13H14L14 6H16V8H18V6H16V4L14 4V2H12Z" fill="currentColor"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2L12 4L10 4V6H8V8H10V6H12V14H2V16H12H13H14L14 6H16V8H18V6H16V4L14 4V2H12Z" fill="currentColor"></path></svg></span></button></div></div><div class="footer_decoration"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 5H11V7H13V9H15V11H13V13H11V15H9V13H7V11H5V9H7V7H9V5Z" fill="currentColor"></path></svg><span class="footer_decoration-text u-f1">Y2K Design</span><div class="footer_decoration-right"><div class="footer_icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 5H11V7H13V9H15V11H13V13H11V15H9V13H7V11H5V9H7V7H9V5Z" fill="currentColor"></path></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 5H11V7H13V9H15V11H13V13H11V15H9V13H7V11H5V9H7V7H9V5Z" fill="currentColor"></path></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 5H11V7H13V9H15V11H13V13H11V15H9V13H7V11H5V9H7V7H9V5Z" fill="currentColor"></path></svg></div><span class="footer_decoration-text u-f1">3D2Y</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 5H11V7H13V9H15V11H13V13H11V15H9V13H7V11H5V9H7V7H9V5Z" fill="currentColor"></path></svg></div></div></div></div></footer></div><script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=64591e5db836f60c02bb97e9" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="https://cdn.prod.website-files.com/64591e5db836f60c02bb97e9/js/eduardbodak.schunk.a9a90ad927027f5e.js" type="text/javascript"></script><script src="https://cdn.prod.website-files.com/64591e5db836f60c02bb97e9/js/eduardbodak.a0aa6ca1.11b9555bd6f6ca10.js" type="text/javascript"></script>
 
@@ -1009,4 +536,133 @@ html.is-ready .preloader::before {
 })();
 </script>
 
+<script>
+(function() {
+  const HOME_RATES = {
+    INR: {
+      1: {
+        starter: "₹249", starterRetail: "₹799 retail", starterSave: "Save 68%", starterMonthly: "₹249/mo",
+        ultimate: "₹499", ultimateRetail: "₹1,999 retail", ultimateSave: "Save 75%", ultimateMonthly: "₹499/mo",
+        master: "₹899", masterRetail: "₹3,499 retail", masterSave: "Save 74%", masterMonthly: "₹899/mo",
+        period: "/ 1 month"
+      },
+      3: {
+        starter: "₹599", starterRetail: "₹2,397 retail", starterSave: "Save 75%", starterMonthly: "₹199/mo",
+        ultimate: "₹1,249", ultimateRetail: "₹5,997 retail", ultimateSave: "Save 79%", ultimateMonthly: "₹416/mo",
+        master: "₹2,299", masterRetail: "₹10,497 retail", masterSave: "Save 78%", masterMonthly: "₹766/mo",
+        period: "/ 3 months"
+      },
+      6: {
+        starter: "₹1,099", starterRetail: "₹4,794 retail", starterSave: "Save 77%", starterMonthly: "₹183/mo",
+        ultimate: "₹2,299", ultimateRetail: "₹11,994 retail", ultimateSave: "Save 81%", ultimateMonthly: "₹383/mo",
+        master: "₹4,199", masterRetail: "₹20,994 retail", masterSave: "Save 80%", masterMonthly: "₹700/mo",
+        period: "/ 6 months"
+      },
+      12: {
+        starter: "₹1,899", starterRetail: "₹9,588 retail", starterSave: "Save 80%", starterMonthly: "₹158/mo",
+        ultimate: "₹3,999", ultimateRetail: "₹23,988 retail", ultimateSave: "Save 83%", ultimateMonthly: "₹333/mo",
+        master: "₹7,499", masterRetail: "₹41,988 retail", masterSave: "Save 82%", masterMonthly: "₹624/mo",
+        period: "/ 12 months"
+      }
+    },
+    USD: {
+      1: {
+        starter: "$3.49", starterRetail: "$9.99 retail", starterSave: "Save 65%", starterMonthly: "$3.49/mo",
+        ultimate: "$6.99", ultimateRetail: "$24.99 retail", ultimateSave: "Save 72%", ultimateMonthly: "$6.99/mo",
+        master: "$11.99", masterRetail: "$44.99 retail", masterSave: "Save 73%", masterMonthly: "$11.99/mo",
+        period: "/ 1 month"
+      },
+      3: {
+        starter: "$7.99", starterRetail: "$29.99 retail", starterSave: "Save 73%", starterMonthly: "$2.66/mo",
+        ultimate: "$16.99", ultimateRetail: "$74.99 retail", ultimateSave: "Save 77%", ultimateMonthly: "$5.66/mo",
+        master: "$29.99", masterRetail: "$134.99 retail", masterSave: "Save 78%", masterMonthly: "$9.99/mo",
+        period: "/ 3 months"
+      },
+      6: {
+        starter: "$14.99", starterRetail: "$59.99 retail", starterSave: "Save 75%", starterMonthly: "$2.49/mo",
+        ultimate: "$31.99", ultimateRetail: "$149.99 retail", ultimateSave: "Save 79%", ultimateMonthly: "$5.33/mo",
+        master: "$54.99", masterRetail: "$269.99 retail", masterSave: "Save 80%", masterMonthly: "$9.16/mo",
+        period: "/ 6 months"
+      },
+      12: {
+        starter: "$24.99", starterRetail: "$119.99 retail", starterSave: "Save 79%", starterMonthly: "$2.08/mo",
+        ultimate: "$54.99", ultimateRetail: "$299.99 retail", ultimateSave: "Save 82%", ultimateMonthly: "$4.58/mo",
+        master: "$99.99", masterRetail: "$539.99 retail", masterSave: "Save 81%", masterMonthly: "$8.33/mo",
+        period: "/ 12 months"
+      }
+    }
+  };
+
+  let homeDuration = 1;
+  let homeCurrency = 'INR';
+
+  window.updateHomePricing = function() {
+    const data = HOME_RATES[homeCurrency][homeDuration];
+    if (!data) return;
+
+    const el = id => document.getElementById(id);
+
+    if (el('h-price-starter')) el('h-price-starter').innerText = data.starter;
+    if (el('h-period-starter')) el('h-period-starter').innerText = data.period;
+    if (el('h-retail-starter')) el('h-retail-starter').innerText = data.starterRetail;
+    if (el('h-save-starter')) el('h-save-starter').innerText = data.starterSave;
+    if (el('h-monthly-starter')) el('h-monthly-starter').innerText = data.starterMonthly;
+
+    if (el('h-price-ultimate')) el('h-price-ultimate').innerText = data.ultimate;
+    if (el('h-period-ultimate')) el('h-period-ultimate').innerText = data.period;
+    if (el('h-retail-ultimate')) el('h-retail-ultimate').innerText = data.ultimateRetail;
+    if (el('h-save-ultimate')) el('h-save-ultimate').innerText = data.ultimateSave;
+    if (el('h-monthly-ultimate')) el('h-monthly-ultimate').innerText = data.ultimateMonthly;
+
+    if (el('h-price-master')) el('h-price-master').innerText = data.master;
+    if (el('h-period-master')) el('h-period-master').innerText = data.period;
+    if (el('h-retail-master')) el('h-retail-master').innerText = data.masterRetail;
+    if (el('h-save-master')) el('h-save-master').innerText = data.masterSave;
+    if (el('h-monthly-master')) el('h-monthly-master').innerText = data.masterMonthly;
+
+    const durationLabel = homeDuration === 1 ? '1 Month' : (homeDuration + ' Months');
+    const waBase = "https://wa.me/918317416695?text=";
+
+    if (el('h-btn-starter-wa')) el('h-btn-starter-wa').href = waBase + encodeURIComponent("Hi Rakexura Team, I want to get the Starter Pass (" + durationLabel + ") for " + data.starter + ".");
+    if (el('h-btn-ultimate-wa')) el('h-btn-ultimate-wa').href = waBase + encodeURIComponent("Hi Rakexura Team, I want to get the Ultimate Cloud Pass (" + durationLabel + ") for " + data.ultimate + ".");
+    if (el('h-btn-master-wa')) el('h-btn-master-wa').href = waBase + encodeURIComponent("Hi Rakexura Team, I want to get the All-Access Master Pass (" + durationLabel + ") for " + data.master + ".");
+  };
+
+  window.switchHomeDuration = function(months) {
+    homeDuration = months;
+    document.querySelectorAll('.home-duration-btn').forEach(btn => {
+      if (parseInt(btn.getAttribute('data-duration')) === months) {
+        btn.classList.add('active');
+        btn.style.background = '#000000';
+        btn.style.color = '#ffffff';
+      } else {
+        btn.classList.remove('active');
+        btn.style.background = 'transparent';
+        btn.style.color = '#444444';
+      }
+    });
+    window.updateHomePricing();
+  };
+
+  window.switchHomeCurrency = function(curr) {
+    homeCurrency = curr;
+    document.querySelectorAll('.home-currency-btn').forEach(btn => {
+      if (btn.getAttribute('data-currency') === curr) {
+        btn.classList.add('active');
+        btn.style.background = '#000000';
+        btn.style.color = '#ffffff';
+      } else {
+        btn.classList.remove('active');
+        btn.style.background = 'transparent';
+        btn.style.color = '#555555';
+      }
+    });
+    window.updateHomePricing();
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.updateHomePricing) window.updateHomePricing();
+  });
+})();
+</script>
 </body></html>

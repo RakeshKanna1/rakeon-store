@@ -115,158 +115,7 @@
 </style>
 
 
-<style id="rakexura-header-optical-center">
-  /* Optical Vertical Centering for Header Words */
-  .header_nav-button-inner {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    height: 100% !important;
-  }
 
-  .header_nav-button-text,
-  .header_nav-button-text-span,
-  .header_nav-button-text-touch {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    line-height: 1 !important;
-    transform: translateY(-1.5px) !important;
-  }
-
-  /* Header Title Link Container */
-  .header_title-link {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    text-decoration: none !important;
-    cursor: pointer !important;
-  }
-
-  /* 1. Animated Profile Logo Picture */
-  .header_title-profile {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 34px !important;
-    height: 34px !important;
-    border-radius: 50% !important;
-    overflow: hidden !important;
-    background: #0c0a1a !important;
-    border: 1.5px solid rgba(0, 0, 0, 0.12) !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease !important;
-    flex-shrink: 0 !important;
-  }
-
-  .header_title-profile-img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    display: block !important;
-    border-radius: 50% !important;
-    transition: transform 0.35s ease !important;
-  }
-
-  .header_title-link:hover .header_title-profile {
-    transform: scale(1.1) rotate(-4deg) !important;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18) !important;
-    border-color: #000000 !important;
-  }
-
-  .header_title-link:hover .header_title-profile-img {
-    transform: scale(1.08) !important;
-  }
-
-  /* 2. Premium Black Pill Box for RAKE ✦ XURA */
-  .header_title-button {
-    position: relative !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 0 16px !important;
-    height: 34px !important;
-    min-height: 34px !important;
-    border-radius: 9999px !important;
-    background: #000000 !important;
-    color: #ffffff !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s ease, box-shadow 0.3s ease !important;
-  }
-
-  .header_title-link:hover .header_title-button {
-    transform: translateY(-1px) scale(1.03) !important;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22) !important;
-    background: #111111 !important;
-  }
-
-  .header_title-logo {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    position: relative !important;
-    z-index: 2 !important;
-    color: #ffffff !important;
-  }
-
-  .header_title-logo-text {
-    font-family: inherit !important;
-    font-size: 11.5px !important;
-    font-weight: 900 !important;
-    letter-spacing: 0.08em !important;
-    text-transform: uppercase !important;
-    line-height: 1 !important;
-    color: #ffffff !important;
-    transform: translateY(-0.5px) !important;
-  }
-
-  .header_title-logo svg,
-  .header_title-logo .icon,
-  .header_title-logo svg path {
-    width: 12px !important;
-    height: 12px !important;
-    color: #ff5b1a !important;
-    fill: #ff5b1a !important;
-    display: inline-block !important;
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-  }
-
-  .header_title-link:hover .header_title-logo svg {
-    transform: rotate(90deg) scale(1.15) !important;
-  }
-
-  /* 3. Dark Theme Mode */
-  html.dark-theme .header_title-profile,
-  body.dark-theme .header_title-profile,
-  [data-theme="dark"] .header_title-profile {
-    border-color: rgba(255, 255, 255, 0.2) !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
-  }
-
-  html.dark-theme .header_title-button,
-  body.dark-theme .header_title-button,
-  [data-theme="dark"] .header_title-button {
-    background: #16132b !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
-  }
-
-  html.dark-theme .header_title-link:hover .header_title-button,
-  body.dark-theme .header_title-link:hover .header_title-button,
-  [data-theme="dark"] .header_title-link:hover .header_title-button {
-    background: #201b3d !important;
-    border-color: rgba(255, 91, 26, 0.6) !important;
-    box-shadow: 0 4px 18px rgba(255, 91, 26, 0.25) !important;
-  }
-
-  .header_menu-button-text {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    line-height: 1 !important;
-    transform: translateY(-1.5px) !important;
-  }
-</style>
 
 
 
@@ -801,9 +650,9 @@
     <div class="header_inner">
       <div class="header_title">
         <div class="header_title-inner u-c1">
-          <a href="/" class="header_title-link w-inline-block">
+          <a href="/" aria-current="page" class="header_title-link w-inline-block w--current">
             <div data-button-hover="" class="header_title-profile">
-              <img src="/assets/favicon.png" loading="eager" width="32" height="32" alt="RAKEXURA Subscriptions" fetchpriority="high" class="header_title-profile-img" style="border-radius:50%;object-fit:cover;background:#0c0a1a;">
+              <img src="/assets/favicon.png" loading="eager" width="32" height="32" alt="RAKEXURA Subscriptions" fetchpriority="high" class="header_title-profile-img">
             </div>
             <div data-button-hover="" class="header_title-button">
               <div class="header_title-logo">
@@ -821,7 +670,7 @@
       <nav class="header_nav">
         <ul role="list" class="header_nav-list w-list-unstyled">
           <li class="header_nav-list-item">
-            <a data-nav-link="" data-text="Subscriptions" data-swup-preload="" data-wf--header-button--variant="base" href="/" class="header_nav-button u-c1 w-inline-block ">
+            <a data-nav-link="" data-text="Subscriptions" data-swup-preload="" data-wf--header-button--variant="base" href="/" class="header_nav-button u-c1 w-inline-block w--current is-active">
               <span class="header_nav-button-inner">
                 <span class="header_nav-button-text">Subscriptions</span>
                 <span class="header_nav-button-bg"></span>
@@ -829,7 +678,7 @@
             </a>
           </li>
           <li class="header_nav-list-item">
-            <a data-nav-link="" data-text="Validation" data-swup-preload="" data-wf--header-button--variant="base" href="/validation" class="header_nav-button u-c1 w-inline-block ">
+            <a data-nav-link="" data-text="Validation" data-swup-preload="" data-wf--header-button--variant="base" href="/validation" class="header_nav-button u-c1 w-inline-block">
               <span class="header_nav-button-inner">
                 <span class="header_nav-button-text">Validation</span>
                 <span class="header_nav-button-bg"></span>
@@ -837,7 +686,7 @@
             </a>
           </li>
           <li class="header_nav-list-item">
-            <a data-nav-link="" data-text="Pricing" data-swup-preload="" data-wf--header-button--variant="base" href="/pricing" class="header_nav-button u-c1 w-inline-block ">
+            <a data-nav-link="" data-text="Pricing" data-swup-preload="" data-wf--header-button--variant="base" href="/pricing" class="header_nav-button u-c1 w-inline-block">
               <span class="header_nav-button-inner">
                 <span class="header_nav-button-text">Pricing</span>
                 <span class="header_nav-button-bg"></span>
@@ -845,7 +694,7 @@
             </a>
           </li>
           <li class="header_nav-list-item">
-            <a data-nav-link="" data-text="Support" data-swup-preload="" data-wf--header-button--variant="base" href="/support" class="header_nav-button u-c1 w-inline-block ">
+            <a data-nav-link="" data-text="Support" data-swup-preload="" data-wf--header-button--variant="base" href="/support" class="header_nav-button u-c1 w-inline-block">
               <span class="header_nav-button-inner">
                 <span class="header_nav-button-text">Support</span>
                 <span class="header_nav-button-bg"></span>
@@ -853,7 +702,7 @@
             </a>
           </li>
           <li class="header_nav-list-item">
-            <a data-nav-link="" data-text="Track" data-wf--header-button--variant="base" href="/track" class="header_nav-button u-c1 w-inline-block ">
+            <a data-nav-link="" data-text="Track" data-wf--header-button--variant="base" href="/track" class="header_nav-button u-c1 w-inline-block">
               <span class="header_nav-button-inner">
                 <span class="header_nav-button-text">Track</span>
                 <span class="header_nav-button-bg"></span>
@@ -862,7 +711,7 @@
           </li>
         </ul>
       </nav>
-      <div class="header_tools" style="display: flex; align-items: center; gap: 6px;">
+      <div aria-hidden="true" class="header_tools" style="display:flex; align-items:center; gap:6px;">
         <a data-text="2026" role="link" aria-disabled="true" class="header_nav-button u-c1">
           <span class="header_nav-button-inner">
             <span class="header_nav-button-text">
@@ -871,7 +720,6 @@
             <span class="header_nav-button-bg"></span>
           </span>
         </a>
-        <!-- Dark Theme Box Button matching exact header button box styling -->
         <button type="button" class="header_nav-button u-c1 theme-box-toggle-btn" onclick="window.toggleRakexuraTheme()" style="background: transparent; border: none; padding: 0; cursor: pointer; text-decoration: none; display: inline-flex;">
           <span class="header_nav-button-inner">
             <span class="header_nav-button-text theme-toggle-label" style="display: inline-flex; align-items: center; justify-content: center; gap: 3px;">
@@ -889,82 +737,7 @@
   </header>
   
 
-  <main id="main" class="main" data-load-main="">
-    <div class="matrix-content-wrapper u-container">
-      
-<div aria-hidden="true" class="hero-process_divider" style="display:flex; justify-content:space-between; align-items:center; width:100%; margin-bottom:2.5rem; padding-bottom:1rem; border-bottom:1px solid rgba(0,0,0,0.1);">
-  <div style="display:flex; align-items:center; gap:0.5rem;">
-    <span style="font-size:14px;">  </span>
-    <span class="hero-process_divider-text u-f1" style="font-family:monospace; font-size:11px; color:#666; margin-left:0.5rem;">3D2Y</span>
-    <span style="font-size:14px; margin-left:0.5rem;"></span>
-  </div>
-  <div style="display:flex; align-items:center; gap:0.5rem;">
-    <span style="font-size:14px;"></span>
-  </div>
-  <div style="display:flex; align-items:center; gap:0.5rem;">
-    <span style="font-size:14px;"></span>
-    <span class="hero-process_divider-text u-f1" style="font-family:monospace; font-size:11px; color:#666; margin-right:0.5rem;">A113</span>
-    <span style="font-size:14px;">  </span>
-  </div>
-</div>
-
-
-      <!-- Centered Eduard Bodak Hero Header -->
-      <div style="text-align:center; margin-bottom:2.5rem;">
-        <h1 class="hero-step-title">
-          Subscription Slot Management &amp;<br>Real-Time Account Telemetry.
-        </h1>
-        <div class="hero-step-strip">
-          <div class="hero-step-item"><span class="hero-step-num">01</span> <span class="hero-step-name">PROVISION</span></div>
-          <div class="hero-step-item"><span class="hero-step-num">02</span> <span class="hero-step-name">VALIDATE</span></div>
-          <div class="hero-step-item"><span class="hero-step-num">03</span> <span class="hero-step-name">DISPATCH</span></div>
-          <div class="hero-step-item"><span class="hero-step-num">04</span> <span class="hero-step-name">RENEW</span></div>
-        </div>
-      </div>
-
-      <!-- Controls & Search Toolbar -->
-      <div class="toolbar-wrapper">
-        <input type="text" id="filter-input" class="search-ctrl-input" placeholder="Search customer, WhatsApp, slot ID..." oninput="renderCards()">
-        <div class="toolbar-buttons">
-          <button class="btn-action-ghost" onclick="fetchMatrixData()">REFRESH</button>
-          <button class="btn-gold-cta" onclick="openCreateModal()">
-            <span>+ PROVISION NEW SLOT</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Telemetry Stat Cards -->
-      <div class="stat-row-grid">
-        <div class="stat-box-card">
-          <div class="stat-tag-lbl">TOTAL ALLOCATIONS</div>
-          <div class="stat-val-num" id="metric-total">0</div>
-          <div class="stat-cream-tag">Matrix Slots Recorded</div>
-        </div>
-        <div class="stat-box-card">
-          <div class="stat-tag-lbl">ACTIVE PASSES</div>
-          <div class="stat-val-num" id="metric-active" style="color:#16a34a;">0</div>
-          <div class="stat-cream-tag" style="color:#15803d;">ONLINE TELEMETRY</div>
-        </div>
-        <div class="stat-box-card">
-          <div class="stat-tag-lbl">EXPIRING &lt; 48H</div>
-          <div class="stat-val-num" id="metric-urgent" style="color:#ca8a04;">0</div>
-          <div class="stat-cream-tag" style="color:#a16207;">48H ALERTS ACTIVE</div>
-        </div>
-        <div class="stat-box-card">
-          <div class="stat-tag-lbl">TOTAL MRR RECORDED</div>
-          <div class="stat-val-num" id="metric-revenue" style="color:#000000;">INR 0</div>
-          <div class="stat-cream-tag">Verified Payments</div>
-        </div>
-      </div>
-
-      <!-- Customer Slot Cards Grid -->
-      <div id="slot-cards-target" class="slot-grid-feed">
-        <div style="text-align:center; padding:4rem; color:#666666; font-family:monospace; grid-column:1/-1;">
-          Connecting to Supabase Slot Matrix...
-        </div>
-      </div>
-    </div>
-  </main>
+  
 
   <!-- ADD / EDIT MODAL -->
   <div class="y2k-backdrop" id="slot-modal">
@@ -1641,5 +1414,134 @@
 })();
 </script>
 
+<script>
+(function() {
+  const HOME_RATES = {
+    INR: {
+      1: {
+        starter: "₹249", starterRetail: "₹799 retail", starterSave: "Save 68%", starterMonthly: "₹249/mo",
+        ultimate: "₹499", ultimateRetail: "₹1,999 retail", ultimateSave: "Save 75%", ultimateMonthly: "₹499/mo",
+        master: "₹899", masterRetail: "₹3,499 retail", masterSave: "Save 74%", masterMonthly: "₹899/mo",
+        period: "/ 1 month"
+      },
+      3: {
+        starter: "₹599", starterRetail: "₹2,397 retail", starterSave: "Save 75%", starterMonthly: "₹199/mo",
+        ultimate: "₹1,249", ultimateRetail: "₹5,997 retail", ultimateSave: "Save 79%", ultimateMonthly: "₹416/mo",
+        master: "₹2,299", masterRetail: "₹10,497 retail", masterSave: "Save 78%", masterMonthly: "₹766/mo",
+        period: "/ 3 months"
+      },
+      6: {
+        starter: "₹1,099", starterRetail: "₹4,794 retail", starterSave: "Save 77%", starterMonthly: "₹183/mo",
+        ultimate: "₹2,299", ultimateRetail: "₹11,994 retail", ultimateSave: "Save 81%", ultimateMonthly: "₹383/mo",
+        master: "₹4,199", masterRetail: "₹20,994 retail", masterSave: "Save 80%", masterMonthly: "₹700/mo",
+        period: "/ 6 months"
+      },
+      12: {
+        starter: "₹1,899", starterRetail: "₹9,588 retail", starterSave: "Save 80%", starterMonthly: "₹158/mo",
+        ultimate: "₹3,999", ultimateRetail: "₹23,988 retail", ultimateSave: "Save 83%", ultimateMonthly: "₹333/mo",
+        master: "₹7,499", masterRetail: "₹41,988 retail", masterSave: "Save 82%", masterMonthly: "₹624/mo",
+        period: "/ 12 months"
+      }
+    },
+    USD: {
+      1: {
+        starter: "$3.49", starterRetail: "$9.99 retail", starterSave: "Save 65%", starterMonthly: "$3.49/mo",
+        ultimate: "$6.99", ultimateRetail: "$24.99 retail", ultimateSave: "Save 72%", ultimateMonthly: "$6.99/mo",
+        master: "$11.99", masterRetail: "$44.99 retail", masterSave: "Save 73%", masterMonthly: "$11.99/mo",
+        period: "/ 1 month"
+      },
+      3: {
+        starter: "$7.99", starterRetail: "$29.99 retail", starterSave: "Save 73%", starterMonthly: "$2.66/mo",
+        ultimate: "$16.99", ultimateRetail: "$74.99 retail", ultimateSave: "Save 77%", ultimateMonthly: "$5.66/mo",
+        master: "$29.99", masterRetail: "$134.99 retail", masterSave: "Save 78%", masterMonthly: "$9.99/mo",
+        period: "/ 3 months"
+      },
+      6: {
+        starter: "$14.99", starterRetail: "$59.99 retail", starterSave: "Save 75%", starterMonthly: "$2.49/mo",
+        ultimate: "$31.99", ultimateRetail: "$149.99 retail", ultimateSave: "Save 79%", ultimateMonthly: "$5.33/mo",
+        master: "$54.99", masterRetail: "$269.99 retail", masterSave: "Save 80%", masterMonthly: "$9.16/mo",
+        period: "/ 6 months"
+      },
+      12: {
+        starter: "$24.99", starterRetail: "$119.99 retail", starterSave: "Save 79%", starterMonthly: "$2.08/mo",
+        ultimate: "$54.99", ultimateRetail: "$299.99 retail", ultimateSave: "Save 82%", ultimateMonthly: "$4.58/mo",
+        master: "$99.99", masterRetail: "$539.99 retail", masterSave: "Save 81%", masterMonthly: "$8.33/mo",
+        period: "/ 12 months"
+      }
+    }
+  };
+
+  let homeDuration = 1;
+  let homeCurrency = 'INR';
+
+  window.updateHomePricing = function() {
+    const data = HOME_RATES[homeCurrency][homeDuration];
+    if (!data) return;
+
+    const el = id => document.getElementById(id);
+
+    if (el('h-price-starter')) el('h-price-starter').innerText = data.starter;
+    if (el('h-period-starter')) el('h-period-starter').innerText = data.period;
+    if (el('h-retail-starter')) el('h-retail-starter').innerText = data.starterRetail;
+    if (el('h-save-starter')) el('h-save-starter').innerText = data.starterSave;
+    if (el('h-monthly-starter')) el('h-monthly-starter').innerText = data.starterMonthly;
+
+    if (el('h-price-ultimate')) el('h-price-ultimate').innerText = data.ultimate;
+    if (el('h-period-ultimate')) el('h-period-ultimate').innerText = data.period;
+    if (el('h-retail-ultimate')) el('h-retail-ultimate').innerText = data.ultimateRetail;
+    if (el('h-save-ultimate')) el('h-save-ultimate').innerText = data.ultimateSave;
+    if (el('h-monthly-ultimate')) el('h-monthly-ultimate').innerText = data.ultimateMonthly;
+
+    if (el('h-price-master')) el('h-price-master').innerText = data.master;
+    if (el('h-period-master')) el('h-period-master').innerText = data.period;
+    if (el('h-retail-master')) el('h-retail-master').innerText = data.masterRetail;
+    if (el('h-save-master')) el('h-save-master').innerText = data.masterSave;
+    if (el('h-monthly-master')) el('h-monthly-master').innerText = data.masterMonthly;
+
+    const durationLabel = homeDuration === 1 ? '1 Month' : (homeDuration + ' Months');
+    const waBase = "https://wa.me/918317416695?text=";
+
+    if (el('h-btn-starter-wa')) el('h-btn-starter-wa').href = waBase + encodeURIComponent("Hi Rakexura Team, I want to get the Starter Pass (" + durationLabel + ") for " + data.starter + ".");
+    if (el('h-btn-ultimate-wa')) el('h-btn-ultimate-wa').href = waBase + encodeURIComponent("Hi Rakexura Team, I want to get the Ultimate Cloud Pass (" + durationLabel + ") for " + data.ultimate + ".");
+    if (el('h-btn-master-wa')) el('h-btn-master-wa').href = waBase + encodeURIComponent("Hi Rakexura Team, I want to get the All-Access Master Pass (" + durationLabel + ") for " + data.master + ".");
+  };
+
+  window.switchHomeDuration = function(months) {
+    homeDuration = months;
+    document.querySelectorAll('.home-duration-btn').forEach(btn => {
+      if (parseInt(btn.getAttribute('data-duration')) === months) {
+        btn.classList.add('active');
+        btn.style.background = '#000000';
+        btn.style.color = '#ffffff';
+      } else {
+        btn.classList.remove('active');
+        btn.style.background = 'transparent';
+        btn.style.color = '#444444';
+      }
+    });
+    window.updateHomePricing();
+  };
+
+  window.switchHomeCurrency = function(curr) {
+    homeCurrency = curr;
+    document.querySelectorAll('.home-currency-btn').forEach(btn => {
+      if (btn.getAttribute('data-currency') === curr) {
+        btn.classList.add('active');
+        btn.style.background = '#000000';
+        btn.style.color = '#ffffff';
+      } else {
+        btn.classList.remove('active');
+        btn.style.background = 'transparent';
+        btn.style.color = '#555555';
+      }
+    });
+    window.updateHomePricing();
+  };
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.updateHomePricing) window.updateHomePricing();
+  });
+})();
+</script>
 </body>
 </html>

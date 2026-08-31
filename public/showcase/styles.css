@@ -5071,133 +5071,179 @@ body.dark-theme .pricing-compare-section * {
   color: #f8fafc !important;
 }
 
-/* Optical Centering for header text without breaking translate */
-.header_nav-button-text {
-  line-height: 1 !important;
+/* ==========================================================================
+   RAKEXURA HARMONIOUS CYBER DARK THEME
+   Tailored for luxurious contrast, eye-comfort midnight tones, and legible text
+   ========================================================================== */
+
+html.dark-theme,
+body.dark-theme,
+[data-theme="dark"] {
+  --color-background: #0c0a18 !important;
+  --color: #f4f4f8 !important;
+  --ci-cream: #0c0a18 !important;
+  --ci-black: #f4f4f8 !important;
+  --ci-beige: #17142b !important;
+  --color-background-beige: #17142b !important;
+  background-color: #0c0a18 !important;
+  color: #f4f4f8 !important;
 }
 
-/* Header Title Link Container */
-.header_title-link {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-  text-decoration: none !important;
-  cursor: pointer !important;
+html.dark-theme body {
+  background-color: #0c0a18 !important;
+  color: #f4f4f8 !important;
 }
 
-/* 1. Animated Profile Logo Picture */
-.header_title-profile {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 34px !important;
-  height: 34px !important;
-  border-radius: 50% !important;
-  overflow: hidden !important;
-  background: #0c0a1a !important;
-  border: 1.5px solid rgba(0, 0, 0, 0.12) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease !important;
-  flex-shrink: 0 !important;
+/* Nav & Header */
+html.dark-theme .header,
+html.dark-theme .header_inner {
+  background-color: transparent !important;
 }
 
-.header_title-profile-img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  display: block !important;
-  border-radius: 50% !important;
-  transition: transform 0.35s ease !important;
+html.dark-theme .header_nav-button-bg,
+html.dark-theme .button-default_button-bg {
+  background-color: #17142b !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
 
-.header_title-link:hover .header_title-profile {
-  transform: scale(1.1) rotate(-4deg) !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18) !important;
-  border-color: #000000 !important;
+html.dark-theme .header_nav-button,
+html.dark-theme .header_title-link,
+html.dark-theme .header_menu-button {
+  color: #f4f4f8 !important;
 }
 
-.header_title-link:hover .header_title-profile-img {
-  transform: scale(1.08) !important;
+/* Accent Buttons */
+html.dark-theme .button-default_button-bg.is-yellow,
+html.dark-theme .is-yellow {
+  background-color: #f2c744 !important;
+  color: #18181b !important;
 }
 
-/* 2. Premium Black Pill Box for RAKE ✦ XURA */
-.header_title-button {
-  position: relative !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 0 16px !important;
-  height: 34px !important;
-  min-height: 34px !important;
-  border-radius: 9999px !important;
-  background: #000000 !important;
-  color: #ffffff !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s ease, box-shadow 0.3s ease !important;
+html.dark-theme .button-default.is-yellow .button-default_button-text,
+html.dark-theme .button-default.is-yellow svg {
+  color: #18181b !important;
+  fill: #18181b !important;
 }
 
-.header_title-link:hover .header_title-button {
-  transform: translateY(-1px) scale(1.03) !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22) !important;
-  background: #111111 !important;
+/* Header Title Button (Black Pill with subtle white border in dark mode) */
+html.dark-theme .header_title-button {
+  background-color: #1a1633 !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
 }
 
-.header_title-logo {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  position: relative !important;
-  z-index: 2 !important;
-  color: #ffffff !important;
+html.dark-theme .header_title-bg {
+  background-color: #1a1633 !important;
 }
 
-.header_title-logo-text {
-  font-family: inherit !important;
-  font-size: 11.5px !important;
-  font-weight: 900 !important;
-  letter-spacing: 0.08em !important;
-  text-transform: uppercase !important;
-  line-height: 1 !important;
-  color: #ffffff !important;
-  transform: translateY(-0.5px) !important;
-}
-
-.header_title-logo svg,
-.header_title-logo .icon,
-.header_title-logo svg path {
-  width: 12px !important;
-  height: 12px !important;
-  color: #ff5b1a !important;
-  fill: #ff5b1a !important;
-  display: inline-block !important;
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-}
-
-.header_title-link:hover .header_title-logo svg {
-  transform: rotate(90deg) scale(1.15) !important;
-}
-
-/* 3. Dark Theme Mode */
-html.dark-theme .header_title-profile,
-body.dark-theme .header_title-profile,
-[data-theme="dark"] .header_title-profile {
+html.dark-theme .header_title-profile {
+  background-color: #141129 !important;
   border-color: rgba(255, 255, 255, 0.2) !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
 }
 
-html.dark-theme .header_title-button,
-body.dark-theme .header_title-button,
-[data-theme="dark"] .header_title-button {
-  background: #16132b !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+/* Pricing Section & Cards */
+html.dark-theme .home-pricing-section,
+html.dark-theme #pricing-matrix,
+html.dark-theme .section.is-pricing,
+html.dark-theme .pricing-card-item,
+html.dark-theme .home-pricing-card,
+html.dark-theme .price-card,
+html.dark-theme .pricing-compare-section {
+  background-color: #131126 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #f4f4f8 !important;
 }
 
-html.dark-theme .header_title-link:hover .header_title-button,
-body.dark-theme .header_title-link:hover .header_title-button,
-[data-theme="dark"] .header_title-link:hover .header_title-button {
-  background: #201b3d !important;
-  border-color: rgba(255, 91, 26, 0.6) !important;
-  box-shadow: 0 4px 18px rgba(255, 91, 26, 0.25) !important;
+html.dark-theme .home-pricing-card h3,
+html.dark-theme .pricing-card-item h3,
+html.dark-theme .home-pricing-title,
+html.dark-theme .pricing-compare-section th,
+html.dark-theme .pricing-compare-section td {
+  color: #f4f4f8 !important;
 }
 
+html.dark-theme .home-pricing-card p,
+html.dark-theme .pricing-card-item p,
+html.dark-theme .home-pricing-subtitle {
+  color: #a0a8c0 !important;
+}
+
+/* Capsule Selector Tabs */
+html.dark-theme .home-duration-selector,
+html.dark-theme .home-currency-selector,
+html.dark-theme .duration-selector-wrap,
+html.dark-theme .currency-selector-wrap {
+  background-color: #1a1633 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.4) !important;
+}
+
+html.dark-theme .home-duration-btn,
+html.dark-theme .home-currency-btn,
+html.dark-theme .duration-btn,
+html.dark-theme .currency-btn {
+  color: #cbd5e1 !important;
+}
+
+html.dark-theme .home-duration-btn.active,
+html.dark-theme .home-currency-btn.active,
+html.dark-theme .duration-btn.active,
+html.dark-theme .currency-btn.active {
+  background-color: #f2c744 !important;
+  color: #0c0a18 !important;
+  font-weight: 800 !important;
+}
+
+/* Sub-panels inside pricing cards */
+html.dark-theme .pricing-card-item > div > div[style*="background: var(--theme-card-sub"],
+html.dark-theme .pricing-card-item > div > div[style*="background: rgba(242, 199, 68"] {
+  background-color: #1b1738 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Footer */
+html.dark-theme .footer {
+  background-color: #080612 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #f4f4f8 !important;
+}
+
+html.dark-theme .footer_card {
+  background-color: #131126 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark-theme .footer_card-bg-left,
+html.dark-theme .footer_card-bg-center,
+html.dark-theme .footer_card-bg-right {
+  background-color: #131126 !important;
+}
+
+/* Service & Intro Sections */
+html.dark-theme .intro,
+html.dark-theme .intro.u-theme-dark,
+html.dark-theme .intro_wrap {
+  background-color: #080612 !important;
+}
+
+html.dark-theme .service_card {
+  background-color: #131126 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Validation & Admin Panels */
+html.dark-theme .validator-terminal,
+html.dark-theme .telemetry-card-vault,
+html.dark-theme .search-card,
+html.dark-theme .manage-table-card {
+  background-color: #131126 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #f4f4f8 !important;
+}
+
+html.dark-theme input,
+html.dark-theme select,
+html.dark-theme textarea {
+  background-color: #1b1738 !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: #f4f4f8 !important;
+}
