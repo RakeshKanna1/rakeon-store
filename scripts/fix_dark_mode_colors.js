@@ -24,16 +24,16 @@ html.dark-theme body {
   color: #f4f4f8 !important;
 }
 
-/* Nav & Header */
-.header,
-header.header,
+/* Nav & Header (Dark Mode Only) */
 html.dark-theme .header,
 html.dark-theme header.header,
 body.dark-theme .header,
-body.dark-theme header.header,
+body.dark-theme header.header {
+  background-color: rgba(12, 10, 24, 0.88) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
 html.dark-theme .header_inner {
   background-color: transparent !important;
-  border-bottom: none !important;
 }
 
 html.dark-theme .header_nav-button-bg,
@@ -279,6 +279,60 @@ html.dark-theme #val-loading div {
 `;
 
 const baseEnhancements = `
+
+/* ==========================================================================
+   UNIVERSAL LIGHT THEME HEADER (Matching across All Pages: Home, Pricing, etc.)
+   ========================================================================== */
+.header,
+header.header,
+body.is-price .header,
+body[data-wf-page="678f8fc870e24177d6118bfa"] .header,
+.pricing-page .header {
+  background-color: rgba(242, 239, 235, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+body.is-price .header_nav,
+body[data-wf-page="678f8fc870e24177d6118bfa"] .header_nav {
+  background: transparent !important;
+}
+
+body.is-price .header_nav-link,
+body[data-wf-page="678f8fc870e24177d6118bfa"] .header_nav-link {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #000000 !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+body.is-price .header_nav-link:hover,
+body[data-wf-page="678f8fc870e24177d6118bfa"] .header_nav-link:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+  color: #000000 !important;
+}
+
+body.is-price .header_nav-link.w--current,
+body[data-wf-page="678f8fc870e24177d6118bfa"] .header_nav-link.w--current {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: #000000 !important;
+}
+
+body.is-price .header_button,
+body[data-wf-page="678f8fc870e24177d6118bfa"] .header_button {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #000000 !important;
+}
+
+body.is-price .header_logo-text,
+body.is-price .header_title-text,
+body[data-wf-page="678f8fc870e24177d6118bfa"] .header_logo-text,
+body[data-wf-page="678f8fc870e24177d6118bfa"] .header_title-text {
+  color: #000000 !important;
+}
+
 /* Pricing Comparison Matrix - Default Light Theme */
 .pricing-compare-section {
   background-color: #ffffff !important;

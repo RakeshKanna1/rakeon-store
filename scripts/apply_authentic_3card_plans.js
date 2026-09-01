@@ -10,6 +10,7 @@ let pricingHtml63 = fs.existsSync('pricing.html')
   : execSync('git show 63a153a:pricing.html', { maxBuffer: 15*1024*1024 }).toString('utf8');
 
 pricingHtml63 = pricingHtml63
+  .replace(/class="is-price"/g, "")
   .replace(/\.button-default\.is-yellow,\s*/g, '')
   .replace(/,\s*\.button-default\.is-yellow:hover/g, '')
   .replace(/\.button-default\.is-yellow:hover,\s*/g, '');
