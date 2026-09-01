@@ -953,6 +953,9 @@
 
 
 
+
+
+
 <style id="rakexura-dark-theme-css">
   /* ==========================================================================
      RAKEXURA MASTER CYBER DARK THEME
@@ -981,6 +984,7 @@
   html.dark-theme .hero-track,
   html.dark-theme .process,
   html.dark-theme .process_container,
+  html.dark-theme .next-page,
   html.dark-theme .content-block,
   html.dark-theme .empty-state,
   html.dark-theme .faq,
@@ -1003,7 +1007,10 @@
   html.dark-theme .hero-price_title span,
   html.dark-theme .hero-track_title,
   html.dark-theme .hero-step-title,
-  html.dark-theme .process_content-button-text {
+  html.dark-theme .hero-process_description-text,
+  html.dark-theme .hero_description-text,
+  html.dark-theme .process_content-button-text,
+  html.dark-theme .next-page_title-span {
     color: #ffffff !important;
   }
 
@@ -1022,8 +1029,16 @@
   html.dark-theme .hero_desc,
   html.dark-theme .hero-price_header p,
   html.dark-theme .process_content-description,
+  html.dark-theme .next-page_description,
   html.dark-theme .rich-text p {
     color: #d4d4d8 !important;
+  }
+
+  /* Gray Subtitle Spans Across the Site */
+  html.dark-theme .u-color-gray,
+  html.dark-theme .is-gray,
+  html.dark-theme span.u-color-gray {
+    color: #cbd5e1 !important;
   }
 
   /* Monospace Matrix Tags */
@@ -1032,6 +1047,58 @@
   html.dark-theme .u-f1,
   html.dark-theme .u-f2 {
     color: #cbd5e1 !important;
+  }
+
+  /* All Hero Section Tags (1 - 12 Months Active Passes, etc.) */
+  html.dark-theme .hero-process_tag,
+  html.dark-theme .hero_tag,
+  html.dark-theme .hero-price_tag,
+  html.dark-theme .hero-contact_tag,
+  html.dark-theme .hero-track_tag,
+  html.dark-theme .content-block_tag,
+  html.dark-theme .tag {
+    background-color: #17142b !important;
+    background: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+    color: #f2c744 !important;
+  }
+
+  html.dark-theme .hero-process_tag-text,
+  html.dark-theme .hero-process_tag-text-inner,
+  html.dark-theme .hero-process_tag .price,
+  html.dark-theme .hero_tag-text,
+  html.dark-theme .hero-price_tag-text,
+  html.dark-theme .hero-contact_tag-text {
+    color: #f2c744 !important;
+    font-weight: 800 !important;
+  }
+
+  /* Next-Page Gateway Tags (e.g. PRICING side pills) */
+  html.dark-theme .next-page_tag-bg {
+    background-color: #17142b !important;
+    background: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+  }
+
+  html.dark-theme .next-page_tag-text {
+    color: #ffffff !important;
+    font-weight: 800 !important;
+  }
+
+  html.dark-theme .next-page_tag svg {
+    color: #f2c744 !important;
+    fill: #f2c744 !important;
+  }
+
+  html.dark-theme .next-page_preview-text.is-gray {
+    color: #f2c744 !important;
+    font-weight: 800 !important;
+  }
+
+  html.dark-theme .next-page_preview-text:not(.is-gray) {
+    color: #ffffff !important;
+    font-weight: 800 !important;
   }
 
   /* 2. Header & Navigation */
@@ -1090,7 +1157,7 @@
     font-weight: 700 !important;
   }
 
-  /* ALL Yellow Action Buttons & Small Buttons - VIBRANT GOLD BG + BOLD BLACK TEXT */
+  /* ALL Yellow Action Buttons (View Plans, Header CTA, Support, etc.) - VIBRANT GOLD BG + BOLD BLACK TEXT */
   html.dark-theme .button-default_button-bg.is-yellow,
   html.dark-theme .button-default.is-yellow .button-default_button-bg,
   html.dark-theme .button-default_button-bg[class*="is-yellow"],
@@ -1102,8 +1169,14 @@
   }
 
   html.dark-theme .button-default.is-yellow .button-default_button-text,
+  html.dark-theme .button-default.is-yellow .button-default_button-container,
+  html.dark-theme .button-default.is-yellow .button-default_button-container *,
+  html.dark-theme .button-default:has(.is-yellow) .button-default_button-text,
+  html.dark-theme .button-default:has(.is-yellow) .button-default_button-container *,
   html.dark-theme .button-default_button-bg.is-yellow ~ .button-default_button-container .button-default_button-text,
+  html.dark-theme .button-default_button-bg.is-yellow ~ .button-default_button-container *,
   html.dark-theme a.button-default.is-yellow .button-default_button-text,
+  html.dark-theme a.button-default.is-yellow .button-default_button-container *,
   html.dark-theme .button-small,
   html.dark-theme .button-small_text,
   html.dark-theme .button-small .button-small_text,
@@ -1131,6 +1204,8 @@
 
   html.dark-theme .button-default.is-yellow svg,
   html.dark-theme a.button-default.is-yellow svg,
+  html.dark-theme .button-default.is-yellow svg path,
+  html.dark-theme a.button-default.is-yellow svg path,
   html.dark-theme .button-default_button-bg.is-yellow ~ .button-default_button-container svg,
   html.dark-theme .btn-gold-cta svg {
     color: #18181b !important;
@@ -1257,6 +1332,40 @@
   html.dark-theme .process_hint-tag-text {
     color: #18181b !important;
     font-weight: 900 !important;
+  }
+
+  /* Support Page Pillows (WhatsApp / Email pill in Screenshot 1) */
+  html.dark-theme .hero-contact_pillow,
+  html.dark-theme .contact_pillow {
+    background-color: #17142b !important;
+    background: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+  }
+
+  html.dark-theme .hero-contact_pillow-bg,
+  html.dark-theme .hero-contact_pillow-bg-left,
+  html.dark-theme .hero-contact_pillow-bg-center,
+  html.dark-theme .hero-contact_pillow-bg-right {
+    background-color: #17142b !important;
+    background: #17142b !important;
+    border-color: rgba(255, 255, 255, 0.18) !important;
+  }
+
+  html.dark-theme .hero-contact_pillow-title,
+  html.dark-theme .hero-contact_pillow-inner {
+    color: #ffffff !important;
+    font-weight: 800 !important;
+  }
+
+  html.dark-theme .hero-contact_mail-button {
+    background-color: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .hero-contact_mail-button:hover {
+    border-color: #f2c744 !important;
+    color: #f2c744 !important;
   }
 
   /* 5. Pricing Matrix & Cards Section */
@@ -1699,7 +1808,38 @@
     font-weight: 900 !important;
   }
 
-  /* 7. ADMIN / MANAGE SLOT DASHBOARD */
+  /* 7. ADMIN / MANAGE SLOT DASHBOARD & LOCK CARD */
+  html.dark-theme .admin-lock-backdrop {
+    background: rgba(0, 0, 0, 0.85) !important;
+    backdrop-filter: blur(16px) !important;
+  }
+
+  html.dark-theme .admin-lock-card {
+    background-color: #17142b !important;
+    background: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.8) !important;
+    color: #f4f4f8 !important;
+  }
+
+  html.dark-theme .admin-lock-card h2,
+  html.dark-theme .admin-lock-card h3 {
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .admin-lock-card p,
+  html.dark-theme .admin-lock-card span {
+    color: #cbd5e1 !important;
+  }
+
+  html.dark-theme .admin-pin-input,
+  html.dark-theme #admin-gate-pin {
+    background-color: #211c3d !important;
+    background: #211c3d !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+  }
+
   html.dark-theme .hero-step-strip {
     background-color: #17142b !important;
     border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
@@ -1834,7 +1974,7 @@
     border-color: #f2c744 !important;
   }
 
-  /* 8. Validator Terminal Header & Details */
+  /* 8. Validator Terminal Header & Details & 4 Result Stat Cards */
   html.dark-theme .validator-terminal-header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
     color: #cbd5e1 !important;
@@ -1886,12 +2026,62 @@
     color: #cbd5e1 !important;
   }
 
+  /* Validation Result Container */
   html.dark-theme #val-result-container,
   html.dark-theme .validator-result-card {
+    background-color: #17142b !important;
+    background: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    color: #f4f4f8 !important;
+  }
+
+  /* Validation 4 Result Cards (Subscription Plan, Validity, Isolation, Warranty) */
+  html.dark-theme #val-result-container div[style*="background: #ffffff"],
+  html.dark-theme #val-result-container div[style*="background:#ffffff"],
+  html.dark-theme .validator-result-card div[style*="background: #ffffff"],
+  html.dark-theme .validator-result-card div[style*="background:#ffffff"] {
     background-color: #211c3d !important;
     background: #211c3d !important;
     border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
-    color: #f4f4f8 !important;
+  }
+
+  html.dark-theme #val-result-container div[style*="color: #787571"],
+  html.dark-theme #val-result-container div[style*="color:#787571"] {
+    color: #cbd5e1 !important;
+    font-weight: 800 !important;
+  }
+
+  html.dark-theme #val-result-container div[style*="color: #18181b"],
+  html.dark-theme #val-result-container div[style*="color:#18181b"],
+  html.dark-theme #res-pass-title {
+    color: #ffffff !important;
+    font-weight: 900 !important;
+  }
+
+  html.dark-theme #val-result-container div[style*="color: #15803d"],
+  html.dark-theme #val-result-container div[style*="color:#15803d"],
+  html.dark-theme #res-expiry-val {
+    color: #4ade80 !important;
+    font-weight: 900 !important;
+  }
+
+  /* Secondary Button in Validation Result (WhatsApp VIP Support) */
+  html.dark-theme #val-result-container a[style*="background: #ffffff"],
+  html.dark-theme #val-result-container a[style*="background:#ffffff"],
+  html.dark-theme #val-result-container a[style*="background: #fff"],
+  html.dark-theme #val-result-container a[style*="background:#fff"] {
+    background-color: #211c3d !important;
+    background: #211c3d !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+  }
+
+  html.dark-theme #val-result-container a[style*="background: #ffffff"]:hover,
+  html.dark-theme #val-result-container a[style*="background:#ffffff"]:hover {
+    background-color: #2c2552 !important;
+    border-color: #f2c744 !important;
+    color: #f2c744 !important;
   }
 
   html.dark-theme #val-result-container h3,
