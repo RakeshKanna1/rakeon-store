@@ -1,6 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" class="w-mod-js is-ready">
+<html lang="en" class="w-mod-js is-ready dark-theme">
 <head>
+<script id="rakexura-anti-fouc">
+  (function() {
+    try {
+      var saved = localStorage.getItem('rakexura-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var isDark = (saved === 'dark') || (!saved && prefersDark) || (saved === null);
+      if (isDark) {
+        document.documentElement.classList.add('dark-theme');
+        document.documentElement.style.backgroundColor = '#0c0a18';
+      } else {
+        document.documentElement.classList.remove('dark-theme');
+        document.documentElement.style.backgroundColor = '#ffffff';
+      }
+    } catch (e) {}
+  })();
+</script>
 
 <script id="webflow-env-polyfill">
   window.Webflow = window.Webflow || [];
@@ -939,11 +955,20 @@
 
 
 
+
 <style id="rakexura-dark-theme-css">
   /* ==========================================================================
-     RAKEXURA MASTER CYBER DARK THEME
+     RAKEXURA MASTER CYBER DARK THEME & ZERO-FLASH TRANSITION ENGINE
      Deep Midnight (#0c0a18) + High-Contrast Typography + Obsidian Cards
      ========================================================================== */
+
+  :root {
+    color-scheme: dark light;
+  }
+
+  html {
+    background-color: #0c0a18 !important;
+  }
 
   html.dark-theme {
     --color-background: #0c0a18 !important;
@@ -952,11 +977,31 @@
     --ci-beige: #17142b !important;
     --color: #f4f4f8 !important;
     --ci-black: #f4f4f8 !important;
+    background-color: #0c0a18 !important;
+  }
+
+  html:not(.dark-theme) {
+    background-color: #ffffff !important;
+  }
+
+  /* 0. Complete Elimination of Page Transition White Flash / Preloader */
+  .preloader,
+  #preloader,
+  .preloader_element,
+  .preloader_box,
+  [class*="preloader_box"] {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    background-color: #0c0a18 !important;
   }
 
   /* 1. Global Page Backgrounds & Base Text */
   html.dark-theme,
   html.dark-theme body,
+  html.dark-theme #swup,
+  html.dark-theme main,
   html.dark-theme .main,
   html.dark-theme [data-scroll-container],
   html.dark-theme .page-wrapper,
@@ -971,7 +1016,15 @@
   html.dark-theme .content-block,
   html.dark-theme .empty-state,
   html.dark-theme .faq,
-  html.dark-theme .section {
+  html.dark-theme .section,
+  html.dark-theme .is-changing,
+  html.dark-theme .is-animating,
+  html.dark-theme .is-leaving,
+  html.dark-theme .is-rendering,
+  html.dark-theme [data-swup-transition-overlay],
+  html.dark-theme .swup-transition-fade,
+  html.dark-theme .page-transition,
+  html.dark-theme .transition-curtain {
     background-color: #0c0a18 !important;
     color: #f4f4f8 !important;
   }
@@ -2323,13 +2376,27 @@
   })();
 </script>
 
+
 <script id="rakexura-theme-script">
 (function() {
   function getTheme() {
     var saved = localStorage.getItem('rakexura-theme');
     if (saved === 'dark') return 'dark';
     if (saved === 'light') return 'light';
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'dark'; // Default dark
+  }
+
+  function applyTheme(isDark) {
+    if (isDark) {
+      document.documentElement.classList.add('dark-theme');
+      document.documentElement.style.backgroundColor = '#0c0a18';
+      document.body && (document.body.style.backgroundColor = '#0c0a18');
+    } else {
+      document.documentElement.classList.remove('dark-theme');
+      document.documentElement.style.backgroundColor = '#ffffff';
+      document.body && (document.body.style.backgroundColor = '#ffffff');
+    }
+    updateButtonUI(isDark);
   }
 
   function updateButtonUI(isDark) {
@@ -2344,35 +2411,27 @@
     if (touchText) touchText.textContent = isDark ? '☼ Light' : '☾ Dark';
   }
 
-  function setTheme(theme) {
-    var isDark = (theme === 'dark');
-    if (isDark) {
-      document.documentElement.classList.add('dark-theme');
-    } else {
-      document.documentElement.classList.remove('dark-theme');
-    }
-    try { localStorage.setItem('rakexura-theme', theme); } catch(e) {}
-    updateButtonUI(isDark);
-  }
+  // Initial Sync
+  var isDark = getTheme() === 'dark';
+  applyTheme(isDark);
 
-  // Initialize theme
-  var initialTheme = getTheme();
-  setTheme(initialTheme);
-
-  // Global click delegation for instant toggle response
   document.addEventListener('click', function(e) {
     var btn = e.target.closest('#theme-toggle-btn');
     if (btn) {
       e.preventDefault();
-      e.stopPropagation();
-      var currentlyDark = document.documentElement.classList.contains('dark-theme');
-      setTheme(currentlyDark ? 'light' : 'dark');
+      var currentIsDark = document.documentElement.classList.contains('dark-theme');
+      var newIsDark = !currentIsDark;
+      localStorage.setItem('rakexura-theme', newIsDark ? 'dark' : 'light');
+      applyTheme(newIsDark);
     }
   });
 
-  document.addEventListener('swup:contentReplaced', function() {
-    var current = document.documentElement.classList.contains('dark-theme');
-    updateButtonUI(current);
+  // Swup lifecycle persistence - NEVER LOSE DARK THEME ACROSS PAGE TRANSITIONS
+  ['swup:animationInStart', 'swup:animationOutStart', 'swup:contentReplaced', 'swup:pageView', 'DOMContentLoaded'].forEach(function(evt) {
+    document.addEventListener(evt, function() {
+      var activeIsDark = getTheme() === 'dark';
+      applyTheme(activeIsDark);
+    });
   });
 })();
 </script>
