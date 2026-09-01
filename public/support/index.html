@@ -1166,6 +1166,7 @@ body.is-price .accordion_details:after {
 
 
 
+
 <style id="rakexura-dark-theme-css">
   /* ==========================================================================
      RAKEXURA MASTER CYBER DARK THEME
@@ -1240,7 +1241,7 @@ body.is-price .accordion_details:after {
   html.dark-theme [style*="font-family:monospace"],
   html.dark-theme .u-f1,
   html.dark-theme .u-f2 {
-    color: #a1a1aa !important;
+    color: #cbd5e1 !important;
   }
 
   /* 2. Header & Navigation */
@@ -1383,7 +1384,7 @@ body.is-price .accordion_details:after {
   html.dark-theme [data-duration]:not(.active),
   html.dark-theme [data-curr]:not(.active),
   html.dark-theme [data-currency]:not(.active) {
-    color: #a1a1aa !important;
+    color: #cbd5e1 !important;
   }
 
   html.dark-theme [data-duration].active,
@@ -1563,7 +1564,7 @@ body.is-price .accordion_details:after {
   html.dark-theme .search-ctrl-input::placeholder,
   html.dark-theme #track-input::placeholder,
   html.dark-theme #filter-input::placeholder {
-    color: #71717a !important;
+    color: #cbd5e1 !important;
   }
 
   html.dark-theme .btn-action-ghost {
@@ -1593,23 +1594,50 @@ body.is-price .accordion_details:after {
     color: #f4f4f8 !important;
   }
 
+  /* Telemetry Text & Label Contrast */
+  html.dark-theme .telemetry-card-vault div[style*="font-size:10px"],
+  html.dark-theme .telemetry-card-vault div[style*="font-size: 10px"],
+  html.dark-theme .telemetry-card-vault div[style*="font-size:11px"],
+  html.dark-theme .telemetry-card-vault div[style*="font-size: 11px"],
+  html.dark-theme .telemetry-card-vault div[style*="font-size:12px"],
+  html.dark-theme .telemetry-card-vault div[style*="font-size: 12px"],
+  html.dark-theme .telemetry-card-vault span[style*="color:#666666"],
+  html.dark-theme .telemetry-card-vault span[style*="color: #666666"],
+  html.dark-theme .telemetry-card-vault span[style*="color:#777777"],
+  html.dark-theme .telemetry-card-vault span[style*="color: #777777"],
+  html.dark-theme .telemetry-card-vault div[style*="color:#666666"],
+  html.dark-theme .telemetry-card-vault div[style*="color: #666666"],
+  html.dark-theme .telemetry-card-vault div[style*="color:#777777"],
+  html.dark-theme .telemetry-card-vault div[style*="color: #777777"] {
+    color: #cbd5e1 !important;
+    font-weight: 700 !important;
+  }
+
+  html.dark-theme .telemetry-card-vault span[style*="color:#000000"],
+  html.dark-theme .telemetry-card-vault span[style*="color: #000000"],
+  html.dark-theme .telemetry-card-vault div[style*="color:#000000"],
+  html.dark-theme .telemetry-card-vault div[style*="color: #000000"],
   html.dark-theme .telemetry-card-vault h2,
   html.dark-theme .telemetry-card-vault h3,
   html.dark-theme .telemetry-card-vault h4,
-  html.dark-theme .telemetry-card-vault [style*="color:#000000"],
-  html.dark-theme .telemetry-card-vault [style*="color: #000000"],
-  html.dark-theme .telemetry-card-vault [style*="color:#18181b"],
-  html.dark-theme .telemetry-card-vault [style*="color: #18181b"] {
+  html.dark-theme .telemetry-card-vault strong {
     color: #ffffff !important;
   }
 
-  html.dark-theme .telemetry-card-vault [style*="color:#666666"],
-  html.dark-theme .telemetry-card-vault [style*="color: #666666"],
-  html.dark-theme .telemetry-card-vault [style*="color:#777777"],
-  html.dark-theme .telemetry-card-vault [style*="color: #777777"],
-  html.dark-theme .telemetry-card-vault [style*="color:#555555"],
-  html.dark-theme .telemetry-card-vault [style*="color: #555555"] {
-    color: #a1a1aa !important;
+  /* Green Status Labels & Badges */
+  html.dark-theme .telemetry-card-vault div[style*="color:#16a34a"],
+  html.dark-theme .telemetry-card-vault div[style*="color: #16a34a"],
+  html.dark-theme .telemetry-card-vault span[style*="color:#16a34a"],
+  html.dark-theme .telemetry-card-vault span[style*="color: #16a34a"] {
+    color: #4ade80 !important;
+    font-weight: 800 !important;
+  }
+
+  html.dark-theme .telemetry-card-vault div[style*="background:rgba(22,163,74,0.1)"],
+  html.dark-theme .telemetry-card-vault div[style*="background: rgba(22,163,74,0.1)"] {
+    background: rgba(34, 197, 94, 0.2) !important;
+    border: 1px solid rgba(34, 197, 94, 0.4) !important;
+    color: #4ade80 !important;
   }
 
   /* Vault Unit Box in Dark Mode */
@@ -1624,18 +1652,6 @@ body.is-price .accordion_details:after {
     background: #211c3d !important;
     border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
     color: #f4f4f8 !important;
-  }
-
-  html.dark-theme .vault-unit-box [style*="color:#000000"],
-  html.dark-theme .vault-unit-box [style*="color: #000000"],
-  html.dark-theme .vault-unit-box [style*="color:#18181b"],
-  html.dark-theme .vault-unit-box [style*="color: #18181b"] {
-    color: #ffffff !important;
-  }
-
-  html.dark-theme .vault-unit-box [style*="color:#666666"],
-  html.dark-theme .vault-unit-box [style*="color: #666666"] {
-    color: #a1a1aa !important;
   }
 
   /* PIN Reveal/Hide Button in Dark Mode */
@@ -1661,7 +1677,7 @@ body.is-price .accordion_details:after {
     font-weight: 900 !important;
   }
 
-  /* Direct Store Renewal & Support Desk Cards on Track Page (100% Comprehensive Dark Style) */
+  /* Direct Store Renewal & Support Desk Cards on Track Page */
   html.dark-theme .renewal-card-store,
   html.dark-theme .renewal-card-wa,
   html.dark-theme .renewal-options-grid .renewal-card-store,
@@ -1685,6 +1701,7 @@ body.is-price .accordion_details:after {
   html.dark-theme .renewal-card-wa [style*="color:#000000"],
   html.dark-theme .renewal-card-wa [style*="color: #000000"] {
     color: #ffffff !important;
+    font-weight: 900 !important;
   }
 
   html.dark-theme .renewal-card-store p,
@@ -1693,12 +1710,14 @@ body.is-price .accordion_details:after {
   html.dark-theme .renewal-card-store [style*="color: #555555"],
   html.dark-theme .renewal-card-wa [style*="color:#555555"],
   html.dark-theme .renewal-card-wa [style*="color: #555555"] {
-    color: #d4d4d8 !important;
+    color: #e2e8f0 !important;
+    font-size: 13px !important;
   }
 
   html.dark-theme .renewal-card-store span,
   html.dark-theme .renewal-card-wa span {
-    color: #a1a1aa !important;
+    color: #cbd5e1 !important;
+    font-weight: 700 !important;
   }
 
   /* FASTEST • RECOMMENDED Gold Pill Badge inside Renewal Card */
@@ -1713,9 +1732,10 @@ body.is-price .accordion_details:after {
   /* MANUAL SUPPORT Green Pill Badge inside Renewal Card */
   html.dark-theme .renewal-card-wa span[style*="MANUAL SUPPORT"],
   html.dark-theme .renewal-card-wa span[style*="background:#dcfce7"],
-  html.dark-theme .renewal-card-wa span[style*="background: #dcfce7"] {
+  html.dark-theme .renewal-card-wa span[style*="background: #dcfce7"],
+  html.dark-theme .renewal-card-wa .status-badge-manual {
     background-color: #2c2552 !important;
-    color: #22c55e !important;
+    color: #4ade80 !important;
     border: 1px solid rgba(34, 197, 94, 0.3) !important;
   }
 
@@ -1736,7 +1756,7 @@ body.is-price .accordion_details:after {
   }
 
   html.dark-theme .hero-step-item {
-    color: #d4d4d8 !important;
+    color: #cbd5e1 !important;
   }
 
   html.dark-theme .hero-step-num {
@@ -1757,7 +1777,7 @@ body.is-price .accordion_details:after {
   }
 
   html.dark-theme .stat-tag-lbl {
-    color: #a1a1aa !important;
+    color: #cbd5e1 !important;
   }
 
   html.dark-theme .stat-val-num {
@@ -1784,7 +1804,7 @@ body.is-price .accordion_details:after {
   }
 
   html.dark-theme .slot-cust-phone {
-    color: #22c55e !important;
+    color: #4ade80 !important;
   }
 
   html.dark-theme .slot-id-pill {
@@ -1837,7 +1857,7 @@ body.is-price .accordion_details:after {
   }
 
   html.dark-theme .form-label-tag {
-    color: #a1a1aa !important;
+    color: #cbd5e1 !important;
   }
 
   html.dark-theme .form-input-ctrl,
@@ -1867,11 +1887,11 @@ body.is-price .accordion_details:after {
   /* 7. Validator Terminal Header & Details */
   html.dark-theme .validator-terminal-header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
-    color: #a1a1aa !important;
+    color: #cbd5e1 !important;
   }
 
   html.dark-theme .validator-terminal-header span {
-    color: #a1a1aa !important;
+    color: #cbd5e1 !important;
   }
 
   html.dark-theme .validator-terminal-header [style*="color: #18181b"],
@@ -1908,12 +1928,12 @@ body.is-price .accordion_details:after {
   html.dark-theme .validator-input::placeholder,
   html.dark-theme #val-key-input::placeholder,
   html.dark-theme input::placeholder {
-    color: #71717a !important;
+    color: #cbd5e1 !important;
   }
 
   html.dark-theme .validator-footer-note,
   html.dark-theme [style*="Accepted: WhatsApp"] {
-    color: #71717a !important;
+    color: #cbd5e1 !important;
   }
 
   html.dark-theme #val-result-container,
@@ -2003,7 +2023,7 @@ body.is-price .accordion_details:after {
   html.dark-theme .footer_copyright,
   html.dark-theme .footer_time,
   html.dark-theme .footer_decoration-text {
-    color: #a1a1aa !important;
+    color: #cbd5e1 !important;
   }
 
   /* 12. Theme Toggle Button Active Styling */
