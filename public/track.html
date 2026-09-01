@@ -1124,6 +1124,7 @@
 
 
 
+
 <style id="rakexura-dark-theme-css">
   /* ==========================================================================
      RAKEXURA MASTER CYBER DARK THEME
@@ -1242,19 +1243,26 @@
     font-weight: 800 !important;
   }
 
-  /* Next-Page Gateway Tags (e.g. PRICING side pills) */
-  html.dark-theme .next-page_tag-bg {
+  /* Next-Page Gateway Tags (e.g. VALIDATION and PRICING side pills) */
+  html.dark-theme .next-page_tag,
+  html.dark-theme .next-page_tag-inner,
+  html.dark-theme .next-page_tag-bg,
+  html.dark-theme span[data-shape-item-inner],
+  html.dark-theme .next-page_tag span[data-shape-item-inner] {
     background-color: #17142b !important;
     background: #17142b !important;
     border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
   }
 
-  html.dark-theme .next-page_tag-text {
+  html.dark-theme .next-page_tag-text,
+  html.dark-theme .next-page_tag .next-page_tag-text {
     color: #ffffff !important;
     font-weight: 800 !important;
+    font-family: monospace !important;
   }
 
-  html.dark-theme .next-page_tag svg {
+  html.dark-theme .next-page_tag svg,
+  html.dark-theme .next-page_tag-wrap svg {
     color: #f2c744 !important;
     fill: #f2c744 !important;
   }
@@ -1325,7 +1333,9 @@
     font-weight: 700 !important;
   }
 
-  /* ALL Yellow Action Buttons (View Plans, Header CTA, Support, etc.) - VIBRANT GOLD BG + BOLD BLACK TEXT */
+  /* ALL Yellow Action Buttons (View Plans, Validation CTA, Support, etc.) - BOLD BLACK TEXT ON GOLD */
+  html.dark-theme .button-default.is-yellow,
+  html.dark-theme a.button-default.is-yellow,
   html.dark-theme .button-default_button-bg.is-yellow,
   html.dark-theme .button-default.is-yellow .button-default_button-bg,
   html.dark-theme .button-default_button-bg[class*="is-yellow"],
@@ -1336,6 +1346,8 @@
     border: 1.5px solid #f2c744 !important;
   }
 
+  html.dark-theme .button-default.is-yellow *,
+  html.dark-theme a.button-default.is-yellow *,
   html.dark-theme .button-default.is-yellow .button-default_button-text,
   html.dark-theme .button-default.is-yellow .button-default_button-container,
   html.dark-theme .button-default.is-yellow .button-default_button-container *,
@@ -1346,6 +1358,7 @@
   html.dark-theme a.button-default.is-yellow .button-default_button-text,
   html.dark-theme a.button-default.is-yellow .button-default_button-container *,
   html.dark-theme .button-small,
+  html.dark-theme .button-small *,
   html.dark-theme .button-small_text,
   html.dark-theme .button-small .button-small_text,
   html.dark-theme .button-small_container .button-small_text,
