@@ -1435,8 +1435,9 @@ html.is-ready .preloader::before {
       </button>
     </div>
     
-    <div style="font-family: monospace; font-size: 11px; color: #787571; margin-top: 0.65rem;">
-      💡 Accepted: Slot ID (e.g. #XBOX-SLOT-01), 4-digit Profile PIN, or customer WhatsApp number.
+    <div style="font-family: monospace; font-size: 11px; color: #787571; margin-top: 0.65rem; display: flex; align-items: center; gap: 6px;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex-shrink: 0; color: currentColor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 3c.69 0 1.25.56 1.25 1.25S10.69 7.5 10 7.5s-1.25-.56-1.25-1.25S9.31 5 10 5zm1.5 9h-3v-1.5h1V10h-1V8.5h2v4.5h1V14z" fill="currentColor"></path></svg>
+      <span>Accepted: Slot ID (e.g. #XBOX-SLOT-01), 4-digit Profile PIN, or customer WhatsApp number.</span>
     </div>
 
     <!-- Loading State -->
@@ -1514,6 +1515,123 @@ html.is-ready .preloader::before {
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script id="rakexura-real-validator-script">
+  (function() {
+    const SUPABASE_URL = 'https://cwvfgxdhearouclomjeq.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_xkeb5PPKakTH5qQvPQllBA_eZDAHqKK';
+    let supabaseClient = null;
+
+    function getClient() {
+      if (!supabaseClient && window.supabase) {
+        supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+      }
+      return supabaseClient;
+    }
+
+    window.runKeyValidation = async function() {
+      const input = document.getElementById('val-key-input');
+      const rawKey = (input ? input.value : '').trim();
+      const loadingEl = document.getElementById('val-loading');
+      const resultCard = document.getElementById('val-result-card');
+      const errorCard = document.getElementById('val-error-card');
+      const submitBtn = document.getElementById('val-submit-btn');
+
+      if (!rawKey) {
+        if (input) {
+          input.focus();
+          input.style.borderColor = '#dc2626';
+          setTimeout(() => { input.style.borderColor = ''; }, 2000);
+        }
+        return;
+      }
+
+      // Show loading
+      if (loadingEl) loadingEl.style.display = 'block';
+      if (resultCard) resultCard.style.display = 'none';
+      if (errorCard) errorCard.style.display = 'none';
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        const client = getClient();
+        let slot = null;
+
+        if (client) {
+          const cleanNum = rawKey.replace(/[^0-9]/g, '');
+          let query = client.from('subscriptions').select('*');
+
+          if (rawKey.length === 36 && rawKey.includes('-')) {
+            query = query.eq('id', rawKey);
+          } else if (cleanNum.length === 4 && rawKey.length === 4) {
+            query = query.eq('profile_pin', cleanNum);
+          } else if (rawKey.startsWith('#') || rawKey.toUpperCase().includes('SLOT') || rawKey.toUpperCase().includes('PCGP') || rawKey.toUpperCase().includes('GFN') || rawKey.toUpperCase().includes('XBOX') || rawKey.toUpperCase().includes('PASS')) {
+            query = query.ilike('profile_slot', '%' + rawKey + '%');
+          } else if (cleanNum.length >= 7) {
+            query = query.ilike('whatsapp', '%' + cleanNum + '%');
+          } else {
+            query = query.or('profile_slot.ilike.%' + rawKey + '%,customer_name.ilike.%' + rawKey + '%,profile_pin.eq.' + rawKey);
+          }
+
+          const { data, error } = await query.order('expiry_date', { ascending: false }).limit(1);
+          if (!error && data && data.length > 0) {
+            slot = data[0];
+          }
+        }
+
+        if (loadingEl) loadingEl.style.display = 'none';
+        if (submitBtn) submitBtn.disabled = false;
+
+        if (slot) {
+          // Found real slot!
+          const slotName = slot.profile_slot || rawKey;
+          const platformName = slot.platform || 'Subscription Pass';
+
+          let timeText = 'Active';
+          if (slot.expiry_date) {
+            const diff = new Date(slot.expiry_date).getTime() - Date.now();
+            if (diff > 0) {
+              const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+              timeText = days > 0 ? (days + ' Days Remaining') : 'Expiring Today';
+            } else {
+              timeText = 'Expired';
+            }
+          }
+
+          document.getElementById('res-key-label').innerText = 'SLOT: ' + slotName.toUpperCase();
+          document.getElementById('res-pass-title').innerText = platformName;
+          document.getElementById('res-expiry-val').innerText = timeText;
+          document.getElementById('res-track-link').href = '/track?slot=' + encodeURIComponent(slotName);
+
+          if (resultCard) resultCard.style.display = 'block';
+        } else {
+          // Wrong key / not found
+          document.getElementById('err-key-label').innerText = '"' + rawKey + '"';
+          document.getElementById('err-whatsapp-link').href = 'https://wa.me/918317416695?text=' + encodeURIComponent('Hi Rakexura Team, my subscription slot key (' + rawKey + ') is showing not found on the validator. Could you assist?');
+          if (errorCard) errorCard.style.display = 'block';
+        }
+      } catch (err) {
+        if (loadingEl) loadingEl.style.display = 'none';
+        if (submitBtn) submitBtn.disabled = false;
+        if (errorCard) {
+          document.getElementById('err-key-label').innerText = '"' + rawKey + '"';
+          errorCard.style.display = 'block';
+        }
+      }
+    };
+
+    // Auto-run if query param ?key= or ?slot= exists
+    document.addEventListener('DOMContentLoaded', function() {
+      var params = new URLSearchParams(window.location.search);
+      var queryKey = params.get('key') || params.get('slot');
+      if (queryKey) {
+        var input = document.getElementById('val-key-input');
+        if (input) {
+          input.value = queryKey;
+          runKeyValidation();
+        }
+      }
+    });
+  })();
+</script>
 <script id="rakexura-real-validator-script">
   (function() {
     const SUPABASE_URL = 'https://cwvfgxdhearouclomjeq.supabase.co';

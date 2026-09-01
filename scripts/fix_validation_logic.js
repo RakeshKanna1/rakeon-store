@@ -30,8 +30,9 @@ const newValidationSection = `
       </button>
     </div>
     
-    <div style="font-family: monospace; font-size: 11px; color: #787571; margin-top: 0.65rem;">
-      💡 Accepted: Slot ID (e.g. #XBOX-SLOT-01), 4-digit Profile PIN, or customer WhatsApp number.
+    <div style="font-family: monospace; font-size: 11px; color: #787571; margin-top: 0.65rem; display: flex; align-items: center; gap: 6px;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex-shrink: 0; color: currentColor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 3c.69 0 1.25.56 1.25 1.25S10.69 7.5 10 7.5s-1.25-.56-1.25-1.25S9.31 5 10 5zm1.5 9h-3v-1.5h1V10h-1V8.5h2v4.5h1V14z" fill="currentColor"></path></svg>
+      <span>Accepted: Slot ID (e.g. #XBOX-SLOT-01), 4-digit Profile PIN, or customer WhatsApp number.</span>
     </div>
 
     <!-- Loading State -->
