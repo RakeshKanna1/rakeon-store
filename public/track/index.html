@@ -1120,6 +1120,7 @@
 
 
 
+
 <style id="rakexura-dark-theme-css">
   /* ==========================================================================
      RAKEXURA MASTER CYBER DARK THEME
@@ -1146,6 +1147,8 @@
   html.dark-theme .hero-process,
   html.dark-theme .hero-contact,
   html.dark-theme .hero-track,
+  html.dark-theme .process,
+  html.dark-theme .process_container,
   html.dark-theme .content-block,
   html.dark-theme .empty-state,
   html.dark-theme .faq,
@@ -1167,7 +1170,8 @@
   html.dark-theme .hero-price_title,
   html.dark-theme .hero-price_title span,
   html.dark-theme .hero-track_title,
-  html.dark-theme .hero-step-title {
+  html.dark-theme .hero-step-title,
+  html.dark-theme .process_content-button-text {
     color: #ffffff !important;
   }
 
@@ -1185,6 +1189,7 @@
   html.dark-theme .u-p1,
   html.dark-theme .hero_desc,
   html.dark-theme .hero-price_header p,
+  html.dark-theme .process_content-description,
   html.dark-theme .rich-text p {
     color: #d4d4d8 !important;
   }
@@ -1253,10 +1258,12 @@
     font-weight: 700 !important;
   }
 
-  /* ALL Yellow Action Buttons (Header, Footer Next-Page, CTAs) - VIBRANT GOLD BG + BOLD BLACK TEXT */
+  /* ALL Yellow Action Buttons & Small Buttons - VIBRANT GOLD BG + BOLD BLACK TEXT */
   html.dark-theme .button-default_button-bg.is-yellow,
   html.dark-theme .button-default.is-yellow .button-default_button-bg,
-  html.dark-theme .button-default_button-bg[class*="is-yellow"] {
+  html.dark-theme .button-default_button-bg[class*="is-yellow"],
+  html.dark-theme .button-small_bg,
+  html.dark-theme .button-small .button-small_bg {
     background-color: #f2c744 !important;
     background: #f2c744 !important;
     border: 1.5px solid #f2c744 !important;
@@ -1265,6 +1272,11 @@
   html.dark-theme .button-default.is-yellow .button-default_button-text,
   html.dark-theme .button-default_button-bg.is-yellow ~ .button-default_button-container .button-default_button-text,
   html.dark-theme a.button-default.is-yellow .button-default_button-text,
+  html.dark-theme .button-small,
+  html.dark-theme .button-small_text,
+  html.dark-theme .button-small .button-small_text,
+  html.dark-theme .button-small_container .button-small_text,
+  html.dark-theme a.button-small .button-small_text,
   html.dark-theme .btn-gold-cta,
   html.dark-theme .btn-gold-cta *,
   html.dark-theme .btn-gold-cta span,
@@ -1350,7 +1362,72 @@
     filter: brightness(0) invert(1) drop-shadow(0 4px 14px rgba(242, 199, 68, 0.4)) !important;
   }
 
-  /* 4. Pricing Matrix & Cards Section */
+  /* 4. PROCESS PHASE MODULES (01 Allocation, 02 Telemetry, 03 Auto-Renew, 04 Warranty) */
+  html.dark-theme .process_visual-pillow {
+    background-color: #17142b !important;
+    background: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+  }
+
+  html.dark-theme .process_visual-pillow.has-text,
+  html.dark-theme .process_visual-pillow-text {
+    color: #ffffff !important;
+    font-weight: 800 !important;
+  }
+
+  html.dark-theme .process_visual-img-outer {
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 1.5rem !important;
+    overflow: hidden !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6) !important;
+  }
+
+  html.dark-theme .process_visual-circle,
+  html.dark-theme .process_visual-rectangle,
+  html.dark-theme .process_visual-bottom-box,
+  html.dark-theme .process_visual-bottom-length-wrap {
+    background-color: #17142b !important;
+    background: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    color: #ffffff !important;
+  }
+
+  /* Vertical Step Minimap Navigation Rail on Right Side */
+  html.dark-theme .process_minimap-bg {
+    background-color: #17142b !important;
+    background: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  html.dark-theme .process_minimap-number {
+    color: #f2c744 !important;
+    font-weight: 800 !important;
+  }
+
+  html.dark-theme .process_minimap-line {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+  }
+
+  html.dark-theme .process_minimap-item.is-active .process_minimap-number {
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .process_minimap-item.is-active .process_minimap-line {
+    background-color: #f2c744 !important;
+  }
+
+  /* Process Content Switcher Hint Pill */
+  html.dark-theme .process_hint-tag-bg {
+    background-color: #f2c744 !important;
+  }
+
+  html.dark-theme .process_hint-tag-text {
+    color: #18181b !important;
+    font-weight: 900 !important;
+  }
+
+  /* 5. Pricing Matrix & Cards Section */
   html.dark-theme #pricing-matrix,
   html.dark-theme .section.is-pricing,
   html.dark-theme .home-pricing-section,
@@ -1521,7 +1598,7 @@
     color: #22c55e !important;
   }
 
-  /* 5. Validation / Slot Tracker / Telemetry Sections */
+  /* 6. Validation / Slot Tracker / Telemetry Sections */
   html.dark-theme .validator-section,
   html.dark-theme #validator-section,
   html.dark-theme .track-section,
@@ -1790,7 +1867,7 @@
     font-weight: 900 !important;
   }
 
-  /* 6. ADMIN / MANAGE SLOT DASHBOARD */
+  /* 7. ADMIN / MANAGE SLOT DASHBOARD */
   html.dark-theme .hero-step-strip {
     background-color: #17142b !important;
     border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
@@ -1925,7 +2002,7 @@
     border-color: #f2c744 !important;
   }
 
-  /* 7. Validator Terminal Header & Details */
+  /* 8. Validator Terminal Header & Details */
   html.dark-theme .validator-terminal-header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
     color: #cbd5e1 !important;
@@ -1995,7 +2072,7 @@
     color: #d4d4d8 !important;
   }
 
-  /* 8. Pricing Comparison Table */
+  /* 9. Pricing Comparison Table */
   html.dark-theme .pricing-compare-section {
     background-color: #17142b !important;
     border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
@@ -2017,7 +2094,7 @@
     border-color: rgba(255, 255, 255, 0.15) !important;
   }
 
-  /* 9. FAQ & Accordions */
+  /* 10. FAQ & Accordions */
   html.dark-theme .accordion_item,
   html.dark-theme details.accordion_details {
     border-color: rgba(255, 255, 255, 0.15) !important;
@@ -2032,7 +2109,7 @@
     color: #d4d4d8 !important;
   }
 
-  /* 10. Support Page Action Cards */
+  /* 11. Support Page Action Cards */
   html.dark-theme .support-card-item {
     background-color: #17142b !important;
     border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
@@ -2047,7 +2124,7 @@
     color: #d4d4d8 !important;
   }
 
-  /* 11. Footer & Sitemap */
+  /* 12. Footer & Sitemap */
   html.dark-theme .footer {
     background-color: #0c0a18 !important;
     border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
@@ -2067,7 +2144,7 @@
     color: #cbd5e1 !important;
   }
 
-  /* 12. Theme Toggle Button Active Styling */
+  /* 13. Theme Toggle Button Active Styling */
   html.dark-theme #theme-toggle-btn {
     border-color: rgba(242, 199, 68, 0.5) !important;
     color: #f2c744 !important;
