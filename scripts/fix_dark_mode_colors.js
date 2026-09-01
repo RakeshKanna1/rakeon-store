@@ -247,6 +247,26 @@ html.dark-theme #val-loading {
   color: #a0a8c0 !important;
 }
 
+
+/* Dark Theme Footer Next-Page Gateway */
+html.dark-theme .footer_next-page .button-default.no-animation {
+  background-color: #17142b !important;
+  color: #f4f4f8 !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html.dark-theme .footer_next-page .button-default.is-yellow {
+  background-color: #f2c744 !important;
+  color: #18181b !important;
+  border-color: #18181b !important;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.6) !important;
+}
+
+html.dark-theme .footer_next-page .button-default.is-yellow .button-default_button-text,
+html.dark-theme .footer_next-page .button-default.is-yellow svg {
+  color: #18181b !important;
+}
+
 html.dark-theme #val-loading div {
   color: #f4f4f8 !important;
 }
@@ -304,6 +324,111 @@ const baseEnhancements = `
 .hero-contact_description {
   margin: 0 !important;
   line-height: 1.35 !important;
+}
+
+
+/* ==========================================================================
+   UNIFIED FOOTER NEXT-PAGE GATEWAY PILLS
+   Flawless, identical styling across all pages (Home, Pricing, Validation, Support)
+   ========================================================================== */
+.footer_next-page {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+}
+
+.footer_next-page-action {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+/* Left Informational Pill (e.g. "NEED SUPPORT?", "HOW IT WORKS?", "VIEW PRICING?") */
+.footer_next-page .button-default.no-animation {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  box-sizing: border-box !important;
+  background-color: #e8e3dc !important;
+  color: #18181b !important;
+  border: 1.5px solid rgba(24, 24, 27, 0.15) !important;
+  border-radius: 1.25rem !important;
+  padding: 0 16px !important;
+  font-family: var(--font-family-mono, monospace) !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  overflow: hidden !important;
+}
+
+.footer_next-page .button-default.no-animation .button-default_button-bg {
+  display: none !important;
+}
+
+.footer_next-page .button-default.no-animation .button-default_button-container {
+  padding: 0 !important;
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  text-transform: inherit !important;
+}
+
+/* Right Interactive Action Pill (e.g. "SUPPORT", "VALIDATION", "PRICING") */
+.footer_next-page .button-default.is-yellow {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  box-sizing: border-box !important;
+  background-color: #f2c744 !important;
+  color: #18181b !important;
+  border: 1.5px solid #18181b !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 2px 0 #18181b !important;
+  padding: 0 18px !important;
+  font-family: var(--font-family-mono, monospace) !important;
+  font-size: 11.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease !important;
+}
+
+.footer_next-page .button-default.is-yellow:hover {
+  background-color: #e8bc33 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 3px 0 #18181b !important;
+}
+
+.footer_next-page .button-default.is-yellow .button-default_button-bg {
+  display: none !important;
+}
+
+.footer_next-page .button-default.is-yellow .button-default_button-container {
+  padding: 0 !important;
+  gap: 6px !important;
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  text-transform: inherit !important;
+}
+
+.footer_next-page .button-default.is-yellow svg {
+  width: 14px !important;
+  height: 14px !important;
+  color: #18181b !important;
+  flex-shrink: 0 !important;
 }
 
 .support-action-bar {

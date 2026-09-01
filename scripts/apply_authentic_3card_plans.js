@@ -5,9 +5,14 @@ const { execSync } = require('child_process');
 console.log("Extracting authentic 3-card pricing design from commit 63a153a...");
 
 // 1. Get authentic pricing.html (source of truth)
-const pricingHtml63 = fs.existsSync('pricing.html') 
+let pricingHtml63 = fs.existsSync('pricing.html') 
   ? fs.readFileSync('pricing.html', 'utf8') 
   : execSync('git show 63a153a:pricing.html', { maxBuffer: 15*1024*1024 }).toString('utf8');
+
+pricingHtml63 = pricingHtml63
+  .replace(/\.button-default\.is-yellow,\s*/g, '')
+  .replace(/,\s*\.button-default\.is-yellow:hover/g, '')
+  .replace(/\.button-default\.is-yellow:hover,\s*/g, '');
 
 // Extract the <section class="section is-pricing" ...> ... </section>
 const sectionMatch = pricingHtml63.match(/<section class="section is-pricing"[\s\S]*?<\/section>/);
