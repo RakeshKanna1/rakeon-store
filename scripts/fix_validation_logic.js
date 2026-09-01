@@ -63,7 +63,7 @@ const newValidationSection = `
           <div id="res-expiry-val" style="font-size: 14.5px; font-weight: 900; color: #15803d; margin-top: 4px;">Active</div>
         </div>
         <div style="background: #ffffff; border: 1.5px solid #18181b; border-radius: 0.75rem; padding: 14px 16px;">
-          <div style="font-size: 10.5px; font-family: monospace; color: #787571; text-transform: uppercase;">PIN Guard Isolation</div>
+          <div style="font-size: 10.5px; font-family: monospace; color: #787571; text-transform: uppercase;">Profile Isolation</div>
           <div style="font-size: 14.5px; font-weight: 900; color: #15803d; margin-top: 4px;">&#10003; 100% Dedicated Slot</div>
         </div>
         <div style="background: #ffffff; border: 1.5px solid #18181b; border-radius: 0.75rem; padding: 14px 16px;">
