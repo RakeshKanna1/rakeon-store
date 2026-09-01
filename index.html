@@ -1625,6 +1625,7 @@
 
 
 
+
 <style id="rakexura-dark-theme-css">
   /* ==========================================================================
      RAKEXURA MASTER CYBER DARK THEME
@@ -1788,17 +1789,27 @@
     fill: #18181b !important;
   }
 
-  /* 3. Homepage 3D Service Cards */
+  /* 3. Homepage 3D Service Cards - SMOOTH CURVED CORNERS WITHOUT SHARP WIREFRAME */
+  html.dark-theme .hero_card-list-item,
   html.dark-theme .service-card,
-  html.dark-theme .service-card_flip-back,
+  html.dark-theme .hero_card-list-item .service-card {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
   html.dark-theme .service-card_flip-front,
-  html.dark-theme .hero_card-list-item .service-card,
-  html.dark-theme .hero_card-list-item .service-card_flip-front {
+  html.dark-theme .service-card_flip-back,
+  html.dark-theme .hero_card-list-item .service-card_flip-front,
+  html.dark-theme .hero_card-list-item .service-card_flip-back {
     background-color: #17142b !important;
     background: #17142b !important;
     border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 1.5rem !important; /* Smooth curved corners */
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6) !important;
     color: #f4f4f8 !important;
+    overflow: hidden !important;
   }
 
   html.dark-theme .service-card_back-top-title,
@@ -1826,6 +1837,13 @@
     background-color: #2c2552 !important;
     border-color: #f2c744 !important;
     color: #f2c744 !important;
+  }
+
+  /* 3D Pixel Center Artwork in Dark Mode */
+  html.dark-theme .service-card_front-visual img,
+  html.dark-theme .service-card_front-visual svg,
+  html.dark-theme .pixel-visual_img {
+    filter: brightness(0) invert(1) drop-shadow(0 4px 14px rgba(242, 199, 68, 0.4)) !important;
   }
 
   /* 4. Pricing Matrix & Cards Section */
@@ -2068,7 +2086,7 @@
     background-color: #211c3d !important;
     background: #211c3d !important;
     border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
-    border-radius: 1.5rem !important; /* Smooth curved card */
+    border-radius: 1.5rem !important;
   }
 
   /* Countdown Grid Wrapper - NO BORDER (Removes sharp wireframe) */
@@ -2086,7 +2104,7 @@
     background-color: #17142b !important;
     background: #17142b !important;
     border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
-    border-radius: 1.25rem !important; /* Smooth curved capsule */
+    border-radius: 1.25rem !important;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
   }
 
@@ -2163,7 +2181,7 @@
     background-color: #211c3d !important;
     background: #211c3d !important;
     border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
-    border-radius: 1.25rem !important; /* Smooth curved profile panel */
+    border-radius: 1.25rem !important;
     color: #f4f4f8 !important;
   }
 
@@ -2205,7 +2223,7 @@
     background-color: #211c3d !important;
     background: #211c3d !important;
     border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
-    border-radius: 1.25rem !important; /* Smooth curved card */
+    border-radius: 1.25rem !important;
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5) !important;
     color: #f4f4f8 !important;
   }
