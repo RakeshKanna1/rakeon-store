@@ -1626,6 +1626,7 @@
 
 
 
+
 <style id="rakexura-dark-theme-css">
   /* ==========================================================================
      RAKEXURA MASTER CYBER DARK THEME
@@ -1735,13 +1736,15 @@
   }
 
   html.dark-theme .header_nav-button-bg,
-  html.dark-theme .button-default_button-bg {
+  html.dark-theme .button-default:not(.is-yellow) .button-default_button-bg,
+  html.dark-theme .button-default_button-bg:not(.is-yellow) {
     background-color: #17142b !important;
     border: 1px solid rgba(255, 255, 255, 0.18) !important;
   }
 
   html.dark-theme .header_nav-button,
-  html.dark-theme .header_menu-button {
+  html.dark-theme .header_menu-button,
+  html.dark-theme .button-default:not(.is-yellow) .button-default_button-text {
     color: #f4f4f8 !important;
   }
 
@@ -1757,11 +1760,18 @@
     font-weight: 700 !important;
   }
 
-  /* ALL Yellow Action Buttons & Spans - ALWAYS BOLD DARK BLACK TEXT */
-  .button-default:has(.is-yellow) .button-default_button-text,
-  a:has(.button-default_button-bg.is-yellow) .button-default_button-text,
-  html.dark-theme a:has(.button-default_button-bg.is-yellow) .button-default_button-text,
-  html.dark-theme .button-default_button-bg.is-yellow ~ .button-default_button-text,
+  /* ALL Yellow Action Buttons (Header, Footer Next-Page, CTAs) - VIBRANT GOLD BG + BOLD BLACK TEXT */
+  html.dark-theme .button-default_button-bg.is-yellow,
+  html.dark-theme .button-default.is-yellow .button-default_button-bg,
+  html.dark-theme .button-default_button-bg[class*="is-yellow"] {
+    background-color: #f2c744 !important;
+    background: #f2c744 !important;
+    border: 1.5px solid #f2c744 !important;
+  }
+
+  html.dark-theme .button-default.is-yellow .button-default_button-text,
+  html.dark-theme .button-default_button-bg.is-yellow ~ .button-default_button-container .button-default_button-text,
+  html.dark-theme a.button-default.is-yellow .button-default_button-text,
   html.dark-theme .btn-gold-cta,
   html.dark-theme .btn-gold-cta *,
   html.dark-theme .btn-gold-cta span,
@@ -1782,8 +1792,9 @@
     font-weight: 900 !important;
   }
 
-  html.dark-theme a:has(.button-default_button-bg.is-yellow) svg,
-  html.dark-theme .button-default_button-bg.is-yellow ~ svg,
+  html.dark-theme .button-default.is-yellow svg,
+  html.dark-theme a.button-default.is-yellow svg,
+  html.dark-theme .button-default_button-bg.is-yellow ~ .button-default_button-container svg,
   html.dark-theme .btn-gold-cta svg {
     color: #18181b !important;
     fill: #18181b !important;
