@@ -916,6 +916,75 @@
   }
   
 </style>
+<style id="rakexura-dark-theme-css">
+  /* Cyber Dark Theme - Strictly Scoped to html.dark-theme */
+  html.dark-theme {
+    --color-background: #0c0a18 !important;
+    --ci-cream: #0c0a18 !important;
+    --color-background-beige: #17142b !important;
+    --ci-beige: #17142b !important;
+    --color: #f4f4f8 !important;
+    --ci-black: #f4f4f8 !important;
+  }
+
+  html.dark-theme,
+  html.dark-theme body,
+  html.dark-theme .main,
+  html.dark-theme [data-scroll-container],
+  html.dark-theme .page-wrapper,
+  html.dark-theme .hero,
+  html.dark-theme .hero-price,
+  html.dark-theme .hero-process,
+  html.dark-theme .hero-contact,
+  html.dark-theme .content-block,
+  html.dark-theme .empty-state,
+  html.dark-theme .faq {
+    background-color: #0c0a18 !important;
+    color: #f4f4f8 !important;
+  }
+
+  html.dark-theme h1,
+  html.dark-theme h2,
+  html.dark-theme h3,
+  html.dark-theme h4,
+  html.dark-theme .u-h1,
+  html.dark-theme .u-h2,
+  html.dark-theme .hero_title-span,
+  html.dark-theme .hero_title {
+    color: #f4f4f8 !important;
+  }
+
+  html.dark-theme p,
+  html.dark-theme .u-p1,
+  html.dark-theme .hero_desc {
+    color: #d4d4d8 !important;
+  }
+
+  html.dark-theme .header {
+    background-color: rgba(12, 10, 24, 0.88) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+  html.dark-theme .header_nav-button-bg,
+  html.dark-theme .button-default_button-bg {
+    background-color: #17142b !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  html.dark-theme .header_nav-button,
+  html.dark-theme .header_title-link,
+  html.dark-theme .header_menu-button {
+    color: #f4f4f8 !important;
+  }
+
+  html.dark-theme .pricing-card-item,
+  html.dark-theme .validator-terminal-card,
+  html.dark-theme .pricing-compare-section {
+    background-color: #17142b !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    color: #f4f4f8 !important;
+  }
+</style>
 </head>
 <body style="background:#000; color:#b9a4ff; font-family:sans-serif; padding:40px 20px; line-height:1.8; max-width:800px; margin:auto;">
   <a href="/" style="color:#facc15; text-decoration:none; font-weight:bold;">&larr; Back to Subscriptions</a>
@@ -1071,5 +1140,58 @@
   })();
 </script>
 
+<script id="rakexura-theme-script">
+(function() {
+  function getTheme() {
+    var saved = localStorage.getItem('rakexura-theme');
+    if (saved === 'dark') return 'dark';
+    if (saved === 'light') return 'light';
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function updateButtonUI(isDark) {
+    var btn = document.getElementById('theme-toggle-btn');
+    if (!btn) return;
+    btn.setAttribute('data-text', isDark ? 'Light' : 'Dark');
+    btn.setAttribute('title', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
+    btn.setAttribute('aria-label', isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode');
+    var spanText = btn.querySelector('.header_nav-button-text-span');
+    var touchText = btn.querySelector('.header_nav-button-text-touch');
+    if (spanText) spanText.textContent = isDark ? '☼ Light' : '☾ Dark';
+    if (touchText) touchText.textContent = isDark ? '☼ Light' : '☾ Dark';
+  }
+
+  function setTheme(theme) {
+    var isDark = (theme === 'dark');
+    if (isDark) {
+      document.documentElement.classList.add('dark-theme');
+    } else {
+      document.documentElement.classList.remove('dark-theme');
+    }
+    try { localStorage.setItem('rakexura-theme', theme); } catch(e) {}
+    updateButtonUI(isDark);
+  }
+
+  // Initialize theme
+  var initialTheme = getTheme();
+  setTheme(initialTheme);
+
+  // Global click delegation for instant toggle response
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('#theme-toggle-btn');
+    if (btn) {
+      e.preventDefault();
+      e.stopPropagation();
+      var currentlyDark = document.documentElement.classList.contains('dark-theme');
+      setTheme(currentlyDark ? 'light' : 'dark');
+    }
+  });
+
+  document.addEventListener('swup:contentReplaced', function() {
+    var current = document.documentElement.classList.contains('dark-theme');
+    updateButtonUI(current);
+  });
+})();
+</script>
 </body>
 </html>
