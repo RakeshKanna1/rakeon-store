@@ -222,19 +222,87 @@ html.dark-theme textarea {
 }
 `;
 
+const baseEnhancements = `
+/* Pricing Comparison Matrix - Default Light Theme */
+.pricing-compare-section {
+  background-color: #ffffff !important;
+  border: 1.5px solid #18181b !important;
+  color: #18181b !important;
+}
+
+.pricing-compare-section table {
+  color: #18181b !important;
+}
+
+.pricing-compare-section th {
+  color: #18181b !important;
+}
+
+.pricing-compare-section td {
+  color: #18181b !important;
+}
+
+.pricing-compare-section td strong {
+  color: #18181b !important;
+}
+
+.pricing-compare-section td[style*="color: #71717a"],
+.pricing-compare-section td[style*="color:#71717a"],
+.pricing-compare-section td[style*="color: #888888"],
+.pricing-compare-section td[style*="color:#888888"] {
+  color: #71717a !important;
+}
+
+/* Support Hero Compact Layout */
+.hero-contact {
+  min-height: calc(100svh - var(--header-height)) !important;
+}
+
+.hero-contact_content {
+  padding-top: 1.5rem !important;
+  grid-gap: 2.25rem !important;
+  align-content: start !important;
+}
+
+.hero-contact_action-group {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.15rem !important;
+  align-items: flex-start !important;
+}
+
+.hero-contact_description {
+  margin: 0 !important;
+  line-height: 1.35 !important;
+}
+
+.support-action-bar {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  align-items: center !important;
+  margin-top: 0 !important;
+}
+`;
+
 ['styles.css', 'public/styles.css', 'public/showcase/styles.css'].forEach(cssPath => {
   if (!fs.existsSync(cssPath)) return;
   let css = fs.readFileSync(cssPath, 'utf8');
 
-  // Remove previous custom dark theme block if present
-  const cutIndex = css.indexOf('/* ==========================================================================\n   RAKEXURA HARMONIOUS CYBER DARK THEME');
+  // Remove previous custom blocks if present
+  const cutIndex = css.indexOf('/* Pricing Comparison Matrix - Default Light Theme */');
   if (cutIndex !== -1) {
     css = css.substring(0, cutIndex).trimEnd();
+  } else {
+    const darkIndex = css.indexOf('/* ==========================================================================\n   RAKEXURA HARMONIOUS CYBER DARK THEME');
+    if (darkIndex !== -1) {
+      css = css.substring(0, darkIndex).trimEnd();
+    }
   }
 
-  css = css.trimEnd() + '\n\n' + darkModeStyles.trim() + '\n';
+  css = css.trimEnd() + '\n\n' + baseEnhancements.trim() + '\n\n' + darkModeStyles.trim() + '\n';
   fs.writeFileSync(cssPath, css, 'utf8');
-  console.log("Updated dark mode palette in:", cssPath);
+  console.log("Updated stylesheets in:", cssPath);
 });
 
-console.log("Dark mode palette updated successfully!");
+console.log("Dark mode palette and base enhancements updated successfully!");

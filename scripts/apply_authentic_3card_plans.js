@@ -56,7 +56,10 @@ indexTargets.forEach(p => {
   html = html.replace(/<section class="section is-pricing"[\s\S]*?<\/section>/g, '');
 
   // Wrap section in #pricing-matrix id for smooth anchor linking
-  const homePricingSection = pricingSection.replace('<section class="section is-pricing"', '<section id="pricing-matrix" class="section is-pricing"');
+  let homePricingSection = pricingSection.replace('<section class="section is-pricing"', '<section id="pricing-matrix" class="section is-pricing"');
+
+  // Remove comparison matrix info box from homepage (kept on dedicated /pricing page)
+  homePricingSection = homePricingSection.replace(/<!-- Store Comparison Table -->[\s\S]*?<div class="pricing-compare-section"[\s\S]*?<\/table>\s*<\/div>/, '');
 
   // Insert before <section ... class="next-page"
   if (html.includes('class="next-page"') || html.includes('data-next-page')) {
