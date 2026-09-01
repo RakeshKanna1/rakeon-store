@@ -1102,8 +1102,24 @@
   }
   
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
 <style id="rakexura-dark-theme-css">
-  /* Cyber Dark Theme - Strictly Scoped to html.dark-theme */
+  /* ==========================================================================
+     RAKEXURA MASTER CYBER DARK THEME
+     Deep Midnight (#0c0a18) + High-Contrast Typography + Obsidian Cards
+     ========================================================================== */
+
   html.dark-theme {
     --color-background: #0c0a18 !important;
     --ci-cream: #0c0a18 !important;
@@ -1113,6 +1129,7 @@
     --ci-black: #f4f4f8 !important;
   }
 
+  /* 1. Global Page Backgrounds & Base Text */
   html.dark-theme,
   html.dark-theme body,
   html.dark-theme .main,
@@ -1122,53 +1139,758 @@
   html.dark-theme .hero-price,
   html.dark-theme .hero-process,
   html.dark-theme .hero-contact,
+  html.dark-theme .hero-track,
   html.dark-theme .content-block,
   html.dark-theme .empty-state,
-  html.dark-theme .faq {
+  html.dark-theme .faq,
+  html.dark-theme .section {
     background-color: #0c0a18 !important;
     color: #f4f4f8 !important;
   }
 
+  /* Headings */
   html.dark-theme h1,
   html.dark-theme h2,
   html.dark-theme h3,
   html.dark-theme h4,
   html.dark-theme .u-h1,
   html.dark-theme .u-h2,
+  html.dark-theme .u-h3,
+  html.dark-theme .hero_title,
   html.dark-theme .hero_title-span,
-  html.dark-theme .hero_title {
-    color: #f4f4f8 !important;
+  html.dark-theme .hero-price_title,
+  html.dark-theme .hero-price_title span,
+  html.dark-theme .hero-track_title,
+  html.dark-theme .hero-step-title {
+    color: #ffffff !important;
   }
 
+  /* Yellow Highlight Tag (e.g. Telemetry / Badges) - ALWAYS BOLD DARK TEXT */
+  html.dark-theme span[style*="background:#facc15"],
+  html.dark-theme span[style*="background: #facc15"],
+  html.dark-theme span[style*="background:#f2c744"],
+  html.dark-theme span[style*="background: #f2c744"] {
+    color: #18181b !important;
+    font-weight: 900 !important;
+  }
+
+  /* Paragraphs & Subtitles */
   html.dark-theme p,
   html.dark-theme .u-p1,
-  html.dark-theme .hero_desc {
+  html.dark-theme .hero_desc,
+  html.dark-theme .hero-price_header p,
+  html.dark-theme .rich-text p {
     color: #d4d4d8 !important;
   }
 
+  /* Monospace Matrix Tags */
+  html.dark-theme [style*="font-family: monospace"],
+  html.dark-theme [style*="font-family:monospace"],
+  html.dark-theme .u-f1,
+  html.dark-theme .u-f2 {
+    color: #a1a1aa !important;
+  }
+
+  /* 2. Header & Navigation */
   html.dark-theme .header {
-    background-color: rgba(12, 10, 24, 0.88) !important;
+    background-color: rgba(12, 10, 24, 0.9) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(12px) !important;
+  }
+
+  /* Top-Left RAKEXURA Logo Pill Fix in Dark Mode */
+  html.dark-theme .header_title-bg {
+    background-color: #17142b !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  }
+
+  html.dark-theme .header_title-link,
+  html.dark-theme .header_title-button,
+  html.dark-theme .header_title-logo-text,
+  html.dark-theme .header_logo-text,
+  html.dark-theme .header_title-text {
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .header_title-button .icon {
+    color: #f2c744 !important;
+    fill: #f2c744 !important;
+  }
+
+  html.dark-theme .header_title-profile {
+    background-color: #17142b !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
   }
 
   html.dark-theme .header_nav-button-bg,
   html.dark-theme .button-default_button-bg {
     background-color: #17142b !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
   }
 
   html.dark-theme .header_nav-button,
-  html.dark-theme .header_title-link,
   html.dark-theme .header_menu-button {
     color: #f4f4f8 !important;
   }
 
+  html.dark-theme .header_nav-button.w--current .header_nav-button-bg,
+  html.dark-theme .header_nav-button.is-active .header_nav-button-bg {
+    background-color: #f4f4f8 !important;
+    border-color: #ffffff !important;
+  }
+
+  html.dark-theme .header_nav-button.w--current,
+  html.dark-theme .header_nav-button.is-active {
+    color: #0c0a18 !important;
+    font-weight: 700 !important;
+  }
+
+  /* Yellow Action Buttons - ALWAYS BOLD DARK TEXT */
+  .button-default:has(.is-yellow) .button-default_button-text,
+  a:has(.button-default_button-bg.is-yellow) .button-default_button-text,
+  html.dark-theme a:has(.button-default_button-bg.is-yellow) .button-default_button-text,
+  html.dark-theme .button-default_button-bg.is-yellow ~ .button-default_button-text,
+  html.dark-theme .btn-gold-cta,
+  html.dark-theme .btn-gold,
+  html.dark-theme button[style*="background: #facc15"],
+  html.dark-theme button[style*="background:#facc15"],
+  html.dark-theme button[style*="background: #f2c744"],
+  html.dark-theme button[style*="background:#f2c744"],
+  html.dark-theme a[style*="background: #f2c744"],
+  html.dark-theme a[style*="background:#f2c744"] {
+    color: #18181b !important;
+    font-weight: 800 !important;
+  }
+
+  html.dark-theme a:has(.button-default_button-bg.is-yellow) svg,
+  html.dark-theme .button-default_button-bg.is-yellow ~ svg,
+  html.dark-theme .btn-gold-cta svg {
+    color: #18181b !important;
+    fill: #18181b !important;
+  }
+
+  /* 3. Homepage 3D Service Cards */
+  html.dark-theme .service-card,
+  html.dark-theme .service-card_flip-back,
+  html.dark-theme .service-card_flip-front,
+  html.dark-theme .hero_card-list-item .service-card,
+  html.dark-theme .hero_card-list-item .service-card_flip-front {
+    background-color: #17142b !important;
+    background: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6) !important;
+    color: #f4f4f8 !important;
+  }
+
+  html.dark-theme .service-card_back-top-title,
+  html.dark-theme .service-card_back-bottom,
+  html.dark-theme .service-card_back-text {
+    color: #f2c744 !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  html.dark-theme .service-card_icon svg,
+  html.dark-theme .service-card_back-icon svg {
+    color: #f2c744 !important;
+    fill: #f2c744 !important;
+  }
+
+  html.dark-theme .service-card_back-list-text {
+    background-color: #211c3d !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+  }
+
+  html.dark-theme .service-card_back-list-text:hover {
+    background-color: #2c2552 !important;
+    border-color: #f2c744 !important;
+    color: #f2c744 !important;
+  }
+
+  /* 4. Pricing Matrix & Cards Section */
+  html.dark-theme #pricing-matrix,
+  html.dark-theme .section.is-pricing,
+  html.dark-theme .home-pricing-section,
+  html.dark-theme .hero-price_container,
+  html.dark-theme .hero-price {
+    background-color: #0c0a18 !important;
+    background: #0c0a18 !important;
+  }
+
+  /* Duration & Currency Selectors */
+  html.dark-theme .duration-selector-wrap,
+  html.dark-theme .currency-selector-wrap,
+  html.dark-theme .home-duration-selector,
+  html.dark-theme .home-currency-selector {
+    background-color: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+  }
+
+  html.dark-theme [data-duration]:not(.active),
+  html.dark-theme [data-curr]:not(.active),
+  html.dark-theme [data-currency]:not(.active) {
+    color: #a1a1aa !important;
+  }
+
+  html.dark-theme [data-duration].active,
+  html.dark-theme [data-curr].active,
+  html.dark-theme [data-currency].active {
+    background-color: #f2c744 !important;
+    color: #18181b !important;
+    font-weight: 800 !important;
+  }
+
+  /* Savings Banner Capsule in Dark Mode */
+  html.dark-theme .savings-banner-pill,
+  html.dark-theme .savings-banner-wrap,
+  html.dark-theme div:has(> #savings-banner-text),
+  html.dark-theme div:has(> #h-savings-banner-text),
+  html.dark-theme div[style*="border-radius: 999px"]:has(#savings-banner-text),
+  html.dark-theme div[style*="border-radius:999px"]:has(#savings-banner-text),
+  html.dark-theme div[style*="border-radius: 999px"]:has(#h-savings-banner-text),
+  html.dark-theme div[style*="border-radius:999px"]:has(#h-savings-banner-text),
+  html.dark-theme div[style*="border-radius: 999px"][style*="padding: 6px 16px"],
+  html.dark-theme div[style*="border-radius:999px"][style*="padding:6px 16px"] {
+    background-color: #17142b !important;
+    background: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+    color: #f4f4f8 !important;
+  }
+
+  html.dark-theme #savings-banner-text,
+  html.dark-theme #h-savings-banner-text {
+    color: #f4f4f8 !important;
+    font-weight: 800 !important;
+  }
+
+  /* Most Popular Badge in Dark Mode */
+  html.dark-theme div[style*="background: #f2c744"],
+  html.dark-theme div[style*="background:#f2c744"] {
+    background-color: #f2c744 !important;
+    color: #0c0a18 !important;
+    font-weight: 900 !important;
+  }
+
+  /* 3 Pricing Cards */
   html.dark-theme .pricing-card-item,
+  html.dark-theme .home-pricing-card,
+  html.dark-theme .price-card {
+    background-color: #17142b !important;
+    background: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5) !important;
+    color: #f4f4f8 !important;
+  }
+
+  html.dark-theme .pricing-card-item h3,
+  html.dark-theme .pricing-card-item h3 span,
+  html.dark-theme .home-pricing-title {
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .pricing-card-item p,
+  html.dark-theme .home-pricing-subtitle {
+    color: #d4d4d8 !important;
+  }
+
+  /* Slot Matrix Code Badges [SLOT-XBOX-PC] */
+  html.dark-theme .pricing-card-item span[style*="font-family: monospace"],
+  html.dark-theme .pricing-card-item span[style*="font-family:monospace"],
+  html.dark-theme .pricing-card-item [style*="color: #787571"],
+  html.dark-theme .pricing-card-item [style*="color:#787571"],
+  html.dark-theme .pricing-card-item [style*="color: #b45309"],
+  html.dark-theme .pricing-card-item [style*="color:#b45309"] {
+    color: #f2c744 !important;
+  }
+
+  /* Price Display Boxes inside Cards */
+  html.dark-theme .pricing-card-item div[style*="border-radius: 0.85rem"],
+  html.dark-theme .pricing-card-item div[style*="border-radius:0.85rem"] {
+    background-color: #211c3d !important;
+    background: #211c3d !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  html.dark-theme .pricing-card-item span[id*="price-"],
+  html.dark-theme span#price-starter,
+  html.dark-theme span#price-ultimate,
+  html.dark-theme span#price-master {
+    color: #ffffff !important;
+    font-weight: 900 !important;
+  }
+
+  html.dark-theme .pricing-card-item span[id*="period-"],
+  html.dark-theme span#period-starter,
+  html.dark-theme span#period-ultimate,
+  html.dark-theme span#period-master {
+    color: #cbd5e1 !important;
+  }
+
+  html.dark-theme .pricing-card-item span[id*="retail-"],
+  html.dark-theme span#retail-starter,
+  html.dark-theme span#retail-ultimate,
+  html.dark-theme span#retail-master {
+    color: #94a3b8 !important;
+    text-decoration: line-through !important;
+  }
+
+  html.dark-theme .pricing-card-item span[id*="monthly-"],
+  html.dark-theme span#monthly-starter,
+  html.dark-theme span#monthly-ultimate,
+  html.dark-theme span#monthly-master {
+    color: #cbd5e1 !important;
+    font-weight: 700 !important;
+  }
+
+  html.dark-theme span#save-starter,
+  html.dark-theme span#save-ultimate,
+  html.dark-theme span#save-master {
+    background-color: #f2c744 !important;
+    color: #18181b !important;
+    font-weight: 800 !important;
+  }
+
+  /* Card Feature Checklist Text & Checkmarks */
+  html.dark-theme .pricing-card-item ul,
+  html.dark-theme .pricing-card-item ul li,
+  html.dark-theme .home-pricing-card ul,
+  html.dark-theme .home-pricing-card ul li,
+  html.dark-theme .price-card ul,
+  html.dark-theme .price-card ul li,
+  html.dark-theme ul[style*="color: #333333"],
+  html.dark-theme ul[style*="color:#333333"],
+  html.dark-theme .pricing-card-item div[style*="font-size: 13px"],
+  html.dark-theme .pricing-card-item div[style*="font-size:13px"] {
+    color: #f4f4f8 !important;
+  }
+
+  html.dark-theme .pricing-card-item ul li span[style*="color: #15803d"],
+  html.dark-theme .pricing-card-item ul li span[style*="color:#15803d"],
+  html.dark-theme .pricing-card-item span[style*="color: #15803d"],
+  html.dark-theme .pricing-card-item span[style*="color:#15803d"] {
+    color: #22c55e !important;
+    font-weight: 900 !important;
+  }
+
+  html.dark-theme .pricing-card-item ul li svg,
+  html.dark-theme .pricing-card-item svg path {
+    color: #22c55e !important;
+  }
+
+  /* 5. Validation / Slot Tracker / Telemetry Sections */
+  html.dark-theme .validator-section,
+  html.dark-theme #validator-section,
+  html.dark-theme .track-section,
+  html.dark-theme #track-section,
+  html.dark-theme .hero-track {
+    background-color: #0c0a18 !important;
+    background: #0c0a18 !important;
+  }
+
+  /* Search Toolbar Wrapper on Track & Manage Pages */
+  html.dark-theme .toolbar-wrapper,
+  html.dark-theme .search-toolbar-wrapper {
+    background-color: #17142b !important;
+    background: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  html.dark-theme .search-ctrl-input,
+  html.dark-theme #track-input,
+  html.dark-theme #filter-input {
+    background-color: #211c3d !important;
+    background: #211c3d !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .search-ctrl-input::placeholder,
+  html.dark-theme #track-input::placeholder,
+  html.dark-theme #filter-input::placeholder {
+    color: #71717a !important;
+  }
+
+  html.dark-theme .btn-action-ghost {
+    background-color: #211c3d !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    color: #f4f4f8 !important;
+  }
+
+  html.dark-theme .btn-action-ghost:hover {
+    background-color: #2c2552 !important;
+    border-color: #f2c744 !important;
+    color: #f2c744 !important;
+  }
+
+  /* Telemetry Card Vault Container */
+  html.dark-theme .telemetry-card-vault,
+  html.dark-theme #tracker-result-area .telemetry-card-vault,
+  html.dark-theme .validator-terminal,
   html.dark-theme .validator-terminal-card,
+  html.dark-theme #validator-terminal,
+  html.dark-theme .track-card,
+  html.dark-theme .manage-card {
+    background-color: #17142b !important;
+    background: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6) !important;
+    color: #f4f4f8 !important;
+  }
+
+  html.dark-theme .telemetry-card-vault h2,
+  html.dark-theme .telemetry-card-vault h3,
+  html.dark-theme .telemetry-card-vault h4,
+  html.dark-theme .telemetry-card-vault [style*="color:#000000"],
+  html.dark-theme .telemetry-card-vault [style*="color: #000000"],
+  html.dark-theme .telemetry-card-vault [style*="color:#18181b"],
+  html.dark-theme .telemetry-card-vault [style*="color: #18181b"] {
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .telemetry-card-vault [style*="color:#666666"],
+  html.dark-theme .telemetry-card-vault [style*="color: #666666"],
+  html.dark-theme .telemetry-card-vault [style*="color:#777777"],
+  html.dark-theme .telemetry-card-vault [style*="color: #777777"],
+  html.dark-theme .telemetry-card-vault [style*="color:#555555"],
+  html.dark-theme .telemetry-card-vault [style*="color: #555555"] {
+    color: #a1a1aa !important;
+  }
+
+  /* Vault Unit Box in Dark Mode */
+  html.dark-theme .vault-unit-box,
+  html.dark-theme .telemetry-card-vault .vault-unit-box,
+  html.dark-theme .telemetry-card-vault div[style*="background:#f2efeb"],
+  html.dark-theme .telemetry-card-vault div[style*="background: #f2efeb"],
+  html.dark-theme .telemetry-card-vault div[style*="background:#ffffff"],
+  html.dark-theme .telemetry-card-vault div[style*="background: #ffffff"],
+  html.dark-theme .telemetry-card-vault .detail-cell-vault {
+    background-color: #211c3d !important;
+    background: #211c3d !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+    color: #f4f4f8 !important;
+  }
+
+  html.dark-theme .vault-unit-box [style*="color:#000000"],
+  html.dark-theme .vault-unit-box [style*="color: #000000"],
+  html.dark-theme .vault-unit-box [style*="color:#18181b"],
+  html.dark-theme .vault-unit-box [style*="color: #18181b"] {
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .vault-unit-box [style*="color:#666666"],
+  html.dark-theme .vault-unit-box [style*="color: #666666"] {
+    color: #a1a1aa !important;
+  }
+
+  /* PIN Reveal/Hide Button in Dark Mode */
+  html.dark-theme .vault-unit-box button,
+  html.dark-theme .vault-unit-box button[onclick*="togglePinVisibility"] {
+    background-color: #2c2552 !important;
+    background: #2c2552 !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .vault-unit-box button:hover {
+    background-color: #372e66 !important;
+    border-color: #f2c744 !important;
+    color: #f2c744 !important;
+  }
+
+  /* PIN Code Badge in Dark Mode */
+  html.dark-theme .pin-code-large {
+    background-color: #facc15 !important;
+    color: #18181b !important;
+    border-color: #18181b !important;
+    font-weight: 900 !important;
+  }
+
+  /* 6. ADMIN / MANAGE SLOT DASHBOARD (Full Obsidian Cyber Theme) */
+  html.dark-theme .hero-step-strip {
+    background-color: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+  }
+
+  html.dark-theme .hero-step-item {
+    color: #d4d4d8 !important;
+  }
+
+  html.dark-theme .hero-step-num {
+    color: #f2c744 !important;
+  }
+
+  html.dark-theme .hero-step-name {
+    color: #ffffff !important;
+  }
+
+  /* Admin Telemetry Stat Cards */
+  html.dark-theme .stat-box-card {
+    background-color: #17142b !important;
+    background: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5) !important;
+    color: #f4f4f8 !important;
+  }
+
+  html.dark-theme .stat-tag-lbl {
+    color: #a1a1aa !important;
+  }
+
+  html.dark-theme .stat-val-num {
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .stat-cream-tag {
+    background-color: #211c3d !important;
+    color: #cbd5e1 !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+  /* Customer Slot Items & Cards Grid */
+  html.dark-theme .slot-item-box {
+    background-color: #17142b !important;
+    background: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6) !important;
+    color: #f4f4f8 !important;
+  }
+
+  html.dark-theme .slot-cust-name {
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .slot-cust-phone {
+    color: #22c55e !important;
+  }
+
+  html.dark-theme .slot-id-pill {
+    background-color: #211c3d !important;
+    color: #f2c744 !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  html.dark-theme .inner-row-pill {
+    background-color: #211c3d !important;
+    color: #f4f4f8 !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+  html.dark-theme .inner-row-pill span,
+  html.dark-theme .inner-row-pill strong {
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .btn-pill-action {
+    background-color: #211c3d !important;
+    color: #f4f4f8 !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  html.dark-theme .btn-pill-action:hover {
+    background-color: #372e66 !important;
+    border-color: #f2c744 !important;
+    color: #f2c744 !important;
+  }
+
+  /* Admin Modals (Create / Edit / Renew Slot) */
+  html.dark-theme .y2k-backdrop {
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(12px) !important;
+  }
+
+  html.dark-theme .y2k-panel {
+    background-color: #17142b !important;
+    background: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.8) !important;
+    color: #f4f4f8 !important;
+  }
+
+  html.dark-theme .y2k-panel h2,
+  html.dark-theme .y2k-panel h3,
+  html.dark-theme .y2k-panel strong {
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .form-label-tag {
+    color: #a1a1aa !important;
+  }
+
+  html.dark-theme .form-input-ctrl,
+  html.dark-theme .form-select-ctrl {
+    background-color: #211c3d !important;
+    background: #211c3d !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .form-select-ctrl option {
+    background-color: #211c3d !important;
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .upload-zone-box {
+    background-color: #211c3d !important;
+    border: 2px dashed rgba(255, 255, 255, 0.25) !important;
+    color: #cbd5e1 !important;
+  }
+
+  html.dark-theme .upload-zone-box:hover {
+    background-color: #2c2552 !important;
+    border-color: #f2c744 !important;
+  }
+
+  /* 7. Validator Terminal Header & Details */
+  html.dark-theme .validator-terminal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: #a1a1aa !important;
+  }
+
+  html.dark-theme .validator-terminal-header span {
+    color: #a1a1aa !important;
+  }
+
+  html.dark-theme .validator-terminal-header [style*="color: #18181b"],
+  html.dark-theme .validator-terminal-header [style*="color:#18181b"] {
+    color: #f2c744 !important;
+  }
+
+  html.dark-theme .validator-terminal h2,
+  html.dark-theme .validator-terminal h2 span,
+  html.dark-theme .validator-terminal-card h2 {
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .validator-terminal p,
+  html.dark-theme .validator-terminal-card p {
+    color: #d4d4d8 !important;
+  }
+
+  html.dark-theme .validator-input-group {
+    background: transparent !important;
+  }
+
+  html.dark-theme .validator-input,
+  html.dark-theme #val-key-input,
+  html.dark-theme input[id*="slot-input"],
+  html.dark-theme input[type="text"],
+  html.dark-theme input[type="tel"] {
+    background-color: #211c3d !important;
+    background: #211c3d !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .validator-input::placeholder,
+  html.dark-theme #val-key-input::placeholder,
+  html.dark-theme input::placeholder {
+    color: #71717a !important;
+  }
+
+  html.dark-theme .validator-footer-note,
+  html.dark-theme [style*="Accepted: WhatsApp"] {
+    color: #71717a !important;
+  }
+
+  html.dark-theme #val-result-container,
+  html.dark-theme .validator-result-card {
+    background-color: #211c3d !important;
+    background: #211c3d !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    color: #f4f4f8 !important;
+  }
+
+  html.dark-theme #val-result-container h3,
+  html.dark-theme #val-result-container strong {
+    color: #ffffff !important;
+  }
+
+  html.dark-theme #val-result-container p,
+  html.dark-theme #val-result-container span {
+    color: #d4d4d8 !important;
+  }
+
+  /* 8. Pricing Comparison Table */
   html.dark-theme .pricing-compare-section {
     background-color: #17142b !important;
-    border-color: rgba(255, 255, 255, 0.15) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
     color: #f4f4f8 !important;
+  }
+
+  html.dark-theme .pricing-compare-section th,
+  html.dark-theme .pricing-compare-section td {
+    color: #f4f4f8 !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+  }
+
+  html.dark-theme .pricing-compare-section td strong {
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .pricing-compare-section thead tr {
+    background-color: #211c3d !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+  }
+
+  /* 9. FAQ & Accordions */
+  html.dark-theme .accordion_item,
+  html.dark-theme details.accordion_details {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+  }
+
+  html.dark-theme .accordion_title {
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .accordion_content p,
+  html.dark-theme .accordion_content-inner {
+    color: #d4d4d8 !important;
+  }
+
+  /* 10. Support Page Action Cards */
+  html.dark-theme .support-card-item {
+    background-color: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    color: #f4f4f8 !important;
+  }
+
+  html.dark-theme .support-card-item h3 {
+    color: #ffffff !important;
+  }
+
+  html.dark-theme .support-card-item p {
+    color: #d4d4d8 !important;
+  }
+
+  /* 11. Footer & Sitemap */
+  html.dark-theme .footer {
+    background-color: #0c0a18 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+  html.dark-theme .footer_link {
+    color: #d4d4d8 !important;
+  }
+
+  html.dark-theme .footer_link:hover {
+    color: #f2c744 !important;
+  }
+
+  html.dark-theme .footer_copyright,
+  html.dark-theme .footer_time,
+  html.dark-theme .footer_decoration-text {
+    color: #a1a1aa !important;
+  }
+
+  /* 12. Theme Toggle Button Active Styling */
+  html.dark-theme #theme-toggle-btn {
+    border-color: rgba(242, 199, 68, 0.5) !important;
+    color: #f2c744 !important;
+    background-color: #17142b !important;
   }
 </style>
 </head>
