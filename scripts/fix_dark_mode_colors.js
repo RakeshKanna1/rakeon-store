@@ -80,6 +80,7 @@ html.dark-theme .price-card,
 html.dark-theme .pricing-compare-section {
   background-color: #131126 !important;
   border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.5) !important;
   color: #f4f4f8 !important;
 }
 
@@ -89,6 +90,35 @@ html.dark-theme .home-pricing-title,
 html.dark-theme .pricing-compare-section th,
 html.dark-theme .pricing-compare-section td {
   color: #f4f4f8 !important;
+}
+
+html.dark-theme .pricing-compare-section td strong {
+  color: #ffffff !important;
+}
+
+html.dark-theme .pricing-compare-section td:nth-child(3) {
+  background-color: rgba(242, 199, 68, 0.1) !important;
+  color: #fef08a !important;
+}
+
+html.dark-theme .pricing-compare-section td:nth-child(3) strong {
+  color: #ffffff !important;
+}
+
+html.dark-theme .pricing-compare-section thead tr {
+  background-color: #1a1633 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+html.dark-theme .pricing-compare-section tr {
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark-theme .pricing-compare-section td[style*="color: #71717a"],
+html.dark-theme .pricing-compare-section td[style*="color:#71717a"],
+html.dark-theme .pricing-compare-section td[style*="color: #888888"],
+html.dark-theme .pricing-compare-section td[style*="color:#888888"] {
+  color: #94a3b8 !important;
 }
 
 html.dark-theme .home-pricing-card p,

@@ -4,8 +4,10 @@ const { execSync } = require('child_process');
 
 console.log("Extracting authentic 3-card pricing design from commit 63a153a...");
 
-// 1. Get 63a153a:pricing.html
-const pricingHtml63 = execSync('git show 63a153a:pricing.html', { maxBuffer: 15*1024*1024 }).toString('utf8');
+// 1. Get authentic pricing.html (source of truth)
+const pricingHtml63 = fs.existsSync('pricing.html') 
+  ? fs.readFileSync('pricing.html', 'utf8') 
+  : execSync('git show 63a153a:pricing.html', { maxBuffer: 15*1024*1024 }).toString('utf8');
 
 // Extract the <section class="section is-pricing" ...> ... </section>
 const sectionMatch = pricingHtml63.match(/<section class="section is-pricing"[\s\S]*?<\/section>/);
