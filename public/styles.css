@@ -5090,6 +5090,37 @@ body.dark-theme .telemetry-card-vault {
   color: #71717a !important;
 }
 
+/* Support Hero Compact Layout */
+.hero-contact {
+  min-height: calc(100svh - var(--header-height)) !important;
+}
+
+.hero-contact_content {
+  padding-top: 1.5rem !important;
+  grid-gap: 2.25rem !important;
+  align-content: start !important;
+}
+
+.hero-contact_action-group {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.15rem !important;
+  align-items: flex-start !important;
+}
+
+.hero-contact_description {
+  margin: 0 !important;
+  line-height: 1.35 !important;
+}
+
+.support-action-bar {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  align-items: center !important;
+  margin-top: 0 !important;
+}
+
 /* ==========================================================================
    RAKEXURA HARMONIOUS CYBER DARK THEME
    Tailored for luxurious contrast, eye-comfort midnight tones, and legible text
@@ -5267,6 +5298,8 @@ html.dark-theme textarea {
   color: #f4f4f8 !important;
 }
 
+
+
 /* ==========================================================================
    RAKEXURA HARMONIOUS CYBER DARK THEME
    Tailored for luxurious contrast, eye-comfort midnight tones, and legible text
@@ -5319,6 +5352,19 @@ html.dark-theme .button-default.is-yellow .button-default_button-text,
 html.dark-theme .button-default.is-yellow svg {
   color: #18181b !important;
   fill: #18181b !important;
+}
+
+/* Secondary Buttons */
+html.dark-theme .btn-secondary-rakexura {
+  background-color: #1a1633 !important;
+  color: #f4f4f8 !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+html.dark-theme .btn-secondary-rakexura:hover {
+  background-color: #241f47 !important;
+  color: #ffffff !important;
 }
 
 /* Header Title Button (Black Pill with subtle white border in dark mode) */

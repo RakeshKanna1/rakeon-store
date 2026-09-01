@@ -55,6 +55,19 @@ html.dark-theme .button-default.is-yellow svg {
   fill: #18181b !important;
 }
 
+/* Secondary Buttons */
+html.dark-theme .btn-secondary-rakexura {
+  background-color: #1a1633 !important;
+  color: #f4f4f8 !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.5) !important;
+}
+
+html.dark-theme .btn-secondary-rakexura:hover {
+  background-color: #241f47 !important;
+  color: #ffffff !important;
+}
+
 /* Header Title Button (Black Pill with subtle white border in dark mode) */
 html.dark-theme .header_title-button {
   background-color: #1a1633 !important;
