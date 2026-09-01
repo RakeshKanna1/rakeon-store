@@ -198,6 +198,7 @@ html.is-ready .preloader::before {
 
 
 
+
 <style id="rakexura-dark-theme-css">
   /* ==========================================================================
      RAKEXURA MASTER CYBER DARK THEME
@@ -329,13 +330,20 @@ html.is-ready .preloader::before {
     font-weight: 700 !important;
   }
 
-  /* Yellow Action Buttons - ALWAYS BOLD DARK TEXT */
+  /* ALL Yellow Action Buttons & Spans - ALWAYS BOLD DARK BLACK TEXT */
   .button-default:has(.is-yellow) .button-default_button-text,
   a:has(.button-default_button-bg.is-yellow) .button-default_button-text,
   html.dark-theme a:has(.button-default_button-bg.is-yellow) .button-default_button-text,
   html.dark-theme .button-default_button-bg.is-yellow ~ .button-default_button-text,
   html.dark-theme .btn-gold-cta,
+  html.dark-theme .btn-gold-cta *,
+  html.dark-theme .btn-gold-cta span,
+  html.dark-theme a.btn-gold-cta,
+  html.dark-theme a.btn-gold-cta span,
+  html.dark-theme button.btn-gold-cta,
+  html.dark-theme button.btn-gold-cta span,
   html.dark-theme .btn-gold,
+  html.dark-theme .btn-gold *,
   html.dark-theme button[style*="background: #facc15"],
   html.dark-theme button[style*="background:#facc15"],
   html.dark-theme button[style*="background: #f2c744"],
@@ -343,7 +351,8 @@ html.is-ready .preloader::before {
   html.dark-theme a[style*="background: #f2c744"],
   html.dark-theme a[style*="background:#f2c744"] {
     color: #18181b !important;
-    font-weight: 800 !important;
+    fill: #18181b !important;
+    font-weight: 900 !important;
   }
 
   html.dark-theme a:has(.button-default_button-bg.is-yellow) svg,
@@ -625,6 +634,46 @@ html.is-ready .preloader::before {
     color: #f4f4f8 !important;
   }
 
+  /* Countdown Outer Container in Dark Mode */
+  html.dark-theme .telemetry-card-vault div[style*="background:#f2efeb"],
+  html.dark-theme .telemetry-card-vault div[style*="background: #f2efeb"],
+  html.dark-theme .telemetry-card-vault div[style*="background:#ffffff"],
+  html.dark-theme .telemetry-card-vault div[style*="background: #ffffff"] {
+    background-color: #211c3d !important;
+    background: #211c3d !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  /* Countdown Grid & Individual Cells in Dark Mode */
+  html.dark-theme .countdown-grid-box,
+  html.dark-theme .countdown-cell,
+  html.dark-theme .telemetry-card-vault .countdown-grid-box,
+  html.dark-theme .telemetry-card-vault .countdown-cell {
+    background-color: #17142b !important;
+    background: #17142b !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  html.dark-theme .countdown-digit,
+  html.dark-theme .telemetry-card-vault .countdown-digit {
+    color: #facc15 !important;
+    font-weight: 900 !important;
+    font-family: monospace !important;
+  }
+
+  html.dark-theme .countdown-digit[style*="color:#16a34a"],
+  html.dark-theme .countdown-digit[style*="color: #16a34a"] {
+    color: #4ade80 !important;
+  }
+
+  html.dark-theme .countdown-lbl,
+  html.dark-theme .telemetry-card-vault .countdown-lbl {
+    color: #cbd5e1 !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+  }
+
   /* Telemetry Text & Label Contrast */
   html.dark-theme .telemetry-card-vault div[style*="font-size:10px"],
   html.dark-theme .telemetry-card-vault div[style*="font-size: 10px"],
@@ -674,10 +723,6 @@ html.is-ready .preloader::before {
   /* Vault Unit Box in Dark Mode */
   html.dark-theme .vault-unit-box,
   html.dark-theme .telemetry-card-vault .vault-unit-box,
-  html.dark-theme .telemetry-card-vault div[style*="background:#f2efeb"],
-  html.dark-theme .telemetry-card-vault div[style*="background: #f2efeb"],
-  html.dark-theme .telemetry-card-vault div[style*="background:#ffffff"],
-  html.dark-theme .telemetry-card-vault div[style*="background: #ffffff"],
   html.dark-theme .telemetry-card-vault .detail-cell-vault {
     background-color: #211c3d !important;
     background: #211c3d !important;
@@ -773,10 +818,13 @@ html.is-ready .preloader::before {
   /* WhatsApp Contact Button */
   html.dark-theme .renewal-card-wa a[style*="background:#22c55e"],
   html.dark-theme .renewal-card-wa a[style*="background: #22c55e"],
-  html.dark-theme .renewal-card-wa button[style*="background:#22c55e"],
-  html.dark-theme .renewal-card-wa button[style*="background: #22c55e"] {
+  html.dark-theme .renewal-card-wa a[style*="background:#22c55e"] *,
+  html.dark-theme .renewal-card-wa a[style*="background: #22c55e"] *,
+  html.dark-theme .renewal-card-wa a[href*="wa.me"],
+  html.dark-theme .renewal-card-wa a[href*="wa.me"] * {
     background-color: #22c55e !important;
     color: #0c0a18 !important;
+    fill: #0c0a18 !important;
     font-weight: 900 !important;
   }
 
