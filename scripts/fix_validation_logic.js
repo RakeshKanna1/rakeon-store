@@ -14,16 +14,16 @@ const newValidationSection = `
   <div class="validator-terminal">
     <div class="validator-terminal-header">
       <span style="font-weight: 800; color: #18181b;">[ KEY VALIDATION &amp; SECURITY PROTOCOL ]</span>
-      <span>SECURITY: <strong style="color: #15803d;">PIN GUARDED</strong> &bull; ZERO BAN RISK</span>
+      <span>STATUS: <strong style="color: #15803d;">LIVE VALIDATION</strong> &bull; ZERO BAN RISK</span>
     </div>
 
-    <h2 style="font-size: clamp(1.4rem, 4vw, 1.85rem); font-weight: 900; margin: 0 0 0.5rem; text-transform: uppercase; letter-spacing: -0.02em; color: #18181b;">Verify Access Key or Slot ID</h2>
+    <h2 style="font-size: clamp(1.4rem, 4vw, 1.85rem); font-weight: 900; margin: 0 0 0.5rem; text-transform: uppercase; letter-spacing: -0.02em; color: #18181b;">Track &amp; Verify Your Subscription</h2>
     <p style="font-size: 14px; color: #4b4946; margin: 0 0 1.25rem; line-height: 1.5; max-width: 750px;">
-      Enter your Slot ID, 4-digit Profile PIN, or WhatsApp number to verify genuine activation, PIN isolation, and active warranty status.
+      Enter your WhatsApp Number or Slot ID to check your active pass, remaining validity, countdown, and warranty status.
     </p>
 
     <div class="validator-input-group">
-      <input id="val-key-input" type="text" class="validator-input" placeholder="Enter Slot ID, 4-digit PIN, or WhatsApp (e.g. #XBOX-SLOT-01)..." onkeydown="if(event.key==='Enter') runKeyValidation();">
+      <input id="val-key-input" type="text" class="validator-input" placeholder="Enter WhatsApp Number or Slot ID (e.g. 9876543210 or #XBOX-SLOT-01)..." onkeydown="if(event.key==='Enter') runKeyValidation();">
       <button id="val-submit-btn" onclick="runKeyValidation()" class="btn-primary-rakexura">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true" class="icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M5 9L5 4H3V9V10V11L13 11V13H11V15H13V13H15V11L17 11V9H15V7H13V5H11V7L13 7V9H5Z" fill="currentColor"></path></svg>
         <span>Verify Slot</span>
@@ -32,7 +32,7 @@ const newValidationSection = `
     
     <div style="font-family: monospace; font-size: 11px; color: #787571; margin-top: 0.65rem; display: flex; align-items: center; gap: 6px;">
       <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 20 20" fill="none" aria-hidden="true" style="flex-shrink: 0; color: currentColor;"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 3c.69 0 1.25.56 1.25 1.25S10.69 7.5 10 7.5s-1.25-.56-1.25-1.25S9.31 5 10 5zm1.5 9h-3v-1.5h1V10h-1V8.5h2v4.5h1V14z" fill="currentColor"></path></svg>
-      <span>Accepted: Slot ID (e.g. #XBOX-SLOT-01), 4-digit Profile PIN, or customer WhatsApp number.</span>
+      <span>Accepted: WhatsApp number (e.g. 9876543210) or Slot ID (e.g. #XBOX-SLOT-01).</span>
     </div>
 
     <!-- Loading State -->
