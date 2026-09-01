@@ -4,8 +4,12 @@
   "description": "RAKEXURA Subscriptions Platform",
   "scripts": {
     "dev": "npx serve -l 3000 .",
-    "build": "echo Static site ready",
-    "start": "npx serve -l 3000 ."
+    "build": "node scripts/sync.js",
+    "start": "npx serve -l 3000 .",
+    "sync": "node scripts/sync.js",
+    "sync:plans": "node scripts/apply_authentic_3card_plans.js",
+    "sync:styles": "node scripts/fix_dark_mode_colors.js",
+    "sync:support": "node scripts/fix_support_spacing.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.4"

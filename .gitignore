@@ -7,16 +7,17 @@
 # testing
 /coverage
 
-# next.js
+# next.js & vercel
 /.next/
 /out/
+/.vercel/
+/build/
 
-# production
-/build
-
-# misc
+# misc & OS
 .DS_Store
+Thumbs.db
 *.pem
+*.log
 
 # debug logs
 npm-debug.log*
@@ -25,9 +26,6 @@ yarn-error.log*
 
 # local env files
 .env*.local
-
-# vercel
-.vercel
 
 # typescript
 *.tsbuildinfo
