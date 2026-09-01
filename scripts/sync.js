@@ -21,7 +21,10 @@ try {
   console.log('\n[2/3] Syncing support layout & spacing...');
   execSync('node scripts/fix_support_spacing.js', { stdio: 'inherit' });
 
-  console.log('\n[3/3] Syncing harmonious dark theme & base stylesheets...');
+  console.log('\n[3/4] Syncing real slot validator logic...');
+  execSync('node scripts/fix_validation_logic.js', { stdio: 'inherit' });
+
+  console.log('\n[4/4] Syncing harmonious dark theme & base stylesheets...');
   execSync('node scripts/fix_dark_mode_colors.js', { stdio: 'inherit' });
 
   console.log('\n====================================================');

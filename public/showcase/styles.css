@@ -5340,3 +5340,33 @@ html.dark-theme textarea {
   border-color: rgba(255, 255, 255, 0.15) !important;
   color: #f4f4f8 !important;
 }
+
+html.dark-theme .validator-result-card {
+  background-color: #1a1633 !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: #f4f4f8 !important;
+}
+
+html.dark-theme .validator-result-card div[style*="background: #ffffff"],
+html.dark-theme .validator-result-card div[style*="background:#ffffff"] {
+  background-color: #131126 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #f4f4f8 !important;
+}
+
+html.dark-theme #val-error-card {
+  background-color: #261118 !important;
+  border-color: #ef4444 !important;
+}
+
+html.dark-theme #val-error-card p {
+  color: #fca5a5 !important;
+}
+
+html.dark-theme #val-loading {
+  color: #a0a8c0 !important;
+}
+
+html.dark-theme #val-loading div {
+  color: #f4f4f8 !important;
+}
