@@ -1117,6 +1117,7 @@
 
 
 
+
 <style id="rakexura-dark-theme-css">
   /* ==========================================================================
      RAKEXURA MASTER CYBER DARK THEME
@@ -1552,24 +1553,34 @@
     color: #f4f4f8 !important;
   }
 
-  /* Countdown Outer Container in Dark Mode */
+  /* Countdown Outer Card Box in Dark Mode (Curved Rounded Container) */
   html.dark-theme .telemetry-card-vault div[style*="background:#f2efeb"],
   html.dark-theme .telemetry-card-vault div[style*="background: #f2efeb"],
   html.dark-theme .telemetry-card-vault div[style*="background:#ffffff"],
   html.dark-theme .telemetry-card-vault div[style*="background: #ffffff"] {
     background-color: #211c3d !important;
     background: #211c3d !important;
-    border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 1.5rem !important; /* Smooth curved card */
   }
 
-  /* Countdown Grid & Individual Cells in Dark Mode */
+  /* Countdown Grid Wrapper - NO BORDER (Removes sharp wireframe) */
   html.dark-theme .countdown-grid-box,
+  html.dark-theme .telemetry-card-vault .countdown-grid-box {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Countdown Individual Cells - BEAUTIFULLY CURVED ROUNDED CORNERS */
   html.dark-theme .countdown-cell,
-  html.dark-theme .telemetry-card-vault .countdown-grid-box,
   html.dark-theme .telemetry-card-vault .countdown-cell {
     background-color: #17142b !important;
     background: #17142b !important;
-    border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 1.25rem !important; /* Smooth curved capsule */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
   }
 
   html.dark-theme .countdown-digit,
@@ -1645,6 +1656,7 @@
     background-color: #211c3d !important;
     background: #211c3d !important;
     border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 1.25rem !important; /* Smooth curved profile panel */
     color: #f4f4f8 !important;
   }
 
@@ -1654,6 +1666,7 @@
     background-color: #2c2552 !important;
     background: #2c2552 !important;
     border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 0.85rem !important;
     color: #ffffff !important;
   }
 
@@ -1668,6 +1681,7 @@
     background-color: #facc15 !important;
     color: #18181b !important;
     border-color: #18181b !important;
+    border-radius: 0.65rem !important;
     font-weight: 900 !important;
   }
 
@@ -1684,6 +1698,7 @@
     background-color: #211c3d !important;
     background: #211c3d !important;
     border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 1.25rem !important; /* Smooth curved card */
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5) !important;
     color: #f4f4f8 !important;
   }
