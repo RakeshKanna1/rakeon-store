@@ -399,10 +399,9 @@ html.is-ready .preloader::before {
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
-    background-color: #f2efeb !important;
-    border-bottom: 1.5px solid rgba(24, 24, 27, 0.12) !important;
+    background-color: transparent !important;
+    border-bottom: none !important;
     z-index: 9999 !important;
-    transition: box-shadow 0.2s ease, background-color 0.2s ease !important;
   }
   header.header.is-scrolled, .header.is-scrolled {
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05) !important;
@@ -549,7 +548,7 @@ html.is-ready .preloader::before {
         </div>
 
         <div>
-          <a id="btn-starter-wa" href="https://wa.me/918317416695?text=Hi%20Rakexura%20Team%2C%20I%20want%20to%20get%20the%20Xbox%20PC%20Game%20Pass%20(1%20Month)%20for%20%E2%82%B9199." target="_blank" class="btn-primary-rakexura" style="width: 100%; box-sizing: border-box; text-align: center;">
+          <a id="btn-starter-wa" href="https://rakexura-store.vercel.app/games/xbox-pc-game-pass-3-months-56" target="_blank" class="btn-primary-rakexura" style="width: 100%; box-sizing: border-box; text-align: center;">
             <span>Get Xbox Pass &rarr;</span>
           </a>
         </div>
@@ -617,7 +616,7 @@ html.is-ready .preloader::before {
         </div>
 
         <div>
-          <a id="btn-ultimate-wa" href="https://wa.me/918317416695?text=Hi%20Rakexura%20Team%2C%20I%20want%20to%20get%20the%20Ultimate%20Cloud%20Pass%20(1%20Month)%20for%20%E2%82%B9399." target="_blank" class="btn-primary-rakexura" style="width: 100%; box-sizing: border-box; text-align: center; background-color: #f2c744;">
+          <a id="btn-ultimate-wa" href="https://rakexura-store.vercel.app/subscriptions" target="_blank" class="btn-primary-rakexura" style="width: 100%; box-sizing: border-box; text-align: center; background-color: #f2c744;">
             <span>Get Ultimate Combo &rarr;</span>
           </a>
         </div>
@@ -672,7 +671,7 @@ html.is-ready .preloader::before {
         </div>
 
         <div>
-          <a id="btn-master-wa" href="https://wa.me/918317416695?text=Hi%20Rakexura%20Team%2C%20I%20want%20to%20get%20NVIDIA%20GeForce%20NOW%20(1%20Month)%20for%20%E2%82%B9250." target="_blank" class="btn-primary-rakexura" style="width: 100%; box-sizing: border-box; text-align: center;">
+          <a id="btn-master-wa" href="https://rakexura-store.vercel.app/games/nvidia-geforce-now-57" target="_blank" class="btn-primary-rakexura" style="width: 100%; box-sizing: border-box; text-align: center;">
             <span>Get GeForce NOW &rarr;</span>
           </a>
         </div>
@@ -862,15 +861,14 @@ html.is-ready .preloader::before {
     const bText = document.getElementById('savings-banner-text');
     if (bText) bText.innerText = data.banner;
 
-    // WhatsApp Links
-    const durLabel = activeDuration === 1 ? '1 Month' : (activeDuration + ' Months');
+    // Rakexura Store Direct Pass Redirect Links
     const bStartWa = document.getElementById('btn-starter-wa');
     const bUltWa = document.getElementById('btn-ultimate-wa');
     const bGfnWa = document.getElementById('btn-master-wa');
 
-    if (bStartWa) bStartWa.href = "https://wa.me/918317416695?text=" + encodeURIComponent("Hi Rakexura Team, I want to get Xbox PC Game Pass (" + durLabel + ") for " + data.starter + ".");
-    if (bUltWa) bUltWa.href = "https://wa.me/918317416695?text=" + encodeURIComponent("Hi Rakexura Team, I want to get Ultimate Cloud Pass (" + durLabel + ") for " + data.ultimate + ".");
-    if (bGfnWa) bGfnWa.href = "https://wa.me/918317416695?text=" + encodeURIComponent("Hi Rakexura Team, I want to get NVIDIA GeForce NOW (" + durLabel + ") for " + data.gfn + ".");
+    if (bStartWa) bStartWa.href = "https://rakexura-store.vercel.app/games/xbox-pc-game-pass-3-months-56";
+    if (bUltWa) bUltWa.href = "https://rakexura-store.vercel.app/subscriptions";
+    if (bGfnWa) bGfnWa.href = "https://rakexura-store.vercel.app/games/nvidia-geforce-now-57";
   }
 
   // Bind clicks with event delegation to guarantee click response

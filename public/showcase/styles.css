@@ -5036,13 +5036,7 @@ body.dark-theme .main,
   color: #f8fafc !important;
 }
 
-html.dark-theme header.header,
-html.dark-theme .header,
-body.dark-theme header.header,
-body.dark-theme .header {
-  background-color: #0c0a1a !important;
-  border-bottom: 1.5px solid rgba(255, 255, 255, 0.12) !important;
-}
+
 
 html.dark-theme .header_nav-button,
 body.dark-theme .header_nav-button {
@@ -5250,9 +5244,15 @@ html.dark-theme body {
 }
 
 /* Nav & Header */
+.header,
+header.header,
 html.dark-theme .header,
+html.dark-theme header.header,
+body.dark-theme .header,
+body.dark-theme header.header,
 html.dark-theme .header_inner {
   background-color: transparent !important;
+  border-bottom: none !important;
 }
 
 html.dark-theme .header_nav-button-bg,

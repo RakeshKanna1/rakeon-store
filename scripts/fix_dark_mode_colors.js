@@ -25,9 +25,15 @@ html.dark-theme body {
 }
 
 /* Nav & Header */
+.header,
+header.header,
 html.dark-theme .header,
+html.dark-theme header.header,
+body.dark-theme .header,
+body.dark-theme header.header,
 html.dark-theme .header_inner {
   background-color: transparent !important;
+  border-bottom: none !important;
 }
 
 html.dark-theme .header_nav-button-bg,
