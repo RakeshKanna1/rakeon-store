@@ -26,5 +26,12 @@
   "html.format.wrapLineLength": 120,
   "html.format.indentInnerHtml": false,
   "css.validate": true,
-  "javascript.validate.enable": true
+  "javascript.validate.enable": true,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "index.html": "pricing.html, validation.html, support.html, track.html, manage.html, terms.html, privacy.html, imprint.html",
+    "styles.css": "*.css.map, *.min.css",
+    "package.json": "package-lock.json, README.md, .gitignore, sync.js, vercel.json"
+  }
 }

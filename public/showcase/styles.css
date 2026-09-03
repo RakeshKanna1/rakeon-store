@@ -6332,25 +6332,25 @@ html.dark-theme .hero-process_title-span {
 html.dark-theme .hero-process_title-span-outer .hero-process_title-span,
 html.dark-theme .hero-process_title-span:nth-of-type(2) {
   color: #f2c744 !important;
-  text-shadow: 0 0 28px rgba(242, 199, 68, 0.45) !important;
+  text-shadow: none !important;
 }
 
 html.dark-theme .hero_title-span-wrap .hero_title-span,
 html.dark-theme .hero_title-span:nth-child(2) {
   color: #f2c744 !important;
-  text-shadow: 0 0 28px rgba(242, 199, 68, 0.45) !important;
+  text-shadow: none !important;
 }
 
 html.dark-theme .hero-price_title-span-wrap .hero-price_title-span,
 html.dark-theme .hero-price_title-span:nth-child(2) {
   color: #f2c744 !important;
-  text-shadow: 0 0 28px rgba(242, 199, 68, 0.45) !important;
+  text-shadow: none !important;
 }
 
 html.dark-theme .hero-contact_title-span-wrap .hero-contact_title-span,
 html.dark-theme .hero-contact_title-span:nth-child(2) {
   color: #f2c744 !important;
-  text-shadow: 0 0 28px rgba(242, 199, 68, 0.45) !important;
+  text-shadow: none !important;
 }
 
 /* Validator Terminal Gold Lettering & Headings */
@@ -6358,14 +6358,14 @@ html.dark-theme .validator-terminal-header span:first-child {
   color: #f2c744 !important;
   font-weight: 800 !important;
   letter-spacing: 0.08em !important;
-  text-shadow: 0 0 16px rgba(242, 199, 68, 0.3) !important;
+  text-shadow: none !important;
 }
 
 html.dark-theme #res-key-label,
 html.dark-theme #res-pass-title {
   color: #f2c744 !important;
   font-weight: 800 !important;
-  text-shadow: 0 0 16px rgba(242, 199, 68, 0.35) !important;
+  text-shadow: none !important;
 }
 
 html.dark-theme .validator-terminal h2 {
@@ -6387,7 +6387,7 @@ html.dark-theme .validator-terminal div[style*="font-family: monospace"] span {
 
 html.dark-theme #val-loading div[style*="color: #18181b"] {
   color: #f2c744 !important;
-  text-shadow: 0 0 16px rgba(242, 199, 68, 0.4) !important;
+  text-shadow: none !important;
 }
 
 html.dark-theme .hero-process_description-text {
@@ -6419,7 +6419,7 @@ html.dark-theme .hero-process_steps {
 html.dark-theme .hero-process_steps-number {
   color: #f2c744 !important;
   font-weight: 900 !important;
-  text-shadow: 0 0 14px rgba(242, 199, 68, 0.35) !important;
+  text-shadow: none !important;
 }
 
 html.dark-theme .hero-process_divider-text {
@@ -6443,14 +6443,14 @@ html.dark-theme .process_visual-pillow.has-text {
 html.dark-theme .process_visual-pillow-text {
   color: #f2c744 !important;
   font-weight: 800 !important;
-  text-shadow: 0 0 14px rgba(242, 199, 68, 0.35) !important;
+  text-shadow: none !important;
 }
 
 html.dark-theme .process_content-header > .process_content-description {
   color: #f2c744 !important;
   font-weight: 800 !important;
   font-size: 1.15rem !important;
-  text-shadow: 0 0 16px rgba(242, 199, 68, 0.3) !important;
+  text-shadow: none !important;
 }
 
 html.dark-theme .process_content-description {
@@ -6534,7 +6534,7 @@ html.dark-theme .stat-number,
 html.dark-theme .telemetry-metric-num {
   color: #f2c744 !important;
   font-weight: 900 !important;
-  text-shadow: 0 0 20px rgba(242, 199, 68, 0.4) !important;
+  text-shadow: none !important;
 }
 
 html.dark-theme [id^="slot-"],
@@ -6547,7 +6547,7 @@ html.dark-theme .slot-tag-highlight {
 html.dark-theme .pricing-card-item:nth-child(2) h3,
 html.dark-theme #title-ultimate {
   color: #f2c744 !important;
-  text-shadow: 0 0 16px rgba(242, 199, 68, 0.35) !important;
+  text-shadow: none !important;
 }
 
 html.dark-theme .accordion_summary:hover .accordion_title,
@@ -6562,7 +6562,7 @@ html.dark-theme .accordion_icon-wrap svg {
 
 html.dark-theme .hero-contact_mail-button-text {
   color: #f2c744 !important;
-  text-shadow: 0 0 18px rgba(242, 199, 68, 0.4) !important;
+  text-shadow: none !important;
 }
 
 html.dark-theme .menu_nav-item:hover,
@@ -6847,7 +6847,7 @@ html.dark-theme [id^="price-"] {
 
 html.dark-theme #price-ultimate {
   color: #f2c744 !important;
-  text-shadow: 0 2px 14px rgba(242, 199, 68, 0.35);
+  text-shadow: none !important;
 }
 
 /* Period Label (/ 1 month, / 2 months, etc.) */
@@ -7406,36 +7406,25 @@ html.dark-theme .rich-text strong {
 html.dark-theme .rk-glow-hero,
 .dark-theme .rk-glow-hero {
   color: #f2c744 !important;
-  text-shadow: 
-    0 0 8px rgba(242, 199, 68, 1),
-    0 0 20px rgba(242, 199, 68, 0.8),
-    0 0 45px rgba(242, 199, 68, 0.5),
-    0 0 75px rgba(242, 199, 68, 0.3) !important;
+  text-shadow: none !important;
 }
 
 html.dark-theme .rk-glow-text,
 .dark-theme .rk-glow-text {
   color: #f2c744 !important;
-  text-shadow: 
-    0 0 6px rgba(242, 199, 68, 0.95),
-    0 0 16px rgba(242, 199, 68, 0.7),
-    0 0 32px rgba(242, 199, 68, 0.4) !important;
+  text-shadow: none !important;
 }
 
 html.dark-theme .rk-glow-badge,
 .dark-theme .rk-glow-badge {
   color: #f2c744 !important;
-  text-shadow: 
-    0 0 6px rgba(242, 199, 68, 0.9),
-    0 0 15px rgba(242, 199, 68, 0.55) !important;
+  text-shadow: none !important;
 }
 
 html.dark-theme .rk-glow-inline,
 .dark-theme .rk-glow-inline {
   color: #f2c744 !important;
-  text-shadow: 
-    0 0 5px rgba(242, 199, 68, 0.85),
-    0 0 12px rgba(242, 199, 68, 0.45) !important;
+  text-shadow: none !important;
 }
 
 /* --- LIGHT THEME: CLEAN DARK TEXT (NO GOLD, NO GLOW) --- */
@@ -7617,3 +7606,95 @@ a.button-small span,
   fill: #18181b !important;
   color: #18181b !important;
 }
+
+
+/* ==========================================================================
+   PURE GOLD THEME - ZERO GLOW / ZERO TEXT-SHADOW
+   ========================================================================== */
+.rk-glow-hero,
+.rk-glow-text,
+.rk-glow-badge,
+.rk-glow-inline,
+[class*="rk-glow"],
+html.dark-theme [class*="rk-glow"],
+html.dark-theme .hero_title,
+html.dark-theme .hero-price_title,
+html.dark-theme .hero-track_title,
+html.dark-theme .process_visual-pillow-text,
+html.dark-theme .process_content-header > .process_content-description,
+html.dark-theme .process_minimap-number {
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+
+/* ==========================================================================
+   PROCESS VISUAL PILLOW BADGE (01-04) THEME CONTRAST SYSTEM
+   - Light mode: Black pill + White letters
+   - Dark mode: White pill + Black letters
+   ========================================================================== */
+/* Light Mode Defaults (Active when NOT dark-theme) */
+.process_visual-pillow,
+.process_visual-pillow.has-text,
+html:not(.dark-theme) .process_visual-pillow,
+html:not(.dark-theme) .process_visual-pillow.has-text {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+.process_visual-pillow-text,
+.process_visual-pillow-text *,
+h2.process_visual-pillow-text,
+html:not(.dark-theme) .process_visual-pillow-text,
+html:not(.dark-theme) .process_visual-pillow-text *,
+html:not(.dark-theme) h2.process_visual-pillow-text {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+
+/* Dark Mode Overrides */
+html.dark-theme .process_visual-pillow,
+html.dark-theme .process_visual-pillow.has-text,
+html[data-theme="dark"] .process_visual-pillow,
+html[data-theme="dark"] .process_visual-pillow.has-text,
+body.dark-theme .process_visual-pillow,
+body.dark-theme .process_visual-pillow.has-text {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+html.dark-theme .process_visual-pillow-text,
+html.dark-theme .process_visual-pillow-text *,
+html.dark-theme h2.process_visual-pillow-text,
+html[data-theme="dark"] .process_visual-pillow-text,
+html[data-theme="dark"] .process_visual-pillow-text *,
+html[data-theme="dark"] h2.process_visual-pillow-text,
+body.dark-theme .process_visual-pillow-text,
+body.dark-theme .process_visual-pillow-text *,
+body.dark-theme h2.process_visual-pillow-text {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+
+/* Light / White Mode: Black Pill + White Letters */
+html:not(.dark-theme) .process_visual-pillow {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+html:not(.dark-theme) .process_visual-pillow.has-text {
+  background-color: #000000 !important;
+  border: 1px solid #000000 !important;
+}
+html:not(.dark-theme) .process_visual-pillow-text,
+html:not(.dark-theme) .process_visual-pillow-text *,
+html:not(.dark-theme) h2.process_visual-pillow-text {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+

@@ -42,8 +42,8 @@
 <meta name="theme-color" content="#000" media="(prefers-color-scheme: dark)">
 <meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<!--<link rel="stylesheet" href="styles.css?v=20260903_v8">-->
-<link rel="stylesheet" href="styles.css?v=20260903_v8">
+<!--<link rel="stylesheet" href="styles.css?v=20260903_v29">-->
+<link rel="stylesheet" href="styles.css?v=20260903_v29">
 <style>
 :root {
 	--z-index-preloader: 1100;
@@ -1050,7 +1050,7 @@ html.dark-theme [id^="price-"] {
 
 html.dark-theme #price-ultimate {
   color: #f2c744 !important;
-  text-shadow: 0 2px 14px rgba(242, 199, 68, 0.35);
+  text-shadow: none !important;
 }
 
 /* Period Label (/ 1 month, / 2 months, etc.) */
@@ -2036,6 +2036,58 @@ html.dark-theme .rich-text strong {
   }
 </style>
 <style id="rakexura-gold-glow-master">
+/* ==========================================================================
+   PROCESS VISUAL PILLOW BADGE (01-04) THEME CONTRAST SYSTEM
+   - Light mode: Black pill + White letters
+   - Dark mode: White pill + Black letters
+   ========================================================================== */
+/* Light Mode Defaults (Active when NOT dark-theme) */
+.process_visual-pillow,
+.process_visual-pillow.has-text,
+html:not(.dark-theme) .process_visual-pillow,
+html:not(.dark-theme) .process_visual-pillow.has-text {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+.process_visual-pillow-text,
+.process_visual-pillow-text *,
+h2.process_visual-pillow-text,
+html:not(.dark-theme) .process_visual-pillow-text,
+html:not(.dark-theme) .process_visual-pillow-text *,
+html:not(.dark-theme) h2.process_visual-pillow-text {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+
+/* Dark Mode Overrides */
+html.dark-theme .process_visual-pillow,
+html.dark-theme .process_visual-pillow.has-text,
+html[data-theme="dark"] .process_visual-pillow,
+html[data-theme="dark"] .process_visual-pillow.has-text,
+body.dark-theme .process_visual-pillow,
+body.dark-theme .process_visual-pillow.has-text {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+html.dark-theme .process_visual-pillow-text,
+html.dark-theme .process_visual-pillow-text *,
+html.dark-theme h2.process_visual-pillow-text,
+html[data-theme="dark"] .process_visual-pillow-text,
+html[data-theme="dark"] .process_visual-pillow-text *,
+html[data-theme="dark"] h2.process_visual-pillow-text,
+body.dark-theme .process_visual-pillow-text,
+body.dark-theme .process_visual-pillow-text *,
+body.dark-theme h2.process_visual-pillow-text {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+
 
 /* ==========================================================================
    BUTTON THEME & BRAND SYSTEM (SCREENSHOT FIXES)
@@ -2699,28 +2751,28 @@ a.button-small span,
     heroGlow.forEach(function(el) {
       el.style.setProperty('color', isDark ? '#f2c744' : '#000000', 'important');
       el.style.setProperty('-webkit-text-fill-color', isDark ? '#f2c744' : '#000000', 'important');
-      el.style.setProperty('text-shadow', isDark ? '0 0 8px #f2c744, 0 0 22px rgba(242, 199, 68, 0.85), 0 0 45px rgba(242, 199, 68, 0.55), 0 0 75px rgba(242, 199, 68, 0.35)' : 'none', 'important');
+      el.style.setProperty('text-shadow', 'none', 'important');
     });
 
     var textGlow = document.querySelectorAll('.rk-glow-text');
     textGlow.forEach(function(el) {
       el.style.setProperty('color', isDark ? '#f2c744' : '#18181b', 'important');
       el.style.setProperty('-webkit-text-fill-color', isDark ? '#f2c744' : '#18181b', 'important');
-      el.style.setProperty('text-shadow', isDark ? '0 0 6px #f2c744, 0 0 16px rgba(242, 199, 68, 0.7), 0 0 32px rgba(242, 199, 68, 0.4)' : 'none', 'important');
+      el.style.setProperty('text-shadow', 'none', 'important');
     });
 
     var badgeGlow = document.querySelectorAll('.rk-glow-badge');
     badgeGlow.forEach(function(el) {
       el.style.setProperty('color', isDark ? '#f2c744' : '#18181b', 'important');
       el.style.setProperty('-webkit-text-fill-color', isDark ? '#f2c744' : '#18181b', 'important');
-      el.style.setProperty('text-shadow', isDark ? '0 0 5px #f2c744, 0 0 14px rgba(242, 199, 68, 0.6)' : 'none', 'important');
+      el.style.setProperty('text-shadow', 'none', 'important');
     });
 
     var inlineGlow = document.querySelectorAll('.rk-glow-inline');
     inlineGlow.forEach(function(el) {
       el.style.setProperty('color', isDark ? '#f2c744' : '#18181b', 'important');
       el.style.setProperty('-webkit-text-fill-color', isDark ? '#f2c744' : '#18181b', 'important');
-      el.style.setProperty('text-shadow', isDark ? '0 0 5px #f2c744, 0 0 12px rgba(242, 199, 68, 0.5)' : 'none', 'important');
+      el.style.setProperty('text-shadow', 'none', 'important');
     });
   }
 
@@ -2737,6 +2789,16 @@ a.button-small span,
       document.body && (document.body.style.backgroundColor = '#ffffff');
     }
     updateGlowElements(isDark);
+    var pillows = document.querySelectorAll('.process_visual-pillow');
+    pillows.forEach(function(p) {
+      p.style.setProperty('background-color', isDark ? '#ffffff' : '#000000', 'important');
+      p.style.setProperty('border-color', isDark ? '#ffffff' : '#000000', 'important');
+    });
+    var pillowTexts = document.querySelectorAll('.process_visual-pillow-text');
+    pillowTexts.forEach(function(t) {
+      t.style.setProperty('color', isDark ? '#000000' : '#ffffff', 'important');
+      t.style.setProperty('-webkit-text-fill-color', isDark ? '#000000' : '#ffffff', 'important');
+    });
     updateButtonUI(isDark);
   }
 

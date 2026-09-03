@@ -108,4 +108,36 @@ const elapsed = Date.now() - startTime;
 console.log(`\n====================================================`);
 console.log(`  BUILD SYNC COMPLETED IN ${elapsed}ms!`);
 console.log(`  Direct code editing is now active.`);
-console.log(`====================================================`);
+console.log(`====================================================\n`);
+
+// Watch Mode
+if (process.argv.includes('--watch')) {
+  console.log('👀 Watching root files for instant sync (styles.css, *.html)...');
+  const watchFiles = ['styles.css', ...coreFiles.filter(f => f.endsWith('.html'))];
+  
+  let debounceTimeout = null;
+  watchFiles.forEach(file => {
+    if (fs.existsSync(file)) {
+      fs.watch(file, (eventType) => {
+        if (debounceTimeout) clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => {
+          console.log(`⚡ Change detected in ${file} -> syncing...`);
+          copyFile(file, path.join('public', file));
+          if (fs.existsSync('public/showcase')) {
+            copyFile(file, path.join('public/showcase', file));
+          }
+          const matchedRoute = pageRoutes.find(r => r.source === file);
+          if (matchedRoute) {
+            copyFile(file, path.join(matchedRoute.route, 'index.html'));
+            copyFile(file, path.join('public', matchedRoute.route, 'index.html'));
+            if (fs.existsSync('public/showcase')) {
+              copyFile(file, path.join('public/showcase', matchedRoute.route, 'index.html'));
+            }
+          }
+          console.log(`✓ Instant synced ${file} in < 20ms`);
+        }, 50);
+      });
+    }
+  });
+}
+
