@@ -82,13 +82,26 @@
 </style>
 
 <style id="theme-color-tokens">
-  :root {
+  html:not(.dark-theme) {
     --color-background: #f2efeb !important;
     --ci-cream: #f2efeb !important;
     --color-background-beige: #e8e3dc !important;
     --ci-beige: #e8e3dc !important;
   }
-  html, body, .main, [data-scroll-container], .page-wrapper, .hero, .content-block, .empty-state, .faq {
+  html:not(.dark-theme),
+  html:not(.dark-theme) body,
+  html:not(.dark-theme) .main,
+  html:not(.dark-theme) [data-scroll-container],
+  html:not(.dark-theme) .page-wrapper,
+  html:not(.dark-theme) .hero,
+  html:not(.dark-theme) .hero-price,
+  html:not(.dark-theme) .hero-process,
+  html:not(.dark-theme) .hero-contact,
+  html:not(.dark-theme) .process,
+  html:not(.dark-theme) .content-block,
+  html:not(.dark-theme) .empty-state,
+  html:not(.dark-theme) .faq,
+  html:not(.dark-theme) .validator-section {
     background-color: #f2efeb !important;
   }
 </style>

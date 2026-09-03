@@ -6293,9 +6293,148 @@ body.dark-theme,
   color: #f4f4f8 !important;
 }
 
-html.dark-theme body {
+html.dark-theme body,
+html.dark-theme .main,
+html.dark-theme [data-scroll-container],
+html.dark-theme .page-wrapper,
+html.dark-theme .wrapper,
+html.dark-theme .transition-main,
+html.dark-theme .hero,
+html.dark-theme .hero-price,
+html.dark-theme .hero-process,
+html.dark-theme .hero-contact,
+html.dark-theme .process,
+html.dark-theme .next-page,
+html.dark-theme .content-block,
+html.dark-theme .empty-state,
+html.dark-theme .faq,
+html.dark-theme .home-pricing-section,
+html.dark-theme .validator-section,
+html.dark-theme .pricing-matrix-section,
+html.dark-theme .pricing-compare-section {
   background-color: #0c0a18 !important;
   color: #f4f4f8 !important;
+}
+
+/* Validation Page Hero (Hero-Process) in Dark Mode */
+html.dark-theme .hero-process,
+html.dark-theme .hero-process_container,
+html.dark-theme .hero-process_inner {
+  background-color: #0c0a18 !important;
+  color: #f4f4f8 !important;
+}
+
+html.dark-theme .hero-process_title,
+html.dark-theme .hero-process_title-span {
+  color: #ffffff !important;
+}
+
+html.dark-theme .hero-process_description-text {
+  color: #cbd5e1 !important;
+}
+
+html.dark-theme .hero-process_description-text .u-color-gray {
+  color: #94a3b8 !important;
+}
+
+html.dark-theme .hero-process_tag {
+  background-color: #17142b !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+html.dark-theme .hero-process_tag-text {
+  color: #ffffff !important;
+}
+
+html.dark-theme .hero-process_tag-text .price {
+  color: #f2c744 !important;
+}
+
+html.dark-theme .hero-process_steps {
+  color: #a0a8c0 !important;
+}
+
+html.dark-theme .hero-process_steps-number {
+  color: #f2c744 !important;
+}
+
+html.dark-theme .hero-process_divider-text {
+  color: #a0a8c0 !important;
+}
+
+/* Process 4-Step Section in Dark Mode */
+html.dark-theme .process,
+html.dark-theme .process_container,
+html.dark-theme .process_area,
+html.dark-theme .process_area-inner {
+  background-color: #0c0a18 !important;
+  color: #f4f4f8 !important;
+}
+
+html.dark-theme .process_visual-pillow.has-text {
+  background-color: #17142b !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+html.dark-theme .process_visual-pillow-text {
+  color: #f2c744 !important;
+}
+
+html.dark-theme .process_content-description {
+  color: #cbd5e1 !important;
+}
+
+html.dark-theme .process_content-button {
+  color: #a0a8c0 !important;
+}
+
+html.dark-theme .process_content-button:hover,
+html.dark-theme .process_content-button.is-active {
+  color: #ffffff !important;
+}
+
+html.dark-theme .process_minimap {
+  background-color: #131126 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+html.dark-theme .process_minimap-number {
+  color: #f2c744 !important;
+}
+
+/* Next-Page Section in Dark Mode */
+html.dark-theme .next-page,
+html.dark-theme .next-page_container,
+html.dark-theme .next-page_inner {
+  background-color: #0c0a18 !important;
+  color: #f4f4f8 !important;
+}
+
+html.dark-theme .next-page_title,
+html.dark-theme .next-page_title-span {
+  color: #ffffff !important;
+}
+
+html.dark-theme .next-page_description {
+  color: #cbd5e1 !important;
+}
+
+html.dark-theme .next-page_preview-text {
+  color: #f4f4f8 !important;
+}
+
+html.dark-theme .next-page_preview-text.is-gray {
+  color: #a0a8c0 !important;
+}
+
+html.dark-theme .next-page_tag {
+  background-color: #17142b !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #f2c744 !important;
+}
+
+html.dark-theme .next-page_tag-text {
+  color: #f2c744 !important;
 }
 
 /* Nav & Header (Dark Mode Only) */
