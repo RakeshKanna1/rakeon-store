@@ -159,7 +159,6 @@ body.is-price .accordion_details:after {
 .header_nav-button:after {
   pointer-events: none !important; /* Never block touch/click on mobile */
 }
-@media only screen and (max-width: 767px) {
   .header_nav {
     display: flex !important;
     overflow-x: auto !important;
