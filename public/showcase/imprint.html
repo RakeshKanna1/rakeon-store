@@ -28,7 +28,7 @@
   <meta charset="utf-8">
   <title>Terms of Service — RAKEXURA Subscriptions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css?v=20260903_v6">
+  <link rel="stylesheet" href="styles.css?v=20260903_v7">
 
 <script id="auto-live-reload-script">
   // Auto Live-Reload on localhost
@@ -2300,19 +2300,52 @@ html.dark-theme .rich-text strong {
     var saved = localStorage.getItem('rakexura-theme');
     if (saved === 'dark') return 'dark';
     if (saved === 'light') return 'light';
-    return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'dark'; // Default dark
+    return 'dark'; // Default dark theme
+  }
+
+  function updateGlowElements(isDark) {
+    var heroGlow = document.querySelectorAll('.rk-glow-hero');
+    heroGlow.forEach(function(el) {
+      el.style.setProperty('color', isDark ? '#f2c744' : '#000000', 'important');
+      el.style.setProperty('-webkit-text-fill-color', isDark ? '#f2c744' : '#000000', 'important');
+      el.style.setProperty('text-shadow', isDark ? '0 0 8px #f2c744, 0 0 22px rgba(242, 199, 68, 0.85), 0 0 45px rgba(242, 199, 68, 0.55), 0 0 75px rgba(242, 199, 68, 0.35)' : 'none', 'important');
+    });
+
+    var textGlow = document.querySelectorAll('.rk-glow-text');
+    textGlow.forEach(function(el) {
+      el.style.setProperty('color', isDark ? '#f2c744' : '#18181b', 'important');
+      el.style.setProperty('-webkit-text-fill-color', isDark ? '#f2c744' : '#18181b', 'important');
+      el.style.setProperty('text-shadow', isDark ? '0 0 6px #f2c744, 0 0 16px rgba(242, 199, 68, 0.7), 0 0 32px rgba(242, 199, 68, 0.4)' : 'none', 'important');
+    });
+
+    var badgeGlow = document.querySelectorAll('.rk-glow-badge');
+    badgeGlow.forEach(function(el) {
+      el.style.setProperty('color', isDark ? '#f2c744' : '#18181b', 'important');
+      el.style.setProperty('-webkit-text-fill-color', isDark ? '#f2c744' : '#18181b', 'important');
+      el.style.setProperty('text-shadow', isDark ? '0 0 5px #f2c744, 0 0 14px rgba(242, 199, 68, 0.6)' : 'none', 'important');
+    });
+
+    var inlineGlow = document.querySelectorAll('.rk-glow-inline');
+    inlineGlow.forEach(function(el) {
+      el.style.setProperty('color', isDark ? '#f2c744' : '#18181b', 'important');
+      el.style.setProperty('-webkit-text-fill-color', isDark ? '#f2c744' : '#18181b', 'important');
+      el.style.setProperty('text-shadow', isDark ? '0 0 5px #f2c744, 0 0 12px rgba(242, 199, 68, 0.5)' : 'none', 'important');
+    });
   }
 
   function applyTheme(isDark) {
     if (isDark) {
       document.documentElement.classList.add('dark-theme');
+      document.documentElement.setAttribute('data-theme', 'dark');
       document.documentElement.style.backgroundColor = '#0c0a18';
       document.body && (document.body.style.backgroundColor = '#0c0a18');
     } else {
       document.documentElement.classList.remove('dark-theme');
+      document.documentElement.setAttribute('data-theme', 'light');
       document.documentElement.style.backgroundColor = '#ffffff';
       document.body && (document.body.style.backgroundColor = '#ffffff');
     }
+    updateGlowElements(isDark);
     updateButtonUI(isDark);
   }
 
@@ -2343,13 +2376,20 @@ html.dark-theme .rich-text strong {
     }
   });
 
-  // Swup lifecycle persistence - NEVER LOSE DARK THEME ACROSS PAGE TRANSITIONS
   ['swup:animationInStart', 'swup:animationOutStart', 'swup:contentReplaced', 'swup:pageView', 'DOMContentLoaded'].forEach(function(evt) {
     document.addEventListener(evt, function() {
       var activeIsDark = getTheme() === 'dark';
       applyTheme(activeIsDark);
     });
   });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      applyTheme(getTheme() === 'dark');
+    });
+  } else {
+    applyTheme(getTheme() === 'dark');
+  }
 })();
 </script>
 <!-- Fullscreen Responsive Cyber Menu Drawer -->
