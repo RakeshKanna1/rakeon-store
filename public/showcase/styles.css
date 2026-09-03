@@ -6329,6 +6329,45 @@ html.dark-theme .hero-process_title-span {
   color: #ffffff !important;
 }
 
+/* Strategic Cyber Gold Lettering & Glow Accents */
+html.dark-theme .hero-process_title-span-outer .hero-process_title-span,
+html.dark-theme .hero-process_title-span:nth-of-type(2) {
+  color: #f2c744 !important;
+  text-shadow: 0 0 28px rgba(242, 199, 68, 0.45) !important;
+}
+
+html.dark-theme .hero_title-span-wrap .hero_title-span,
+html.dark-theme .hero_title-span:nth-child(2) {
+  color: #f2c744 !important;
+  text-shadow: 0 0 28px rgba(242, 199, 68, 0.45) !important;
+}
+
+html.dark-theme .hero-price_title-span-wrap .hero-price_title-span,
+html.dark-theme .hero-price_title-span:nth-child(2) {
+  color: #f2c744 !important;
+  text-shadow: 0 0 28px rgba(242, 199, 68, 0.45) !important;
+}
+
+html.dark-theme .hero-contact_title-span-wrap .hero-contact_title-span,
+html.dark-theme .hero-contact_title-span:nth-child(2) {
+  color: #f2c744 !important;
+  text-shadow: 0 0 28px rgba(242, 199, 68, 0.45) !important;
+}
+
+/* Validator Terminal Gold Lettering & Headings */
+html.dark-theme .validator-terminal-header span:first-child {
+  color: #f2c744 !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-shadow: 0 0 16px rgba(242, 199, 68, 0.3) !important;
+}
+
+html.dark-theme #res-key-label,
+html.dark-theme #res-pass-title {
+  color: #f2c744 !important;
+  font-weight: 800 !important;
+}
+
 html.dark-theme .hero-process_description-text {
   color: #cbd5e1 !important;
 }
@@ -6348,6 +6387,7 @@ html.dark-theme .hero-process_tag-text {
 
 html.dark-theme .hero-process_tag-text .price {
   color: #f2c744 !important;
+  font-weight: 800 !important;
 }
 
 html.dark-theme .hero-process_steps {
@@ -6356,6 +6396,8 @@ html.dark-theme .hero-process_steps {
 
 html.dark-theme .hero-process_steps-number {
   color: #f2c744 !important;
+  font-weight: 900 !important;
+  text-shadow: 0 0 14px rgba(242, 199, 68, 0.35) !important;
 }
 
 html.dark-theme .hero-process_divider-text {
@@ -6436,6 +6478,51 @@ html.dark-theme .next-page_tag {
 html.dark-theme .next-page_tag-text {
   color: #f2c744 !important;
 }
+
+/* Strategic Gold Highlights for Telemetry, Countdowns & Badges */
+html.dark-theme .countdown-num,
+html.dark-theme .telemetry-stat-value,
+html.dark-theme .stat-number,
+html.dark-theme .telemetry-metric-num {
+  color: #f2c744 !important;
+  font-weight: 900 !important;
+  text-shadow: 0 0 20px rgba(242, 199, 68, 0.4) !important;
+}
+
+html.dark-theme [id^="slot-"],
+html.dark-theme .slot-tag,
+html.dark-theme .slot-tag-highlight {
+  color: #f2c744 !important;
+  font-weight: 800 !important;
+}
+
+html.dark-theme .pricing-card-item:nth-child(2) h3,
+html.dark-theme #title-ultimate {
+  color: #f2c744 !important;
+  text-shadow: 0 0 16px rgba(242, 199, 68, 0.35) !important;
+}
+
+html.dark-theme .accordion_summary:hover .accordion_title,
+html.dark-theme .accordion_details[open] .accordion_title {
+  color: #f2c744 !important;
+  transition: color 0.15s ease !important;
+}
+
+html.dark-theme .accordion_icon-wrap svg {
+  color: #f2c744 !important;
+}
+
+html.dark-theme .hero-contact_mail-button-text {
+  color: #f2c744 !important;
+  text-shadow: 0 0 18px rgba(242, 199, 68, 0.4) !important;
+}
+
+html.dark-theme .menu_nav-item:hover,
+html.dark-theme .footer_link:hover {
+  color: #f2c744 !important;
+  transition: color 0.15s ease !important;
+}
+
 
 /* Nav & Header (Dark Mode Only) */
 html.dark-theme .header,
