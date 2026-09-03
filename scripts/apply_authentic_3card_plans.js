@@ -30,7 +30,11 @@ pricingHtml63 = pricingHtml63
   .replace(/class="is-price"/g, "")
   .replace(/\.button-default\.is-yellow,\s*/g, '')
   .replace(/,\s*\.button-default\.is-yellow:hover/g, '')
-  .replace(/\.button-default\.is-yellow:hover,\s*/g, '');
+  .replace(/\.button-default\.is-yellow:hover,\s*/g, '')
+  .replace(/b\.style\.backgroundColor\s*=\s*'#18181b';/g, "b.style.backgroundColor = '';")
+  .replace(/b\.style\.color\s*=\s*'#ffffff';/g, "b.style.color = '';")
+  .replace(/b\.style\.backgroundColor\s*=\s*'transparent';/g, "b.style.backgroundColor = '';")
+  .replace(/b\.style\.color\s*=\s*'#18181b';/g, "b.style.color = '';");
 
 // Extract the <section class="section is-pricing" ...> ... </section>
 const sectionMatch = pricingHtml63.match(/<section class="section is-pricing"[\s\S]*?<\/section>/);

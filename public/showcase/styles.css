@@ -5282,6 +5282,552 @@ a[href="#main"]:focus {
 }
 
 /* ==========================================================================
+   ACCESSIBILITY: Hide Skip Link offscreen unless focused
+   ========================================================================== */
+.skip-nav,
+.skip-link,
+[data-skip-link],
+a.skip-nav_link,
+a[href="#main"].skip-nav_link,
+a[href="#main"] {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  z-index: -100 !important;
+}
+
+.skip-nav:focus,
+.skip-link:focus,
+a.skip-nav_link:focus,
+a[href="#main"].skip-nav_link:focus,
+a[href="#main"]:focus {
+  position: fixed !important;
+  top: 10px !important;
+  left: 10px !important;
+  width: auto !important;
+  height: auto !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  z-index: 99999 !important;
+}
+
+/* ==========================================================================
+   DESKTOP PROTECTION: Strict Hide of Mobile-Only Hero Actions & Metrics
+   Desktop (>= 768px) is 100% CLEAN & UNTOUCHED in Both Light & Dark Themes
+   ========================================================================== */
+.mobile-only,
+.hero_action-group-mobile,
+.hero_metrics-mobile,
+[class*="mobile-only"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-only {
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+    width: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+  .hero_action-group-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 1.25rem !important;
+    box-sizing: border-box !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+  .hero_metrics-mobile {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 1.5rem !important;
+    font-family: monospace !important;
+    font-size: 11px !important;
+    box-sizing: border-box !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY: Hide Skip Link offscreen unless focused
+   ========================================================================== */
+.skip-nav,
+.skip-link,
+[data-skip-link],
+a.skip-nav_link,
+a[href="#main"].skip-nav_link,
+a[href="#main"] {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  z-index: -100 !important;
+}
+
+.skip-nav:focus,
+.skip-link:focus,
+a.skip-nav_link:focus,
+a[href="#main"].skip-nav_link:focus,
+a[href="#main"]:focus {
+  position: fixed !important;
+  top: 10px !important;
+  left: 10px !important;
+  width: auto !important;
+  height: auto !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  z-index: 99999 !important;
+}
+
+/* ==========================================================================
+   DESKTOP PROTECTION: Strict Hide of Mobile-Only Hero Actions & Metrics
+   Desktop (>= 768px) is 100% CLEAN & UNTOUCHED in Both Light & Dark Themes
+   ========================================================================== */
+.mobile-only,
+.hero_action-group-mobile,
+.hero_metrics-mobile,
+[class*="mobile-only"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-only {
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+    width: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+  .hero_action-group-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 1.25rem !important;
+    box-sizing: border-box !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+  .hero_metrics-mobile {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 1.5rem !important;
+    font-family: monospace !important;
+    font-size: 11px !important;
+    box-sizing: border-box !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY: Hide Skip Link offscreen unless focused
+   ========================================================================== */
+.skip-nav,
+.skip-link,
+[data-skip-link],
+a.skip-nav_link,
+a[href="#main"].skip-nav_link,
+a[href="#main"] {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  z-index: -100 !important;
+}
+
+.skip-nav:focus,
+.skip-link:focus,
+a.skip-nav_link:focus,
+a[href="#main"].skip-nav_link:focus,
+a[href="#main"]:focus {
+  position: fixed !important;
+  top: 10px !important;
+  left: 10px !important;
+  width: auto !important;
+  height: auto !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  z-index: 99999 !important;
+}
+
+/* ==========================================================================
+   DESKTOP PROTECTION: Strict Hide of Mobile-Only Hero Actions & Metrics
+   Desktop (>= 768px) is 100% CLEAN & UNTOUCHED in Both Light & Dark Themes
+   ========================================================================== */
+.mobile-only,
+.hero_action-group-mobile,
+.hero_metrics-mobile,
+[class*="mobile-only"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-only {
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+    width: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+  .hero_action-group-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 1.25rem !important;
+    box-sizing: border-box !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+  .hero_metrics-mobile {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 1.5rem !important;
+    font-family: monospace !important;
+    font-size: 11px !important;
+    box-sizing: border-box !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY: Hide Skip Link offscreen unless focused
+   ========================================================================== */
+.skip-nav,
+.skip-link,
+[data-skip-link],
+a.skip-nav_link,
+a[href="#main"].skip-nav_link,
+a[href="#main"] {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  z-index: -100 !important;
+}
+
+.skip-nav:focus,
+.skip-link:focus,
+a.skip-nav_link:focus,
+a[href="#main"].skip-nav_link:focus,
+a[href="#main"]:focus {
+  position: fixed !important;
+  top: 10px !important;
+  left: 10px !important;
+  width: auto !important;
+  height: auto !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  z-index: 99999 !important;
+}
+
+/* ==========================================================================
+   DESKTOP PROTECTION: Strict Hide of Mobile-Only Hero Actions & Metrics
+   Desktop (>= 768px) is 100% CLEAN & UNTOUCHED in Both Light & Dark Themes
+   ========================================================================== */
+.mobile-only,
+.hero_action-group-mobile,
+.hero_metrics-mobile,
+[class*="mobile-only"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-only {
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+    width: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+  .hero_action-group-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 1.25rem !important;
+    box-sizing: border-box !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+  .hero_metrics-mobile {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 1.5rem !important;
+    font-family: monospace !important;
+    font-size: 11px !important;
+    box-sizing: border-box !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY: Hide Skip Link offscreen unless focused
+   ========================================================================== */
+.skip-nav,
+.skip-link,
+[data-skip-link],
+a.skip-nav_link,
+a[href="#main"].skip-nav_link,
+a[href="#main"] {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  z-index: -100 !important;
+}
+
+.skip-nav:focus,
+.skip-link:focus,
+a.skip-nav_link:focus,
+a[href="#main"].skip-nav_link:focus,
+a[href="#main"]:focus {
+  position: fixed !important;
+  top: 10px !important;
+  left: 10px !important;
+  width: auto !important;
+  height: auto !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  z-index: 99999 !important;
+}
+
+/* ==========================================================================
+   DESKTOP PROTECTION: Strict Hide of Mobile-Only Hero Actions & Metrics
+   Desktop (>= 768px) is 100% CLEAN & UNTOUCHED in Both Light & Dark Themes
+   ========================================================================== */
+.mobile-only,
+.hero_action-group-mobile,
+.hero_metrics-mobile,
+[class*="mobile-only"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-only {
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+    width: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+  .hero_action-group-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 1.25rem !important;
+    box-sizing: border-box !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+  .hero_metrics-mobile {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 1.5rem !important;
+    font-family: monospace !important;
+    font-size: 11px !important;
+    box-sizing: border-box !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY: Hide Skip Link offscreen unless focused
+   ========================================================================== */
+.skip-nav,
+.skip-link,
+[data-skip-link],
+a.skip-nav_link,
+a[href="#main"].skip-nav_link,
+a[href="#main"] {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  z-index: -100 !important;
+}
+
+.skip-nav:focus,
+.skip-link:focus,
+a.skip-nav_link:focus,
+a[href="#main"].skip-nav_link:focus,
+a[href="#main"]:focus {
+  position: fixed !important;
+  top: 10px !important;
+  left: 10px !important;
+  width: auto !important;
+  height: auto !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  z-index: 99999 !important;
+}
+
+/* ==========================================================================
+   DESKTOP PROTECTION: Strict Hide of Mobile-Only Hero Actions & Metrics
+   Desktop (>= 768px) is 100% CLEAN & UNTOUCHED in Both Light & Dark Themes
+   ========================================================================== */
+.mobile-only,
+.hero_action-group-mobile,
+.hero_metrics-mobile,
+[class*="mobile-only"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-only {
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+    width: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+  .hero_action-group-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-top: 1.25rem !important;
+    box-sizing: border-box !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+  .hero_metrics-mobile {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 1.5rem !important;
+    font-family: monospace !important;
+    font-size: 11px !important;
+    box-sizing: border-box !important;
+    visibility: visible !important;
+    height: auto !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+/* ==========================================================================
    UNIVERSAL LIGHT THEME HEADER (Matching across All Pages: Home, Pricing, etc.)
    ========================================================================== */
 html:not(.dark-theme) .header,
@@ -5833,9 +6379,276 @@ html.dark-theme .section.is-pricing {
   background-color: #0c0a18 !important;
 }
 
+/* Pricing Header Titles & Subtitles */
+html.dark-theme .hero-price_header h1,
+html.dark-theme .hero-price_header h1 span,
+html.dark-theme .hero-price_title,
+html.dark-theme .hero-price_title span,
+html.dark-theme .home-pricing-title {
+  color: #ffffff !important;
+}
+
+html.dark-theme .hero-price_header p,
+html.dark-theme .hero-price_header p span,
+html.dark-theme .home-pricing-subtitle {
+  color: #cbd5e1 !important;
+}
+
+html.dark-theme .hero-price_header div[style*="color: #787571"] span,
+html.dark-theme .hero-price_header div[style*="color:#787571"] span,
+html.dark-theme .hero-price_header div span {
+  color: #a0a8c0 !important;
+}
+
+/* Capsule Selector Tabs */
+html.dark-theme .home-duration-selector,
+html.dark-theme .home-currency-selector,
+html.dark-theme .duration-selector-wrap,
+html.dark-theme .currency-selector-wrap {
+  background-color: #17142b !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+  color: #f4f4f8 !important;
+}
+
+/* Unselected Duration & Currency Buttons */
+html.dark-theme .home-duration-btn,
+html.dark-theme .home-currency-btn,
+html.dark-theme .duration-btn,
+html.dark-theme .currency-btn {
+  background-color: transparent !important;
+  color: #f1f5f9 !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+html.dark-theme .home-duration-btn:hover,
+html.dark-theme .home-currency-btn:hover,
+html.dark-theme .duration-btn:hover,
+html.dark-theme .currency-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
+/* Selected / Active Duration & Currency Buttons */
+html.dark-theme .home-duration-btn.active,
+html.dark-theme .home-currency-btn.active,
+html.dark-theme .duration-btn.active,
+html.dark-theme .currency-btn.active {
+  background-color: #f2c744 !important;
+  color: #0c0a18 !important;
+  font-weight: 900 !important;
+  box-shadow: 0 2px 8px rgba(242, 199, 68, 0.4) !important;
+}
+
+/* Duration Pill Badges (Hot, -15%, -25%, Save 90%) */
+html.dark-theme .duration-btn span,
+html.dark-theme .home-duration-btn span {
+  background-color: rgba(255, 255, 255, 0.18) !important;
+  color: #ffffff !important;
+}
+
+html.dark-theme .duration-btn.active span,
+html.dark-theme .home-duration-btn.active span {
+  background-color: rgba(24, 24, 27, 0.25) !important;
+  color: #0c0a18 !important;
+  font-weight: 900 !important;
+}
+
+html.dark-theme .duration-btn span[style*="background: #f2c744"],
+html.dark-theme .duration-btn span[style*="background:#f2c744"],
+html.dark-theme .duration-btn .badge-hot,
+html.dark-theme .duration-btn .badge-save {
+  background-color: #f2c744 !important;
+  color: #18181b !important;
+}
+
+/* Dynamic Savings / Dispatch Info Strip */
+html.dark-theme #savings-banner {
+  background-color: #17142b !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45) !important;
+  color: #f4f4f8 !important;
+}
+
+html.dark-theme #savings-banner-text,
+html.dark-theme #savings-banner span {
+  color: #e2e8f0 !important;
+}
+
+/* Pricing Cards */
 html.dark-theme .pricing-card-item,
 html.dark-theme .home-pricing-card,
-html.dark-theme .price-card,
+html.dark-theme .price-card {
+  background-color: #131126 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+  color: #f4f4f8 !important;
+}
+
+html.dark-theme .pricing-card-item.is-featured {
+  border: 2px solid #f2c744 !important;
+  background-color: #16132e !important;
+  box-shadow: 0 8px 32px rgba(242, 199, 68, 0.2) !important;
+}
+
+/* Popular Combo Top Floating Badge */
+html.dark-theme .pricing-card-item.is-featured div[style*="background: #f2c744"],
+html.dark-theme .pricing-card-item.is-featured div[style*="background:#f2c744"] {
+  background-color: #f2c744 !important;
+  color: #18181b !important;
+  border-color: #18181b !important;
+  font-weight: 900 !important;
+}
+
+/* Slot Tags: [SLOT-XBOX-PC], [SLOT-GFN-RTX], [SLOT-COMBO-PRO] */
+html.dark-theme .pricing-card-item div[style*="color: #787571"],
+html.dark-theme .pricing-card-item div[style*="color:#787571"],
+html.dark-theme .pricing-card-item [class*="slot-tag"] {
+  color: #cbd5e1 !important;
+  font-weight: 800 !important;
+}
+
+html.dark-theme .pricing-card-item div[style*="color: #b45309"],
+html.dark-theme .pricing-card-item div[style*="color:#b45309"] {
+  color: #fbbf24 !important;
+  font-weight: 800 !important;
+}
+
+/* Card Icons */
+html.dark-theme .pricing-card-item div[style*="background: #faf8f5"],
+html.dark-theme .pricing-card-item div[style*="background:#faf8f5"] {
+  background-color: #1c1836 !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+html.dark-theme .pricing-card-item span[style*="color: #18181b"],
+html.dark-theme .pricing-card-item span[style*="color:#18181b"] {
+  color: #f2c744 !important;
+}
+
+/* Card Titles & Descriptions */
+html.dark-theme .pricing-card-item h3,
+html.dark-theme .home-pricing-card h3 {
+  color: #ffffff !important;
+}
+
+html.dark-theme .pricing-card-item p,
+html.dark-theme .home-pricing-card p {
+  color: #a0a8c0 !important;
+}
+
+/* Price Display Sub-Panels */
+html.dark-theme .pricing-card-item div[style*="border-radius: 0.85rem"] {
+  background-color: #1c1836 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+html.dark-theme .pricing-card-item.is-featured div[style*="border-radius: 0.85rem"],
+html.dark-theme .pricing-card-item div[style*="background: rgba(242, 199, 68"] {
+  background-color: rgba(242, 199, 68, 0.12) !important;
+  border: 1.5px solid rgba(242, 199, 68, 0.4) !important;
+}
+
+/* BIG HERO PRICES IN DARK MODE */
+html.dark-theme #price-starter,
+html.dark-theme #price-master,
+html.dark-theme .price-value,
+html.dark-theme [id^="price-"] {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.15);
+}
+
+html.dark-theme #price-ultimate {
+  color: #f2c744 !important;
+  text-shadow: 0 2px 14px rgba(242, 199, 68, 0.35);
+}
+
+/* Period Label (/ 1 month, / 2 months, etc.) */
+html.dark-theme #period-starter,
+html.dark-theme #period-ultimate,
+html.dark-theme #period-master,
+html.dark-theme [id^="period-"] {
+  color: #cbd5e1 !important;
+}
+
+/* Retail Strikethrough (₹799 retail, etc.) */
+html.dark-theme #retail-starter,
+html.dark-theme #retail-ultimate,
+html.dark-theme #retail-master,
+html.dark-theme [id^="retail-"] {
+  color: #94a3b8 !important;
+}
+
+/* Save Badges */
+html.dark-theme #save-starter,
+html.dark-theme #save-master,
+html.dark-theme [id^="save-"]:not(#save-ultimate) {
+  background-color: rgba(34, 197, 94, 0.22) !important;
+  color: #4ade80 !important;
+  border: 1px solid rgba(74, 222, 128, 0.3) !important;
+}
+
+html.dark-theme #save-ultimate {
+  background-color: #f2c744 !important;
+  color: #18181b !important;
+  font-weight: 900 !important;
+}
+
+/* Monthly Rate Breakdown (₹199/mo, etc.) */
+html.dark-theme #monthly-starter,
+html.dark-theme #monthly-ultimate,
+html.dark-theme #monthly-master,
+html.dark-theme [id^="monthly-"] {
+  color: #cbd5e1 !important;
+}
+
+/* Checklist Features */
+html.dark-theme .pricing-card-item ul,
+html.dark-theme .pricing-card-item li {
+  color: #e2e8f0 !important;
+}
+
+html.dark-theme .pricing-card-item li strong {
+  color: #ffffff !important;
+}
+
+html.dark-theme .pricing-card-item li span[style*="color: #15803d"],
+html.dark-theme .pricing-card-item li span[style*="color:#15803d"] {
+  color: #4ade80 !important;
+}
+
+/* Card CTA Action Buttons */
+html.dark-theme .btn-primary-rakexura,
+html.dark-theme #btn-starter-wa,
+html.dark-theme #btn-master-wa {
+  background-color: #1a1633 !important;
+  color: #ffffff !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.6) !important;
+}
+
+html.dark-theme .btn-primary-rakexura:hover,
+html.dark-theme #btn-starter-wa:hover,
+html.dark-theme #btn-master-wa:hover {
+  background-color: #26204c !important;
+  border-color: #f2c744 !important;
+  color: #f2c744 !important;
+}
+
+html.dark-theme #btn-ultimate-wa {
+  background-color: #f2c744 !important;
+  color: #18181b !important;
+  border: 1.5px solid #18181b !important;
+  font-weight: 900 !important;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.6) !important;
+}
+
+html.dark-theme #btn-ultimate-wa:hover {
+  background-color: #ffd659 !important;
+}
+
+/* Store Comparison Table */
 html.dark-theme .pricing-compare-section {
   background-color: #131126 !important;
   border-color: rgba(255, 255, 255, 0.14) !important;
@@ -5843,58 +6656,49 @@ html.dark-theme .pricing-compare-section {
   color: #f4f4f8 !important;
 }
 
-html.dark-theme .pricing-card-item.is-featured {
-  border-color: #f2c744 !important;
-  background-color: #16132e !important;
-  box-shadow: 0 8px 30px rgba(242, 199, 68, 0.15) !important;
+html.dark-theme .pricing-compare-section div[style*="display: flex"] span {
+  color: #cbd5e1 !important;
 }
 
-html.dark-theme .pricing-card-item div[style*="background: #faf8f5"],
-html.dark-theme .pricing-card-item div[style*="background:#faf8f5"],
-html.dark-theme .pricing-card-item div[style*="background: rgba(242, 199, 68"] {
-  background-color: #1c1836 !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
+html.dark-theme .pricing-compare-section div[style*="display: flex"] span[style*="color: #18181b"],
+html.dark-theme .pricing-compare-section div[style*="display: flex"] span[style*="color:#18181b"] {
+  color: #f2c744 !important;
 }
 
-html.dark-theme .pricing-card-item ul,
-html.dark-theme .pricing-card-item li {
-  color: #d4d4d8 !important;
+html.dark-theme .pricing-compare-section table {
+  color: #e2e8f0 !important;
 }
 
-html.dark-theme .pricing-card-item li strong {
+html.dark-theme .pricing-compare-section thead tr {
+  background-color: #1a1633 !important;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+html.dark-theme .pricing-compare-section th {
   color: #ffffff !important;
 }
 
-html.dark-theme .home-pricing-card h3,
-html.dark-theme .pricing-card-item h3,
-html.dark-theme .home-pricing-title,
-html.dark-theme .hero-price_title,
-html.dark-theme .hero-price_header h1 span,
-html.dark-theme .pricing-compare-section th,
+html.dark-theme .pricing-compare-section th[style*="background: #f2c744"],
+html.dark-theme .pricing-compare-section th[style*="background:#f2c744"] {
+  background-color: #f2c744 !important;
+  color: #18181b !important;
+}
+
+html.dark-theme .pricing-compare-section tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
 html.dark-theme .pricing-compare-section td {
-  color: #ffffff !important;
+  color: #e2e8f0 !important;
 }
 
 html.dark-theme .pricing-compare-section td strong {
   color: #ffffff !important;
 }
 
-html.dark-theme .pricing-compare-section td:nth-child(3) {
-  background-color: rgba(242, 199, 68, 0.1) !important;
-  color: #fef08a !important;
-}
-
-html.dark-theme .pricing-compare-section td:nth-child(3) strong {
-  color: #ffffff !important;
-}
-
-html.dark-theme .pricing-compare-section thead tr {
-  background-color: #1a1633 !important;
-  border-bottom-color: rgba(255, 255, 255, 0.15) !important;
-}
-
-html.dark-theme .pricing-compare-section tr {
-  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+html.dark-theme .pricing-compare-section td span[style*="color: #15803d"],
+html.dark-theme .pricing-compare-section td span[style*="color:#15803d"] {
+  color: #4ade80 !important;
 }
 
 html.dark-theme .pricing-compare-section td[style*="color: #71717a"],
@@ -5904,46 +6708,52 @@ html.dark-theme .pricing-compare-section td[style*="color:#888888"] {
   color: #94a3b8 !important;
 }
 
-html.dark-theme .home-pricing-card p,
-html.dark-theme .pricing-card-item p,
-html.dark-theme .home-pricing-subtitle,
-html.dark-theme .hero-price_header p {
-  color: #a0a8c0 !important;
+html.dark-theme .pricing-compare-section td:nth-child(3),
+html.dark-theme .pricing-compare-section td[style*="background: rgba(242, 199, 68"] {
+  background-color: rgba(242, 199, 68, 0.1) !important;
+  color: #fef08a !important;
 }
 
-/* Capsule Selector Tabs */
-html.dark-theme .home-duration-selector,
-html.dark-theme .home-currency-selector,
-html.dark-theme .duration-selector-wrap,
-html.dark-theme .currency-selector-wrap,
-html.dark-theme #savings-banner {
-  background-color: #17142b !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
-  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.4) !important;
+html.dark-theme .pricing-compare-section td:nth-child(3) strong,
+html.dark-theme .pricing-compare-section td[style*="background: rgba(242, 199, 68"] strong {
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   GLOBAL DARK MODE CONTRAST SAFEGUARDS (Across All Pages & Components)
+   Guarantees no dark or black text is ever lost on dark backgrounds
+   ========================================================================== */
+html.dark-theme h1,
+html.dark-theme h2,
+html.dark-theme h3,
+html.dark-theme h4,
+html.dark-theme h5,
+html.dark-theme h6 {
+  color: #ffffff !important;
+}
+
+html.dark-theme [style*="color: #18181b"]:not([style*="background: #f2c744"]):not([style*="background:#f2c744"]):not(.duration-btn.active):not(.currency-btn.active):not(.is-yellow):not(.button-default.is-yellow *):not([style*="background-color: #f2c744"]):not([style*="background-color:#f2c744"]),
+html.dark-theme [style*="color:#18181b"]:not([style*="background: #f2c744"]):not([style*="background:#f2c744"]):not(.duration-btn.active):not(.currency-btn.active):not(.is-yellow):not(.button-default.is-yellow *):not([style*="background-color: #f2c744"]):not([style*="background-color:#f2c744"]) {
   color: #f4f4f8 !important;
 }
 
-html.dark-theme .home-duration-btn,
-html.dark-theme .home-currency-btn,
-html.dark-theme .duration-btn,
-html.dark-theme .currency-btn {
+html.dark-theme [style*="color: #555555"],
+html.dark-theme [style*="color:#555555"],
+html.dark-theme [style*="color: #4b4946"],
+html.dark-theme [style*="color:#4b4946"] {
   color: #cbd5e1 !important;
 }
 
-html.dark-theme .home-duration-btn.active,
-html.dark-theme .home-currency-btn.active,
-html.dark-theme .duration-btn.active,
-html.dark-theme .currency-btn.active {
-  background-color: #f2c744 !important;
-  color: #0c0a18 !important;
-  font-weight: 800 !important;
+html.dark-theme [style*="color: #787571"],
+html.dark-theme [style*="color:#787571"] {
+  color: #a0a8c0 !important;
 }
 
-/* Sub-panels inside pricing cards */
-html.dark-theme .pricing-card-item > div > div[style*="background: var(--theme-card-sub"],
-html.dark-theme .pricing-card-item > div > div[style*="background: rgba(242, 199, 68"] {
-  background-color: #1b1738 !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
+html.dark-theme [style*="color: #333333"],
+html.dark-theme [style*="color:#333333"],
+html.dark-theme [style*="color: #333"],
+html.dark-theme [style*="color:#333"] {
+  color: #e2e8f0 !important;
 }
 
 /* Footer */
@@ -6075,4 +6885,156 @@ html.dark-theme .footer_next-page .button-default.is-yellow svg {
 
 html.dark-theme #val-loading div {
   color: #f4f4f8 !important;
+}
+
+/* Homepage Hero Layout in Dark Mode */
+html.dark-theme .hero,
+html.dark-theme .hero_container,
+html.dark-theme .hero_inner {
+  background-color: #0c0a18 !important;
+  color: #f4f4f8 !important;
+}
+
+html.dark-theme .hero_title,
+html.dark-theme .hero_title-span {
+  color: #ffffff !important;
+}
+
+html.dark-theme .hero_description-text {
+  color: #cbd5e1 !important;
+}
+
+html.dark-theme .hero_tag {
+  background-color: #17142b !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+html.dark-theme .hero_tag-text {
+  color: #ffffff !important;
+}
+
+html.dark-theme .hero_divider-text {
+  color: #a0a8c0 !important;
+}
+
+/* Service Section in Dark Mode */
+html.dark-theme .service,
+html.dark-theme .service_container,
+html.dark-theme .service_inner {
+  background-color: #0c0a18 !important;
+  color: #f4f4f8 !important;
+}
+
+html.dark-theme .service_header-title {
+  color: #ffffff !important;
+}
+
+html.dark-theme .service_header-description {
+  color: #cbd5e1 !important;
+}
+
+/* Support Hero Contact in Dark Mode */
+html.dark-theme .hero-contact,
+html.dark-theme .hero-contact_container,
+html.dark-theme .hero-contact_inner {
+  background-color: #0c0a18 !important;
+  color: #f4f4f8 !important;
+}
+
+html.dark-theme .hero-contact_title,
+html.dark-theme .hero-contact_title-span {
+  color: #ffffff !important;
+}
+
+html.dark-theme .hero-contact_description {
+  color: #cbd5e1 !important;
+}
+
+html.dark-theme .hero-contact_mail-button {
+  background-color: #17142b !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+  color: #f2c744 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
+}
+
+html.dark-theme .hero-contact_mail-button-text {
+  color: #f2c744 !important;
+}
+
+html.dark-theme .hero-contact_pillow-inner {
+  background-color: #131126 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #cbd5e1 !important;
+}
+
+html.dark-theme .hero-contact_pillow-title {
+  color: #cbd5e1 !important;
+}
+
+html.dark-theme .hero-contact_divider-text,
+html.dark-theme .hero-contact_footer-text {
+  color: #a0a8c0 !important;
+}
+
+/* Support FAQ & Accordions in Dark Mode */
+html.dark-theme .faq,
+html.dark-theme .faq_container,
+html.dark-theme .accordion {
+  background-color: #0c0a18 !important;
+  color: #f4f4f8 !important;
+}
+
+html.dark-theme .faq_title {
+  color: #ffffff !important;
+}
+
+html.dark-theme .accordion_item {
+  background-color: #131126 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 0.85rem !important;
+  margin-bottom: 0.75rem !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+html.dark-theme .accordion_title {
+  color: #ffffff !important;
+}
+
+html.dark-theme .accordion_content,
+html.dark-theme .accordion_content-inner,
+html.dark-theme .accordion .rich-text,
+html.dark-theme .accordion .rich-text p {
+  color: #cbd5e1 !important;
+}
+
+html.dark-theme .accordion_tag {
+  color: #a0a8c0 !important;
+}
+
+html.dark-theme .accordion_icon-wrap svg {
+  color: #f2c744 !important;
+}
+
+/* Legal Content & Rich Text in Dark Mode */
+html.dark-theme .content-block,
+html.dark-theme .rich-text,
+html.dark-theme .rich-text h1,
+html.dark-theme .rich-text h2,
+html.dark-theme .rich-text h3,
+html.dark-theme .rich-text h4 {
+  color: #ffffff !important;
+}
+
+html.dark-theme .rich-text p,
+html.dark-theme .rich-text li,
+html.dark-theme .rich-text span {
+  color: #cbd5e1 !important;
+}
+
+html.dark-theme .rich-text a {
+  color: #f2c744 !important;
+}
+
+html.dark-theme .rich-text strong {
+  color: #ffffff !important;
 }
