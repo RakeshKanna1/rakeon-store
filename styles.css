@@ -6366,6 +6366,29 @@ html.dark-theme #res-key-label,
 html.dark-theme #res-pass-title {
   color: #f2c744 !important;
   font-weight: 800 !important;
+  text-shadow: 0 0 16px rgba(242, 199, 68, 0.35) !important;
+}
+
+html.dark-theme .validator-terminal h2 {
+  color: #ffffff !important;
+}
+
+html.dark-theme .validator-terminal p {
+  color: #cbd5e1 !important;
+}
+
+html.dark-theme .validator-terminal div[style*="font-family: monospace"] {
+  color: #f2c744 !important;
+}
+
+html.dark-theme .validator-terminal div[style*="font-family: monospace"] span {
+  color: #f2c744 !important;
+  font-weight: 700 !important;
+}
+
+html.dark-theme #val-loading div[style*="color: #18181b"] {
+  color: #f2c744 !important;
+  text-shadow: 0 0 16px rgba(242, 199, 68, 0.4) !important;
 }
 
 html.dark-theme .hero-process_description-text {
@@ -6420,6 +6443,15 @@ html.dark-theme .process_visual-pillow.has-text {
 
 html.dark-theme .process_visual-pillow-text {
   color: #f2c744 !important;
+  font-weight: 800 !important;
+  text-shadow: 0 0 14px rgba(242, 199, 68, 0.35) !important;
+}
+
+html.dark-theme .process_content-header > .process_content-description {
+  color: #f2c744 !important;
+  font-weight: 800 !important;
+  font-size: 1.15rem !important;
+  text-shadow: 0 0 16px rgba(242, 199, 68, 0.3) !important;
 }
 
 html.dark-theme .process_content-description {
@@ -6432,7 +6464,8 @@ html.dark-theme .process_content-button {
 
 html.dark-theme .process_content-button:hover,
 html.dark-theme .process_content-button.is-active {
-  color: #ffffff !important;
+  color: #f2c744 !important;
+  font-weight: 800 !important;
 }
 
 html.dark-theme .process_minimap {
@@ -6442,6 +6475,22 @@ html.dark-theme .process_minimap {
 
 html.dark-theme .process_minimap-number {
   color: #f2c744 !important;
+  font-weight: 900 !important;
+}
+
+html.dark-theme .process_hint-tag-text {
+  color: #f2c744 !important;
+  font-weight: 800 !important;
+}
+
+html.dark-theme .hero-process_footer-text {
+  color: #f2c744 !important;
+  font-weight: 700 !important;
+}
+
+html.dark-theme .validator-input:focus {
+  border-color: #f2c744 !important;
+  box-shadow: 0 0 16px rgba(242, 199, 68, 0.4) !important;
 }
 
 /* Next-Page Section in Dark Mode */
@@ -6854,34 +6903,104 @@ html.dark-theme .pricing-card-item li span[style*="color:#15803d"] {
   color: #4ade80 !important;
 }
 
-/* Card CTA Action Buttons */
+/* Universal Master CTA Action Buttons (Desktop & Mobile) */
+.btn-primary-rakexura,
+#btn-starter-wa,
+#btn-ultimate-wa,
+#btn-master-wa,
+#val-submit-btn,
+#res-btn-wa {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-height: 48px !important;
+  padding: 13px 22px !important;
+  border-radius: 0.85rem !important;
+  font-family: monospace, system-ui, -apple-system, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease !important;
+}
+
+/* Light Mode Defaults */
+html:not(.dark-theme) .btn-primary-rakexura,
+html:not(.dark-theme) #btn-starter-wa,
+html:not(.dark-theme) #btn-master-wa {
+  background-color: #f2c744 !important;
+  color: #18181b !important;
+  border: 1.5px solid #18181b !important;
+  box-shadow: 0 3px 0 #18181b !important;
+}
+
+html:not(.dark-theme) #btn-ultimate-wa {
+  background-color: #18181b !important;
+  color: #f2c744 !important;
+  border: 1.5px solid #18181b !important;
+  box-shadow: 0 3px 0 #18181b !important;
+}
+
+/* Dark Mode: Card 1 & Card 3 Action Buttons */
 html.dark-theme .btn-primary-rakexura,
 html.dark-theme #btn-starter-wa,
 html.dark-theme #btn-master-wa {
   background-color: #1a1633 !important;
   color: #ffffff !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.22) !important;
   box-shadow: 0 4px 0 rgba(0, 0, 0, 0.6) !important;
 }
 
 html.dark-theme .btn-primary-rakexura:hover,
 html.dark-theme #btn-starter-wa:hover,
 html.dark-theme #btn-master-wa:hover {
-  background-color: #26204c !important;
+  background-color: #241f47 !important;
   border-color: #f2c744 !important;
   color: #f2c744 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.7) !important;
 }
 
-html.dark-theme #btn-ultimate-wa {
+/* Dark Mode: Card 2 (Ultimate Combo) Featured Cyber Gold CTA Button */
+html.dark-theme #btn-ultimate-wa,
+html.dark-theme .pricing-card-item.is-featured .btn-primary-rakexura,
+html.dark-theme #val-submit-btn,
+html.dark-theme #res-btn-wa {
   background-color: #f2c744 !important;
-  color: #18181b !important;
-  border: 1.5px solid #18181b !important;
+  color: #0c0a18 !important;
+  border: 1.5px solid #0c0a18 !important;
   font-weight: 900 !important;
-  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.6) !important;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.6), 0 0 20px rgba(242, 199, 68, 0.35) !important;
 }
 
-html.dark-theme #btn-ultimate-wa:hover {
-  background-color: #ffd659 !important;
+html.dark-theme #btn-ultimate-wa:hover,
+html.dark-theme .pricing-card-item.is-featured .btn-primary-rakexura:hover,
+html.dark-theme #val-submit-btn:hover,
+html.dark-theme #res-btn-wa:hover {
+  background-color: #ffd859 !important;
+  color: #000000 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.7), 0 0 26px rgba(242, 199, 68, 0.5) !important;
+}
+
+html.dark-theme #btn-starter-wa span,
+html.dark-theme #btn-master-wa span,
+html.dark-theme .btn-primary-rakexura span {
+  color: inherit !important;
+}
+
+html.dark-theme #btn-ultimate-wa span,
+html.dark-theme .pricing-card-item.is-featured .btn-primary-rakexura span,
+html.dark-theme #val-submit-btn span,
+html.dark-theme #res-btn-wa span {
+  color: #0c0a18 !important;
+  font-weight: 900 !important;
 }
 
 /* Store Comparison Table */
