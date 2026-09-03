@@ -1,51 +1,110 @@
 /**
- * RAKEXURA Subscriptions - Master Platform Synchronizer
+ * RAKEXURA Fast Static Asset & Mirror Sync
  * 
- * Synchronizes:
- * 1. Authentic 3-card pricing plans & duration engine across all pricing pages and index targets
- * 2. Support page compact spacing and action grouping
- * 3. Unified high-contrast cyber dark theme & base enhancements across all stylesheets
+ * Direct editing workflow:
+ * Edit your code files (index.html, styles.css, pricing.html, etc.) directly.
+ * This script runs on build/deploy to cleanly copy source files into `public/` in < 50ms.
  */
 
-const { execSync } = require('child_process');
+const fs = require('fs');
 const path = require('path');
 
 console.log('====================================================');
-console.log('  RAKEXURA MASTER PLATFORM SYNC');
+console.log('  RAKEXURA DIRECT BUILD & MIRROR SYNC');
 console.log('====================================================\n');
 
-try {
-  console.log('[1/8] Syncing authentic 3-card plans to all targets...');
-  execSync('node scripts/apply_authentic_3card_plans.js', { stdio: 'inherit' });
+const startTime = Date.now();
 
-  console.log('\n[2/8] Ensuring authentic intro section on homepage...');
-  execSync('node scripts/restore_intro_section.js', { stdio: 'inherit' });
-
-  console.log('\n[2/3] Syncing support layout & spacing...');
-  execSync('node scripts/fix_support_spacing.js', { stdio: 'inherit' });
-
-  console.log('\n[3/4] Syncing real slot validator logic...');
-  execSync('node scripts/fix_validation_logic.js', { stdio: 'inherit' });
-
-  console.log('\n[4/5] Syncing harmonious dark theme & base stylesheets...');
-  execSync('node scripts/fix_dark_mode_colors.js', { stdio: 'inherit' });
-
-  console.log('\n[5/6] Syncing perfected mobile hero design across HTML templates...');
-  execSync('node scripts/fix_mobile_hero_design.js', { stdio: 'inherit' });
-
-  console.log('\n[6/8] Syncing bulletproof mobile menu dialog across all pages...');
-  execSync('node scripts/fix_missing_menu_dialog.js', { stdio: 'inherit' });
-
-  console.log('\n[7/8] Syncing perfected telemetry tracking design & countdown HUD...');
-  execSync('node scripts/fix_track_design.js', { stdio: 'inherit' });
-
-  console.log('\n[8/8] Patching app.js runtime stability...');
-  execSync('node scripts/patch_app_js.js', { stdio: 'inherit' });
-
-  console.log('\n====================================================');
-  console.log('  ALL TARGETS SYNCHRONIZED SUCCESSFULLY!');
-  console.log('====================================================');
-} catch (err) {
-  console.error('\nSync failed:', err.message);
-  process.exit(1);
+function copyFile(src, dest) {
+  if (!fs.existsSync(src)) return;
+  const destDir = path.dirname(dest);
+  if (!fs.existsSync(destDir)) {
+    fs.mkdirSync(destDir, { recursive: true });
+  }
+  fs.copyFileSync(src, dest);
+  console.log(`✓ Copied ${path.relative('.', src)} -> ${path.relative('.', dest)}`);
 }
+
+function copyDir(src, dest) {
+  if (!fs.existsSync(src)) return;
+  if (!fs.existsSync(dest)) {
+    fs.mkdirSync(dest, { recursive: true });
+  }
+  const entries = fs.readdirSync(src, { withFileTypes: true });
+  for (const entry of entries) {
+    const srcPath = path.join(src, entry.name);
+    const destPath = path.join(dest, entry.name);
+    if (entry.isDirectory()) {
+      if (entry.name !== 'node_modules' && entry.name !== '.git') {
+        copyDir(srcPath, destPath);
+      }
+    } else {
+      fs.copyFileSync(srcPath, destPath);
+    }
+  }
+}
+
+// 1. Root files to sync into public/
+const coreFiles = [
+  'styles.css',
+  'index.html',
+  'pricing.html',
+  'support.html',
+  'validation.html',
+  'track.html',
+  'manage.html',
+  'terms.html',
+  'privacy.html',
+  'imprint.html',
+  'favicon.ico',
+  'sw.js'
+];
+
+coreFiles.forEach(file => {
+  if (fs.existsSync(file)) {
+    copyFile(file, path.join('public', file));
+  }
+});
+
+// 2. Subfolder mirrors (e.g. pricing/index.html from pricing.html)
+const pageRoutes = [
+  { source: 'pricing.html', route: 'pricing' },
+  { source: 'support.html', route: 'support' },
+  { source: 'validation.html', route: 'validation' },
+  { source: 'track.html', route: 'track' },
+  { source: 'manage.html', route: 'manage' }
+];
+
+pageRoutes.forEach(({ source, route }) => {
+  if (fs.existsSync(source)) {
+    copyFile(source, path.join(route, 'index.html'));
+    copyFile(source, path.join('public', route, 'index.html'));
+  }
+});
+
+// 3. Asset and script folders
+copyDir('assets', 'public/assets');
+if (fs.existsSync('scripts/app.js')) {
+  copyFile('scripts/app.js', 'public/scripts/app.js');
+}
+
+// 4. Showcase mirror (if used)
+if (fs.existsSync('public/showcase')) {
+  copyFile('styles.css', 'public/showcase/styles.css');
+  coreFiles.filter(f => f.endsWith('.html')).forEach(file => {
+    if (fs.existsSync(file)) {
+      copyFile(file, path.join('public/showcase', file));
+    }
+  });
+  pageRoutes.forEach(({ source, route }) => {
+    if (fs.existsSync(source)) {
+      copyFile(source, path.join('public/showcase', route, 'index.html'));
+    }
+  });
+}
+
+const elapsed = Date.now() - startTime;
+console.log(`\n====================================================`);
+console.log(`  BUILD SYNC COMPLETED IN ${elapsed}ms!`);
+console.log(`  Direct code editing is now active.`);
+console.log(`====================================================`);
