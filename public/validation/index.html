@@ -504,9 +504,14 @@ html.is-ready .preloader::before {
   /* Full-width Key Validator Section */
   .validator-section {
     padding: 2.5rem 1.25rem 3.5rem !important;
-    background-color: #f2efeb !important;
     width: 100% !important;
     box-sizing: border-box !important;
+  }
+  html:not(.dark-theme) .validator-section {
+    background-color: #f2efeb !important;
+  }
+  html.dark-theme .validator-section {
+    background-color: #0c0a18 !important;
   }
   .validator-terminal {
     max-width: 1200px !important;
