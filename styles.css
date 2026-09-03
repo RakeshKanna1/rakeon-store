@@ -7462,3 +7462,158 @@ body:not(.dark-theme) .rk-glow-inline {
   color: #18181b !important;
   text-shadow: none !important;
 }
+
+
+/* ==========================================================================
+   BUTTON THEME & BRAND SYSTEM (SCREENSHOT FIXES)
+   1. Pricing Card Pill Buttons (Matching Screenshot 152530)
+   2. Goldish Yellow Primary Action Buttons (Matching Screenshot 152603)
+   3. Razor Sharp Black Text on All Yellow/Gold Elements (Screenshot 153107)
+   ========================================================================== */
+
+/* 1. Base Pill Buttons for Pricing Cards */
+.btn-primary-rakexura,
+button.btn-primary-rakexura,
+#btn-starter-wa,
+#btn-ultimate-wa,
+#btn-master-wa {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  border-radius: 9999px !important;
+  padding: 13px 24px !important;
+  font-family: inherit !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.15s ease, border-color 0.15s ease !important;
+}
+
+/* Dark Theme Pricing Card Buttons */
+html.dark-theme #btn-starter-wa,
+html.dark-theme #btn-master-wa,
+.dark-theme #btn-starter-wa,
+.dark-theme #btn-master-wa {
+  background-color: #1a1633 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.6) !important;
+}
+
+html.dark-theme #btn-starter-wa:hover,
+html.dark-theme #btn-master-wa:hover,
+.dark-theme #btn-starter-wa:hover,
+.dark-theme #btn-master-wa:hover {
+  background-color: #26204c !important;
+  border-color: #f2c744 !important;
+  color: #f2c744 !important;
+  -webkit-text-fill-color: #f2c744 !important;
+  transform: translateY(2px) !important;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Featured Card Button - Goldish Yellow with Bold Black Text */
+html.dark-theme #btn-ultimate-wa,
+html:not(.dark-theme) #btn-ultimate-wa,
+.dark-theme #btn-ultimate-wa,
+#btn-ultimate-wa {
+  background-color: #f2c744 !important;
+  color: #18181b !important;
+  -webkit-text-fill-color: #18181b !important;
+  border: 1.5px solid #18181b !important;
+  font-weight: 900 !important;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.6) !important;
+}
+
+#btn-ultimate-wa:hover,
+html.dark-theme #btn-ultimate-wa:hover {
+  background-color: #e5b938 !important;
+  color: #18181b !important;
+  -webkit-text-fill-color: #18181b !important;
+  transform: translateY(2px) !important;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.6) !important;
+}
+
+/* 2. Primary Action Button: VERIFY SLOT (Screenshot 152603) */
+#val-submit-btn,
+button#val-submit-btn,
+html.dark-theme #val-submit-btn,
+html.dark-theme button#val-submit-btn,
+.dark-theme #val-submit-btn,
+html:not(.dark-theme) #val-submit-btn {
+  background-color: #f2c744 !important;
+  color: #18181b !important;
+  -webkit-text-fill-color: #18181b !important;
+  border: 1.5px solid #18181b !important;
+  font-weight: 900 !important;
+  box-shadow: 0 4px 0 #b28b18 !important;
+  border-radius: 0.85rem !important;
+  padding: 10px 24px !important;
+  cursor: pointer !important;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.15s ease !important;
+}
+
+#val-submit-btn:hover,
+html.dark-theme #val-submit-btn:hover {
+  background-color: #e5b938 !important;
+  color: #18181b !important;
+  -webkit-text-fill-color: #18181b !important;
+  transform: translateY(2px) !important;
+  box-shadow: 0 2px 0 #b28b18 !important;
+}
+
+#val-submit-btn svg,
+#val-submit-btn span {
+  color: #18181b !important;
+  -webkit-text-fill-color: #18181b !important;
+  fill: currentColor !important;
+}
+
+/* 3. Razor Sharp Black Letters on ALL Yellow/Gold Elements (Screenshot 153107) */
+.button-small,
+.button-small *,
+.button-small_text,
+.button-small_container,
+a.button-small,
+a.button-small *,
+a.button-small span,
+.is-yellow,
+.is-yellow *,
+.button-default.is-yellow,
+.button-default.is-yellow *,
+.button-default.is-yellow .button-default_button-text,
+.button-default_button-bg.is-yellow ~ .button-default_button-container *,
+.btn-gold-cta,
+.btn-gold-cta *,
+[style*="background: #f2c744"] *,
+[style*="background:#f2c744"] *,
+[style*="background-color: #f2c744"] *,
+[style*="background-color:#f2c744"] *,
+[style*="background: #f2c744"],
+[style*="background:#f2c744"],
+[style*="background-color: #f2c744"],
+[style*="background-color:#f2c744"],
+#save-starter,
+#save-ultimate,
+#save-master {
+  color: #18181b !important;
+  -webkit-text-fill-color: #18181b !important;
+  font-weight: 800 !important;
+}
+
+.button-small svg,
+.button-default.is-yellow svg,
+[style*="background: #f2c744"] svg,
+[style*="background:#f2c744"] svg,
+[style*="background-color: #f2c744"] svg,
+[style*="background-color:#f2c744"] svg {
+  fill: #18181b !important;
+  color: #18181b !important;
+}
