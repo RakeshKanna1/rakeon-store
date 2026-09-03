@@ -101,6 +101,7 @@ if (fs.existsSync('public/showcase')) {
       copyFile(source, path.join('public/showcase', route, 'index.html'));
     }
   });
+  copyDir('assets', 'public/showcase/assets');
 }
 
 const elapsed = Date.now() - startTime;

@@ -6797,14 +6797,16 @@ html.dark-theme .pricing-card-item div[style*="background:#faf8f5"] {
   border-color: rgba(255, 255, 255, 0.18) !important;
 }
 
-/* Make Xbox Logo Pure White in Dark Mode */
+/* Xbox Logo Pure White Rendering */
+img[src*="xbox-logo"],
+img[src*="xbox"],
+img[alt="Xbox"],
 html.dark-theme img[src*="xbox-logo"],
 html.dark-theme img[src*="xbox"],
-html.dark-theme img[alt="Xbox"],
-html.dark-theme img[alt*="Xbox"],
-html.dark-theme .service-card_front-visual > div::before {
-  filter: brightness(0) invert(1) !important;
-  -webkit-filter: brightness(0) invert(1) !important;
+html.dark-theme img[alt="Xbox"] {
+  filter: none !important;
+  -webkit-filter: none !important;
+  opacity: 1 !important;
 }
 
 html.dark-theme .pricing-card-item span[style*="color: #18181b"],
