@@ -1,18 +1,44 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
 
-const orig = execSync('git show origin/main:index.html', { encoding: 'utf8', maxBuffer: 50 * 1024 * 1024 });
+// 1. Try to find an existing intro section from targets already on disk
+let introSection = null;
+const targets = ['index.html', 'public/index.html', 'public/showcase/index.html'];
 
-const introMatch = orig.match(/<section[^>]*class=["']intro u-theme-dark["'][^>]*>[\s\S]*?<\/section>/);
-if (!introMatch) {
-  console.log("Could not find intro section in origin/main");
-  process.exit(1);
+for (const t of targets) {
+  if (fs.existsSync(t)) {
+    const html = fs.readFileSync(t, 'utf8');
+    const match = html.match(/<section[^>]*class=["']intro u-theme-dark["'][^>]*>[\s\S]*?<\/section>/);
+    if (match) {
+      introSection = match[0];
+      console.log(`Found authentic intro section from local ${t}! (Length: ${introSection.length})`);
+      break;
+    }
+  }
 }
 
-const introSection = introMatch[0];
-console.log("Found intro section from origin/main! Length:", introSection.length);
+// 2. Fallback to git refs if not found on disk (supporting shallow clones in CI like Vercel)
+if (!introSection) {
+  const gitRefs = ['HEAD:index.html', 'origin/main:index.html', 'main:index.html'];
+  for (const ref of gitRefs) {
+    try {
+      const orig = execSync(`git show ${ref}`, { encoding: 'utf8', maxBuffer: 50 * 1024 * 1024 });
+      const match = orig.match(/<section[^>]*class=["']intro u-theme-dark["'][^>]*>[\s\S]*?<\/section>/);
+      if (match) {
+        introSection = match[0];
+        console.log(`Found authentic intro section from git ${ref}! (Length: ${introSection.length})`);
+        break;
+      }
+    } catch (e) {
+      // Ignore git ref errors in CI shallow clones
+    }
+  }
+}
 
-const targets = ['index.html', 'public/index.html', 'public/showcase/index.html'];
+if (!introSection) {
+  console.log("Intro section not found in local files or git history; skipping restoration.");
+  process.exit(0);
+}
 
 targets.forEach(t => {
   if (!fs.existsSync(t)) return;
