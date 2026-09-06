@@ -1,0 +1,21 @@
+# Development & IDE files
+.vscode/
+.idea/
+.editorconfig
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Documentation & Guidelines
+*.md
+PROJECT_RULES.md
+AGENTS.md
+
+# One-off maintenance scripts (keep sync.js and scripts/app.js)
+scripts/apply_*.js
+scripts/fix_*.js
+scripts/patch_*.js
+scripts/restore_*.js
+
+# Local environment
+.env*.local
